@@ -1,0 +1,387 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Determinants, Areas, and Volumes} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+ \end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Determinants, Areas, and Volumes}
+\end{onlineOnly}
+
+\subsection*{$2\times 2$ Determinant and the Area of a Parallelogram}
+
+Consider the parallelogram determined by vectors $\vec{u}$ and $\vec{v}$ in $\RR^3$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+
+  \filldraw[blue, opacity=0.3](0,0)--(4,2)--(5,4)--(1,2)--cycle;
+
+\draw[line width=2pt,red,-stealth](0,0)--(4,2) node[below right]{$\vec{u}$};
+ 
+  \draw[line width=2pt,blue, -stealth](0,0)--(1,2) node[above left]{$\vec{v}$}; 
+\end{tikzpicture}
+\end{center}
+
+Recall that the area of a parallelogram is given by the product of the length of the base and the height.
+As shown in the diagram below, the length of the base is the magnitude of $\vec{u}$. The height, $h$, can be found using trigonometry $$h=\norm{\vec{v}}\sin\theta$$ 
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+
+  \filldraw[blue, opacity=0.3](0,0)--(4,2)--(5,4)--(1,2)--cycle;
+
+\draw[line width=0.5pt, dashed](1,2)--(1.6,0.8);
+\node[] at (2, 1.6)   (b) {$h=\norm{\vec{v}}\sin\theta$};
+\draw[line width=2pt,red](0,0)--(4,2);
+ \node[red] at (2, 0.6)   (b) {$\norm{\vec{u}}$};
+ \node[blue] at (0.2, 1.2)   (b) {$\norm{\vec{v}}$};
+ \node[] at (0.3, 0.3)   (b) {$\theta$};
+  \draw[line width=2pt,blue](0,0)--(1,2); 
+\end{tikzpicture}
+\end{center}
+Using the area of a parallelogram formula together with Theorem \ref{th:crossproductsin} we get
+$$\mbox{Area}=(\text{base})(\text{height})=\norm{\vec{u}}h=\norm{\vec{u}}\norm{\vec{v}}\sin\theta=\norm{\vec{u}\times\vec{v}}$$
+We have established the following formula.
+
+\begin{formula}\label{form:areaofparallelogram} The area of a parallelogram determined by vectors $\vec{u}$ and $\vec{v}$ in $\RR^3$ is given by
+$$\mbox{Area}=\norm{\vec{u}\times\vec{v}}$$
+\end{formula}
+
+\begin{example}\label{ex:areaOfParFormula}
+    Use Formula \ref{form:areaofparallelogram} to find the area of a parallelogram determined by vectors 
+    $$\vec{u}=\begin{bmatrix}-2\\1\\3\end{bmatrix},\quad \vec{v}=\begin{bmatrix}1\\6\\2\end{bmatrix}$$
+\begin{explanation}
+    We can start by visualizeing the parallelogram in GeoGebra.  RIGHT-CLICK and DRAG to rotate the image below.  The area of the parallelogram, rounded to two decimal places, is displayed inside the parallelogram.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+
+\begin{onlineOnly}    
+\begin{center}
+\geogebra{g7g6kjqm}{600}{400}
+\end{center}
+\end{onlineOnly}
+
+    To find the exact area we compute
+    $$\vec{u}\times \vec{v}=\begin{bmatrix}-2\\1\\3\end{bmatrix}\times \begin{bmatrix}1\\6\\2\end{bmatrix}=\begin{vmatrix}\vec{i} &\vec{j} &\vec{k}\\-2 & 1 & 3\\1 & 6 & 2\end{vmatrix}=\begin{bmatrix}\answer{-16}\\\answer{7}\\\answer{-13}\end{bmatrix}$$
+
+    $$\mbox{Area}=\norm{\vec{u}\times\vec{v}}=\sqrt{\answer{474}}$$
+\end{explanation}
+\end{example}
+
+
+
+
+Formula \ref{form:areaofparallelogram} can be easily adapted to parallelograms determined by vectors in $\RR^2$, as illustrated by the following example.
+
+\begin{example}\label{ex:areaofparallelogram}
+Find the area of the parallelogram in the diagram.
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-3,-1) grid (4,4);
+  \draw[<->] (-3,0)--(4,0);
+  \draw[<->] (0,-1)--(0,4);
+  
+  \filldraw[blue, opacity=0.3](0,0)--(-2,2)--(2,4)--(4,2)--cycle;
+
+\draw[line width=2pt,red,-stealth](0,0)--(4,2);
+
+
+ \draw[line width=2pt,blue,-stealth](0,0)--(-2,2);
+ 
+\end{tikzpicture}
+\end{center}
+\begin{explanation}
+The vectors that determine the parallelogram are 
+$$\begin{bmatrix}4\\2\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}-2\\2\end{bmatrix}$$
+The problem we run into is that these vectors are in $\RR^2$, whereas the cross product is defined only for vectors in $\RR^3$.  We will get around this difficulty by ``padding" our vectors with zeros on the bottom.  In other words, we will consider them as vectors sitting in the $xy$-coordinate plane in $\RR^3$.  This allows us to compute the cross product 
+$$\begin{bmatrix}4\\2\\0\end{bmatrix}\times\begin{bmatrix}-2\\2\\0\end{bmatrix}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\4&2&0\\-2&2&0\end{vmatrix}=\vec{k}\Big((4)(2)-(2)(-2)\Big)=12\vec{k}=\begin{bmatrix}0\\0\\12\end{bmatrix}$$
+The area of the parallelogram is then given by
+$$\mbox{Area}=\norm{\begin{bmatrix}0\\0\\12\end{bmatrix}}=12$$
+\end{explanation}
+\end{example}
+
+Example \ref{ex:areaofparallelogram} illustrates an important phenomenon.  Observe that the zeros in the last column of the determinant ensure that the $\vec{i}$ and $\vec{j}$ components of the cross product are zero, while the last component is the determinant of the $2\times 2$ matrix whose rows (or columns) are the two vectors that determine the parallelogram in $\RR^2$.  In general, if the parallelogram is determined by vectors 
+$$\begin{bmatrix}a\\b\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}c\\d\end{bmatrix}$$
+then the area of the parallelogram can be computed as follows:
+$$\begin{bmatrix}a\\b\\0\end{bmatrix}\times\begin{bmatrix}c\\d\\0\end{bmatrix}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\a&b&0\\c&d&0\end{vmatrix}=\vec{k}\begin{vmatrix}a&b\\c&d\end{vmatrix}=\vec{k}\Big((a)(d)-(b)(c)\Big)=\begin{bmatrix}0\\0\\ad-bc\end{bmatrix}$$
+
+$$\mbox{Area}=\norm{\begin{bmatrix}0\\0\\ad-bc\end{bmatrix}}=|ad-bc|=\Big|\det\begin{bmatrix}a&b\\c&d\end{bmatrix}\Big|=\Big|\det\begin{bmatrix}a&c\\b&d\end{bmatrix}\Big|$$
+
+So the area of the parallelogram turns out to be the absolute value of the determinant of the matrix whose rows (or columns) are the two vectors that determine the parallelogram. 
+The following formula summarizes our discussion.
+
+\begin{formula}\label{form:areaofparallelogramdeterminant} Let $\vec{u}=\begin{bmatrix}a\\b\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}c\\d\end{bmatrix}$ be vectors of $\RR^2$.  The area of the parallelogram determined by $\vec{u}$ and $\vec{v}$ is given by
+$$\mbox{Area}=\Big|{\det\begin{bmatrix}a&b\\c&d\end{bmatrix}}\Big|=\Big|\det\begin{bmatrix}a&c\\b&d\end{bmatrix}\Big|$$
+\end{formula}
+
+\begin{example}\label{exp:polyArea}
+    Use Formula \ref{form:areaofparallelogramdeterminant} to find the area of the polygon shown below.
+  \begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-3,-2) grid (3,4);
+  \draw[<->] (-3,0)--(3,0);
+  \draw[<->] (0,-2)--(0,4);
+  \filldraw[blue, opacity=0.3](-1,-1)--(-2,2)--(-1,3)--(1,2)--(2,0)--cycle;
+%\draw[line width=2pt,red,-stealth](0,0)--(4,2);
+% \draw[line width=2pt,blue,-stealth](0,0)--(-2,2);
+ \end{tikzpicture}
+\end{center}  
+\begin{explanation}
+    We will start by splitting this region into triangles.
+    \begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-3,-2) grid (3,4);
+  \draw[<->] (-3,0)--(3,0);
+  \draw[<->] (0,-2)--(0,4);
+  \filldraw[blue, opacity=0.3](-1,-1)--(-2,2)--(-1,3)--(1,2)--(2,0)--cycle;
+\draw[line width=1pt,red,-stealth](0,0)--(-1,-1);
+\draw[line width=1pt,red,-stealth](0,0)--(-2,2);
+\draw[line width=1pt,red,-stealth](0,0)--(-1,3);
+\draw[line width=1pt,red,-stealth](0,0)--(1,2);
+\draw[line width=1pt,red,-stealth](0,0)--(2,0);
+\node[] at (1, 0.6)   (b) {$A_1$};
+\node[] at (0.2, 1.9)   (b) {$A_2$};
+\node[] at (-1, 1.5)   (b) {$A_3$};
+\node[] at (-1, 0.2)   (b) {$A_4$};
+\node[] at (0.5, -0.4)   (b) {$A_5$};
+ \end{tikzpicture}
+\end{center} 
+    We can find the total area of the polygon by finding the area of each triangle.  The area of each triangle is half of the area of the corresponding parallelogram.  For instance, $A_1$ is half of the area of the parallelogram depicted below. 
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-3,-2) grid (3,4);
+  \draw[<->] (-3,0)--(3,0);
+  \draw[<->] (0,-2)--(0,4);
+  \filldraw[blue, opacity=0.3](-1,-1)--(-2,2)--(-1,3)--(1,2)--(2,0)--cycle;
+\draw[line width=1pt,red,-stealth](0,0)--(-1,-1);
+\draw[line width=1pt,red,-stealth](0,0)--(-2,2);
+\draw[line width=1pt,red,-stealth](0,0)--(-1,3);
+\draw[line width=1pt,red,-stealth](0,0)--(1,2);
+\draw[line width=1pt,red,-stealth](0,0)--(2,0);
+\filldraw[orange, opacity=0.3](2,0)--(0,0)--(1,2)--(3,2)--cycle;
+ \end{tikzpicture}
+\end{center} 
+We compute
+$$A_1=\frac{1}{2}\left|\det\begin{bmatrix}2 & 1\\0 & 2\end{bmatrix}\right |=\answer{2}$$
+$$A_2=\frac{1}{2}\left|\det\begin{bmatrix}1 & -1\\2 & 3\end{bmatrix}\right |=\answer{2.5}$$
+$$A_3=\frac{1}{2}\left|\det\begin{bmatrix}-1 & -2\\3 & 2\end{bmatrix}\right |=\answer{2}$$
+$$A_4=\frac{1}{2}\left|\det\begin{bmatrix}-2 & -1\\2 & -1\end{bmatrix}\right |=\answer{2}$$
+$$A_5=\frac{1}{2}\left|\det\begin{bmatrix}-1 & 2\\-1 & 0\end{bmatrix}\right |=\answer{1}$$
+The total area of the polygon is $\answer{9.5}$.
+\end{explanation}
+\end{example}
+
+
+\subsection*{$3\times 3$ Determinant and the Volume of a Parallelepiped}
+
+Our next goal is to find the volume of a three-dimensional figure called a \dfn{parallelepiped}.  A parallelepiped is a six-faced figure whose opposite faces are congruent parallelograms located in parallel planes.  A parallelepiped is a three-dimensional counterpart of a parallelogram, and is determined by three non-coplanar vectors in $\RR^3$.  The figure below shows a parallelepiped determined by three vectors.
+
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}
+	\draw[->](-2,0,0)--(5,0,0) node[below left]{$y$};
+    \draw[->](0,-2,0)--(0,6,0) node[below left]{$z$};
+    \draw[->](0,0,-2)--(0,0,5) node[below left]{$x$};
+    
+    \draw[line width=0.5pt, dashed](3,5,1)--(5,1,-2);
+    \draw[line width=0.5pt, dashed](3,5,1)--(-2,4,3);
+    \draw[line width=0.5pt, dashed](3,5,1)--(7,9,6);
+    
+    \filldraw[blue, opacity=0.4] (0,0,0)--(-2, 4, 3)--(2,8,8)--(4,4,5)--cycle;
+    \filldraw[blue, opacity=0.5] (2,8,8)--(4,4,5)--(9,5,3)--(7,9,6)--cycle;
+    \filldraw[blue, opacity=0.6] (0,0,0)--(4,4,5)--(9,5,3)--(5,1,-2)--cycle;
+    
+    \draw[->, line width=2pt,blue, -stealth](0,0,0)--(-2,4,3);
+    \draw[->, line width=2pt,red, -stealth](0,0,0)--(4,4,5);
+    \draw[->, line width=2pt, -stealth](0,0,0)--(5,1,-2);
+    
+\end{tikzpicture}
+\end{center}
+
+Consider a parallelepiped determined by vectors $\vec{u}$, $\vec{v}$ and $\vec{w}$, as shown below.  
+
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}
+    \draw[->, line width=2pt, -stealth,orange,dashed](0,0,0)--(4,0,1)node[above left]{$\vec{v}$};
+    
+    \draw[line width=0.5pt, dashed](4,0,1)--(5,0,6);
+    \draw[line width=0.5pt, dashed](4,0,1)--(9,5,2);
+    
+    \draw[line width=2pt, gray](1,0,5)--(6,5,6);
+    \draw[line width=2pt, gray](10,5,7)--(6,5,6);
+    \draw[line width=2pt, gray](10,5,7)--(5,0,6);
+    \draw[line width=2pt, gray](1,0,5)--(5,0,6);
+    \draw[line width=2pt, gray](6,5,6)--(5,5,1);
+    \draw[line width=2pt, gray](9,5,2)--(5,5,1);
+    \draw[line width=2pt, gray](10,5,7)--(9,5,2);
+    
+    \draw[->, line width=2pt,red, -stealth](0,0,0)--(1,0,5)node[below left]{$\vec{u}$};
+    \draw[->, line width=2pt, blue, -stealth](0,0,0)--(5,5,1)node[above left]{$\vec{w}$} ;
+  
+\end{tikzpicture}
+\end{center}
+
+The volume of a parallelepiped is given by 
+$$\mbox{Volume}=(\text{area of base})(\text{height})$$
+We will consider the parallelogram determined by $\vec{u}$ and $\vec{v}$ to be the base of the parallelepiped.  Thus, the area of the base is given by 
+$$\mbox{Area of Base}=\norm{\vec{u}\times\vec{v}}$$
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}
+    \draw[->, line width=2pt, -stealth,orange,dashed](0,0,0)--(4,0,1)node[above left]{$\vec{v}$};
+    
+    \draw[line width=0.5pt, dashed](4,0,1)--(5,0,6);
+    \draw[line width=0.5pt, dashed](4,0,1)--(9,5,2);
+    
+    \draw[line width=0.5pt, dashed](5,5,1)--(0,5,0);
+    
+    \draw[line width=2pt, gray](1,0,5)--(6,5,6);
+    \draw[line width=2pt, gray](10,5,7)--(6,5,6);
+    \draw[line width=2pt, gray](10,5,7)--(5,0,6);
+    \draw[line width=2pt, gray](1,0,5)--(5,0,6);
+    \draw[line width=2pt, gray](6,5,6)--(5,5,1);
+    \draw[line width=2pt, gray](9,5,2)--(5,5,1);
+    \draw[line width=2pt, gray](10,5,7)--(9,5,2);
+    
+    \draw[->, line width=2pt,red, -stealth](0,0,0)--(1,0,5)node[below left]{$\vec{u}$};
+    \draw[->, line width=2pt, blue, -stealth](0,0,0)--(5,5,1)node[above left]{$\vec{w}$} ;
+    \node[blue] at (0.4, 1.1)   (b) {$\theta$};
+    \draw[->, line width=1pt, -stealth](0,0,0)--(0,6,0) node[above]{$\vec{u}\times\vec{v}$};
+    \draw[->, gray, line width=0.5pt, -stealth](-0.25,2.5,0)node[left, black]{$h$}--(-0.25,0,0);
+    \draw[->, gray, line width=0.5pt, -stealth](-0.25,2.5,0)--(-0.25,5,0);
+\end{tikzpicture}
+\end{center}
+
+The height of the parallelepiped is measured along a line perpendicular to the base.  By Theorem \ref{th:crossproductorthtouandv}, $\vec{u}\times\vec{v}$ lies on such a line.  Let $\theta$ be the angle between $\vec{w}$ and $\vec{u}\times\vec{v}$, $0\leq \theta\leq\pi$.  Then the height, $h$, of the parallelepiped is given by 
+$$h=\norm{\vec{w}}|\cos\theta |$$
+
+It may be difficult to visualize this in two dimensions.  Below is a replica of of the above diagram in GeoGebra.  RIGHT-CLICK and DRAG to rotate the image.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+\begin{onlineOnly}
+\begin{center}
+\geogebra{tfuzeqwr}{900}{700}
+\end{center}
+\end{onlineOnly}
+
+This gives us the following formula for the volume of the parallelepiped
+$$\mbox{Volume}=\norm{\vec{u}\times\vec{v}}\norm{\vec{w}}|\cos\theta |=|(\vec{u}\times\vec{v})\dotp\vec{w}|$$
+
+We have established the following formula.
+
+\begin{formula}\label{form:volumeparallelepiped}
+The volume of a parallelepiped determined by vectors $\vec{u}$, $\vec{v}$ and $\vec{w}$ in $\RR^3$ is given by\\
+$$\mbox{Volume}=|(\vec{u}\times\vec{v})\dotp\vec{w}|$$
+\end{formula}
+
+Our next goal is to show that this expression for the volume is equal to the determinant of a $3\times 3$ matrix whose rows are the vectors that determine the parallelepiped.
+
+Let 
+$$\vec{u}=\begin{bmatrix}u_1\\u_2\\u_3\end{bmatrix},\quad\vec{v}=\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix},\quad\vec{w}=\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix}$$
+then
+\begin{align}\label{eq:boxproduct}(\vec{u}\times\vec{v})\dotp\vec{w}=\begin{vmatrix}\vec{i}&\vec{j}&\vec{k}\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}\dotp\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix}=\begin{vmatrix}w_1&w_2&w_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{vmatrix}
+\end{align}
+The expression in (\ref{eq:boxproduct}) is sometimes referred to as the \dfn{box product} or the \dfn{scalar triple product}.
+
+Recall that $\det(A)=\det(A^T)$ (Theorem \ref{th:detoftrans}).  Therefore, the three vectors that determine the parallelogram can be used to form rows or columns of the determinant on the right side of (\ref{eq:boxproduct}).  This gives us the following formula.
+
+\begin{formula}\label{form:boxproduct}
+Let $\vec{u}=\begin{bmatrix}u_1\\u_2\\u_3\end{bmatrix},\quad\vec{v}=\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix},\quad\vec{w}=\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix}$ be vectors in $\RR^3$.  Then the volume of the parallelepiped determined by $\vec{u}$, $\vec{v}$ and $\vec{w}$ is given by 
+$$\mbox{Volume}=\Big|\det\begin{bmatrix}w_1&w_2&w_3\\u_1&u_2&u_3\\v_1&v_2&v_3\end{bmatrix}\Big|=\Big|\det\begin{bmatrix}w_1&u_1&v_1\\w_2&u_2&v_2\\w_3&u_3&v_3\end{bmatrix}\Big|$$
+\end{formula}
+
+\subsection*{Determinants and Linear Transformations}
+We will now turn our attention to the determinant of a matrix of a linear transformation.  
+
+\begin{exploration}\label{exp:LinTransAreaDet}
+The following GeoGebra interactive shows a polygon $P$ located in the domain of a linear transformation $T$ induced by the matrix $M$.  The right-hand side shows the image of $P$ under $T$.  The number inside each polygon indicates its area.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+\begin{onlineOnly}
+\begin{center}
+\geogebra{nr8jsz4w}{950}{700}
+\end{center}
+\end{onlineOnly}
+
+\begin{question}
+Let $M=\begin{bmatrix}1&1\\-1&2\end{bmatrix}$.  Find the determinant of $M$.
+$$\det{M}=\answer{3}$$
+Drag the vertices of $P$ to change the polygon.  Make a note of how the area of $P$ and the area of the image change.  How are the areas related to each other?
+$$\mbox{Area}(T(P))=\answer{3}\mbox{Area}(P)$$
+\end{question}
+\begin{question}
+Change the matrix $M$ to a matrix whose determinant is 1.  Compare the areas of $P$ and $T(P)$.  Try matrices whose determinant is 0 or negative.  What do you observe about the areas?
+
+Formulate a conjecture about the relationship between the area of the polygon and the area of its image under a linear transformation.
+\end{question}
+\end{exploration}
+We will not prove your conjecture in Exploration \ref{exp:LinTransAreaDet} for arbitrary figures as it is beyond the scope of this text.  However, we can tackle the problem of how linear transformations affect areas of parallelograms.  This is the topic of our next example.
+
+\begin{example}\label{ex:detLinTransArea}
+    Let $T:\RR^2\longrightarrow\RR^2$ be a linear transformation induced by matrix $M$.  Suppose $\vec{u}$ and $\vec{v}$ are vectors in $\RR^2$.  Let $P$ be a parallelogram determined by $\vec{u}$ and $\vec{v}$.  Show that 
+    $$\mbox{Area}(T(P))=\left|\det{M}\right|\mbox{Area}(P)$$
+    \begin{explanation}
+        Let $\vec{u}=\begin{bmatrix}a\\b\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}c\\d\end{bmatrix}$, and let $M=\begin{bmatrix}m & n\\p & q\end{bmatrix}$.  By Formula \ref{form:areaofparallelogramdeterminant}, $\mbox{Area}(P)=ad-bc$.  Applying $M$ to $\vec{u}$ and $\vec{v}$ we get 
+        $$T(\vec{u})=\begin{bmatrix}am+bn\\ap+bq\end{bmatrix}\quad\mbox{and}\quad T(\vec{v})=\begin{bmatrix}cm+dn\\cp+dq\end{bmatrix}$$
+        Using Formula \ref{form:areaofparallelogramdeterminant}, we compute
+        \begin{align*}
+        \mbox{Area}(T(P))=&|(am+bn)(cp+dq)-(ap+bq)(cm+dn)|\\
+        =&|(mq-np)(ad-bc)|\\
+        =&|\det{M}|\mbox{Area}(P)
+        \end{align*}
+    \end{explanation}
+\end{example}
+
+\section*{Practice Problems}
+
+\begin{problem}\label{prob:areasquareandparal} Let $S$ be a square determined by $\begin{bmatrix}2\\0\end{bmatrix}$ and $\begin{bmatrix}0\\2\end{bmatrix}$.  Let $P$ be a parallelogram determined by vectors $\begin{bmatrix}2\\5\end{bmatrix}$ and $\begin{bmatrix}0\\2\end{bmatrix}$.  
+\begin{enumerate}
+\item Sketch both figures in the same coordinate plane, and use geometry to explain why $S$ and $P$ have the same area.  Compute the area of $P$ using Formula \ref{form:areaofparallelogramdeterminant}.
+
+$$\text{Area of }P=\answer{4}$$
+\item Suppose $M$ is the standard matrix of a linear transformation $T:\RR^2\rightarrow\RR^2$ such that $T(S)=P$.  Find $\det M$.
+$$\det M=\answer{1}$$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:boxprductproof}
+Supply the intermediate steps in (\ref{eq:boxproduct}).
+\end{problem}
+
+\begin{problem}\label{prob:volparallelepiped}
+Find the volume of a parallelepiped determined by 
+$$\begin{bmatrix}0\\5\\4\end{bmatrix}\quad\begin{bmatrix}3\\1\\2\end{bmatrix}\quad\begin{bmatrix}1\\1\\6\end{bmatrix}$$
+Answer: $\mbox{Volume}=\answer{72}$
+\end{problem}
+
+\begin{problem}\label{prob:volparallelepiped0}
+Find the volume of a parallelepiped determined by 
+$$\begin{bmatrix}1\\4\\-1\end{bmatrix}\quad\begin{bmatrix}3\\-2\\4\end{bmatrix}\quad\begin{bmatrix}5\\6\\2\end{bmatrix}$$
+Explain your result geometrically.
+
+Answer: $\mbox{Volume}=\answer{0}$
+\end{problem}
+
+
+\end{document} 

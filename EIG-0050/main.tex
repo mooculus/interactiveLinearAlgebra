@@ -1,0 +1,682 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Diagonalizable Matrices and Multiplicity} \license{CC BY-NC-SA 4.0}
+
+\begin{document}  
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Diagonalizable Matrices and Multiplicity}
+\end{onlineOnly}
+
+%When a matrix is similar to a diagonal matrix, the matrix is said to be \dfn{diagonalizable}. 
+Recall that a \dfn{diagonal matrix} $D$ is a matrix containing a zero in every entry except those on the main diagonal.  More precisely, if $d_{ij}$ is the $ij^{th}$ entry of a diagonal matrix $D$, then
+$d_{ij}=0$ unless $i=j$. Such
+matrices look like the following.
+\begin{equation*}
+D = 
+\begin{bmatrix}
+* &  & 0 \\
+& \ddots &  \\
+0 &  & *
+\end{bmatrix}
+\end{equation*}
+where $*$ is a number which might not be zero.
+
+
+Diagonal matrices have some nice properties, as we demonstrate below.
+
+\begin{exploration}\label{init:multiplydiag}
+Let
+$M =\begin{bmatrix}1 & 2 & 3\\ 4&5&6\\7&8&9\end{bmatrix}$ and let $D =\begin{bmatrix}2 & 0 & 0\\ 0&-5&0\\0&0&10\end{bmatrix}$.  Compute $MD$ and $DM$ using Octave.
+
+%To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+
+\begin{verbatim}
+% Define M
+M=[1 2 3; 4 5 6; 7 8 9]
+
+% The function diag(vector) creates a square matrix with diagonal 
+%vector and the remaining entries zero.
+D=diag([2 -5 10]) 
+
+% The function diag() can also be used to return the diagonal of a matrix.  
+diag_M=diag(M)
+
+% Understanding multiplication by a diagonal matrix
+product_MD=M*D
+product_DM=D*M
+
+% Raising a diagonal matrix to a power
+D5=D^5
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJx1zztPwzAUBeA9Uv7DWSqRSlS0EB6qsnn1gmCqSnWb3LSWErv4QYFfz00ilQExWvb5zvEMiltjGTrPdLVZYoXbNe5Q4n6NBzziaZtneTbDy5HRJltH4ywaQ4erD66j8wVqzxQ5gBDeE3lGT9GbT5xNPI4vnaUOYkwBkG0QRfPck7HGHsBWAiJ8s3eLPFPV6G9WuC6xvNkW-G-ClJMFdcFhz0iBRXYCx-Tt2HGpd63sm4YtIN5wsdNTkS4m_9U27EOUfcOoPnXRnDpT09i3_xLgwk1Snp28a1Idd1pVeq5-z0pXaq4n9plMGMA_8WEr4eTO7OXTZaXeyh9wS35E&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+%$$MD = \begin{bmatrix} \answer{2} & \answer{-10} & \answer{30}\\ \answer{8}&\answer{-25}&\answer{60}\\\answer{14}&\answer{-40}&\answer{90}\end{bmatrix} \quad DM= \begin{bmatrix} \answer{2} & \answer{4} & \answer{6}\\ \answer{-20}&\answer{-25}&\answer{-30}\\\answer{70}&\answer{80}&\answer{90}\end{bmatrix}$$
+
+Notice the patterns present in the product matrices.  
+\begin{itemize}
+    \item Each row of $DM$ is the same as its corresponding row of $M$ multiplied by the scalar which is the corresponding diagonal element of $D$.
+    \item In the product $MD$, it is the columns of $M$ that have been multiplied by the diagonal elements.
+    \item Raising $D$ to the $5^{th}$ power amounts to raising each diagonal element to the $5^{th}$ power.
+\end{itemize}   
+These patterns hold in general for any diagonal matrix, and they are fundamental to understanding \emph{diagonalization} and its uses.  We discuss diagonalization next.
+\end{exploration}
+
+\begin{definition}\label{def:diagonalizable}
+Let $A$ be an $n\times n$ matrix. Then $A$ is said to be \dfn{diagonalizable} if there exists an invertible matrix $P$ such that
+\begin{equation*}
+P^{-1}AP=D
+\end{equation*}
+where $D$ is a diagonal matrix.  In other words, a matrix $A$ is diagonalizable if it is similar to a diagonal matrix, $A \sim D$.
+\end{definition}
+
+% Notice that the above equation can be rearranged as $A=PDP^{-1}$. Suppose we wanted to compute $A^{100}$. By diagonalizing $A$ first it suffices to then compute $\left(PDP^{-1}\right)^{100}$, which reduces to $PD^{100}P^{-1}$. This last computation is much simpler than $A^{100}$. While this process is described in detail later, it provides motivation for diagonalization. 
+
+
+If we are given a matrix $A$ that is diagonalizable, then we can write $P^{-1}AP=D$ for some matrix $P$, or, equivalently,
+\begin{equation}\label{eq:understand_diag}
+AP=PD   
+\end{equation}
+If we pause to examine Equation (\ref{eq:understand_diag}), the work that we did in Exploration  \ref{init:multiplydiag} can help us to understand how to find $P$ that will diagonalize $A$. The product $PD$ is formed by multiplying each column of $P$ by a scalar which is the corresponding element on the diagonal of $D$.  To restate this, if $\vec{x}_i$ is column $i$ in our matrix $P$, then Equation (\ref{eq:understand_diag}) tells us that 
+\begin{equation}\label{eq:ev_ew_diag}
+A \vec{x}_i = \lambda_i \vec{x}_i,  
+\end{equation}
+where $\lambda_i$ is the $i$th diagonal element of $D$.  
+
+Of course, Equation (\ref{eq:ev_ew_diag}) is very familiar!  We see that if we are able to diagonalize a matrix $A$, the columns of matrix $P$ will be the eigenvectors of $A$, and the corresponding diagonal entries of $D$ will be the corresponding eigenvalues of $A$.  This is summed up in the following theorem.
+
+\begin{theorem}\label{th:eigenvectorsanddiagonalizable}
+An $n\times n$ matrix $A$ is diagonalizable if and only if there is an
+invertible matrix $P$ given by
+$$P=\begin{bmatrix}
+| & | &   & | \\
+\vec{x}_1 & \vec{x}_2  & \cdots & \vec{x}_n \\
+| & | &   & |
+\end{bmatrix},$$
+where the columns $\vec{x}_i$ are eigenvectors of $A$.
+
+Moreover, if $A$ is diagonalizable, the corresponding eigenvalues of $A$ are the
+diagonal entries of the diagonal matrix $D$.
+\end{theorem}
+
+\begin{proof}
+Suppose $P$ is given as above as an invertible matrix whose columns are eigenvectors of $A$. To show that $A$ is diagonalizable, we will show 
+$$AP=PD,$$
+which is equivalent to $P^{-1}AP=D$.  We have
+$$AP=\begin{bmatrix}
+| & | &   & | \\
+A\vec{x}_1 & A\vec{x}_2  & \cdots & A\vec{x}_n \\
+| & | &   & |
+\end{bmatrix},$$
+while
+\begin{equation*}
+PD=\begin{bmatrix}
+| & | &   & | \\
+\vec{x}_1 & \vec{x}_2  & \cdots & \vec{x}_n \\
+| & | &   & |
+\end{bmatrix} 
+\begin{bmatrix}
+\lambda _{1} &  & 0 \\
+& \ddots &  \\
+0 &  & \lambda _{n}
+\end{bmatrix}=\begin{bmatrix}
+| & | &   & | \\
+\lambda _{1}\vec{x}_1 & \lambda _{2}\vec{x}_2 & \cdots & \lambda_{n}\vec{x}_n \\
+| & | &   & | 
+\end{bmatrix}
+\end{equation*}
+We can complete this half of the proof by comparing columns, and noting that 
+\begin{equation}
+A \vec{x}_i = \lambda_i \vec{x}_i 
+\end{equation}
+for $i=1,\ldots,n$ since the $ \vec{x}_i$ are eigenvectors of $A$ and the $\lambda_i$ are corresponding eigenvalues of $A$.
+
+Conversely, suppose $A$ is diagonalizable so that $P^{-1}AP=D.$ Let
+\begin{equation*}
+P=\begin{bmatrix}
+| & | &   & | \\
+\vec{x}_1 & \vec{x}_2  & \cdots & \vec{x}_n \\
+| & | &   & |
+\end{bmatrix}
+\end{equation*}
+ where the columns are the vectors $\vec{x}_i$ and
+\begin{equation*}
+D=\begin{bmatrix}
+\lambda _{1} &  & 0 \\
+& \ddots &  \\
+0 &  & \lambda _{n}
+\end{bmatrix}
+\end{equation*}
+Then
+\begin{equation*}
+AP=PD=\begin{bmatrix}
+| & | &   & | \\
+\vec{x}_1 & \vec{x}_2  & \cdots & \vec{x}_n \\
+| & | &   & |
+\end{bmatrix} \begin{bmatrix}
+\lambda _{1} &  & 0 \\
+& \ddots &  \\
+0 &  & \lambda _{n}
+\end{bmatrix}
+\end{equation*}
+and so
+\begin{equation*}
+\begin{bmatrix}
+| & | &   & | \\
+A\vec{x}_1 & A\vec{x}_2  & \cdots & A\vec{x}_n \\
+| & | &   & |
+\end{bmatrix} =\begin{bmatrix}
+| & | &   & | \\
+\lambda _{1}\vec{x}_1 & \lambda _{2}\vec{x}_2 & \cdots & \lambda_{n}\vec{x}_n \\
+| & | &   & | 
+\end{bmatrix}
+\end{equation*}
+showing the $\vec{x}_i$ are eigenvectors of $A$ and the $\lambda _{i}$
+are eigenvalues.
+%% Now the $x_{k}$ form a basis for $\mathbb{R}^{n}$
+%%because the matrix $S$ having these vectors as columns is given to be
+%%invertible.
+\end{proof}
+
+Notice that because the matrix $P$ defined above is invertible it follows that the set of eigenvectors of $A$, $\left\{ \vec{x}_1 , \vec{x}_2 , \ldots, , \vec{x}_n  \right\}$, is a basis of $\mathbb{R}^n$.
+
+We demonstrate the concept given in the above theorem in the next example. Note that not only
+are the columns of the matrix $P$ formed by eigenvectors, but $P$ must
+be invertible, and therefore must consist of a linearly independent set of eigenvectors. 
+%We achieve this by using basic eigenvectors for the columns of $P$.
+
+\begin{example}\label{ex:diagonalizematrix}
+Let
+\begin{equation*}
+A=\begin{bmatrix}
+2 & 0 & 0 \\
+1 & 4 & -1 \\
+-2 & -4 & 4
+\end{bmatrix}
+\end{equation*}
+ Find an invertible matrix $P$ and a diagonal matrix $D$ such that $P^{-1}AP=D$.
+
+\begin{explanation}
+We will use eigenvectors of $A$ as the columns of $P$, and
+the corresponding eigenvalues of $A$ as the diagonal entries of $D$. The eigenvalues of $A$ are $\lambda_1 =2,\lambda_2 = 2$, and $\lambda_3 = 6$.   We leave these computations as exercises, as well as the computations to find a basis for each eigenspace.  
+
+One possible basis for $\mathcal{S}_2$, the eigenspace corresponding to $2$, is 
+$\left\{
+\begin{bmatrix}
+-2 \\
+1 \\
+0
+\end{bmatrix},
+\begin{bmatrix}
+1 \\
+0 \\
+1
+\end{bmatrix}
+\right\}$, 
+while a basis for $\mathcal{S}_6$ is given by 
+$\left\{\begin{bmatrix}
+0 \\
+1 \\
+-2
+\end{bmatrix}\right\}$.
+
+We construct the matrix $P$ by using these basis elements as columns.
+\begin{equation*}
+P=\begin{bmatrix}
+-2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & -2
+\end{bmatrix}
+\end{equation*}
+You can verify (See Practice Problem ) that
+\begin{equation*}
+P^{-1}=\begin{bmatrix}
+-1/4 & 1/2 & 1/4 \\
+1/2 & 1 & 1/2 \\
+1/4 & 1/2 & -1/4
+\end{bmatrix}
+\end{equation*}
+Thus,
+\begin{eqnarray*}
+P^{-1}AP &=&\begin{bmatrix}
+-1/4 & 1/2 & 1/4 \\
+1/2 & 1 & 1/2 \\
+1/4 & 1/2 & -1/4
+\end{bmatrix} \begin{bmatrix}
+2 & 0 & 0 \\
+1 & 4 & -1 \\
+-2 & -4 & 4
+\end{bmatrix} \begin{bmatrix}
+-2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & -2
+\end{bmatrix} \\
+&=&\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 6
+\end{bmatrix}
+\end{eqnarray*}
+You can see that the result here is a diagonal matrix where the entries on the main diagonal are the eigenvalues of $A$. Notice that eigenvalues on the main diagonal {\it must} be in the same order as the corresponding eigenvectors in $P$.
+\end{explanation}
+\end{example}
+
+%It is often easier to work with matrices that are diagonalizable, as the next Exploration demonstrates.  
+
+\begin{exploration}\label{exp:motivate_diagonalization}
+We will continue to use matrices from Example \ref{ex:diagonalizematrix} to illustrate why diagonalizable matrices are easier to work with.  Let $A=\begin{bmatrix}
+2 & 0 & 0 \\
+1 & 4 & -1 \\
+-2 & -4 & 4
+\end{bmatrix}$ and let $D=\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 6
+\end{bmatrix}$.  
+Would it be easier to compute $A^5$ or $D^5$ if you had to do so by hand, without a computer?  Certainly $D^5$ is easier, due to the number of zero entries!  %Let's use Octave to compute both.
+
+%To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+
+% \begin{verbatim}
+% % Define matrices A and D 
+% A=[2 0 0; 1 4 -1; -2 -4 4]  
+% D=diag([2 2 6])  
+
+% % Compare computing times for raising A and D to 
+% % the fifth power.
+% tic
+% HARD = A^5  
+% toc
+
+% tic
+% EZ = D^5
+% toc
+% \end{verbatim}
+
+%\href{https://sagecell.sagemath.org/?z=eJw1jbsKgzAYhfdA3uEsQjtYVLSLOISm0Llji0KIif6DRmJKX7-J0OnAd24ZpLG0GiwqeNJmh4BaR0hwJrp3hQJFixI18rJFXiGvUfeIruxGUtMpRipc-3NCnGW4uWVT3kBH_QRaJwRa4qx1Hl7Rnsj_IjikSpgNLNkwY3Nf4y-cBdKcPcRTooMYmrQdnE4Hh3N_RS6H5qA_pDczlw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+Raising a diagonal matrix to a power amounts to simply raising each entry to that same power, whereas computing $A^5$ requires many more calculations.  However, we learned in Example~\ref{ex:diagonalizematrix} that $A$ is similar to $D$.  We will use this to make our computation easier as follows
+\begin{align*}
+    A^5&=\left(PDP^{-1}\right)^5 \\
+       &=(PDP^{-1})(PDP^{-1})(PDP^{-1})(PDP^{-1})(PDP^{-1}) \\
+       &=PD(P^{-1}P)D(P^{-1}P)D(P^{-1}P)D(P^{-1}P)DP^{-1} \\
+       &=PD(I)D(I)D(I)D(I)DP^{-1} \\
+       &=PD^5P^{-1}
+\end{align*}
+With this in mind, it is not as daunting to calculate $A^5$ by hand.  
+
+%We can compute the product $PD^5$ quite easily since $D^5$ is diagonal, as we learned in Exploration~\ref{init:multiplydiag}.  That leaves just one product of $3 \times 3$ matrices to compute by hand to find $A^5$.  And t
+
+$$A^5=\begin{bmatrix}
+-2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & -2
+\end{bmatrix}\begin{bmatrix}32 & 0 & 0\\0 &32 & 0\\0 & 0 & 7776\end{bmatrix}\begin{bmatrix}
+-1/4 & 1/2 & 1/4 \\
+1/2 & 1 & 1/2 \\
+1/4 & 1/2 & -1/4
+\end{bmatrix}=\begin{bmatrix}32 & 0 & 0\\
+ 1936 & 3904 & -1936\\
+ -3872 & -7744 & 3904\end{bmatrix}$$
+The savings in work would certainly be more pronounced for larger matrices or for powers larger that 5.
+
+%To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+
+% \begin{verbatim}
+% A=[2 0 0; 1 4 -1; -2 -4 4]
+% D=diag([2 2 6])
+% P=[-2 1 0; 1 0 1; 0 1 -2]
+% EZ = D^5
+% P*EZ*P^{-1}
+% HARD = A^5
+% \end{verbatim}
+\end{exploration}  
+
+In Exploration~\ref{exp:motivate_diagonalization}, because matrix $A$ was diagonalizable, we were able to cut down on computations.  When we chose to work with $D$ and $P$ instead of $A$ we worked with the eigenvalues and eigenvectors of $A$.  Each column of $P$ is an eigenvector of $A$, and so we repeatedly made use of the following theorem (with $m=5$).
+
+\begin{theorem}\label{th:eigpowers}
+Let $A$ be an $n \times n$ matrix and suppose $A\vec{x}=\lambda \vec{x}$.  Then $A^m \vec{x} = \lambda^m \vec{x}$
+\end{theorem}
+
+\begin{proof}
+We prove this theorem by induction on $m$.  Clearly $A^m \vec{x} = \lambda^m \vec{x}$ holds when $m=1$, as that was given.  For the inductive step, suppose that we know $A^{m-1} \vec{x} = \lambda^{m-1} \vec{x}$.  Then
+\begin{align*}
+    A^m \vec{x} &= (A A^{m-1}) \vec{x} \\
+          &= A (A^{m-1} \vec{x}) \\
+          &= A (\lambda^{m-1} \vec{x}) \\
+          &= \lambda^{m-1} A\vec{x} \\
+          &= \lambda^{m-1} \lambda \vec{x} \\
+          &= \lambda^m \vec{x}
+\end{align*}
+as desired.
+\end{proof}
+
+Matrix $A$ from the Example \ref{ex:diagonalizematrix} and Exploration \ref{exp:motivate_diagonalization} had a repeated eigenvalue of 2.  The next theorem and corollary show that matrices which have \emph{distinct} eigenvalues (where none are repeated) have desirable properties.
+
+\begin{theorem}\label{th:linindepeigenvectors}
+Let $A$ be an $n\times n$ matrix, and suppose that $A$
+has distinct eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_m$.
+For each $i$, let $\vec{x}_i$ be a $\lambda_i$-eigenvector of $A$.
+Then $\{ \vec{x}_1, \vec{x}_2, \ldots, \vec{x}_m\}$ is
+linearly independent.
+\end{theorem}
+
+\begin{proof}
+We prove this by induction on $m$, the number of vectors in the set. If $m = 1$, then $\{\vec{x}_{1}\}$ is a linearly independent set because $\vec{x}_{1} \neq \vec{0}$. In general, suppose we have established that the theorem is true for some $m \geq 1$. Given eigenvectors $\{\vec{x}_{1}, \vec{x}_{2}, \dots, \vec{x}_{m+1}\}$, suppose
+\begin{equation}
+\label{eq:thm_proof_5_5_4_1}
+c_1\vec{x}_1 + c_2\vec{x}_2 + \dots + c_{m+1}\vec{x}_{m+1} = \vec{0}.
+\end{equation}
+We must show that each $c_{i} = 0$. Multiply both sides of (\ref{eq:thm_proof_5_5_4_1}) on the left by $A$ and use the fact that $A\vec{x}_{i} = \lambda_{i}\vec{x}_{i}$ to get
+\begin{equation}
+\label{eq:thm_proof_5_5_4_2}
+c_1\lambda_1\vec{x}_1 + c_2\lambda_2\vec{x}_2 + \dots + c_{m+1}\lambda_{m+1}\vec{x}_{m+1} = \vec{0}.
+\end{equation}
+If we multiply (\ref{eq:thm_proof_5_5_4_1}) by $\lambda_{1}$ and subtract the result from (\ref{eq:thm_proof_5_5_4_2}), the first terms cancel and we obtain
+\begin{equation*}
+c_2(\lambda_2 - \lambda_1)\vec{x}_2 + c_3(\lambda_3 - \lambda_1)\vec{x}_3 + \dots + c_{m+1}(\lambda_{m+1} - \lambda_1)\vec{x}_{m+1} = \vec{0}.
+\end{equation*}
+Since $\vec{x}_{2}, \vec{x}_{3}, \dots, \vec{x}_{m+1}$
+correspond to distinct eigenvalues $\lambda_{2}, \lambda_{3}, \dots, \lambda_{m+1}$, the set $\{\vec{x}_{2}, \vec{x}_{3}, \dots, \vec{x}_{m+1}\}$ is linearly independent by the induction hypothesis. Hence,
+\begin{equation*}
+c_2(\lambda_2 - \lambda_1) = 0, \quad c_3(\lambda_3 - \lambda_1) = 0, \quad \dots, \quad c_{m+1}(\lambda_{m+1} - \lambda_1) = 0
+\end{equation*}
+and so $c_{2} = c_{3} = \dots = c_{m+1} = 0$ because the $\lambda_{i}$ are distinct. It follows that (\ref{eq:thm_proof_5_5_4_1}) becomes $c_{1}\vec{x}_{1} = \vec{0}$, which implies that $c_{1} = 0$ because $\vec{x}_{1} \neq \vec{0}$, and the proof is complete. 
+\end{proof}
+
+The corollary that follows from this theorem gives a useful tool in determining if $A$ is diagonalizable.
+
+\begin{corollary}\label{th:distincteigenvalues}
+Let $A$ be an $n \times n$ matrix and suppose it has $n$ distinct eigenvalues. Then it follows that $A$ is diagonalizable.
+\end{corollary}
+
+%The corollary tells us that many matrices can be diagonalized in this way.
+\begin{remark}
+    Note that Corollary \ref{th:distincteigenvalues} is NOT an ``if and only if statement".  This means that if $A$ has repeated eigenvalues it is still sometimes possible to diagonalize $A$, as seen in Example \ref{ex:diagonalizematrix}.
+\end{remark}
+
+\begin{definition}\label{def:eigdecomposition}
+If we are able to diagonalize $A$, say $A=PDP^{-1}$, we say that $PDP^{-1}$ is an \dfn{eigenvalue decomposition} of $A$.
+\end{definition}
+Not every matrix has an eigenvalue decomposition. Sometimes we cannot find an invertible matrix $P$ such that $P^{-1}AP=D$.  Consider the following example.
+
+\begin{example}\label{ex:impossiblediagonalize}
+Let
+\begin{equation*}
+A =
+\begin{bmatrix}
+1 & 1 \\
+0 & 1
+\end{bmatrix}
+\end{equation*}
+If possible, find an invertible matrix $P$ and a diagonal matrix $D$ so that $P^{-1}AP=D$.
+
+
+\begin{explanation}
+We see immediately (how?) that the eigenvalues of $A$ are $\lambda_1 =1$ and  $\lambda_2=1$.
+To find $P$, the next step would be to find a basis for the corresponding eigenspace $\mathcal{S}_1$.  We solve the equation $\left( A - \lambda I \right) \vec{x} = \vec{0}$.
+Writing this equation as an augmented matrix, we already have a matrix in row echelon form:
+\begin{equation*}
+\left[\begin{array}{cc|c}  
+0 & -1 & 0 \\
+0 & 0 & 0
+ \end{array}\right]
+\end{equation*}
+We see that the eigenvectors in $\mathcal{S}_1$ are of the form
+$$
+\begin{bmatrix}
+t \\
+0
+\end{bmatrix}
+=t\begin{bmatrix}
+1 \\
+0
+\end{bmatrix},
+$$
+so a basis for the eigenspace $\mathcal{S}_1$ is given by 
+$\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}$.
+It is easy to see that we cannot form an invertible matrix $P$, because any two eigenvectors will be of the form 
+$\begin{bmatrix}
+t \\
+0
+\end{bmatrix}$,
+and so the second row of $P$ would have a row of zeros, and $P$ could not be invertible.  Hence $A$ cannot be diagonalized.
+\end{explanation}
+\end{example}
+We saw earlier in Corollary \ref{th:distincteigenvalues} that an $n \times n$ matrix with $n$ distinct eigenvalues is diagonalizable.  It turns out that there are other useful diagonalizability tests.
+
+Recall that the \dfn{algebraic multiplicity} of an eigenvalue $\lambda$ is the number of times that it occurs as a root of the characteristic polynomial.
+
+\begin{definition}\label{def:geommulteig}
+The \dfn{geometric multiplicity} of an eigenvalue $\lambda$ is the dimension of the corresponding eigenspace $\mathcal{S}_\lambda$.
+\end{definition}
+
+Consider now the following lemma.
+
+\begin{lemma}\label{lemma:dimeigenspace}
+Let $A$ be an $n\times n$ matrix, and let $\mathcal{S}_{\lambda_1}$ be the eigenspace corresponding to the eigenvalue $\lambda_1$ which has algebraic multiplicity $m$.  Then
+$$\mbox{dim}(\mathcal{S}_{\lambda_1})\leq m$$
+\end{lemma}
+
+In other words, the geometric multiplicity of an eigenvalue is less than or equal to the algebraic multiplicity of that same eigenvalue.
+
+\begin{proof}
+Let $k$ be the geometric multiplicity of $\lambda_1$, i.e., $k=\mbox{dim}(\mathcal{S}_{\lambda_1})$.  Suppose $\left\{\vec{x}_1, \vec{x}_2, \ldots ,\vec{x}_k\right\}$ is a basis for the eigenspace $\mathcal{S}_{\lambda_1}$.  Let $P$ be any invertible matrix having $\vec{x}_1,  \vec{x}_2, \ldots ,\vec{x}_k$ as its first $k$ columns, say 
+$$P=\begin{bmatrix}
+| & | &  & | & | & & | \\
+\vec{x}_1 & \vec{x}_2 & \cdots & \vec{x}_k & \vec{x}_{k+1} & \cdots & \vec{x}_n \\
+| & | &  & | & | & & |
+\end{bmatrix}.$$  
+In block form we may write 
+$$P=\begin{bmatrix}
+B&C
+\end{bmatrix} \quad \text{and} \quad P^{-1}=\begin{bmatrix}
+D \\
+E
+\end{bmatrix}$$
+where $B$ is $n \times k$, $C$ is  $n \times (n-k)$, $D$ is $k \times n$, and $E$ is $(n-k) \times n$.  We observe
+$I_n = P^{-1}P = \left[\begin{array}{c|c}  
+DB & DC \\ \hline
+EB & EC
+ \end{array}\right] $. 
+This implies
+$$DB = I_k,\quad DC=O_{k\,\,n-k},\quad EB = O_{n-k\,\,k} \quad\text{ and }\quad EC = I_{n-k}$$
+Therefore,
+\begin{equation*}
+P^{-1}AP=\begin{bmatrix}
+D \\
+E
+\end{bmatrix} 
+A
+\begin{bmatrix}
+B&C
+\end{bmatrix} =
+\left[\begin{array}{c|c}  
+DAB & DAC \\ \hline
+EAB & EAC
+ \end{array}\right]
+\end{equation*}
+\begin{equation*}
+=  \left[\begin{array}{c|c}  
+\lambda_1 DB & DAC \\ \hline
+\lambda_1 EB & EAC
+ \end{array}\right]  
+=  \left[\begin{array}{c|c}  
+\lambda_1 I_k & DAC \\ \hline
+O & EAC
+ \end{array}\right]  
+\end{equation*}
+We finish the proof by comparing the characteristic polynomials on both sides of this equation, and making use of the fact that similar matrices have the same characteristic polynomials.  
+$$\det(A-\lambda I) = \det(P^{-1}AP-\lambda I)=(\lambda_1 - \lambda)^k \det(EAC)$$
+We see that the characteristic polynomial of $A$ has $(\lambda_1 - \lambda)^k$ as a factor.  This tells us that algebraic multiplicity of $\lambda_1$ is at least $k$, proving the desired inequality. 
+\end{proof}
+
+This result tells us that if $\lambda$ is an eigenvalue of $A$, then
+the number of linearly independent $\lambda$-eigenvectors
+is never more than the multiplicity of $\lambda$. We now use this fact to provide a useful diagonalizability condition.
+
+\begin{theorem}\label{th:diagonalizability}
+Let $A$ be an $n \times n$ matrix $A$. Then $A$ is diagonalizable if and only if for each eigenvalue $\lambda$ of $A$, the algebraic multiplicity of $\lambda$ is equal to the geometric multiplicity of $\lambda$.
+\end{theorem}
+
+\begin{proof}
+Suppose $A$ is diagonalizable and let $\lambda_1, \ldots, \lambda_t$ be the distinct eigenvalues of $A$, with algebraic multiplicities $m_1, \ldots, m_t$, respectively and geometric multiplicities $k_1, \ldots, k_t$, respectively.  Since $A$ is diagonalizable, Theorem \ref{th:eigenvectorsanddiagonalizable} implies that $ k_1+\cdots+k_t=n$.  By applying Lemma \ref{lemma:dimeigenspace} $t$ times, we have
+$$n = k_1+\cdots+k_t \le m_1+\cdots+m_t = n,$$
+which is only possible if $k_i=m_i$ for $i=1,\ldots,t$.
+
+Conversely, if the geometric multiplicity equals the algebraic multiplicity of each eigenvalue, then obtaining a basis for each eigenspace yields $n$ eigenvectors.  Applying Theorem \ref{th:linindepeigenvectors}, we know that these $n$ eigenvectors are linearly independent, so Theorem \ref{th:eigenvectorsanddiagonalizable} implies that $A$ is diagonalizable.
+\end{proof}
+
+\section*{Practice Problems}
+\emph{Problems \ref{prob:ex:diagonalizematrix1}-\ref{prob:ex:diagonalizematrix4}}
+In this exercise you will "fill in the details" of Example \ref{ex:diagonalizematrix}.
+
+\begin{problem}\label{prob:ex:diagonalizematrix1}
+Find the eigenvalues of matrix 
+\begin{equation*}
+A=\begin{bmatrix}
+2 & 0 & 0 \\
+1 & 4 & -1 \\
+-2 & -4 & 4
+\end{bmatrix}
+\end{equation*}
+\end{problem} 
+
+\begin{problem}\label{prob:ex:diagonalizematrix2}
+Find a basis for each eigenspace of the matrix $A$.
+\end{problem}
+
+\begin{problem}\label{prob:ex:diagonalizematrix3}
+Compute the inverse of \begin{equation*}
+P=
+\begin{bmatrix}
+-2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & -2
+\end{bmatrix}
+\end{equation*}
+\end{problem}
+
+\begin{problem}\label{prob:ex:diagonalizematrix5}
+Compute $D=P^{-1}AP$
+\end{problem}
+
+\begin{problem}\label{prob:ex:diagonalizematrix4}
+Show that computing the inverse of $P$ is not really necessary by comparing the products  $PD$ and $AP$.
+\end{problem}
+ 
+\begin{problem}\label{prb:diagonalizable}
+In each case, decide whether the matrix $A$ is diagonalizable. If so, find $P$ such that $P^{-1}AP$ is diagonal.
+
+\begin{enumerate}
+\item $\begin{bmatrix}
+1 & 0 & 0 \\
+1 & 2 & 1 \\
+0 & 0 & 1
+\end{bmatrix}$
+\wordChoice{[correct]\choice{Diagonalizable}\choice{Not Diagonalizable}}
+\item $\begin{bmatrix}
+3 &  0 & 6 \\
+0 & -3 & 0 \\
+5 &  0 & 2
+\end{bmatrix}$
+\wordChoice{[correct]\choice{Diagonalizable}\choice{Not Diagonalizable}}
+\item $\begin{bmatrix}
+ 3 &  1 &  6 \\
+ 2 &  1 &  0 \\
+-1 &  0 & -3
+\end{bmatrix}$
+\wordChoice{[correct]\choice{Diagonalizable}\choice{Not Diagonalizable}}
+\item $\begin{bmatrix}
+4 & 0 & 0 \\
+0 & 2 & 2 \\
+2 & 3 & 1
+\end{bmatrix}$
+\wordChoice{\choice{Diagonalizable}\choice[correct]{Not Diagonalizable}}
+\end{enumerate}
+\end{problem}
+
+%\setcounter{enumi}{1}
+%problem  Yes, $ P =
+%\leftB \begin{array}{rrr}
+%-1 & 0 & 6 \\
+% 0 & 1 & 0 \\
+% 1 & 0 & 5
+%\end{array} \rightB$, $P^{-1}AP =
+%\leftB \begin{array}{rrr}
+%-3 &  0 & 0 \\
+% 0 & -3 & 0 \\
+% 0 &  0 & 8
+%\end{array} \rightB$
+
+%\setcounter{enumi}{3}
+%problem  No, $c_{A}(x) = (x + 1)(x - 4)^{2}$ so $\lambda = 4$ has multiplicity 2. But $\func{dim}(E_{4}) = 1$ so Theorem~\ref{thm:016250} applies.
+
+
+\begin{problem}\label{prb:upper_triangular_case}
+Let $A$ denote an $n \times n$ upper triangular matrix.
+\begin{enumerate}
+\item If all the main diagonal entries of $A$ are distinct, show that $A$ is diagonalizable.
+
+\item If all the main diagonal entries of $A$ are equal, show that $A$ is diagonalizable only if it is \textit{already} diagonal.
+Click the arrow to see the answer.
+\begin{expandable}
+The eigenvalues of $A$ are all equal (they are the diagonal elements), so if $P^{-1}AP = D$ is diagonal, then $D = \lambda I$. Hence $A = P^{-1}(\lambda I)P = \lambda I$.
+\end{expandable}
+
+\item Show that $\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix}$ is diagonalizable but that $\begin{bmatrix}
+ 1 & 1 & 0 \\
+ 0 & 1 & 0 \\
+ 0 & 0 & 2
+ \end{bmatrix}$ is not diagonalizable.
+ 
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}\label{prb:det_and_tr_diagonalizable}
+Let $A$ be a diagonalizable $n \times n$ matrix with eigenvalues $\lambda_{1}, \lambda_{2}, \dots, \lambda_{n}$ (including multiplicities). Show that:
+
+\begin{enumerate}
+\item $\det A = \lambda_{1}\lambda_{2}\cdots \lambda_{n}$
+\item $\mbox{tr} A = \lambda_{1} + \lambda_{2} + \cdots + \lambda_{n}$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prb:A_sim_A^T_diagonalizable}
+\begin{enumerate}
+
+\item Show that two diagonalizable matrices are similar if and only if they have the same eigenvalues with the same multiplicities.
+
+\item If $A$ is diagonalizable, show that $A \sim A^{T}$.
+
+\item Show that $A \sim A^{T}$ if
+ $A = \begin{bmatrix}
+ 1 & 1 \\
+ 0 & 1
+ \end{bmatrix}$
+
+\end{enumerate}
+\end{problem}
+
+\section*{Text Source}
+The text in this section is a compilation of material from Section 7.2.1 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra} (CC-BY) and Section 5.5 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications} (CC-BY-NC-SA).
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 362-364.
+
+Many of the Practice Problems are Exercises from 
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 298-310.
+
+\end{document}

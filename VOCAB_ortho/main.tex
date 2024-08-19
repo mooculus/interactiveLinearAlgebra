@@ -1,0 +1,191 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Essential Vocabulary} \license{CC BY-NC-SA 4.0}
+
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\begin{onlineOnly}
+\section*{Essential Vocabulary}
+Here is a  \href{https://quizlet.com/906041657/chapter-9-vocabulary-flash-cards/?i=y06sd&x=1jqt}{link to a list of these terms on Quizlet}
+\end{onlineOnly}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Fundamental subspaces of a matrix
+\begin{expandable}
+    $\mbox{null}(A)$ is the orthogonal complement of $\mbox{row}(A)$, and $\mbox{null}(A^T)$ is the orthogonal complement of $\mbox{col}(A)$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Gram-Schmidt process
+\begin{expandable}
+    An iterative process which constructs an orthogonal basis for a subspace. The idea is to build the orthogonal set one vector at a time, by taking a vector not in the span of the vectors in the current iteration of the set, and subtracting its orthogonal projection onto each of those vectors.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal Basis
+\begin{expandable}
+    A set of orthogonal vectors that spans a subspace. (Any orthogonal set of vectors must be linearly independent.)
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal complement of a subspace
+\begin{expandable}
+    If $W$ is a subspace, we define the \dfn{orthogonal complement} $W^\perp$ as the set of all vectors orthogonal to every vector in $W$, i.e.,
+$$
+W^\perp = \{\vec{x} \in\RR^n \mid \vec{x} \dotp \vec{y} = 0 \mbox{ for all } \vec{y} \in W\}
+$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal Decomposition Theorem 
+\begin{expandable}
+    Let $W$ be a subspace of $\RR^n$ and let $\vec{x} \in \RR^n$.  Then there exist unique vectors $\vec{w} \in W$ and $\vec{w}^\perp \in W^\perp$ such that $\vec{x} = \vec{w} + \vec{w}^\perp$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal matrices
+\begin{expandable}
+    An $n \times n$ matrix $Q$ is called an \dfn{orthogonal matrix} if its columns form an orthonormal set.  This will happen if and only if its rows form an orthonormal set.  Note also that $Q$ is an orthogonal matrix if and only if it is an invertible matrix such that $Q^{-1}=Q^{T}$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal projection onto a subspace
+\begin{expandable}
+    Let $W$ be a subspace of $\RR^n$ with orthogonal basis $\{\vec{f}_{1}, \vec{f}_{2}, \dots, \vec{f}_{m}\}$. If $\vec{x}$ is in $\RR^n$, the vector
+$$
+\vec{w}=\mbox{proj}_W(\vec{x}) = \mbox{proj}_{\vec{f}_1}\vec{x} + \mbox{proj}_{\vec{f}_2}\vec{x} + \dots + \mbox{proj}_{\vec{f}_m}\vec{x}
+$$
+is called the \dfn{orthogonal projection} of $\vec{x}$ onto $W$. 
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonal set of vectors
+\begin{expandable}
+    Let $\{ \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_k \}$ be a set of nonzero
+vectors in $\RR^n$. Then this set is called an
+\dfn{orthogonal set} if 
+$\vec{v}_i \dotp \vec{v}_j = 0$ for all $i \neq j$.
+Moreover, if $\norm{\vec{v}_i}=1$ for $i=1,\ldots,m$ (i.e. each vector in the set is a unit vector), we say the set of vectors is an \dfn{orthonormal set}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthogonally diagonalizable matrix
+\begin{expandable}
+    An $n \times n$ matrix $A$ is said to be \dfn{orthogonally diagonalizable} if an orthogonal matrix $Q$ can be found such that  $Q^{-1}AQ = Q^{T}AQ$ is diagonal.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthonormal basis
+\begin{expandable}
+    A set of orthonormal vectors that spans a subspace. (Any orthogonal set of vectors must be linearly independent by Theorem \ref{orthbasis}.)
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Orthonormal set of vectors
+\begin{expandable}
+    Let $\{ \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_k \}$ be a set of nonzero
+vectors in $\RR^n$. Then this set is called an
+\dfn{orthogonal set} if 
+$\vec{v}_i \dotp \vec{v}_j = 0$ for all $i \neq j$.
+Moreover, if $\norm{\vec{v}_i}=1$ for $i=1,\ldots,m$ (i.e. each vector in the set is a unit vector), we say the set of vectors is an \dfn{orthonormal set}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Properties of orthogonal matrices
+\begin{expandable}
+If $Q$ is an orthogonal matrix, then...
+\begin{enumerate}
+    \item $Q^{-1} = Q^T$ is orthogonal,
+
+    \item $\mbox{det} Q = \pm 1$,
+
+    \item if $\lambda$ is an eigenvalue of $Q$, then $|\lambda|=1$,
+
+    \item the product of $Q$ with any other orthogonal matrix will be an orthogonal matrix (i.e. orthogonal matrices are closed under matrix multiplication), 
+
+    and
+
+    \item $Q$ is a length-preserving and angle-preserving linear transformation.
+
+\end{enumerate}
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+QR factorization
+\begin{expandable}
+    Let $A$ be an $m \times n$ matrix with independent columns. A \dfn{QR-factorization} of $A$ expresses it as $A = QR$ where $Q$ is $m \times n$ with orthonormal columns and $R$ is an invertible and upper triangular matrix with positive diagonal entries.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Rank-Nullity Theorem for matrices (\ref{th:matrixranknullity})
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix.  Then 
+$$\mbox{rank}(A)+\mbox{nullity}(A)=n.$$
+This implies that the dimension of a subspace of $\RR^n$ plus the dimension of its orthogonal complement equals $n$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Spectral Theorem
+\begin{expandable}
+    If $A$ is a real $n \times n$ matrix, then $A$ is symmetric if an only if $A$ is orthogonally diagonalizable.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+ 
+\end{document}
+
+

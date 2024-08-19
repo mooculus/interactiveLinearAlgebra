@@ -1,0 +1,144 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Essential Vocabulary} \license{CC BY-NC-SA 4.0}
+
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\begin{onlineOnly}
+\section*{Essential Vocabulary}
+\end{onlineOnly}
+
+Coordinate vector
+
+\begin{expandable}
+    Let $V$ be a vector space, and let $\mathcal{B}=\{\vec{v}_1, \ldots ,\vec{v}_n\}$ be a basis for $V$.  If $\vec{v}=a_1\vec{v}_1+\ldots +a_n\vec{v}_n$, then the vector in $\RR^n$ whose components are the coefficients $a_1, \ldots ,a_n$  is said to be the \dfn{coordinate vector for $\vec{v}$ with respect to $\mathcal{B}$}.  We denote the coordinate vector by $[\vec{v}]_{\mathcal{B}}$ and write:
+$$[\vec{v}]_{\mathcal{B}}=\begin{bmatrix}a_1\\\vdots \\a_n\end{bmatrix}$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Finite-dimensional vector space
+
+\begin{expandable}
+    A vector space is said to be \dfn{finite-dimensional} if it is spanned by finitely many vectors.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ Isomorphism
+
+ \begin{expandable}
+     Let $V$ and $W$ be vector spaces.  If there exists an invertible linear transformation $T:V\rightarrow W$ we say that $V$ and $W$ are \dfn{isomorphic} and write $V\cong W$.  The invertible linear transformation $T$ is called an \dfn{isomorphism}.
+ \end{expandable}
+
+ \begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ Matrix of a linear transformation
+
+ \begin{expandable}
+     Let $V$ and $W$ be finite-dimensional vector spaces with ordered bases $\mathcal{B}=\{\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n\}$ and $\mathcal{C}$, respectively.  Suppose $T:V\rightarrow W$ is a linear transformation.  
+$$\text{Let}\quad A=\begin{bmatrix}
+           | & |& &|\\
+		[T(\vec{v}_1)]_{\mathcal{C}} & [T(\vec{v}_2)]_{\mathcal{C}}&\dots &[T(\vec{v}_n)]_{\mathcal{C}}\\
+		|&| & &|
+         \end{bmatrix}$$
+Then $A[\vec{v}]_{\mathcal{B}}=[T(\vec{v})]_{\mathcal{C}}$ for all vectors $\vec{v}$ in $V$.  
+
+Matrix $A$ is called the matrix of $T$ with respect to ordered bases $\mathcal{B}$ and $\mathcal{C}$.
+ \end{expandable}
+
+ \begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ One-to-one linear transformation
+
+ \begin{expandable}
+     A linear transformation $T:V\rightarrow W$ is \dfn{one-to-one} if 
+$$T(\vec{v}_1)=T(\vec{v}_2)\quad \text{implies that}\quad \vec{v}_1=\vec{v}_2$$
+ \end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ Onto linear transformation
+
+ \begin{expandable}
+     A linear transformation $T:V\rightarrow W$ is \dfn{onto} if for every element $\vec{w}$ of $W$, there exists an element $\vec{v}$ of $V$ such that $T(\vec{v})=\vec{w}$.
+ \end{expandable}
+
+ \begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Subspace
+
+\begin{expandable}
+    A nonempty subset $U$ of a vector space $V$ is called a \dfn{subspace} of $V$, provided that $U$ is itself a vector space when given the same addition and scalar multiplication as $V$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Vector Space
+
+\begin{expandable}
+     Let $V$ be a nonempty set.  Suppose that elements of $V$ can be added together and multiplied by scalars.  The set $V$, together with operations of addition and scalar multiplication, is called a \dfn{vector space} provided that 
+  \begin{itemize}
+  \item[] $V$ is closed under addition
+  \item[] $V$ is closed under scalar multiplication
+  \end{itemize}
+  and the following properties hold for $\vec{u}$, $\vec{v}$ and $\vec{w}$ in $V$ and scalars $k$ and $p$:
+  \begin{enumerate}
+   \item 
+  Commutative Property of Addition:\quad
+  $\vec{u}+\vec{v}=\vec{v}+\vec{u}$
+  \item 
+  Associative Property of Addition:\quad
+  $(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$
+  \item 
+  Existence of Additive Identity:\quad
+  $\vec{u}+\vec{0}=\vec{u}$
+  \item 
+  Existence of Additive Inverse:\quad
+  $\vec{u}+(-\vec{u})=\vec{0}$
+  \item 
+  Distributive Property over Vector Addition:\quad
+  $k(\vec{u}+\vec{v})=k\vec{u}+k\vec{v}$
+  \item 
+  Distributive Property over Scalar Addition:\quad
+  $(k+p)\vec{u}=k\vec{u}+p\vec{u}$
+  \item 
+  Associative Property for Scalar Multiplication:\quad
+  $k(p\vec{u})=(kp)\vec{u}$
+  \item 
+  Multiplication by $1$:\quad
+  $1\vec{u}=\vec{u}$
+  \end{enumerate}
+We will refer to elements of $V$ as \dfn{vectors}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ Note that definitions of span, linear independence, basis, and dimension are analogous to those for subspaces of $\RR^n$.
+
+ 
+
+\end{document}

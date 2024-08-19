@@ -1,0 +1,342 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{A Brief Introduction to $\RR^n$} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{A Brief Introduction to $\RR^n$}
+\end{onlineOnly}
+
+The set of all real numbers is denoted by $\RR$.  It is convenient to associate real numbers with points on a line, called the \dfn{real number line}.   
+
+\begin{center}
+\begin{tikzpicture}
+\draw[latex-latex] (-3.5,0) -- (3.5,0) ; %edit here for the axis
+\foreach \x in  {-3,-2,-1,0,1,2,3} % edit here for the vertical lines
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+\foreach \x in {-3,-2,-1,0,1,2,3} % edit here for the numbers
+\draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+{$\x$};
+\end{tikzpicture}
+\end{center}
+
+The set of all ordered pairs $(x, y)$, where $x$ and $y$ are real numbers, is called $\RR^2$.  Using set notation we write:  
+$$\RR^2=\{(x, y):x,y\in \RR\}$$
+Geometrically speaking, $\RR^2$ can be associated with a coordinate plane in which we refer to each point by its $x$ and $y$ coordinates.
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-4.5,
+xmax=4.5,
+ymin=-3.5,
+ymax=3.5,
+xtick={-4,-3,...,4},
+ytick={-3,-2,...,3},]
+\end{axis}
+\end{tikzpicture}
+\end{center}
+The set of all ordered triples $(x, y, z)$, where $x$, $y$ and $z$ are real numbers,  is called $\RR^3$.  
+$$\RR^3=\{(x, y, z):x,y, z\in \RR\}$$
+Geometrically, an ordered triple of $\RR^3$ is associated with a point of a three-dimensional space whose position is given by  $x$, $y$ and $z$ coordinates.
+
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}
+	\draw[->](-2,0,0)--(5,0,0) node[below left]{$y$};
+    \draw[->](0,-2,0)--(0,5,0) node[below left]{$z$};
+    \draw[->](0,0,-2)--(0,0,5) node[below left]{$x$};
+    
+   \end{tikzpicture}
+\end{center}
+
+\begin{example}\label{ex:plotpointsr3} The following points are shown plotted in $\RR^3$.
+
+  \begin{enumerate}
+\item
+$P(6, 8, 7)$
+\item
+$Q(4, -6, 9)$
+\item
+$R(-3, 9, -10)$
+  \end{enumerate}
+  
+  
+  \begin{center}
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,z=0.3cm]
+% The axes
+\draw[->] (xyz cs:x=-13.5) -- (xyz cs:x=13.5) node[above] {$y$};
+\draw[->] (xyz cs:y=-13.5) -- (xyz cs:y=13.5) node[right] {$z$};
+\draw[->] (xyz cs:z=13.5)--(xyz cs:z=-13.5) node[below] {$x$} ;
+% The thin ticks
+\foreach \coo in {-13,-12,...,13}
+{
+  \draw (\coo,-1.5pt) -- (\coo,1.5pt);
+  \draw (-1.5pt,\coo) -- (1.5pt,\coo);
+  \draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+}
+
+% Dashed lines for the points P
+\draw[dashed,red] 
+  (xyz cs:z=-6) -- 
+  +(0,7) coordinate (u) -- 
+  (xyz cs:y=7) -- 
+  +(8,0) -- 
+  ++(xyz cs:x=8,z=-6) coordinate (v) --
+  +(0,-7) coordinate (w) --
+  cycle;
+\draw[dashed,red] (u) -- (v);
+\draw[dashed,red] (8,7) -- (8,0) -- (w);
+
+% Dots and labels for P
+\node[fill,circle,inner sep=1.5pt,label={right:$P(6,8,7)$}] at (v) {};
+
+% Dashed lines for the points Q
+\draw[dashed,blue] 
+  (xyz cs:z=-4) -- 
+  +(0,9) coordinate (u1) -- 
+  (xyz cs:y=9) -- 
+  +(-6,0) -- 
+  ++(xyz cs:x=-6,z=-4) coordinate (v1) --
+  +(0,-9) coordinate (w1) --
+  cycle;
+\draw[dashed,blue] (u1) -- (v1);
+\draw[dashed,blue] (-6,9) -- (-6,0) -- (w1);
+
+% Dots and labels for Q
+\node[fill,circle,inner sep=1.5pt,label={left:$Q(4,-6,9)$}] at (v1) {};
+
+% Dashed lines for the points R
+\draw[dashed] 
+  (xyz cs:z=3) -- 
+  +(0,-10) coordinate (u2) -- 
+  (xyz cs:y=-10) -- 
+  +(9,0) -- 
+  ++(xyz cs:x=9,z=3) coordinate (v2) --
+  +(0,10) coordinate (w2) --
+  cycle;
+\draw[dashed] (u2) -- (v2);
+\draw[dashed] (9,-10) -- (9,0) -- (w2);
+
+% Dots and labels for R
+\node[fill,circle,inner sep=1.5pt,label={right:$R(-3,9,-10)$}] at (v2) {};
+
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+Each pair of axes in $\RR^3$ determines a plane. The resulting three planes are called \dfn{coordinate planes}.  Each coordinate plane is named after the axes that determine it.  Thus, we have the $xy$-plane, $xz$-plane, and $yz$-plane.  Coordinate planes intersect at the point $(0, 0, 0)$, called the \dfn{origin}, and subdivide $\RR^3$ into eight regions, called \dfn{octants}. 
+
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}
+	\draw[->](-3,0,0)--(5,0,0) node[below left]{$y$};
+    \draw[->](0,-2,0)--(0,5,0) node[below left]{$z$};
+    \draw[->](0,0,-2)--(0,0,5) node[below left]{$x$};
+       
+    \filldraw[blue!30!white] (0,0,0)--(0,0,-2)--(4,0,-2)--(4,0,0)--cycle;
+   \filldraw[blue!50!white] (0,-1,-2)--(0, 4, -2)--(0,4,0)--(0,-1,0)--cycle;
+    \filldraw[blue!40!white] (-2,4,0)--(4,4,0)node[black, below left]{$yz$-plane}--(4,-1,0)--(-2,-1,0)--cycle;
+    \filldraw[blue!30!white] (0,0,0)--(0,0,4)--(-2,0,4)--(-2,0,0)--cycle;
+    \filldraw[blue!50!white] (0,-1,0)--(0, 4, 0)--(0,4,4)node[black, below right]{$xz$-plane}--(0,-1,4)--cycle;
+    \filldraw[blue!30!white] (0,0,0)--(0,0,4)--(4,0,4)node[black, above left]{$xy$-plane}--(4,0,0)--cycle;
+     
+     \node[fill,circle,inner sep=1.5pt,label={right:$(0,0,0)$}] at (0,0,0) {};
+\end{tikzpicture}
+\end{center}
+
+
+
+The set of all ordered $n$-tuples $(x_1, x_2, \ldots, x_n)$, where $x_i$ is a real number for $1\leq i\leq n$, is called $\RR^n$.
+$$\RR^n=\{(x_1, x_2,\ldots,x_n)|x_i\in \RR\, \text{for}\, 1\leq i\leq n\}$$
+The point $(0,0,\ldots, 0)$ in $\RR^n$ is called the \dfn{origin}. 
+
+$\RR^n$ cannot be visualized for $n>3$, but many familiar ideas, such as the distance formula, can be generalized to $\RR^n$. 
+
+\subsection*{Distance in $\RR^n$}
+In this section we will establish a formula for the distance between two points in $\RR^n$.  We begin by observing that the distance between two numbers (points) $x_1$ and $x_2$ on the number line is given by $|x_1-x_2|$.  (Why do we use the absolute value brackets?).
+
+We can use the Pythagorean Theorem to establish the distance formula for points of $\RR^2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[line width=2pt,black](-1,0)--(5,0);
+\draw[line width=2pt,black](0,-1)--(0,3);
+    \draw[line width=1pt](1, 1)--(4,2.5);
+ \fill (1,1)node[below right]{$A(x_1,y_1)$} circle (1.1mm);
+\fill (4, 2.5)node[above]{$B(x_2,y_2)$} circle (1.1mm);
+\draw[line width=1pt, dashed](1,1)--(1,0);
+   \draw[line width=1pt, dashed](1,1)--(0,1);
+   \draw[line width=1pt, dashed](4,2.5)--(4,0);
+   \draw[line width=1pt, dashed](4, 2.5)--(0,2.5);
+   \filldraw[blue, opacity=0.3](1,1)--(4,1)--(4,2.5)--cycle;
+    \node[black] at (2.5, -0.4)   (a) {$|x_1-x_2|$};
+    \node[black] at (-0.9, 1.7)   (a) {$|y_1-y_2|$};
+ \end{tikzpicture}
+\end{center}
+
+Let $A(x_1, y_1)$ and $B(x_2, y_2)$ be points in $\RR^2$.  By the Pythagorean Theorem we have
+$$AB^2=(x_1-x_2)^2+(y_1-y_2)^2$$
+$$AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
+Why were we able to drop the absolute value brackets?
+
+The distance formula for points in $\RR^3$ can also be derived using the Pythagorean Theorem.  Let $A(x_1, y_1, z_1)$ and $B(x_2, y_2, z_2)$ be points of $\RR^3$.  Use the navigation bar in the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{dc267r6v}{800}{600} 
+\end{center}
+\end{onlineOnly}
+
+\begin{formula}\label{form:distR3}
+Let $A(x_1, y_1, z_1)$ and $B(x_2, y_2, z_2)$ be points in $\RR^3$.  The distance between $A$ and $B$ is given by
+$$AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$$
+\end{formula}
+
+Observe the similarity of pattern in the distance formulas for $\RR^1$, $\RR^2$ and $\RR^3$.  We will take advantage of this pattern to define the distance between two points of $\RR^n$.
+
+\begin{formula}\label{form:distRn}
+Let $A(a_1, a_2,\ldots ,a_n)$ and $B(b_1, b_2,\ldots ,b_n)$ be points in $\RR^n$.  The distance between $A$ and $B$ is given by
+$$AB=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2+\ldots +(a_n-b_n)^2}$$
+\end{formula}
+
+
+
+\section*{Practice Problems}
+\begin{problem}\label{prob:plotpointsr3}
+Find the coordinates of each point.
+
+  \begin{center}
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,z=0.3cm]
+% The axes
+\draw[->] (xyz cs:x=-13.5) -- (xyz cs:x=13.5) node[above] {$y$};
+\draw[->] (xyz cs:y=-13.5) -- (xyz cs:y=13.5) node[right] {$z$};
+\draw[->] (xyz cs:z=13.5)--(xyz cs:z=-13.5) node[below] {$x$} ;
+% The thin ticks
+\foreach \coo in {-13,-12,...,13}
+{
+  \draw (\coo,-1.5pt) -- (\coo,1.5pt);
+  \draw (-1.5pt,\coo) -- (1.5pt,\coo);
+  \draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+}
+
+% Dashed lines for the points P
+\draw[dashed,red] 
+  (xyz cs:z=-5) -- 
+  +(0,10) coordinate (u) -- 
+  (xyz cs:y=10) -- 
+  +(5,0) -- 
+  ++(xyz cs:x=5,z=-5) coordinate (v) --
+  +(0,-10) coordinate (w) --
+  cycle;
+\draw[dashed,red] (u) -- (v);
+\draw[dashed,red] (5,10) -- (5,0) -- (w);
+
+% Dots and labels for P
+\node[fill,circle,inner sep=1.5pt,label={right:$P$}] at (v) {};
+
+% Dashed lines for the points Q
+\draw[dashed,blue] 
+  (xyz cs:z=6) -- 
+  +(0,2) coordinate (u1) -- 
+  (xyz cs:y=2) -- 
+  +(3,0) -- 
+  ++(xyz cs:x=3,z=6) coordinate (v1) --
+  +(0,-2) coordinate (w1) --
+  cycle;
+\draw[dashed,blue] (u1) -- (v1);
+\draw[dashed,blue] (3,2) -- (3,0) -- (w1);
+
+% Dots and labels for Q
+\node[fill,circle,inner sep=1.5pt,label={right:$Q$}] at (v1) {};
+
+% Dashed lines for the points R
+\draw[dashed] 
+  (xyz cs:z=-3) -- 
+  +(0,-8) coordinate (u2) -- 
+  (xyz cs:y=-8) -- 
+  +(-5,0) -- 
+  ++(xyz cs:x=-5,z=-3) coordinate (v2) --
+  +(0,8) coordinate (w2) --
+  cycle;
+\draw[dashed] (u2) -- (v2);
+\draw[dashed] (-5,-8) -- (-5,0) -- (w2);
+
+% Dots and labels for R
+\node[fill,circle,inner sep=1.5pt,label={left:$R$}] at (v2) {};
+
+\end{tikzpicture}
+\end{center}
+Answer:
+  $$P(\answer{5}, \answer{5}, \answer{10})$$
+ 
+  $$Q(\answer{-6}, \answer{3}, \answer{2})$$
+
+  $$R(\answer{3}, \answer{-5}, \answer{-8})$$
+
+\end{problem}
+
+\begin{problem}\label{prob:geogebrapts}
+Find the coordinates of each point.
+RIGHT-CLICK and DRAG to rotate the image.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{bynu3r84}{800}{600} 
+\end{center}
+\end{onlineOnly}
+
+Answer:
+  $$A(\answer{-1}, \answer{4}, \answer{2})$$
+ 
+  $$B(\answer{3}, \answer{2}, \answer{-3})$$
+
+  $$C(\answer{2}, \answer{-5}, \answer{3})$$
+  
+  $$D(\answer{-3}, \answer{-2}, \answer{4})$$
+
+\end{problem}
+
+\begin{problem}\label{prob:distR3}
+Find the distance between $A(-2, -1, 4)$ and $B(1, -5, -8)$.
+$$AB=\answer{13}$$
+\end{problem}
+
+\begin{problem}\label{prob:distR4}
+Consider the equation 
+$$x^2+y^2+z^2+w^2=25$$
+
+What can be said about all points $(x, y, z, w)\in \RR^4$ that satisfy this equation?
+
+\begin{multipleChoice}
+ \choice{Such points are equidistant from the origin.}
+ \choice{Such points form a four-dimensional sphere of radius $5$.}
+ \choice{Such points are located 5 units from the origin.}
+ \choice[correct]{All of the above.}
+  \end{multipleChoice}
+
+
+\end{problem}
+
+\end{document} 

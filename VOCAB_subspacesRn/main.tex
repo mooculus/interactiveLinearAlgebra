@@ -1,0 +1,146 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Essential Vocabulary} \license{CC BY-NC-SA 4.0}
+
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\begin{onlineOnly}
+\section*{Essential Vocabulary}
+Here is a  \href{https://quizlet.com/880920639/chapter-5-vocabulary-flash-cards/?i=y06sd&x=1jqt}{link to a list of these terms on Quizlet}
+\end{onlineOnly}
+
+Basis
+\begin{expandable}
+A set $\mathcal{S}$ of vectors is called a \dfn{basis} of $\RR^n$ (or a basis of a subspace $V$ of $\RR^n$) provided that 
+\begin{enumerate}
+\item 
+$\mbox{span}(\mathcal{S})=\RR^n$ (or $V$)
+\item 
+$\mathcal{S}$ is linearly independent.
+\end{enumerate}
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Closed under addition
+\begin{expandable}
+    A set $V$ is said to be \dfn{closed under addition} if for each element $\vec{u} \in V$ and $\vec{v} \in V$ the sum $\vec{u}+\vec{v}$ is also in $V$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+ Closed under scalar multiplication
+\begin{expandable}
+    A set $V$ is said to be \dfn{closed under scalar multiplication} if for each element $\vec{v} \in V$  and for each scalar $k \in \RR$ the product $k\vec{v}$ is also in $V$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Column space of a matrix
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix.  The \dfn{column space} of $A$, denoted by $\mbox{col}(A)$, is the subspace of $\RR^m$ spanned by the columns of $A$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Coordinate vector with respect to a basis
+\begin{expandable}
+    Let $\mathcal{B} = \{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ be an \underline{ordered} basis.  Then the \dfn{coordinate vector} $\vec{v}$ is the  column vector $\begin{bmatrix}c_1\\ c_2\\ \vdots \\c_k\end{bmatrix}$ such that $\vec{v} = c_1\vec{v}_1+c_2\vec{v}_2+\ldots +c_p\vec{v}_k$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Dimension
+\begin{expandable}
+    Let $V$ be a subspace of $\RR^n$.  The \dfn{dimension} of $V$ is the number, $m$, of elements in any basis of $V$.  We write
+$$\mbox{dim}(V)=m$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Null space of a matrix
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.   
+    It is a subspace of $\RR^n$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Nullity of a matrix
+\begin{expandable}
+    Let $A$ be a matrix.  The dimension of the null space of $A$ is called the \dfn{nullity} of $A$.
+$$\mbox{dim}\Big(\mbox{null}(A)\Big)=\mbox{nullity}(A)$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Ordered basis
+\begin{expandable}
+    A basis in which the elements appear in a specific fixed order.  Establishing an order is necessary because a coordinate vector with respect to a given basis relies on the order in which the basis elements appear.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Rank of a matrix
+\begin{expandable}
+    Let $A$ be a matrix.  The dimension of the row space of $A$ is called the \dfn{rank} of $A$.
+$$\mbox{dim}\Big(\mbox{row}(A)\Big)=\mbox{rank}(A)$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Rank-Nullity theorem
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix.  Then 
+$$\mbox{rank}(A)+\mbox{nullity}(A)=n$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Row space of a matrix
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix.  The \dfn{row space} of $A$, denoted by $\mbox{row}(A)$, is the subspace of $\RR^n$ spanned by the rows of $A$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Subspace
+\begin{expandable}
+    Suppose that $V$ is a nonempty subset of $\RR^n$ that is closed under addition and closed under scalar multiplication.  Then $V$ is a \dfn{subspace} of $\RR^n$.
+\end{expandable}
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+\end{document}

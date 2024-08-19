@@ -1,0 +1,239 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+\title{Orthogonal Projections} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+\begin{abstract}
+ \end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Orthogonal Projections}
+\end{onlineOnly}
+
+Given a line $l$ and a vector $\vec{v}$ emanating from a point on $l$, it is sometimes convenient to express $\vec{v}$ as the sum of a vector $\vec{v}_{\parallel}$, parallel to $l$, and a vector $\vec{v}_{\perp}$, perpendicular to $l$.  If you have taken a physics course, you may have seen a force vector decomposed into the sum of two components: one parallel and one perpendicular to the direction of motion.
+
+\begin{center}
+ \begin{tikzpicture}[scale=.8]
+  \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
+  \node[red] at (3.5, 2.2)   (a) {$\vec{v}_{\perp}$};
+ \node[red] at (1.5, -0.95)   (b) {$\vec{v}_{\parallel}$};
+  \node[] at (5, 1)   (c) {$l$};
+  \node[blue] at (-0.8, 1.9)   (d) {$\vec{v}=\vec{v}_{\perp}+\vec{v}_{\parallel}$};
+   \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+\draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+\draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+\end{tikzpicture}
+
+\end{center}
+
+Suppose $\vec{d}$ is a direction vector for $l$.  Then $\vec{v}_
+{\parallel}=k\vec{d}$ for some scalar $k$.  Our goal is to find $k$.  
+\begin{align*}\vec{v}\dotp\vec{d}&=(\vec{v}_{\parallel}+\vec{v}_{\perp})\dotp\vec{d}\\
+&=(k\vec{d}+\vec{v}_{\perp})\dotp\vec{d}\\
+&=k\vec{d}\dotp\vec{d}+\vec{v}_{\perp}\dotp\vec{d}\\
+&=k\norm{\vec{d}}^2+0\\
+&=k\norm{\vec{d}}^2
+\end{align*}
+We conclude that $$k=\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}$$
+and $$\vec{v}_{\parallel}=k\vec{d}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}$$
+
+The vector $\vec{v}_{\parallel}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}$ is called the \dfn{projection of $\vec{v}$ onto $\vec{d}$}.  In our discussion, $\vec{d}$ is a direction vector for line $l$.  So, we can also say that $\vec{v}_{\parallel}$ is the \dfn{projection of $\vec{v}$ onto $l$}.
+
+To find $\vec{v}_{\perp}$, observe that $\vec{v}_{\perp}=\vec{v}-\vec{v}_{\parallel}$.
+
+
+\begin{definition}\label{def:projection}
+Let $\vec{v}$ be a vector, and let $\vec{d}$ be a non-zero vector.  The \dfn{projection of $\vec{v}$ onto $\vec{d}$} is given by 
+$$\mbox{proj}_{\vec{d}}\vec{v}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}$$
+\end{definition}
+
+\begin{example}\label{ex:projection1}
+Find the projection of $\vec{v}$, shown below, onto the line given by $y=\frac{1}{2}x-1$.
+
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+
+\draw[thin,gray!40] (-3,-3) grid (5,5);
+  \draw[<->] (-3,0)--(5,0);
+  \draw[<->] (0,-3)--(0,5);
+  \draw[red, dashed] (2,4)--(3.6, 0.8); 
+  \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+\draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+\draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+\node[blue] at (-0.5, 1.5)   (a) {$\vec{v}$};
+\node[red] at (1.9, -0.9)   (b) {$\vec{v}_{\parallel}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{explanation}
+We begin by finding vectors $\vec{v}$ and $\vec{d}$. The tail of $\vec{v}$ is located at $(-2, -2)$, and the head of $\vec{v}$ is at $(2, 4)$.  Using the ``head-tail" formula we get 
+$$\vec{v}=\begin{bmatrix}2-(-2)\\4-(-2)\end{bmatrix}=\begin{bmatrix}4\\6\end{bmatrix}$$ The direction vector for the line $y=\frac{1}{2}x-1$ is $$\vec{d}=\begin{bmatrix}2\\1\end{bmatrix}$$
+We find that $\vec{v}\dotp\vec{d}=14$ and $\norm{\vec{d}}^2=5$.
+Thus $$\mbox{proj}_{\vec{d}}\vec{v}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}=\frac{14}{5}\begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}28/5\\14/5\end{bmatrix}$$
+\end{explanation}
+\end{example}
+
+\subsection*{Distance from a Point to a Line}
+
+The shortest distance from a point to a line is the length of the perpendicular line segment dropped from the point to the line.  Vector projection formula will help us find the length of such a perpendicular.
+
+\begin{example}\label{ex:distancefrompttoline}
+Let $A(2, -1, 1)$ be a point in $\RR^3$.  Suppose line $l$ is given by parametric equations $$x=t+3$$
+$$y=-t+1$$
+$$z=t-2$$
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  
+   \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+   \node[] at (5, 0.8)   (a) {$l$};
+\fill (2, 4)node[above, right]{$A(2, -1, 1)$} circle (1mm);
+\end{tikzpicture}
+\end{center}
+
+Find the distance from $A$ to $l$.
+\begin{explanation}
+We will first construct a vector $\vec{v}$ by picking an arbitrary point $B$ on $l$ to be the tail of $\vec{v}$ and using point $A$ as the head of $\vec{v}$.  An easy point to choose on line $l$ is the point $(3, 1, -2)$ that corresponds to $t=0$.  Now we have 
+$$\vec{v}=\overrightarrow{BA}=\begin{bmatrix}2-3\\-1-1\\1-(-2)\end{bmatrix}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}$$
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  
+   \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+    \node[] at (5, 0.8)   (a) {$l$};
+\draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+
+\fill (-2, -2) circle (1mm);
+\fill (2, 4)node[below, right]{$A(2, -1, 1)$} circle (1mm);
+\node[] at (-1, -2.5)   (b) {$B(3, 1, -2)$};
+\node[blue] at (0, 2)   (c) {$\vec{v}$};
+\end{tikzpicture}
+\end{center}
+
+The line has a direction vector 
+$$\vec{d}=\begin{bmatrix}1\\-1\\1\end{bmatrix}$$
+
+We will now find the projection of $\overrightarrow{BA}$ onto $l$  $$\mbox{proj}_{\vec{d}} \overrightarrow{BA}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}=\frac{4}{3}\begin{bmatrix}1\\-1\\1\end{bmatrix}=\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}$$
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  
+   \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+   \node[] at (5, 0.8)   (a) {$l$};
+   \node[] at (-1, -2.5)   (b) {$B(3, 1, -2)$};
+\node[blue] at (0, 2)   (c) {$\vec{v}$};
+\node[red] at (1.3, -1.3)   (d) {$\mbox{proj}_{\vec{d}}\overrightarrow{BA}$};
+\draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+\draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+\draw[red, dashed] (2,4)--(3.6, 0.8); 
+\fill (-2, -2)  circle (1mm);
+\fill (2, 4)node[above, right]{$A(2, -1, 1)$} circle (1mm);
+\end{tikzpicture}
+\end{center}
+
+
+Next, we find $\vec{v}_{\perp}$.
+$$\vec{v}_{\perp}=\vec{v}-\vec{v}_{\parallel}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}-\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}=\begin{bmatrix}-7/3\\-2/3\\5/3\end{bmatrix}$$
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
+   \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
+   \node[] at (5, 0.8)   (a) {$l$};
+   \node[] at (-1, -2.5)   (b) {$B(3, 1, -2)$};
+\node[blue] at (0, 2)   (c) {$\vec{v}$};
+\node[red] at (1.3, -1.3)   (d)
+{$\mbox{proj}_{\vec{d}}\overrightarrow{BA}$};
+\node[red] at (3.6, 2.3)   (e) {$\vec{v}_{\perp}$};
+\draw[line width=2pt,blue,-stealth](-2, -2)--(2,4);
+\draw[line width=2pt,red,-stealth](-2, -2)--(3.6, 0.8);
+\fill (-2, -2)  circle (1mm);
+\fill (2, 4)node[above, right]{$A(2, -1, 1)$} circle (1mm);
+\end{tikzpicture}
+\end{center}
+
+
+Finally, to find the distance between point $A$ and line $l$, we find the magnitude of $\vec{v}_{\perp}$.
+$$\norm{\vec{v}_{\perp}}=\frac{1}{3}\sqrt{49+4+25}=\frac{\sqrt{78}}{3}$$
+\end{explanation}
+\end{example}
+
+\section*{Practice Problems}
+\emph{Problems \ref{prob:proj1a}-\ref{prob:proj1b}}
+
+Find $\mbox{proj}_{\vec{d}}\vec{v}$.  
+
+  \begin{problem}\label{prob:proj1a}
+  If $\vec{d}=\begin{bmatrix}-1\\3\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}1\\4\end{bmatrix}$ then
+  $$\mbox{proj}_{\vec{d}}\vec{v}=\begin{bmatrix}\answer{-1.1}\\\answer{3.3}\end{bmatrix}$$
+    \end{problem}
+    
+    \begin{problem}\label{prob:proj1b}
+    If $\vec{d}=\begin{bmatrix}0\\2\\1\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}-1\\-4\\2\end{bmatrix}$ then
+    $$\mbox{proj}_{\vec{d}}\vec{v}=\begin{bmatrix}\answer{0}\\\answer{-2.4}\\\answer{-1.2}\end{bmatrix}$$
+    \end{problem}
+
+\begin{problem}\label{prob:proj2}
+Find the projection of vector $\vec{v}$ onto line $l$. (If entering answers in decimal form, round to the nearest one hundredth.)
+
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\draw[thin,gray!40] (-2,-2) grid (9,4);
+  \draw[<->] (-2,0)--(9,0);
+  \draw[<->] (0,-2)--(0,4);
+  \node[blue] at (6, 1)   (a) {$\vec{v}$};
+  \node[] at (-2.4, 1)   (b) {$l$};
+  \draw [-,line width=1pt]  (-2,0.8)--(9, -1.4);
+\draw[line width=2pt,blue,-stealth](7, -1)--(4,3);
+\end{tikzpicture}
+\end{center}
+
+Answer:
+$$\begin{bmatrix}\answer[tolerance=0.005]{-95/26}\\\answer[tolerance=0.005]{19/26}\end{bmatrix}$$
+\end{problem}
+
+\begin{problem}\label{prob:distpttoline}
+Find the distance between point $A$ and line $l$.
+
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\draw[thin,gray!40] (0,-2) grid (9,4);
+  \draw[->] (0,0)--(9,0);
+  \draw[<->] (0,-2)--(0,4);
+  \fill (7,2)node[above, right]{$A$} circle (1mm);
+  \node[] at (2.6, -2)   (b) {$l$};
+  \draw [-,line width=1pt]  (3,-2)--(6, 4);
+\end{tikzpicture}
+\end{center}
+
+Answer: $\sqrt{\answer{3.2}}$.
+\end{problem}
+
+\begin{problem}\label{prob:proj3}
+Show that $\mbox{proj}_{\vec{d}}\vec{v}$ does not depend on the length of $\vec{d}$ by proving that $\mbox{proj}_{\vec{d}}\vec{v}=\mbox{proj}_{k\vec{d}}\vec{v}$ for $k\neq 0$.  What does this result mean geometrically?  Illustrate your response with a diagram.
+\end{problem}
+
+\begin{problem}\label{prob:circletangenttoline}
+Find the radius of a circle centered at $(4, 2)$ if the line $y=\frac{3}{2}x+3$ is tangent to the circle.  Enter your response as a fraction.
+
+Answer:
+$$r=\sqrt{\answer{196/13}}$$
+The graph below shows the line $y=\frac{3}{2}x+3$ together with a circle of radius $1$.  Change the value of $r$ to the radius you have found to visualize the correct answer.
+
+\pdfOnly{
+Access GeoGebra interactives through the online version of this text at 
+
+\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+}
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{bngnjxee}{800}{600} 
+\end{center}
+\end{onlineOnly}
+
+
+
+\end{problem}
+\end{document}

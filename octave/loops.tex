@@ -1,0 +1,83 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Loops} \license{CC BY-NC-SA 4.0}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+\section*{Loops}
+
+This tutorial will introduce \emph{for} and \emph{while} loops. You can access our Octave code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  Alternatively, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.  
+
+Loops are used to generate sequences of objects (such as numbers or vectors) according to some rule.  We will start with a simple \emph{for} loop.  Every time you perform the steps inside the loop, you come back to the beginning, and increase the index $i$ by 1 until you reach the desired number of iterations.  Try to guess the outcome of the loop in each example, then run the code to verify your guess.
+
+\begin{example}\label{ex:loop1}
+        \begin{verbatim}
+% Enter the starting value
+n=10;
+
+% At every iteration, n gets replaced with n+1
+for i=1:10
+    n=n+1
+end
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJwdyjEOglAQRdF-ktnDa6iw4LeSX1i4kB95wiRkMMOIcfcSb3lyO9w9GciF2LNFms842vqmitcyjCoqHW4JHowv7Jxb2uYXOGbmjuBrbQ9O-Fgu8L6oPLeA1XItgwrOvP6ZPv0AoF8hKw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
+\end{example}
+
+\begin{example}\label{ex:loop2}
+    \begin{verbatim}
+% Enter the first component of vector v
+v(1)=1;
+
+% Enter the second component of vector v
+v(2)=1;
+
+% we continue to assign values to vector components
+for i=1:10
+    v(i+2)=v(i)+v(i+1);
+    v(i) % this prints each component individually
+end
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJx1jjEKwzAMRXeD76AlEJOl7tiQsQcxttwIUjnYiktvXwdKmqVapC_pfX4HdxbMIDNCpFwEfHquiZEFUoSKXlKGqlXtrZnsqJVW3Ykp6BOH_9D1B72wvbEQbwiSwJVCD4bqlg3Lvvhih1XRKjZNk73Zi1bQqvY0NMfWzLDP1ozHwUDXElGBNVODAZ2fT7mIA1UKm1uWt1bI4QOvKk6t&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+
+Do you recognize this famous sequence?
+\end{example}
+
+\begin{example}\label{ex:vandermonde}
+    A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
+    $$V=\begin{bmatrix}
+1&x_1&x_1^2&\dots&x_1^{n-1}\\
+1&x_2&x_2^2&\dots&x_2^{n-1}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+1&x_n&x_n^2&\dots&x_n^{n-1}\end{bmatrix}$$
+We will use a \emph{nested} loop to create a $5\times 5$ Vandermonde matrix for $x_1=2, x_2=-1, x_3=5, x_4=-2, x_5=3$.  We recommend that you create this matrix by hand first, then study and run the code.
+
+\begin{verbatim}
+% Define the vector [x_1, ..., x_5]
+w=[2 -1 5 -2 3];
+
+% This nested loop creates a 5x5 Vandermonde matrix
+for i=1:5
+    for j=1:5
+        V(i,j)=w(i)^(j-1);
+    end
+end
+V
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxFjEEKgzAURPeB3GE2goIKsWRTcdcjFDdiJeiXRjQpMdQcv7Fd9A08GAYmwY1mbQgKbxq9dejCIHKUZZkjDLLn7Gi6CoWARFHh0tecnUlwf-odhnZPE1ZrXxgdKU97vJJBolVmIrfZaGzKOx04m-O_bsRVcobIWZd_PWlTnS9Zc6Q6e6RLIbL6t5GZOPuq_QBP6C9I&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+You will see applications of the Vandermonde matrix in Least Squares, and Curve Fitting.
+
+\end{example}
+
+%\emph{For} loops work great if you know exactly how many times you want the loop to run.  Sometimes we want the loop to run only while a certain condition (or conditions) is satisfied.  The following set of examples introduce the \emph{while} loop which will help us accomplish this.
+
+%\begin{example}\label{ex:while1}
+    
+%\end{example}
+
+\end{document}

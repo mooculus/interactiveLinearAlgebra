@@ -1,0 +1,93 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Matrices} \license{CC BY-NC-SA 4.0}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+The templates in this section provide sample Octave code for basic matrix operations.  You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  Alternatively, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE. 
+
+\begin{template}\label{temp:matrixOps}
+
+\begin{verbatim}
+% Define matrices A, B, and C
+A = [1 -1 0 0;
+     2 -2 1 2;
+     0 1 0 1];
+     
+B = [2 3 -1 4;
+     1 -1 2 -2;
+     1 -2 0 3];   
+     
+C = [1 -2 1 4;
+     2 -2 0 1;
+     -2 1 1 0;
+     1 3 -2 -1];     
+     
+% Find A+B
+sum=A+B
+
+% Find the transpose of A
+% Copying and pasting A'  may not work because the prime comes through
+% in a different font.
+A_trans1=A'
+% we can also use the transpose function
+A_trans2=transpose(A)
+
+% Find AC
+product=A*C
+
+% Find the inverse of C
+inv_C=inv(C)
+
+% Find the determinant of C
+det_C=det(C)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxdUEFuwyAQvFvyH-YSNWkTyZDcIg6Yqp-oogjZWEGqIcK4_X4XartOOKyY2ZmdhQ3eTWedQa9jsI0ZIPeo99CuhSoLCYFPhgNDhepcFkiH48DBwGdcIbXZZcZlUScbxzEZTzOdxyTviuBkPF7O2TR51RSZIk4PkZQx49xl_yuxlEUilmetpm3wYekp8q0ui2HsRb4sdLwZxKDdcPeDge8g6cnXzDAhX5Lux6DRDvpr8BhJ9GjpRtdE691i42JpbuVuFSXpN-_Bt2MThXxVT0tY923C3wrUInRVgupW7Z6ErYkm9NZpFycxMSSmSuJfcXxtIA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{template}
+
+\begin{template}\label{temp:id_matrix}
+Sometimes it is useful to generate a commonly used matrix or a vector (e.g. identity matrix, zero vector). 
+\begin{verbatim}
+% 5 by 5 identity matrix
+I_5=eye(5)
+
+% 5 by 5 zero matrix
+O_5=zeros(5)
+
+% The zero vector in R^5
+O_col=zeros(5,1)
+
+% Row of zeros
+O_row=zeros(1,5)
+
+% Non-square zero matrix
+O_block=zeros(2,3)
+
+% Matrix filled with 1s
+One_block=ones(2,3)
+
+% How would you generate a matrix filled with 3s?
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxdzj0PgjAQBuCdhP9wC4kmOCBhNK46qAlx1vBxSGPtxbZY66-XYiHqcsPdc-9dBBmUti-sRqGZtnArtGTPMNiesxVanGXzMAiDaHQvlDSZQ29cQ03q2OKHPLDSJIEJyE-ZkxXx0caJ1zkZoGZYUM5IMt4k8Zi4J7FQ966Q-H-75FRdvV_Gqfe7YQ4N4xxrMEy3kLhwgX6BBH77Tf-DoY7XYKmDCwqUhUYo_KGfoFSt342kXHo=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{template}
+
+\begin{template}\label{temp:randMat}
+    When doing computational experiments you might need to create large matrices.  If the type of matrix is irrelevant, you may want to use random matrices.
+
+    \begin{verbatim}
+% Generate a random 3 by 3 matrix A with real-number values between 0 and 1
+A=rand(3,3)
+
+% Generate a random 4 by 5 matrix B with integer values between -10 and 25
+B=randi([-10,25],4,5)
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxtzLEKwjAUheE9kHc4S6GFFGzTjA7t0ocQhxu8aKCJEFNb397U4qTLGX44X4GRA0dKDEKkcLl7aNhXHk8puhU9FpduiExTHWZvOeJJ08wPWE4Lc8AB-YdGiv64CaVWupJCiuKP3W22-drDbruQ-Prr1s0ut0aK4UO78pSjas1ZdcpUb3XOOqE=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
+\end{template}
+
+\end{document}

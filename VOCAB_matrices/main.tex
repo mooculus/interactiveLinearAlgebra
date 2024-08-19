@@ -1,0 +1,277 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Essential Vocabulary} \license{CC BY-NC-SA 4.0}
+
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\begin{onlineOnly}
+\section*{Essential Vocabulary}
+Here is a  \href{https://quizlet.com/880920377/chapter-4-vocabulary-flash-cards/?i=y06sd&x=1jqt}{link to a list of these terms on Quizlet}
+\end{onlineOnly}
+
+Column matrix (or column vector)
+\begin{expandable}
+    A matrix with $m$ rows and only 1 column.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Diagonal matrix
+\begin{expandable}
+    A matrix $A=[a_{ij}]$  where $a_{ij}=0$ whenever $i \ne j$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Dimensions of a matrix
+\begin{expandable}
+    An $m \times n$ matrix is a matrix with $m$ rows and $n$ columns.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Elementary matrix
+\begin{expandable}
+    A matrix formed by applying one elementary row operation to the identity matrix.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Homogeneous system 
+\begin{expandable}
+    A system of linear equations is called \dfn{homogeneous} if the system can be written in the form
+$$\begin{array}{ccccccccc}
+      a_{11}x_1 &+ &a_{12}x_2&+&\ldots&+&a_{1n}x_n&= &0 \\
+	 a_{21}x_1 &+ &a_{22}x_2&+&\ldots&+&a_{2n}x_n&= &0 \\
+     &&&&\vdots&&&& \\
+     a_{m1}x_1 &+ &a_{m2}x_2&+&\ldots&+&a_{mn}x_n&= &0
+    \end{array},$$
+or as a matrix equation as $A \vec{x} = \vec{0}$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Identity matrix
+\begin{expandable}
+    A square matrix with ones as diagonal entries and zeros for the remaining entries.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Inverse of a square matrix
+\begin{expandable}
+    Let $A$ be an $n\times n$ matrix.  An $n\times n$ matrix $B$ is called an \dfn{inverse} of $A$ if 
+$$AB=BA=I$$
+where $I$ is an $n\times n$ identity matrix.  If such an inverse matrix exists, we say that $A$ is \dfn{invertible}.  If an inverse does not exist, we say that $A$ is not invertible.  The inverse of $A$ is denoted by $A^{-1}$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+LU factorization
+\begin{expandable}
+    A factorization $A=LU$ where $L$ is lower triangular and $U$ is upper triangular with ones on the diagonal (called unit upper triangluar).  It is useful for solving $Ax=b$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Matrix
+\begin{expandable}
+    A rectangular array of numbers.  It has $m$ rows and $n$ columns for some positive integers $m$ and $n$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Matrix addition
+\begin{expandable}
+    Let $A=\begin{bmatrix} a_{ij}\end{bmatrix} $ and $B=\begin{bmatrix} b_{ij}\end{bmatrix}$ be two
+$m\times n$ matrices. Then the \dfn{sum of matrices} $A$ and $B$, denoted by $A+B$,  is an $m \times n$
+matrix  given by 
+$$A+B=\begin{bmatrix}a_{ij}+b_{ij}\end{bmatrix}$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Matrix factorization
+\begin{expandable}
+    Representing a matrix as a product of two or more matrices.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Matrix multiplication
+\begin{expandable}
+    Let $A$ be an $m\times n$ matrix whose rows are vectors $\vec{r}_1$, $\vec{r}_2,\ldots ,\vec{r}_n$.  Let $B$ be an $n\times p$ matrix with columns $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p$.  Then the matrix product $AB$ is an $m \times p$ matrix with entries given by the dot products
+$$AB=\begin{bmatrix}-&\vec{r}_1&-\\-&\vec{r}_2&-\\ &\vdots & \\-&\vec{r}_i &-\\ &\vdots& \\-&\vec{r}_m&-\end{bmatrix}\begin{bmatrix}|&|&&|&&|\\\vec{b}_1& \vec{b}_2 &\ldots  & \vec{b}_j&\ldots& \vec{b}_p\\|&|&&|&&|\end{bmatrix}=$$
+$$=\begin{bmatrix}\vec{r}_1\dotp \vec{b}_1&\vec{r}_1\dotp \vec{b}_2&\ldots&\vec{r}_1\dotp \vec{b}_j&\ldots &\vec{r}_1\dotp \vec{b}_p\\\vec{r}_2\dotp \vec{b}_1&\vec{r}_2\dotp \vec{b}_2&\ldots&\vec{r}_2\dotp \vec{b}_j&\ldots &\vec{r}_2\dotp \vec{b}_p\\\vdots&\vdots&&\vdots&&\vdots\\\vec{r}_i\dotp \vec{b}_1&\vec{r}_i\dotp \vec{b}_2&\ldots&\vec{r}_i\dotp \vec{b}_j&\ldots &\vec{r}_i\dotp \vec{b}_p\\\vdots&\vdots&&\vdots&&\vdots\\\vec{r}_m\dotp \vec{b}_1&\vec{r}_m\dotp \vec{b}_2&\ldots&\vec{r}_m\dotp \vec{b}_j&\ldots &\vec{r}_m\dotp \vec{b}_p\end{bmatrix}
+$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Matrix powers
+\begin{expandable}
+    If $A$ is a square matrix then we can define $A^k$ to be the result of multiplying $A$ by itself $k$ times.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Negative of a matrix
+\begin{expandable}
+    The additive inverse of a matrix, formed by multiplying the matrix by the scalar $-1$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Nonsingular matrix
+\begin{expandable}
+    A square matrix $A$ is said to be \dfn{nonsingular} provided that $\mbox{rref}(A)=I$.  Otherwise we say that $A$ is \dfn{singular}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Partitioned matrices - block multiplication
+\begin{expandable}
+    Subdividing a matrix into submatrices using imaginary horizontal and vertical lines - used to multiply matrices more efficiently.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Permutation matrix
+\begin{expandable}
+    A matrix formed by permuting the rows of the identity matrix.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Properties of matrix algebra
+\begin{expandable}
+    Addition and scalar multiplication of matrices have many nice properties. Matrix multiplication is not commutative, but the associative and distributive laws hold. The inverse and transpose operations of a product follow the "shoes and socks" rule.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Row matrix
+\begin{expandable}
+    A matrix with only $1$ row and $n$ columns.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Scalar multiple of a matrix
+\begin{expandable}
+    If $A=\begin{bmatrix} a_{ij}\end{bmatrix} $ and $k$ is a scalar,
+then $kA=\begin{bmatrix} ka_{ij}\end{bmatrix}$. 
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Singular matrix
+\begin{expandable}
+    A square matrix $A$ is said to be \dfn{singular} provided that $\mbox{rref}(A)$ is NOT the identity matrix.  If instead $\mbox{rref}(A)=I$, we say that $A$ is \dfn{nonsingular}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Square matrix
+\begin{expandable}
+    A matrix with the same number of rows and columns.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Symmetric matrix
+\begin{expandable}
+    An $n\times n$ matrix $A$ is said to be
+\dfn{symmetric} if $A=A^{T}.$ It is said to be
+\dfn{skew symmetric} if $A=-A^{T}.$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+ 
+
+Transpose of a matrix
+\begin{expandable}
+    Let $A=\begin{bmatrix} a _{ij}\end{bmatrix}$ be an $m\times n$ matrix. Then the \dfn{transpose of $A$}, denoted by $A^{T}$, is the $n\times m$
+matrix given by switching the rows and columns:
+$$
+A^{T} = \begin{bmatrix} a _{ij}\end{bmatrix}^{T}= \begin{bmatrix} a_{ji} \end{bmatrix}
+$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+Zero matrix
+\begin{expandable}
+    The $m\times n$ \dfn{zero matrix} is the $m\times n$ matrix
+having every entry equal to zero. The zero matrix is
+denoted by $O$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+ 
+\end{document}
+
+

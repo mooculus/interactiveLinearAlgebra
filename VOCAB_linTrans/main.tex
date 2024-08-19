@@ -1,0 +1,93 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Essential Vocabulary} \license{CC BY-NC-SA 4.0}
+
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\begin{onlineOnly}
+\section*{Essential Vocabulary}
+Here is a  \href{https://quizlet.com/881362019/chapter-6-vocabulary-flash-cards/?i=y06sd&x=1jqt}{link to a list of these terms on Quizlet}
+\end{onlineOnly}
+
+Composition of linear transformations
+\begin{expandable}
+    Let $U$, $V$ and $W$ be vector spaces, and let $T:U\rightarrow V$ and $S:V\rightarrow W$ be linear transformations.  The \dfn{composition} of $S$ and $T$ is the transformation $S\circ T:U\rightarrow W$ given by
+$$(S\circ T)(\vec{u})=S(T(\vec{u}))$$
+
+The matrix of a composition is the product of the matrices corresponding to the transformations in the composition, in the same order.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Image of a linear transformation
+\begin{expandable}
+    Let $V$ and $W$ be vector spaces, and let $T:V\rightarrow W$ be a linear transformation.  The \dfn{image} of $T$, denoted by $\mbox{im}(T)$, is the set
+$$\mbox{im}(T)=\{T(\vec{v}):\vec{v}\in V\}$$
+In other words, the image of $T$ consists of individual images of all vectors of $V$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Inverse of a linear transformation
+\begin{expandable}
+    Let $V$ and $W$ be vector spaces, and let $T:V\rightarrow W$ be a linear transformation.  A transformation $S:W\rightarrow V$ that satisfies $S\circ T=\id_V$ and $T\circ S=\id_W$ is called an \dfn{inverse} of $T$. If $T$ has an inverse, $T$ is called \dfn{invertible}.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Kernel of a linear transformation
+\begin{expandable}
+    Let $V$ and $W$ be vector spaces, and let $T:V\rightarrow W$ be a linear transformation.  The \dfn{kernel} of $T$, denoted by $\mbox{ker}(T)$, is the set
+$$\mbox{ker}(T)=\{\vec{v}:T(\vec{v})=\vec{0}\}$$
+In other words, the kernel of $T$ consists of all vectors of $V$ that map to $\vec{0}$ in $W$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Linear transformation
+\begin{expandable}
+    A transformation $T:\RR^n\rightarrow \RR^m$ is called a \dfn{ linear transformation} if the following are true for all vectors $\vec{u}$ and $\vec{v}$ in $\RR^n$, and scalars $k$.
+$$T(k\vec{u})= kT(\vec{u})$$
+
+$$T(\vec{u}+\vec{v})= T(\vec{u})+T(\vec{v})$$
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+Standard matrix of a linear transformation
+\begin{expandable}
+    Let $T:\RR^n\rightarrow\RR^m$ be a linear transformation.  Then the matrix
+ 
+ $$A=\begin{bmatrix}
+           | & |& &|\\
+		T(\vec{e}_1) & T(\vec{e}_2)&\dots &T(\vec{e}_n)\\
+		|&| & &|
+         \end{bmatrix}
+$$
+is known as the \dfn{standard matrix of the linear transformation} $T$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
+
+
+
+\end{document}

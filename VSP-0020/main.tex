@@ -1,0 +1,293 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+ \title{$\mathbb{R}^n$ and Subspaces of $\mathbb{R}^n$} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+\begin{onlineOnly}
+\section*{$\mathbb{R}^n$ and Subspaces of $\mathbb{R}^n$}
+\end{onlineOnly}
+
+
+We are familiar with two operations that can be applied to vectors in $\RR^n$, namely, addition and scalar multiplication. We learned that addition and scalar multiplication satisfy many nice properties (see Theorem \ref{th:vecproperties}). These properties give $\RR^n$ an algebraic structure.  We begin this section by introducing another property, called \dfn{closure}.  Adding closure to the properties we studied earlier allows us to show that $\RR^n$ satisfies all of the properties of a \dfn{vector space}.  
+
+\subsection*{Closure}
+ \begin{definition} \label{def:closedunderaddition}
+  A set $V$ is said to be \dfn{closed under addition} if for each element $\vec{u} \in V$ and $\vec{v} \in V$ the sum $\vec{u}+\vec{v}$ is also in $V$.
+\end{definition}
+
+  \begin{definition} \label{def:closedunderscalarmult}
+  A set $V$ is said to be \dfn{closed under scalar multiplication} if for each element $\vec{v} \in V$  and for each scalar $k \in \RR$ the product $k\vec{v}$ is also in $V$.
+\end{definition}
+
+
+\begin{example}\label{ex:posevenint}
+Let $E$ be the set of positive even integers.  Then $E$ is closed under addition, because the sum of two even integers is again an even integer.
+\end{example}
+
+\begin{example}\label{ex:posoddint}
+Let $D$ be the set of positive odd integers.  Then $D$ is not closed under addition, for the sum of two odd integers need not be an odd integer (in fact, it will always be even).
+\end{example}
+
+\begin{example} \label{ex:Q1}
+Let $X_1$ be defined as follows.
+$$X_1=\left\{\begin{bmatrix} x_1\\x_2\end{bmatrix} \in \mathbb{R}^2 : x_1 \ge 0, x_2 \ge 0 \right\}$$
+In other words, $X_1$ is the set of vectors in $\mathbb{R}^2$ in the first quadrant (or on an axis on the boundary of the first quadrant). Show that $X_1$ is closed under addition, but $X_1$ is not closed under scalar multiplication.
+\begin{explanation} Suppose $\vec{v}_1=\begin{bmatrix}a\\b\end{bmatrix}$ and $\vec{v}_2=\begin{bmatrix}c\\d\end{bmatrix}$ are in $X_1$.  This means that $a, b, c, d\geq 0$.  But then we have $a+c, b+d\geq 0$.  Therefore $\vec{v}_1+\vec{v}_2=\begin{bmatrix}a+c\\b+d\end{bmatrix}$ is also in $X_1$. We conclude that $X_1$ is closed under addition.
+
+$X_1$ is not closed under scalar multiplication because $(-1)\vec{v}_1=\begin{bmatrix}-a\\-b\end{bmatrix}$ is not in $X_1$.
+
+The figure below helps us see that the sum of any two vectors in $X_1$ also lies in $X_1$, but any negative scalar multiple of a vector in $X_1$ does not lie in $X_1$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[thin,gray!40] (-4,-4) grid (4,4);
+  \draw[<->] (-4,0)--(4,0);
+  \draw[<->] (0,-4)--(0,4);
+  \filldraw[blue, opacity=0.3](0,0)--(4,0)--(4,4)--(0,4)--cycle;
+\draw[line width=2pt,red,-stealth](0,0)--(2,1) ;
+ \draw[line width=2pt,blue,-stealth](0,0)--(1,3) ;
+  \draw[line width=2pt,-stealth](0,0)--(3,4); 
+\end{tikzpicture}\quad
+\begin{tikzpicture}[scale=0.7]
+\draw[thin,gray!40] (-4,-4) grid (4,4);
+  \draw[<->] (-4,0)--(4,0);
+  \draw[<->] (0,-4)--(0,4);
+  
+  \filldraw[blue, opacity=0.3](0,0)--(4,0)--(4,4)--(0,4)--cycle;
+\draw[line width=2pt,red,-stealth](0,0)--(2,1) ;
+ \draw[line width=2pt,blue,-stealth](0,0)--(1,3) ;
+ \draw[line width=2pt,red,dashed,-stealth](0,0)--(-2,-1) ;
+ \draw[line width=2pt,blue,dashed,-stealth](0,0)--(-1,-3) ;
+
+\end{tikzpicture}
+\end{center}
+\end{explanation}
+\end{example}
+
+\begin{example} \label{ex:Q1-3}
+Let $X_1$ be as in Example \ref{ex:Q1}.  Let $$X_3=\left\{\begin{bmatrix} x_1\\x_2\end{bmatrix} \in \mathbb{R}^2 : x_1 \le 0, x_2 \le 0 \right\}$$
+In other words, $X_3$ is the set of vectors in $\RR^2$ in the third quadrant (or on an axis on the boundary of the third quadrant).  Now let 
+$$Y = X_1 \bigcup X_3$$ 
+In other words, $Y$ is the set of vectors in $\RR^2$ that are either in the first quadrant, the third quadrant, or lie along one of the axes, as shown below.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[thin,gray!40] (-4,-4) grid (4,4);
+  \draw[<->] (-4,0)--(4,0);
+  \draw[<->] (0,-4)--(0,4);
+  \filldraw[blue, opacity=0.3](0,0)--(4,0)--(4,4)--(0,4)--cycle;
+\filldraw[blue, opacity=0.3](0,0)--(-4,0)--(-4,-4)--(0,-4)--cycle;
+\end{tikzpicture}
+\end{center}
+Then $Y$ is closed under scalar multiplication, but $Y$ is not closed under addition.
+\end{example}
+
+\subsection*{$\RR^n$ as a Vector Space}
+
+In Theorem \ref{th:vecproperties} we learned that vector addition and scalar multiplication in $\RR^n$ satisfy the following eight properties:
+
+For all vectors $\vec{u}$, $\vec{v}$, $\vec{w}\in\RR^n$, and scalars $k, p\in\RR$,
+\begin{enumerate}
+ \item 
+  Commutative Property of Addition:\quad
+  $\vec{u}+\vec{v}=\vec{v}+\vec{u}$
+  \item 
+  Associative Property of Addition:\quad
+  $(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})$
+  \item 
+  Existence of Additive Identity:\quad
+  $\vec{u}+\vec{0}=\vec{u}$
+  \item 
+  Existence of Additive Inverse:\quad
+  $\vec{u}+(-\vec{u})=\vec{0}$
+  \item
+  Distributive Property over Vector Addition:\quad
+  $k(\vec{u}+\vec{v})=k\vec{u}+k\vec{v}$
+  \item
+  Distributive Property over Scalar Addition:\quad
+  $(k+p)\vec{u}=k\vec{u}+p\vec{u}$
+  \item 
+  Associative Property for Scalar Multiplication:\quad
+  $k(p\vec{u})=(kp)\vec{u}$
+  \item 
+  Multiplication by $1$:\quad
+  $1\vec{u}=\vec{u}$
+  \end{enumerate}
+
+  In addition, observe that  
+  \begin{itemize}
+      \item[]  $\RR^n$ is closed under addition (Why?)
+      \item[] $\RR^n$ is closed under scalar multiplication (Why?)
+\end{itemize}      
+      The eight properties of vector operations, together with closure, constitute the criteria for a set with two operations to be considered a \dfn{vector space}. So, $\RR^n$ is a vector space.  
+      
+      We will encounter other vector spaces later. Any vector space must be closed under both of its operations, and must satisfy the other eight properties in the list above.  We will see (in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0050/main}{Abstract Vector Spaces}, for instance) that a wide variety of sets, with a wide variety of operations, are vector spaces (one important reason to study linear algebra).  As we shall see, these sets and their operations may look very different, but the behavior of the elements under the two operations makes them vector spaces.  For now, we simply focus on $\RR^n$.
+
+
+\subsection*{Subspaces of $\RR^n$}
+
+Now that we understand what it means for a set to be closed under addition and scalar multiplication, we are ready for the main definition.
+
+\begin{definition}\label{def:subspace} Suppose that $V$ is a nonempty subset of $\RR^n$ that is closed under addition and closed under scalar multiplication.  Then $V$ is a \dfn{subspace} of $\RR^n$.
+\end{definition}
+We use the term \dfn{subspace} because it turns out that any subset of $\RR^n$ closed under both addition and scalar multiplication is also a vector space.  In other words, by inheriting vector addition and scalar multiplication from $\RR^n$, and satisfying the properties of closure, a subset of $\RR^n$ will automatically satisfy all vector space properties.  We will prove this in Theorem \ref{th:subspacetestabstract} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0050/main}{Abstract Vector Spaces}.
+
+\begin{example} \label{y-axis_subspace}
+Let $V$ be the set of vectors in $\RR^3$ on the $y-$axis.  Then $V$ is a subspace of $\RR^3$.  
+
+\begin{explanation}
+To verify this, note that any vector in $V$ is of the form $\begin{bmatrix}0\\y\\0 \end{bmatrix}$.  If we multiply such a vector by a scalar $c$, we get a vector of the form $\begin{bmatrix}0\\cy\\0 \end{bmatrix}$, which is clearly still in $V$.  This proves $V$ is closed under scalar multiplication.  Next, note that $\begin{bmatrix}0\\y_1\\0 \end{bmatrix} + \begin{bmatrix}0\\y_2\\0 \end{bmatrix}= \begin{bmatrix}0\\y_1 + y_2\\0\end{bmatrix}$, so $V$ is closed under addition.
+\end{explanation}
+\end{example}
+
+
+Recall that the \dfn{span} of a set of vectors is the set of all linear combinations of those vectors (see Definition \ref{def:span}).  It is easy to see from this definition, that the span of any set of vectors in $\RR^n$ must be closed under both addition and scalar multiplication, and therefore the span of those vectors is a subspace of $\RR^n$.  This argument proves the following result, giving us an abundance of examples of subspaces:
+
+\begin{theorem} \label{th:span_is_subspace}
+Let $S$ be any set of vectors in $\RR^n$.  Then $\mbox{span}(S)$ is a subspace of $\RR^n$.
+\end{theorem}
+
+In particular, if we take $S$ to be the single vector $\vec{v}$, we have that $\text{span}(\vec{v})$ is a subspace of $\RR^n$.  Geometrically, this subspace is a line in the direction of the vector $\vec{v}$.  Similarly, the span of two vectors is a subspace of $\RR^n$.  If the two vectors are linearly independent, then the subspace is a plane in $\RR^n$. 
+
+Not every line or plane in $\RR^n$ is a subspace, however.  The following important result provides us with a quick way to determine that some subsets are not subspaces.
+
+\begin{theorem} \label{th:zero_in_subspace}
+If $V$ is a subspace of $\RR^n$, then the zero vector $\vec{0}$ is in $V$.
+\end{theorem}
+\begin{proof} 
+Take any vector $\vec{v}$ in $V$, and note that $0 \vec{v} = \vec{0}$ is in $V$ because $V$ is closed under scalar multiplication.
+\end{proof}
+
+Theorem \ref{th:zero_in_subspace} shows that the only lines in $\RR^n$ that are subspaces are those that pass through the origin.  The same holds true for planes and hyperplanes.  For example, the plane $z=3$ in $\RR^3$ is not a subspace of $\RR^3$, while any plane containing the origin is a subspace.
+
+\begin{theorem} \label{th:opposite_in_subspace}
+If $V$ is a subspace of $\RR^n$, then for any vector $\vec{v} \in V$, the opposite vector, $-\vec{v}$, is also in $V$.
+\end{theorem}
+
+The proof is similar to what was done for the previous theorem and is left as an exercise.
+
+\section*{Practice Problems}
+
+\emph{Problems \ref{prob:Y^+1}-\ref{prob:Y^+2}}
+Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are non-negative.    
+ \begin{problem}\label{prob:Y^+1}
+ Is $Y^+$ closed under vector addition?
+ 
+ \begin{multipleChoice}
+ \choice[correct]{Yes}
+ \choice{No}
+ \end{multipleChoice}
+ \end{problem}
+ 
+ \begin{problem}\label{prob:Y^+2}
+ Is $Y^+$ closed under scalar multiplication?
+ 
+  \begin{multipleChoice}
+ \choice{Yes}
+ \choice[correct]{No}
+ \end{multipleChoice}
+    \end{problem}
+
+
+
+\emph{Problems \ref{pr:R^3axes1}-\ref{pr:R^3axes2}}
+ Let $X$ be the set of all vectors in $\RR^3$ that lie on either the $x$-axis, the $y$-axis, or the $z$-axis.    
+ 
+ 	\begin{problem}\label{pr:R^3axes1}
+  Is $X$ closed under vector addition?
+  
+  \begin{multipleChoice}
+ \choice{Yes}
+ \choice[correct]{No}
+ \end{multipleChoice}
+ 
+ 	\end{problem}
+ 	\begin{problem}\label{pr:R^3axes2}
+ Is $X$ closed under scalar multiplication?
+ 
+ \begin{multipleChoice}
+ \choice[correct]{Yes}
+ \choice{No}
+ \end{multipleChoice}
+ 	\end{problem}
+
+
+\emph{Problems \ref{prob:closedmultchoice1}-\ref{prob:closedmultchoice2}}
+For each figure below, determine whether the set $V$ of vectors shown in the figure is closed under vector addition and scalar multiplication.  Justify your responses.
+  
+\begin{problem}\label{prob:closedmultchoice1} 
+$V$ consists of all vectors in $\mathbb{R}^3$ in a slanted half-plane which has the $x$-axis as a boundary.
+
+\tdplotsetmaincoords{70}{130}
+\begin{tikzpicture}[scale=0.8]
+	\draw[->](-4,0,0)--(1,0,0); %y
+    \draw[->](0,-2,0)--(0,3,0) ;%z
+    \draw[->](0,0,-2)--(0,0,5) ;%x
+      \filldraw[blue, opacity=0.3] (0,0,-1)--(-3,3,-1)--(-3,3,4)--(0,0,4)--cycle;
+     
+    
+   % \draw[->, line width=2pt,red, -stealth](0,0,0)--(2,3,0);
+    % \draw[->, line width=2pt,blue, -stealth](0,0,0)--(0,2,2.5);
+    
+\end{tikzpicture}
+
+Is $V$ closed under scalar multiplication?
+ 
+ \begin{multipleChoice}
+ \choice{Yes}
+ \choice[correct]{No}
+ \end{multipleChoice}
+ 
+ Is $V$ closed under addition?
+ 
+ \begin{multipleChoice}
+ \choice[correct]{Yes}
+ \choice{No}
+ \end{multipleChoice}
+\end{problem}
+
+\begin{problem} \label{prob:closedmultchoice2}
+$V$ consists of all vectors along the line, as shown.
+
+\begin{tikzpicture}[scale=0.5]
+
+  \draw[<->] (-4,0)--(4,0);
+  \draw[<->] (0,-4)--(0,4);
+  \draw[->,line width=2pt,blue, -stealth] (0,0)--(2,4);
+  \draw[->,line width=2pt,blue, -stealth] (0,0)--(-2,-4);
+  \draw[->,line width=2pt,blue, -stealth] (0,0)--(1,2);
+  \draw[->,line width=2pt,blue, -stealth] (0,0)--(-1,-2);
+  
+ \end{tikzpicture}
+ 
+ Is $V$ closed under scalar multiplication?
+ 
+ \begin{multipleChoice}
+ \choice[correct]{Yes}
+ \choice{No}
+ \end{multipleChoice}
+ 
+ Is $V$ closed under addition?
+ 
+ \begin{multipleChoice}
+ \choice[correct]{Yes}
+ \choice{No}
+ \end{multipleChoice}
+\end{problem}    
+
+
+\begin{problem}\label{prob:opposite_in_subspace}
+Prove Theorem \ref{th:opposite_in_subspace}.
+\end{problem}
+
+\begin{problem}\label{prob:null(A)_is_subspace}
+Let $A$ be an $m \times n$ matrix.  Let $V$ be the subset of $\RR^n$ consisting of all vectors $\vec{x}$ such that $A \vec{x} = \vec{0}$.  Prove that $V$ is a subspace of $\RR^n$.  (Note that this subspace is called the null space of the matrix $A$ and we will denote it $\mbox{null}(A)$.)
+\end{problem}
+
+\end{document}

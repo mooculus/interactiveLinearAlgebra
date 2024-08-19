@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+\author{}
+\license{Creative Commons 4.0 By-NC-SA}
+%\outcome{Compute an antiderivative using basic formulas}
+\begin{document}
+\begin{exercise}
+Consider matrix $A$ and $\text{rref}(A)$ shown below.
+$$A=\begin{bmatrix}1&2&1&0&-1\\1&2&2&3&0\\0&0&1&3&1\end{bmatrix}\rightsquigarrow\begin{bmatrix}1&2&0&-3&-2\\0&0&1&3&1\\0&0&0&0&0\end{bmatrix}=\mbox{rref}(A)$$
+Find each of the following:
+$$\text{rank}(A)=\answer{2}$$
+$$\text{dim}\left(\text{row}(A)\right)=\answer{2}$$
+$$\text{dim}\left(\text{col}(A)\right)=\answer{2}$$
+$$\text{dim}\left(\text{null}(A)\right)=\answer{3}$$
+
+Select an appropriate basis for $\text{row}(A)$.
+\begin{multipleChoice}
+ \choice{$\left\{ \begin{bmatrix}1&2&1&0&-1\end{bmatrix}, \begin{bmatrix}1&2&2&3&0\end{bmatrix}, \begin{bmatrix}0&0&1&3&1\end{bmatrix}\right\}$}
+ \choice{$\left\{ \begin{bmatrix}1&2&0&-3&-2\end{bmatrix}, \begin{bmatrix}0&0&1&3&1\end{bmatrix}, \begin{bmatrix}0&0&0&0&0\end{bmatrix}\right\}$}
+  \choice[correct]{$\left\{ \begin{bmatrix}1&2&0&-3&-2\end{bmatrix}, \begin{bmatrix}0&0&1&3&1\end{bmatrix}\right\}$}
+ \end{multipleChoice}
+
+ Using the algorithm in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0040/main}{Subspaces of $\RR^n$ Associated with Matrices}, find a basis for $\text{col}(A)$.
+
+ $$\left\{\begin{bmatrix}\answer{1}\\\answer{1}\\\answer{0}\end{bmatrix}, \begin{bmatrix}\answer{1}\\\answer{2}\\\answer{1}\end{bmatrix}\right\}$$
+
+\end{exercise}
+\end{document}
