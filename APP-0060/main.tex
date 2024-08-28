@@ -9,7 +9,10 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Application to Markov Chains}
+\end{onlineOnly}
+
 Many natural phenomena progress through various stages and can be in a variety of states at each stage. For example, the weather in a given city progresses day by day and, on any given day, may be sunny or rainy. Here the states are ``sun'' and ``rain,'' and the weather progresses from one state to another in daily stages. Another example might be a football team: The stages of its evolution are the games it plays, and the possible states are ``win,'' ``draw,'' and ``loss.''
 
 
@@ -477,8 +480,10 @@ The solution is ${\bf s} = \begin{bmatrix}
 
 \section*{Practice Problems}
 
-\begin{problem}
+\emph{Problems \ref{prob:RegOrNot1}-\ref{prob:RegOrNot2}}
+
 Which of the following stochastic matrices is regular?
+
 \begin{problem}\label{prob:RegOrNot1}
 $\begin{bmatrix}
 0 & 0 & \frac{1}{2} \\
@@ -490,6 +495,7 @@ $\begin{bmatrix}
  \choice[correct]{Not regular}
  \end{multipleChoice}
 \end{problem}
+
 \begin{problem}\label{prob:RegOrNot2}
 $\begin{bmatrix}
 \frac{1}{2} & 0 & \frac{1}{3} \\
@@ -501,9 +507,10 @@ $\begin{bmatrix}
  \choice[correct]{Not regular}
  \end{multipleChoice}
 \end{problem}
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:SteadyState&ProbVec1}-\ref{prob:SteadyState&ProbVec5}}
+
 In each case find the steady-state vector and, assuming that it starts in state 1, find the probability that it is in state 2 after $3$ transitions.
 
 \begin{problem}\label{prob:SteadyState&ProbVec1}
@@ -516,12 +523,14 @@ Steady state vector $ = \begin{bmatrix}
 \answer{\frac{1}{3}}
 \end{bmatrix}$, probability $ = \answer{\frac{3}{8}}$
 \end{problem}
+
 \begin{problem}\label{prob:SteadyState&ProbVec2}
 $$\begin{bmatrix}
 \frac{1}{2} & 1 \\
 \frac{1}{2} & 0
 \end{bmatrix}$$
 \end{problem}
+
 \begin{problem}\label{prob:SteadyState&ProbVec3}
 $$\begin{bmatrix}
 	0 & \frac{1}{2} & \frac{1}{4} \\
@@ -534,6 +543,7 @@ Steady state vector $ = \begin{bmatrix}
 \answer{\frac{1}{3}}
 \end{bmatrix}$, probability $ = \answer{0.312}$
 \end{problem}
+
 \begin{problem}\label{prob:SteadyState&ProbVec3a}
 $$\begin{bmatrix}
 0.4 & 0.1 & 0.5 \\
@@ -541,6 +551,7 @@ $$\begin{bmatrix}
 0.4 & 0.3 & 0.3
 \end{bmatrix}$$
 \end{problem}
+
 \begin{problem}\label{prob:SteadyState&ProbVec4}
 $$\begin{bmatrix}
 0.8 & 0.0 & 0.2 \\
@@ -553,6 +564,7 @@ Steady state vector = $\begin{bmatrix}
 \answer{\frac{2}{5}}
 \end{bmatrix}$, probability $ = \answer{0.306}$
 \end{problem}
+
 \begin{problem}\label{prob:SteadyState&ProbVec5}
 $$\begin{bmatrix}
 0.1 & 0.3 & 0.3 \\
@@ -560,19 +572,23 @@ $$\begin{bmatrix}
 0.6 & 0.6 & 0.1
 \end{bmatrix}$$
 \end{problem}
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:fox1}-\ref{prob:fox2}}
+
 A fox hunts in three territories $A$, $B$, and $C$. He never hunts in the same territory on two successive days. If he hunts in $A$, then he hunts in $C$ the next day. If he hunts in $B$ or $C$, he is twice as likely to hunt in $A$ the next day as in the other territory.
+
 \begin{problem}\label{prob:fox1}
 What proportion of his time does he spend in $A$, in $B$, and in $C$?
 \end{problem}
+
 \begin{problem}\label{prob:fox2}
 If he hunts in $A$ on Monday ($C$ on Monday), what is the probability that he will hunt in $B$ on Thursday?
 \end{problem}
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:SocialClass1}-\ref{prob:SocialClass2}}
+
 Assume that there are three social classes---upper, middle, and lower---and that social mobility behaves as follows:
 
 \begin{enumerate}
@@ -582,15 +598,17 @@ Assume that there are three social classes---upper, middle, and lower---and that
 
 \item For the children of lower-class parents, $60\%$ remain lower-class, whereas $30\%$ become middle-class and $10\%$ upper-class.
 \end{enumerate}
+
 \begin{problem}\label{prob:SocialClass1}
 Find the probability that the grandchild of lower-class parents becomes upper-class.
 \end{problem}
+
 \begin{problem}\label{prob:SocialClass2}
 Find the long-term breakdown of society into classes.
 $\answer{50}\%$ middle, $\answer{25}\%$ upper, $\answer{25}\%$ lower
 \end{problem}
 
-\end{problem}
+
 
 \begin{problem}\label{prob:election}
 The prime minister says she will call an election. This gossip is passed from person to person with a probability $p \neq 0$ that the information is passed incorrectly at any stage. Assume that when a person hears the gossip he or she passes it to one person who does not know. Find the long-term probability that a person will hear that there is going to be an election.
@@ -605,7 +623,8 @@ Probability of being late $= \answer{\frac{7}{16}}$, Probability of being on tim
 Suppose you have $1$ cent and match coins with a friend. At each match you either win or lose $1$ cent \ with equal probability. If you go broke or ever get $4$ cents, you quit. Assume your friend never quits. If the states are 0, 1, 2, 3, and 4 representing your wealth, show that the corresponding transition matrix $P$ is not regular. Find the probability that you will go broke after $3$ matches.
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:mouse1}-\ref{prob:mouse2}}
+
 A mouse is put into a maze of compartments, as in the diagram. Assume that he always leaves any compartment he enters and that he is equally likely to take any tunnel entry.
 
 %\begin{figure}[H]
@@ -618,6 +637,7 @@ A mouse is put into a maze of compartments, as in the diagram. Assume that he al
 If he starts in compartment 1, find the probability that he is in compartment 1 again after $3$ moves.
 $\answer{\frac{7}{75}}$
 \end{problem}
+
 \begin{problem}\label{prob:mouse2} 
 Find the compartment in which he spends most of his time if he is left for a long time.
 He spends most of his time in compartment $\answer{3}$.  The steady state vector is $\begin{bmatrix}
@@ -628,7 +648,7 @@ He spends most of his time in compartment $\answer{3}$.  The steady state vector
 \answer{1/8}
 \end{bmatrix}$
 \end{problem}
-\end{problem}
+
 
 \begin{problem}\label{prob:stochastic1} 
 If a stochastic matrix has a $1$ on its main diagonal, show that it cannot be regular. Assume it is not $1 \times 1$.
