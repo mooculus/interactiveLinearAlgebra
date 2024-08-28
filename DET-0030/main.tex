@@ -10,7 +10,10 @@
  \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Elementary Row Operations and the Determinant}
+\end{onlineOnly}
+
 When we first introduced the determinant we motivated its definition for a $2\times 2$ matrix by the fact that the value of the determinant is zero if and only if the matrix is singular.  We will soon be able to generalize this result to larger matrices, and will eventually establish a formula for the inverse of a nonsingular matrix in terms of determinants.  
 
 Recall that we can find the inverse of a matrix or establish that the inverse does not exist by using elementary row operations to carry the given matrix to its reduced row-echelon form.  In order to start relating determinants to inverses we need to find out what elementary row operations do to the determinant of a matrix.  
@@ -201,8 +204,9 @@ $$\begin{array}{|c|c|}
 \end{example}
 
 
-
 \section*{Practice Problems}
+
+
 
 % \begin{problem}\label{prob:proofofrowswapanddet}
 % Complete the proof of Theorem \ref{th:elemrowopsanddet}\ref{item:rowswapanddet} by showing that the result holds for a $2\times 2$ matrix.
@@ -238,7 +242,7 @@ Apply \ref{item:rowconstantmultanddet} of Theorem \ref{th:elemrowopsanddet} to a
 Prove that if one row of a matrix is a linear combination of two other rows of the matrix, then the determinant of the matrix is 0.
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:elemrowopsdet1}-\ref{prob:elemrowopsdet2}}
 Find $\det{A}$ using elementary row operations.
 
 \begin{problem}\label{prob:elemrowopsdet1}
@@ -253,9 +257,9 @@ Answer:
 $$\det{A}=\answer{0}$$
 \end{problem}
 
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:elemmatdet1}-\ref{prob:elemmatdet3}}
 Each of the following matrices is an elementary matrix. 
 \begin{hint}
 See Definition \ref{def:elemmatrix}.
@@ -284,6 +288,4 @@ See Definition \ref{def:elemmatrix}.
    Answer: $$\det{E_3}=\answer{-1}$$
   \end{problem}
   
-\end{problem}
-
 \end{document} 
