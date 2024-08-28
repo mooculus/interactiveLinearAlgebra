@@ -11,17 +11,25 @@
 \maketitle
 
 
+\begin{onlineOnly}
+\section*{INDEX}
+\end{onlineOnly}
 
-\section{INDEX}
 A hyperlinked term will take you to the section where the term is defined.  Parenthetical hyperlink will take you to the specific definition or formula in the section.  Use arrows on the right to display the definition or formula in the index.
 \subsection{A}
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0030/main}{addition of vectors}
 
 %adjoint of a matrix
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0060/main}{adjugate of a matrix}
+adjugate of a matrix (the term \emph{adjoint} is also sometimes used) (\ref{th:adjugateinverseformula})
+\begin{expandable}
+    The transpose of the matrix of cofactors of a matrix - it is part of a formula for the inverse of a matrix.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0020/main}{algebraic multiplicity of an eigenvalue}
+\begin{expandable}
+    The multiplicity of an eigenvalue as a root of the characteristic equation.
+\end{expandable}
 
 associated homogeneous system (\ref{def:asshomsys})
 \begin{expandable}
@@ -29,11 +37,38 @@ associated homogeneous system (\ref{def:asshomsys})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{augmented matrix}
+\begin{expandable}
+    Every linear system 
+$$\begin{array}{ccccccccc}
+      a_{11}x_1 &+ &a_{12}x_2&+&\ldots&+&a_{1n}x_n&= &b_1 \\
+	 a_{21}x_1 &+ &a_{22}x_2&+&\ldots&+&a_{2n}x_n&= &b_2 \\
+     &&&&\vdots&&&& \\
+     a_{m1}x_1 &+ &a_{m2}x_2&+&\ldots&+&a_{mn}x_n&= &b_m
+    \end{array}$$
+    can be written in the \dfn{augmented matrix form} as follows:
+    $$\left[\begin{array}{cccc|c}  
+ a_{11}&a_{12}&\ldots&a_{1n}&b_1\\a_{21}&a_{22}&\ldots&a_{2n}&b_2\\\vdots&\vdots&\ddots&\vdots&\vdots\\a_{m1}&a_{m2}&\ldots&a_{mn}&b_m
+ \end{array}\right]$$
+ The array to the left of the vertical bar is called the \dfn{coefficient matrix} of the linear system and is often given a capital letter name, like $A$.  The vertical array to the right of the bar is called a \dfn{constant vector}.
+ $$A=\begin{bmatrix}a_{11}&a_{12}&\ldots&a_{1n}\\a_{21}&a_{22}&\ldots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\ldots&a_{mn}\end{bmatrix}\quad\text{and}\quad\vec{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_m\end{bmatrix}$$
+We will sometimes use the following notation to represent an augmented matrix.
 
+$$\left[\begin{array}{c|c}  
+ A & \vec{b}\\
+ \end{array}\right]$$
+\end{expandable}
 
 \subsection{B}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{back substitution}
+\begin{expandable}
+When a matrix is in row-echelon form, we can compute the solution to the system by starting from the last equation and working backwards.  This process is known as \dfn{back substitution}.
+\end{expandable}
+
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{basic variable} (also called a \dfn{leading variable}
+\begin{expandable}
+    When a coefficient matrix is in row echelon form, a \dfn{basic variable} is a variable corresponding to a column of the matrix with at least one leading entry.
+\end{expandable}
 
 basis (\ref{def:basis})
 \begin{expandable}
@@ -49,6 +84,9 @@ $\mathcal{S}$ is linearly independent.
 %Basis Theorem
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0023/main}{block matrices}
+\begin{expandable}
+    Subdividing a matrix into submatrices using imaginary horizontal and vertical lines - used to multiply matrices more efficiently.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0070/main}{box product}
 
@@ -66,6 +104,10 @@ $$\mbox{det}(A-\lambda I) = 0$$ is called the \dfn{characteristic equation} of $
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0020/main}{characteristic polynomial}
+\begin{expandable}
+    The polynomial 
+$$\mbox{det}(A-\lambda I)$$ is called the \dfn{characteristic equation} of $A$. 
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0045/main}{Cholesky factorization}
 
@@ -82,12 +124,26 @@ closed under scalar multiplication (\ref{def:closedunderscalarmult})
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0010/main}{codomain of a linear transformation}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{coefficient matrix}
+\begin{expandable}
+    A \dfn{coefficient matrix} is a matrix whose entries are the coefficients of a system of linear equations.  For the system $$\begin{array}{ccccccccc}
+      a_{11}x_1 &+ &a_{12}x_2&+&\ldots&+&a_{1n}x_n&= &b_1 \\
+	 a_{21}x_1 &+ &a_{22}x_2&+&\ldots&+&a_{2n}x_n&= &b_2 \\
+     &&&&\vdots&&&& \\
+     a_{m1}x_1 &+ &a_{m2}x_2&+&\ldots&+&a_{mn}x_n&= &b_m
+    \end{array},$$ 
+    the \dfn{coefficient matrix} is $A=\begin{bmatrix}a_{11}&a_{12}&\ldots&a_{1n}\\a_{21}&a_{22}&\ldots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\ldots&a_{mn}\end{bmatrix}$.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0010/main}{cofactor expansion}
+\begin{expandable}
+    A method to compute $\mbox{det} A$ using determinants of minor matrices associated with one row or one column.
+\end{expandable}
 
-%cofactor of a square matrix %see 7.6 LaPlace Expansion
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{column matrix (vector)}
+\begin{expandable}
+    A matrix with $m$ rows and only 1 column.
+\end{expandable}
 
 column space of a matrix (\ref{def:colspace})
 \begin{expandable}
@@ -98,15 +154,29 @@ composition of linear transformations (\ref{def:compoflintrans})
 \begin{expandable}
     Let $U$, $V$ and $W$ be vector spaces, and let $T:U\rightarrow V$ and $S:V\rightarrow W$ be linear transformations.  The \dfn{composition} of $S$ and $T$ is the transformation $S\circ T:U\rightarrow W$ given by
 $$(S\circ T)(\vec{u})=S(T(\vec{u}))$$
+
+The matrix of a composition is the product of the matrices corresponding to the transformations in the composition, in the same order.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0010/main}{consistent system}
+\begin{expandable}
+    A system of equations that has at least one solution.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{convergence}
+\begin{expandable}
+    when the iterates of an iterative method approach a solution
+\end{expandable}
 
 coordinate vector with respect to a basis (\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0030/main}{in $\RR^n$}) (\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0060/main}{abstract vector spaces})
+\begin{expandable}
+    Let $\mathcal{B} = \{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ be an \underline{ordered} basis.  Then the \dfn{coordinate vector} $\vec{v}$ is the  column vector $\begin{bmatrix}c_1\\ c_2\\ \vdots \\c_k\end{bmatrix}$ such that $\vec{v} = c_1\vec{v}_1+c_2\vec{v}_2+\ldots +c_p\vec{v}_k$.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0060/main}{Cramer's Rule}
+\begin{expandable}
+    A method of solving systems of equations that uses determinants.
+\end{expandable}
 
 cross product (\ref{def:crossproduct})
 \begin{expandable}
@@ -116,48 +186,15 @@ $$\vec{u}\times\vec{v}=(u_2v_3-u_3v_2)\vec{i}-(u_1v_3-u_3v_1)\vec{j}+(u_1v_2-u_2
 \end{expandable}
 
 \subsection{D}
-determinant ($2\times 2$) (\ref{def:twodetcrossprod})
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0025/main}{determinant}
 \begin{expandable}
-    A $2\times 2$ \dfn{determinant} is a number associated with a $2\times 2$ matrix
-
-$$\det{\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}}=\begin{vmatrix}
-a & b\\
-c & d
-\end{vmatrix} =ad-bc$$
-\end{expandable}
-
-determinant ($3\times 3$) (\ref{def:threedetcrossprod})
-\begin{expandable}
-    A $3\times 3$ \dfn{determinant} is a number associated with a $3\times 3$ matrix
-$$\det{\begin{bmatrix}
-a_1 & a_2 & a_3\\
-b_1 & b_2 &b_3\\
-c_1 &c_2 &c_3
-\end{bmatrix}}=
-\begin{vmatrix}
-a_1 & a_2 & a_3\\
-b_1 & b_2 &b_3\\
-c_1 &c_2 &c_3
-\end{vmatrix} =a_1
-\begin{vmatrix}
-b_2 & b_3\\
-c_2 & c_3
-\end{vmatrix} -a_2
-\begin{vmatrix}
-b_1 & b_3\\
-c_1 & c_3
-\end{vmatrix} +a_3
-\begin{vmatrix}
-b_1 & b_2\\
-c_1 & c_2
-\end{vmatrix}
-$$
+    A function that assigns a scalar output to each square matrix $A$, denoted $\mbox{det} A$ - it is nonzero if and only if $A$ is invertible.  Geometrically speaking, the determinant of a linear transformation of a square matrix is the factor by which area (or volume or hypervolume) is scaled by the transformation.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0025/main}{diagonal matrix}
+\begin{expandable}
+    A matrix $A=[a_{ij}]$  where $a_{ij}=0$ whenever $i \ne j$
+\end{expandable}
 
 diagonalizable matrix (\ref{def:diagonalizable})
 \begin{expandable}
@@ -174,6 +211,11 @@ dimension (\ref{def:dimension}) (also see \ref{def:dimensionabstract})
 $$\mbox{dim}(V)=m$$
 \end{expandable}
 
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RRN-0010/main}{Dimensions of a matrix}
+\begin{expandable}
+    An $m \times n$ matrix is a matrix with $m$ rows and $n$ columns.
+\end{expandable}
+
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RRN-0020/main}{Direction vector}
 
 Distance between points in $\RR^n$ (\ref{form:distRn})
@@ -187,6 +229,9 @@ $$AB=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2+\ldots +(a_n-b_n)^2}$$
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0070/main}{Distance between point and line}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{divergence}
+\begin{expandable}
+    when the iterates of an iterative method fail to approach a solution
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0010/main}{domain of a linear transformation} 
 
@@ -201,12 +246,8 @@ Any corresponding eigenvector is called a \dfn{dominant eigenvector} of $A$.
 
 dot product (\ref{def:dotproduct})
 \begin{expandable}
- %   \begin{definition}
-  Let $\vec{u}$ and $\vec{v}$ be vectors in $\RR^n$.  The \dfn{dot
-    product} of $\vec{u}$ and $\vec{v}$, denoted by
-  $\vec{u}\dotp \vec{v}$, is given by
+Let $\vec{u}$ and $\vec{v}$ be vectors in $\RR^n$.  The \dfn{dot product} of $\vec{u}$ and $\vec{v}$, denoted by $\vec{u}\dotp \vec{v}$, is given by
 $$\vec{u}\dotp\vec{v}=\begin{bmatrix}u_1\\u_2\\\vdots\\u_n\end{bmatrix}\dotp\begin{bmatrix}v_1\\v_2\\\vdots\\v_n\end{bmatrix}=u_1v_1+u_2v_2+\ldots+u_nv_n$$
-%\end{definition}
 \end{expandable}
 
 
@@ -214,14 +255,14 @@ $$\vec{u}\dotp\vec{v}=\begin{bmatrix}u_1\\u_2\\\vdots\\u_n\end{bmatrix}\dotp\beg
 
 eigenspace (\ref{def:eigspace})
 \begin{expandable}
-    The set of all eigenvectors associated with a given eigenvalue of a matrix is known as the \dfn{eigenspace} associated with that eigenvalue.
+    If $\lambda$ is an eigenvalue of an $n \times n$ matrix, the set of all eigenvectors associated to $\lambda$ along with the zero vector is the \dfn{eigenspace} associated to $\lambda$.  The eigenspace is a subspace of $\RR^n$.
 \end{expandable}
 
 eigenvalue (\ref{def:eigen})
 \begin{expandable}
-    Let $A$ be an $n \times n$ matrix.  We say that a non-zero vector $\vec{x}$ is an \dfn{eigenvector} of $A$ if $$A\vec{x} = \lambda \vec{x}$$
-for some scalar $\lambda$.
-We say that $\lambda$ is an \dfn{eigenvalue} of $A$ associated with the eigenvector $\vec{x}$.
+    Let $A$ be an $n \times n$ matrix.  We say that a scalar $\lambda$ is an \dfn{eigenvalue} of $A$ if $$A\vec{x} = \lambda \vec{x}$$
+for some nonzero vector $x$.
+We say that $x$ is an \dfn{eigenvector} of $A$ associated with the eigenvalue $\lambda$.
 \end{expandable}
 
 eigenvalue decomposition (\ref{def:eigdecomposition})
@@ -258,7 +299,7 @@ $$R_j+kR_i\rightarrow R_j$$
 
 equivalent linear systems (\ref{def:equivsystems})
 \begin{expandable}
-    Two systems of linear equations are said to be equivalent if they have the same solution set.
+    Linear systems are called \dfn{equivalent} if they have the same solution set.
 \end{expandable}
 
 %Euclidean norm
@@ -267,16 +308,17 @@ equivalent linear systems (\ref{def:equivsystems})
 \subsection{F}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{free variable}
+\begin{expandable}
+    When a linear system is in row-echelon form, the variables corresponding to columns that do not have any leading coefficients (if there are any) are known as \dfn{free variables}.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0040/main}{fundamental subspaces of a matrix}
-
+(See also \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0020/main}{Orthogonal Complements and Decompositions}.)
+\begin{expandable}
+    $\mbox{null}(A)$ is the orthogonal complement of $\mbox{row}(A)$, and $\mbox{null}(A^T)$ is the orthogonal complement of $\mbox{col}(A)$
+\end{expandable}
 
 \subsection{G}
-
-Gaussian elimination (\ref{def:GaussianElimination})
-\begin{expandable}
-    The process of using the elementary row operations on a matrix to transform it into row-echelon form is called \dfn{Gaussian Elimination}.
-\end{expandable}
 
 Gauss-Jordan elimination (\ref{def:GaussJordanElimination})
 \begin{expandable}
@@ -284,16 +326,36 @@ Gauss-Jordan elimination (\ref{def:GaussJordanElimination})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{Gauss-Seidel method}
+\begin{expandable}
+    An iterative method for solving linear systems that is a refinement of the Jacobi method, where we use computed values of variables alternately for quicker convergence.
+\end{expandable}
+
+Gaussian elimination (\ref{def:GaussianElimination})
+\begin{expandable}
+    The process of using the elementary row operations on a matrix to transform it into row-echelon form is called \dfn{Gaussian Elimination}.
+\end{expandable}
 
 geometric multiplicity of an eigenvalue (\ref{def:geommulteig})
 \begin{expandable}
     The \dfn{geometric multiplicity} of an eigenvalue $\lambda$ is the dimension of the corresponding eigenspace $\mathcal{S}_\lambda$.
 \end{expandable}
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0080/main}{Gerschgorin's Disk Theorem}
+Gershgorin disk
+(\ref{th:Gershgorin})
+\begin{expandable}
+    A circle in the complex plane which has a diagonal entry of a matrix as its center and the sum of the absolute values of the other entries in that row (or column) as its radius.
+\end{expandable}
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0015/main}{Gram-Schmidt Process}
+Gershgorin's Theorem
+(\ref{th:Gershgorin})
+\begin{expandable}
+    \dfn{Gershgorin’s theorem} says that the $n$ eigenvalues of an $n \times n$ matrix can be found in the region in the complex plane consisting of the $n$ Gershgorin disks.
+\end{expandable}
 
+Gram-Schmidt process (\ref{th:GS})
+\begin{expandable}
+    An iterative process which constructs an orthogonal basis for a subspace. The idea is to build the orthogonal set one vector at a time, by taking a vector not in the span of the vectors in the current iteration of the set, and subtracting its orthogonal projection onto each of those vectors.
+\end{expandable}
 
 \subsection{H}
 % Head - Tail Formula (\ref{form:headminustailrn})
@@ -314,7 +376,8 @@ $$\begin{array}{ccccccccc}
 	 a_{21}x_1 &+ &a_{22}x_2&+&\ldots&+&a_{2n}x_n&= &0 \\
      &&&&\vdots&&&& \\
      a_{m1}x_1 &+ &a_{m2}x_2&+&\ldots&+&a_{mn}x_n&= &0
-    \end{array}$$
+    \end{array},$$
+or as a matrix equation as $A \vec{x} = \vec{0}$.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RRN-0030/main}{hyperplane}
@@ -322,6 +385,9 @@ $$\begin{array}{ccccccccc}
 \subsection{I}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0020/main}{identity matrix}
+\begin{expandable}
+    A square matrix with ones as diagonal entries and zeros for the remaining entries.
+\end{expandable}
 
 identity transformation (\ref{def:idtransonrn})
 \begin{expandable}
@@ -339,6 +405,9 @@ In other words, the image of $T$ consists of individual images of all vectors of
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0010/main}{inconsistent system}
+\begin{expandable}
+    A system of equations that has no solution.
+\end{expandable}
 
 inner product (\ref{def:innerproductspace})
 \begin{expandable}
@@ -369,7 +438,7 @@ inverse of a square matrix (\ref{def:matinverse})
 \begin{expandable}
     Let $A$ be an $n\times n$ matrix.  An $n\times n$ matrix $B$ is called an \dfn{inverse} of $A$ if 
 $$AB=BA=I$$
-where $I$ is an $n\times n$ identity matrix.  If such an inverse matrix exists, we say that $A$ is \dfn{invertible}.  If an inverse does not exist, we say that $A$ is not invertible.
+where $I$ is an $n\times n$ identity matrix.  If such an inverse matrix exists, we say that $A$ is \dfn{invertible}.  If an inverse does not exist, we say that $A$ is not invertible.  The inverse of $A$ is denoted by $A^{-1}$.
 \end{expandable}
 
 isomorphism (\ref{def:isomorphism})
@@ -379,12 +448,17 @@ isomorphism (\ref{def:isomorphism})
 
 %iterate
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{iterative methods}
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{iterative method}
+\begin{expandable}
+    A technique where we repeat the same procedure (called an \dfn{iteration}) many times (usually using a computer), and we obtain approximate solutions which we hope ``converge to'' the actual solution.
+\end{expandable}
 
 \subsection{J}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0040/main}{Jacobi's method}
-
+\begin{expandable}
+    An iterative method for solving a system of equations where one variable is isolated in each equation in order to compute the coordinate of the next iterate.
+\end{expandable}
 
 \subsection{K}
 
@@ -398,13 +472,19 @@ In other words, the kernel of $T$ consists of all vectors of $V$ that map to $\v
 \subsection{L}
 
 Laplace Expansion Theorem (\ref{th:laplace1})
+\begin{expandable}
+    The determinant of a matrix can be computed using cofactor expansion along ANY row or ANY column.
+\end{expandable}
 
 leading entry (leading 1) (\ref{def:leadentry})
 \begin{expandable}
     The first non-zero entry in a row of a matrix (when read from left to right) is called the \dfn{leading entry}.  When the leading entry is 1, we refer to it as a \dfn{leading 1}.
 \end{expandable}
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{leading variable}
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{leading variable} (also called a \dfn{basic variable}
+\begin{expandable}
+    When a coefficient matrix is in row echelon form, a \dfn{leading variable} is a variable corresponding to a column of the matrix with at least one leading entry.
+\end{expandable}
 
 % least squares error %wait and see
 
@@ -458,6 +538,9 @@ If, in addition to the trivial solution, a \dfn{non-trivial solution} (not all $
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0070/main}{lower triangular matrix}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0070/main}{LU factorization}
+\begin{expandable}
+    A factorization $A=LU$ where $L$ is lower triangular and $U$ is upper triangular with ones on the diagonal (called unit upper triangluar).  It is useful for solving $Ax=b$.
+\end{expandable}
 
 \subsection{M}
 Magnitude of a vector (\ref{def:normrn})
@@ -471,6 +554,9 @@ $$  \norm{\vec{v}}=\sqrt{v_1^2+v_2^2+\ldots +v_n^2}$$
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{main diagonal}
     
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{matrix}
+\begin{expandable}
+    A rectangular array of numbers.  It has $m$ rows and $n$ columns for some positive integers $m$ and $n$.
+\end{expandable}
 
 matrix addition (\ref{def:additionofmatrices})
 \begin{expandable}
@@ -487,11 +573,14 @@ that $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and
 $1\leq j\leq n$.
 \end{expandable}
 
-%matrix factorization
+matrix factorization (see \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0070/main}{LU factorization}, eigenvalue decomposition (\ref{def:eigdecomposition}), QR factorization (\ref{def:QR-factorization}), and \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0060/main}{singular value decomposition (SVD)}. 
+\begin{expandable}
+    Representing a matrix as a product of two or more matrices.
+\end{expandable}
 
 matrix multiplication (by a matrix) (\ref{def:matmatproduct})
 \begin{expandable}
-    Let $A$ be an $m\times n$ matrix whose rows are vectors $\vec{r}_1$, $\vec{r}_2,\ldots ,\vec{r}_n$.  Let $B$ be an $n\times p$ matrix with columns $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p$.  Then the entries of the matrix product $AB$ are given by the dot products
+    Let $A$ be an $m\times n$ matrix whose rows are vectors $\vec{r}_1$, $\vec{r}_2,\ldots ,\vec{r}_n$.  Let $B$ be an $n\times p$ matrix with columns $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p$.  Then the matrix product $AB$ is an $m \times p$ matrix with entries given by the dot products
 $$AB=\begin{bmatrix}-&\vec{r}_1&-\\-&\vec{r}_2&-\\ &\vdots & \\-&\vec{r}_i &-\\ &\vdots& \\-&\vec{r}_m&-\end{bmatrix}\begin{bmatrix}|&|&&|&&|\\\vec{b}_1& \vec{b}_2 &\ldots  & \vec{b}_j&\ldots& \vec{b}_p\\|&|&&|&&|\end{bmatrix}=$$
 $$=\begin{bmatrix}\vec{r}_1\dotp \vec{b}_1&\vec{r}_1\dotp \vec{b}_2&\ldots&\vec{r}_1\dotp \vec{b}_j&\ldots &\vec{r}_1\dotp \vec{b}_p\\\vec{r}_2\dotp \vec{b}_1&\vec{r}_2\dotp \vec{b}_2&\ldots&\vec{r}_2\dotp \vec{b}_j&\ldots &\vec{r}_2\dotp \vec{b}_p\\\vdots&\vdots&&\vdots&&\vdots\\\vec{r}_i\dotp \vec{b}_1&\vec{r}_i\dotp \vec{b}_2&\ldots&\vec{r}_i\dotp \vec{b}_j&\ldots &\vec{r}_i\dotp \vec{b}_p\\\vdots&\vdots&&\vdots&&\vdots\\\vec{r}_m\dotp \vec{b}_1&\vec{r}_m\dotp \vec{b}_2&\ldots&\vec{r}_m\dotp \vec{b}_j&\ldots &\vec{r}_m\dotp \vec{b}_p\end{bmatrix}
 $$
@@ -524,13 +613,24 @@ matrix of a linear transformation with respect to the given bases (\ref{def:matl
     Matrix $A$ of Theorem \ref{th:matlintransgeneral} is called the matrix of $T$ with respect to ordered bases $\mathcal{B}$ and $\mathcal{C}$.
 \end{expandable}
 
-%matrix powers (\ref{exp:motivate_diagonalization})
+matrix powers (\ref{exp:motivate_diagonalization})
+\begin{expandable}
+    If $A$ is a square matrix then we can define $A^k$ to be the result of multiplying $A$ by itself $k$ times.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0010/main}{minor of a square matrix}
 
 \subsection{N}
 
-%negative of a matrix
+negative of a matrix
+(\ref{th:propertiesofaddition})
+\begin{expandable}
+    The additive inverse of a matrix, formed by multiplying the matrix by the scalar $-1$.
+\end{expandable}
+
+\begin{tikzpicture}[scale=1]
+   \filldraw[teal, opacity=0.3](0,0)--(20,0)--(20,0.1)--(0,0.1)--cycle;
+ \end{tikzpicture}
 
 norm (\ref{def:030438})
 
@@ -544,7 +644,8 @@ nonsingular matrix (\ref{def:nonsingularmatrix})
 
 null space of a matrix (\ref{def:nullspace})
 \begin{expandable}
-    Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.
+    Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.   
+    It is a subspace of $\RR^n$.
 \end{expandable}
 
 nullity of a linear transformation (\ref{def:nullityT})
@@ -573,12 +674,18 @@ onto (\ref{def:onto})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0060/main}{ordered basis}
+\begin{expandable}
+    A basis in which the elements appear in a specific fixed order.  Establishing an order is necessary because a coordinate vector with respect to a given basis relies on the order in which the basis elements appear.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0010/main}{orthogonal basis}
-
-orthogonal complement of a subspace of $\RR^n$ (\ref{def:023776})
 \begin{expandable}
-    If $W$ is a subspace of $\RR^n$, define the \dfn{orthogonal complement} $W^\perp$ of $W$ (pronounced ``$W$-perp'') by
+    A set of orthogonal vectors that spans a subspace. (Any orthogonal set of vectors must be linearly independent by Theorem \ref{orthbasis}.)
+\end{expandable}
+
+orthogonal complement of a subspace (\ref{def:023776})
+\begin{expandable}
+    If $W$ is a subspace, we define the \dfn{orthogonal complement} $W^\perp$ as the set of all vectors orthogonal to every vector in $W$, i.e.,
 \begin{equation*}
 W^\perp = \{\vec{x} \in\RR^n \mid \vec{x} \dotp \vec{y} = 0 \mbox{ for all } \vec{y} \in W\}
 \end{equation*}
@@ -591,7 +698,7 @@ Orthogonal Decomposition Theorem (\ref{th:OrthoDecomp})
 
 orthogonal matrix (\ref{def:orthogonal matrices})
 \begin{expandable}
-    An $n \times n$ matrix $Q$ is called an \dfn{orthogonal matrix} if it satisfies one (and hence all) of the conditions in Theorem~\ref{th:orthogonal_matrices}.
+    An $n \times n$ matrix $Q$ is called an \dfn{orthogonal matrix} if its columns form an orthonormal set.  This will happen if and only if its rows form an orthonormal set.  Note also that $Q$ is an orthogonal matrix if and only if it is an invertible matrix such that $Q^{-1}=Q^{T}$.
 \end{expandable}
 
 Orthogonal projection onto a subspace of $\RR^n$ (\ref{def:projOntoSubspace})
@@ -632,6 +739,9 @@ orthogonally diagonalizable matrix (\ref{def:orthDiag})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0010/main}{orthonormal basis}
+\begin{expandable}
+    A set of orthonormal vectors that spans a subspace. (Any orthogonal set of vectors must be linearly independent by Theorem \ref{orthbasis}.)
+\end{expandable}
 
 orthonormal set of vectors (\ref{orthset})
 \begin{expandable}
@@ -645,10 +755,7 @@ Moreover, if $\norm{\vec{v}_i}=1$ for $i=1,\ldots,m$ (i.e. each vector in the se
 %outer product
 
 
-
 \subsection{P}
-
-
 
 parametric equation of a line (\ref{form:paramlinend})
 \begin{expandable}
@@ -664,10 +771,19 @@ x_1=v_1t+a_1\]
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0050/main}{particular solution}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0023/main}{partitioned matrices (block multiplication)}
+\begin{expandable}
+    Subdividing a matrix into submatrices using imaginary horizontal and vertical lines - used to multiply matrices more efficiently.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0070/main}{permutation matrix}
+\begin{expandable}
+    A matrix formed by permuting the rows of the identity matrix.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0030/main}{pivot}
+\begin{expandable}
+    In Gaussian elimination, an entry chosen to become a leading coefficient used to get zeros in the remaining rows.
+\end{expandable}
 
 positive definite matrix (\ref{def:024811})
 \begin{expandable}
@@ -675,12 +791,76 @@ positive definite matrix (\ref{def:024811})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0070/main}{power method (and its variants)}
+\begin{expandable}
+    The \dfn{power method} is an iterative method for computing the dominant eigenvalue of a matrix. It variants can compute the smallest eigenvalue or the eigenvalue closest to some target.
+\end{expandable}
 
-% properties of determinants
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0040/main}{properties of determinants)}
+\begin{expandable}
+\begin{enumerate}
+    \item The determinant of a triangular matrix is the product of its diagonal entries.
+
+    \item The determinant of a matrix is equal to the determinant of its transpose.
+
+    \item The determinant of the inverse of a matrix is the reciprocal of the determinant of the matrix.
+
+    \item A matrix with a zero row has determinant zero.
+
+    \item Interchanging two rows of a matrix changes the sign of its determinant.
+
+    \item A matrix with two identical rows has determinant zero.
+
+    \item Multiplying a row of a matrix by $k$ changes the determinant by a factor of $k$.
+
+    \item Multiplying a matrix by $k$ changes the determinant by a factor of $k^n$.
+
+    \item Adding a multiple of one row of a matrix to another row does not change the determinant. 
+
+    \item A matrix is singular if and only if its determinant is zero.
+
+    \item The determinant of a product is equal to the product of the determinants.
+\end{enumerate}
+\end{expandable}
 
 % properties of matrix algebra 
 
-% properties of orthogonal matrices
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0035/main}{properties of orthogonal matrices)}
+\begin{expandable}
+If $Q$ is an orthogonal matrix, then...
+\begin{enumerate}
+    \item $Q^{-1} = Q^T$ is orthogonal,
+
+    \item $\mbox{det} Q = \pm 1$,
+
+    \item if $\lambda$ is an eigenvalue of $Q$, then $|\lambda|=1$,
+
+    \item the product of $Q$ with any other orthogonal matrix will be an orthogonal matrix (i.e. orthogonal matrices are closed under matrix multiplication), 
+
+    and
+
+    \item $Q$ is a length-preserving and angle-preserving linear transformation.
+
+\end{enumerate}
+\end{expandable}
+
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0040/main}{properties of similar matrices)}
+\begin{expandable}
+Similar matrices must have the same...
+\begin{enumerate}
+    \item determinant,
+
+    \item rank,
+
+    \item trace,
+
+    \item characteristic polynomial, 
+
+    and
+
+    \item eigenvalues.
+
+\end{enumerate}
+\end{expandable}
 
 \subsection{Q}
 
@@ -749,12 +929,24 @@ row echelon form (\ref{def:ref})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0020/main}{row equivalent matrices}
+\begin{expandable}
+    Two matrices $A$ and $B$ are said to be row equivalent if there is a sequence of elementary row operations that converts $A$ to $B$.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{row matrix (vector)}
+\begin{expandable}
+    A matrix with only $1$ row and $n$ columns.
+\end{expandable}
 
 row space of a matrix (\ref{def:rowspace})
 \begin{expandable}
     Let $A$ be an $m\times n$ matrix.  The \dfn{row space} of $A$, denoted by $\mbox{row}(A)$, is the subspace of $\RR^n$ spanned by the rows of $A$.
+\end{expandable}
+
+
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{row matrix}
+\begin{expandable}
+    A matrix with only $1$ row and $n$ columns.
 \end{expandable}
 
 
@@ -763,7 +955,12 @@ row space of a matrix (\ref{def:rowspace})
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0070/main}{scalar triple product}
 
-%scalar multiple of a matrix
+scalar multiple of a matrix
+(\ref{def:scalarmultofmatrices})
+\begin{expandable}
+    If $A=\begin{bmatrix} a_{ij}\end{bmatrix} $ and $k$ is a scalar,
+then $kA=\begin{bmatrix} ka_{ij}\end{bmatrix}$. 
+\end{expandable}
 
 similar matrices (\ref{def:similar})
 \begin{expandable}
@@ -772,7 +969,7 @@ similar matrices (\ref{def:similar})
 
 singular matrix (\ref{def:nonsingularmatrix})
 \begin{expandable}
-    A square matrix $A$ is said to be \dfn{nonsingular} provided that $\mbox{rref}(A)=I$.  Otherwise we say that $A$ is \dfn{singular}.
+    A square matrix $A$ is said to be \dfn{singular} provided that $\mbox{rref}(A)$ is NOT the identity matrix.  If instead $\mbox{rref}(A)=I$, we say that $A$ is \dfn{nonsingular}.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0060/main}{singular value decomposition (SVD)}
@@ -800,6 +997,11 @@ and we say that vectors $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$ \dfn{span} $S$.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0090/main}{spanning set}
+\begin{expandable}
+    Let $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$ be vectors in $\RR^n$.  The set $S$ of all linear combinations of $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$ is called the \dfn{span} of $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$.  We write 
+$$S=\mbox{span}(\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p)$$
+and we say that vectors $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$ \dfn{span} $S$.  Any vector in $S$ is said to be \dfn{in the span} of $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p$.  The set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_p\}$ is called a \dfn{spanning set} for $S$.
+\end{expandable}
 
 spectral decomposition - another name for eigenvalue decomposition (\ref{def:eigdecomposition})
 \begin{expandable}
@@ -807,9 +1009,19 @@ spectral decomposition - another name for eigenvalue decomposition (\ref{def:eig
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0035/main}{Spectral Theorem}
+\begin{expandable}
+    If $A$ is a real $n \times n$ matrix, then $A$ is symmetric if an only if $A$ is orthogonally diagonalizable.
+\end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0035/main}{spectrum} 
 The set of distinct eigenvalues of a matrix.
+
+
+\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}
+{square matrix}
+\begin{expandable}
+    A matrix with the same number of rows and columns.
+\end{expandable}
 
 standard basis (\ref{def:standardbasis})
 \begin{expandable}
@@ -818,7 +1030,15 @@ standard basis (\ref{def:standardbasis})
 
 standard matrix of a linear transformation (\ref{def:standardmatoflintrans})
 \begin{expandable}
-    The matrix in Theorem \ref{th:matlin} is known as the \dfn{standard matrix of the linear transformation} $T$.
+    Let $T:\RR^n\rightarrow\RR^m$ be a linear transformation.  Then the matrix
+  \begin{equation*} \label{matlintrans}
+ A=\begin{bmatrix}
+           | & |& &|\\
+		T(\vec{e}_1) & T(\vec{e}_2)&\dots &T(\vec{e}_n)\\
+		|&| & &|
+         \end{bmatrix}
+\end{equation*}
+is known as the \dfn{standard matrix of the linear transformation} $T$.
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0010/main}{Standard Position}
@@ -849,7 +1069,6 @@ $$|a_{ii}|>r_i(A)$$
 for all values of $i$ from $i=1$ to $i=n$.
 \end{expandable}
 
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0010/main}{square matrix}
 
 subspace (\ref{def:subspaceabstract})
 \begin{expandable}
@@ -876,7 +1095,9 @@ symmetric matrix (\ref{def:symmetricandskewsymmetric})
 \end{expandable}
 
 \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0010/main}{system of linear equations}
-
+\begin{expandable}
+    A finite set of linear (degree 1) equations each with the same variables.
+\end{expandable}
 
 
 \subsection{T}
@@ -889,7 +1110,7 @@ trace of a matrix (\ref{def:trace})
 transpose of a matrix (\ref{def:matrixtranspose})
 \begin{expandable}
     Let $A=\begin{bmatrix} a _{ij}\end{bmatrix}$ be an $m\times n$ matrix. Then the \dfn{transpose of $A$}, denoted by $A^{T}$, is the $n\times m$
-matrix given by 
+matrix given by switching the rows and columns:
 \begin{equation*}
 A^{T} = \begin{bmatrix} a _{ij}\end{bmatrix}^{T}= \begin{bmatrix} a_{ji} \end{bmatrix}
 \end{equation*}
