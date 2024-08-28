@@ -9,7 +9,10 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Application to Input-Output Economic Models}
+\end{onlineOnly}
+
 In 1973 Wassily Leontief was awarded the Nobel prize in economics for his work on mathematical models.  (See W. W. Leontief, ``The world economy of the year 2000,'' \textit{Scientific American,} Sept. 1980.) Roughly speaking, an economic system in this model consists of several industries, each of which produces a product and each of which uses some of the production of the other industries. The following example is typical.
 
 \begin{example}\label{006965}
@@ -217,7 +220,8 @@ Let $E \geq 0$ be a square matrix. In each case, $I - E$ is invertible and $(I -
 
 \section*{Practice Problems}
 
-\begin{problem}
+\emph{Problems \ref{prob:i/o_1}-\ref{prob:i/o_4}}
+
 Find the possible equilibrium price structures for each given input-output matrix.
 \begin{problem}\label{prob:i/o_1}
 
@@ -227,10 +231,17 @@ $\begin{bmatrix}
 0.3 & 0.6 & 0.4
 \end{bmatrix}$
 
+% We determined this answer was not correct, so updated below
+%${\bf p}=\begin{bmatrix}
+%\answer{t} \\
+%\answer{3t} \\
+%\answer{t}
+%\end{bmatrix} \quad$ (Use $t$ as the parameter.)
+
 ${\bf p}=\begin{bmatrix}
-\answer{t} \\
+\answer{4t} \\
 \answer{3t} \\
-\answer{t}
+\answer{2t}
 \end{bmatrix} \quad$ (Use $t$ as the parameter.)
 \end{problem}
 
@@ -268,9 +279,6 @@ $\begin{bmatrix}
 0.2 & 0.1 & 0.1 & 0.6
 \end{bmatrix}$
 \end{problem}
-
-\end{problem}
-
 
 \begin{problem}\label{prob:i/o_5}
 Three industries $A$, $B$, and $C$ are such that all the output of $A$ is used by $B$, all the output of $B$ is used by $C$, and all the output of $C$ is used by $A$. Find the possible equilibrium price structures.
@@ -375,8 +383,10 @@ c & d
 %\end{sol}
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:i/o_14}-\ref{prob:i/o_17}}
+
 In each case show that $I - E$ is invertible and $(I - E)^{-1} \geq 0$.
+
 \begin{problem}\label{prob:i/o_14}
 $\begin{bmatrix}
 0.6 & 0.5 & 0.1 \\
@@ -399,6 +409,7 @@ $\begin{bmatrix}
 0.1 & 0.1 & 0.4
 \end{bmatrix}$
 \end{problem}
+
 \begin{problem}\label{prob:i/o_16}
 $\begin{bmatrix}
 0.6 & 0.2 & 0.1 \\
@@ -414,6 +425,7 @@ Use ${\bf p} = \begin{bmatrix}
  in Theorem~\ref{007060}.
 \end{hint}
 \end{problem}
+
 \begin{problem}\label{prob:i/o_17}
 $\begin{bmatrix}
 0.8 & 0.1 & 0.1 \\
@@ -422,7 +434,6 @@ $\begin{bmatrix}
 \end{bmatrix}$
 \end{problem}
 
-\end{problem}
 
 \begin{problem}\label{ex:ex2_8_10}
 Prove that (1) implies (2) in the Corollary to Theorem~\ref{007060}.
