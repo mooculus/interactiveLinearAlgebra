@@ -13,21 +13,18 @@
 
 
 \section*{How to Use this Text}
-
 In this section we will cover some technical aspects of using this text.  In particular, you will learn about the following features:
 \begin{itemize}
     \item Machine-graded exercises.
     \item Using GeoGebra interactives.
     \item Using Octave cells.
-    \item Saving your work and keeping track of progress.
-    \item Data collection.
 \end{itemize}
 
 \subsection*{Machine-Graded Exercises}
 Machine-graded exercises on the XIMERA platform are designed to help you learn without penalizing you for not getting the right answer the first time.  You can enter answers until you get it right.  
 \begin{question}
 Try typing $5$ in the answer cell below, then answer the question correctly.
-\begin{hint} %  Ha, ha!
+\begin{hint}
     The answer is SMALLER than 5.
 \end{hint}
 $$2+2=\answer{4}$$
@@ -52,36 +49,10 @@ The following screenshot highlights the \dfn{navigation bar} and the \dfn{slider
 GeoGebra offers many more features.  Make sure to read the directions in each interactive!
 
 \subsection*{Octave Cells}
-Matrix calculations are easy to perform using Octave cells.  Octave exercises appear in the Additional Exercises section at the end of each chapter.  A few other sections also contain Octave exercises.%, indicated by the following:
+Please refer to the Octave Tutorial section for more information on how to use Octave and Octave Cells.
 
-To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
-
-If you click the link to go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, you will see the image below.  Notice the dropdown menu in the lower right-hand corner where you can select Octave as the language.  Try copying the following code into a cell to see how it works.
-
-\begin{verbatim}
-% Understanding matrix-vector multiplication as linear combinations of columns
-A=[2 -1 3 2; 0 3 -2 1; -2 4 1 0];
-x=[3;-1;4;1]; %semicolons at the end of a line suppress the output
-x(1)*A(:,1)+x(2)*A(:,2)+x(3)*A(:,3)+x(4)*A(:,4)
-A*x
-\end{verbatim} 
-
-\begin{image}
-\includegraphics{SageCell.jpg}
-\end{image}
-
-Be sure to select Octave as the language or the code will yield an error when you press evaluate.
-
-\subsection*{Saving your Work and Keeping Track of Progress}
-One of the most common questions about XIMERA is, "Do I have to log in to use it?"  Here is what we recommend:
-\begin{itemize}
-\item If you don't care whether or not you keep your work, do NOT log in.  XIMERA gives full access to all users, regardless of log-in status.
-\item If you want to keep track of your progress and your answers, then
-\begin{itemize}
-\item If you plan on using the same computer for all of your XIMERA work, the easiest thing to do is NOT log in.  Your answers will be saved automatically, and XIMERA will remember your progress.  WARNING: You will lose your work if you clear out your cookies.
-\item If you plan to use multiple machines to do your XIMERA work, then you may want to log in, so that XIMERA knows who you are regardless of your computer.  WARNING: If you decide to start logging in, you have to continue to log in, otherwise XIMERA will think of you as multiple people.
-\end{itemize}
-\end{itemize}
+\subsection*{Keeping Track of Progress}
+XIMERA does not require a log-in.  Your answers will be saved automatically, and XIMERA will remember your progress.  WARNING: You will lose your work if you clear out your cookies.  You will also lose your work if you switch to a different computer.
 
 Instructors may require that you submit a proof of completion.  This is easy to do. 
 \begin{itemize}
@@ -99,6 +70,6 @@ Your instructor may ask you to submit a screenshot of your completion summary.
 \includegraphics{ximeraScreenshot3.jpg}
 \end{image}
 \end{itemize}
-\subsection*{Data Collection and Usage}
-Event stream data from user interactions with the platform -- such as mouse clicks, and submitted answers -- are stored on a secure server at the Ohio State University.  There is no plaintext storage of passwords, and only encrypted protocols for authentication are used.  Anonymized event log is available to the authors of this text through secure access requiring a private key. (GPG is used for this.)   Event log data may be used for research purposes and to improve the product.
+% \subsection*{Data Collection and Usage}
+% Event stream data from user interactions with the platform -- such as mouse clicks, and submitted answers -- are stored on a secure server at the Ohio State University.  There is no plaintext storage of passwords, and only encrypted protocols for authentication are used.  Anonymized event log is available to the authors of this text through secure access requiring a private key. (GPG is used for this.)   Event log data may be used for research purposes and to improve the product.
 \end{document}
