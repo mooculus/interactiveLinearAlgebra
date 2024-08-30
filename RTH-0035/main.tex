@@ -10,7 +10,10 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Orthogonal Matrices and Symmetric Matrices}
+\end{onlineOnly}
+
 Recall that an $n \times n$ matrix $A$ is diagonalizable if and only if it has $n$ linearly independent eigenvectors.  (see \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0050/main}{Diagonalizable Matrices and Multiplicity}) Moreover, the matrix $P$ with these eigenvectors as columns is a diagonalizing matrix for $A$, that is
 \begin{equation*}
 P^{-1}AP \mbox{ is diagonal.}
@@ -156,7 +159,8 @@ To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell We
     Q = [q1;q2;q3]
     %Check that Q is an orthogonal matrix.
     Q*transpose(Q)
-    %(You may get numbers close to zero in some places you expect to get zero due to rounding error)
+    %(You may get numbers close to zero in some places you expect 
+    %to get zero due to rounding error)
 \end{verbatim}
     
 
@@ -328,6 +332,7 @@ If A is an $n \times n$ symmetric matrix, then
 \end{equation*}
 for all columns $\vec{x}$ and $\vec{y}$ in $\RR^n$.
 \end{theorem}
+
 \begin{remark}
 The converse also holds (see Practice Problem \ref{ex:8_2_15}).
 \end{remark}
@@ -470,7 +475,9 @@ If we are willing to replace ``diagonal'' by ``upper triangular'' in the real sp
 \begin{theorem}[Schur Triangularization Theorem]\label{th:Schur}
 If $A$ is an $n \times n$ matrix with $n$ real eigenvalues, an orthogonal matrix $Q$ exists such that $Q^{T}AQ$ is upper triangular.
 \end{theorem}
-\remark{There is also a lower triangular version of this theorem.}
+
+\begin{remark}There is also a lower triangular version of this theorem.
+\end{remark}
 
 \begin{proof}
 See Practice Problem \ref{prob:SchurChallenge}
@@ -489,29 +496,15 @@ If $A$ is an $n \times n$ matrix with real eigenvalues $\lambda_{1}, \lambda_{2}
 Suppose $A$ is orthogonally diagonalizable.  Prove that $A$ is symmetric.  (This is the easy direction of the "if and only if" in Theorem \ref{th:PrinAxes}.)
 \end{problem}
 
-\begin{problem}%\label{prob:make_ortho_matrix}
+\emph{Problems \ref{prob:make_ortho_matrix1}-\ref{prob:make_ortho_matrix7}}
+
 Normalize the rows to make each of the following matrices orthogonal.
 
-% 
-\begin{problem}\label{prob:make_ortho_matrix1} 
-$A = \begin{bmatrix}
-1 & 1 \\
--1 & 1
-\end{bmatrix}$
-\end{problem}
 
 \begin{problem}\label{prob:make_ortho_matrix3}
 $A = \begin{bmatrix}
 1 & 2 \\
 -4 & 2
-\end{bmatrix}$
-\end{problem}
-
-\begin{problem}\label{prob:make_ortho_matrix5}
-$A = \begin{bmatrix}
-\cos\theta & -\sin\theta & 0 \\
-\sin\theta & \cos\theta & 0 \\
-0 & 0 & 2
 \end{bmatrix}$
 \end{problem}
 
@@ -522,23 +515,6 @@ $A = \begin{bmatrix}
 2 & 2 & -1
 \end{bmatrix}$
 \end{problem}
-\end{problem}
-
-\begin{problem}\label{prob:triag_orthogonal}
-If $Q$ is a triangular orthogonal matrix, show that $Q$ is diagonal and that all diagonal entries are $1$ or $-1$.
-
-\begin{hint}
-We have $Q^{T} = Q^{-1}$; the first step is to show that $Q$ is lower triangular and also upper triangular, and so is diagonal. But then $Q = Q^{T} = Q^{-1}$, so $Q^{2} = I$. This implies that the diagonal entries of $Q$ are all $\pm 1$.
-\end{hint}
-\end{problem}
-
-\begin{problem}\label{prob:scalar_othogonal}
-If $Q$ is orthogonal, show that $kQ$ is orthogonal if and only if $k = 1$ or $k = -1$.
-\end{problem}
-
-\begin{problem}\label{prob:thirdrow}
-If the first two rows of an orthogonal matrix are $[\frac{1}{3}, \frac{2}{3}, \frac{2}{3}]$ and $[\frac{2}{3}, \frac{1}{3}, \frac{-2}{3}]$, find all possible third rows.
-\end{problem}
 
 \begin{problem}\label{prob:findQ}
 For each matrix $A$, find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diagonal.
@@ -547,17 +523,6 @@ For each matrix $A$, find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diago
 \item\label{prob:findQa} $A = \begin{bmatrix}
 0 & 1 \\
 1 & 0
-\end{bmatrix}$
-
-\item\label{prob:findQb} $A = \begin{bmatrix}
-1 & -1 \\
--1 & 1
-\end{bmatrix}$
-
-\item\label{prob:findQc} $A = \begin{bmatrix}
-3 & 0 & 0 \\
-0 & 2 & 2 \\
-0 & 2 & 5
 \end{bmatrix}$
 
 \item\label{prob:findQd} $A = \begin{bmatrix}
@@ -570,18 +535,6 @@ For each matrix $A$, find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diago
 1 & 1 & 0 \\
 1 & 1 & 0 \\
 0 & 0 & 2
-\end{bmatrix}$
-
-\item $A = \begin{bmatrix}
-5 & -2 & -4 \\
--2 & 8 & -2\\
--4 & -2 & 5
-\end{bmatrix}$
-\item\label{prob:findQf} (challenging problem) $A = \begin{bmatrix}
-5 & 3 & 0 & 0 \\
-3 & 5 & 0 & 0 \\
-0 & 0 & 7 & 1 \\
-0 & 0 & 1 & 7
 \end{bmatrix}$
 
 \item\label{prob:findQg} (challenging problem) $A = \begin{bmatrix}
@@ -630,76 +583,6 @@ For each matrix $A$, find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diago
 %\end{sol}
 \end{problem}
 
-\begin{problem}\label{prob:ortho15a}
-Show that the following are equivalent for a symmetric matrix $A$.
-
-
-\begin{enumerate}
-\item $A$ is orthogonal.
-\item $A^{2} = I$.
-\item All eigenvalues of $A$ are $\pm 1$.
-\end{enumerate}
-\begin{hint}
-For (b) if and only if (c), use Theorem~\ref{th:detofproduct}.
-\end{hint}
-
-
-%\begin{sol}
-%\begin{enumerate} 
-%\setcounter{enumi}{2}
-%\item $\Rightarrow$ a. By Theorem~\ref{thm:024227} let $P^{-1}AP = D = \func{diag}(\lambda_{1}, \dots, \lambda_{n})$ where the $\lambda_{i}$ are the eigenvalues of $A$. By c. we have $\lambda_{i} = \pm 1$ for each $i$, whence $D^{2} = I$. But then $A^{2} = (PDP^{-1})^{2} = PD^{2}P^{-1} = I$. Since $A$ is symmetric this is $AA^{T} = I$, proving a.
-
-%\end{enumerate}
-%\end{sol}
-\end{problem}
-
-
-\begin{problem}\label{ex:8_2_12}
-We call matrices $A$ and $B$ \dfn{orthogonally similar} (and write $A \stackrel{\circ}{\sim} B$) if $B = P^{T}AP$ for an orthogonal matrix $P$.
-
-
-\begin{enumerate}
-\item Show that $A \stackrel{\circ}{\sim} A$ for all $A$; $A \stackrel{\circ}{\sim} B \Rightarrow B \stackrel{\circ}{\sim} A$; and $A \stackrel{\circ}{\sim} B$ and $B \stackrel{\circ}{\sim} C \Rightarrow A \stackrel{\circ}{\sim} C$. (This means that ``orthogonally similar" is an \dfn{equivalence relation}.)
-
-\item Show that the following are equivalent for two symmetric matrices $A$ and $B$.
-
-
-\begin{enumerate}
-\item $A$ and $B$ are similar.
-
-\item $A$ and $B$ are orthogonally similar.
-
-\item $A$ and $B$ have the same eigenvalues.
-
-\end{enumerate}
-\end{enumerate}
-\end{problem}
-
-\begin{problem}\label{prob:ortho14a}
-Assume that $A$ and $B$ are orthogonally similar (Problem \ref{ex:8_2_12}).
-
-
-\begin{enumerate} 
-\item If $A$ and $B$ are invertible, show that $A^{-1}$ and $B^{-1}$ are orthogonally similar.
-
-\item Show that $A^{2}$ and $B^{2}$ are orthogonally similar.
-
-\item Show that, if $A$ is symmetric, so is $B$.
-
-\end{enumerate}
-
-%\begin{sol}
-%\begin{enumerate}
-%\setcounter{enumi}{1}
-%\item  If $B = P^{T}AP = P^{-1}$, then $B^{2} = P^{T}APP^{T}AP = P^{T}A^{2}P$.
-
-%\end{enumerate}
-%\end{sol}
-\end{problem}
-
-\begin{problem}\label{prob:ortho15}
-If $A$ is symmetric, show that every eigenvalue of $A$ is nonnegative if and only if $A = B^{2}$ for some symmetric matrix $B$.
-\end{problem}
 
 \begin{problem}\label{ex:8_2_15}
 Prove the converse of Theorem~\ref{th:dotpSymmetric}:
@@ -711,16 +594,7 @@ If $(A\vec{x}) \dotp \vec{y} = \vec{x} \dotp (A\vec{y})$ for all $n$-columns $\v
 %\end{sol}
 \end{problem}
 
-\begin{problem}\label{prob:ortho17}
-Show that every eigenvalue of $A$ is zero if and only if $A$ is nilpotent ($A^{k} = 0$ for some $k \geq 1$).
-\end{problem}
 
-\begin{problem}\label{prob:ortho18}
-If $A$ has real eigenvalues, show that $A = B + C$ where $B$ is symmetric and $C$ is nilpotent. 
-%\begin{hint}
-%Theorem~\ref{th:024503}
-%\end{hint}
-\end{problem}
 
 \begin{problem}\label{prob:ortho19}
 Let $Q$ be an orthogonal matrix.
@@ -762,78 +636,11 @@ $P^{T}(I - P) = -(I - P)^{T}$
 %\end{sol}
 \end{problem}
 
-\begin{problem}\label{prob:ortho20}
-We call a square matrix $E$ a \dfn{projection matrix} if $E^{2} = E = E^{T}$.
-
-
-\begin{enumerate} 
-\item If $E$ is a projection matrix, show that $Q = I - 2E$ is orthogonal and symmetric.
-
-\item If $Q$ is orthogonal and symmetric, show that \\ $E = \frac{1}{2}(I - Q)$ is a projection matrix.
-
-\item If $Q$ is $m \times n$ and $Q^{T}Q = I$ (for example, a unit column in $\RR^n$), show that $E = QQ^{T}$ is a projection matrix.
-
-\end{enumerate}
-\end{problem}
 
 \begin{problem}\label{prob:ortho21}
 A matrix that we obtain from the identity matrix by writing its rows in a different order is called a \dfn{permutation matrix} (see Theorem \ref{th:LUPA}). Show that every permutation matrix is orthogonal.
 \end{problem}
 
-\begin{problem}\label{prob:ortho22}
-If the rows $\vec{r}_{1}, \dots, \vec{r}_{n}$ of the $n \times n$ matrix $A = \begin{bmatrix}
-a_{ij}
-\end{bmatrix}$ are orthogonal, show that the $(i, j)$-entry of $A^{-1}$ is $\frac{a_{ji}}{\norm{\vec{r}_{j}}^2}$.
-
-%\begin{sol}
-%We have $AA^{T} = D$, where $D$ is diagonal with main diagonal entries $\norm{R_{1}}^{2}, \dots, \norm{R_{n}}^{2}$. Hence $A^{-1} = A^{T}D^{-1}$, and the result follows because $D^{-1}$ has diagonal entries $1 / \norm{R_{1}}^{2}, \dots, 1 / \norm{R_{n}}^{2}$.
-%\end{sol}
-\end{problem}
-
-\begin{problem}\label{prob:ortho23}
-\begin{enumerate} 
-\item Let $A$ be an $m \times n$ matrix. Show that the following are equivalent.
-
-
-\begin{enumerate}[label={\roman*.}]
-\item $A$ has orthogonal rows.
-
-\item $A$ can be factored as $A = DP$, where $D$ is invertible and diagonal and $P$ has orthonormal rows.
-
-\item $AA^{T}$ is an invertible, diagonal matrix.
-
-\end{enumerate}
-\item Show that an $n \times n$ matrix $A$ has orthogonal rows if and only if $A$ can be factored as $A = DQ$, where $Q$ is orthogonal and $D$ is diagonal and invertible.
-
-\end{enumerate}
-\end{problem}
-
-\begin{problem}\label{prob:ortho24}
-Let $A$ be a skew-symmetric matrix; that is, $A^{T} = -A$. Assume that $A$ is an $n \times n$ matrix.
-
-
-\begin{enumerate} 
-\item Show that $I + A$ is invertible. 
-\begin{hint}
-By Theorem~\ref{thm:004553}, it suffices to show that $(I + A)\vec{x} = \vec{0}$, $\vec{x}$ in $\RR^n$, implies $\vec{x} = \vec{0}$. Compute $\vec{x} \dotp \vec{x} = \vec{x}^{T}\vec{x}$, and use the fact that $A\vec{x} = -\vec{x}$ and $A^{2}\vec{x} = \vec{x}$.
-\end{hint}
-
-\item Show that $Q = (I - A)(I + A)^{-1}$ is orthogonal.
-
-\item Show that every orthogonal matrix $P$ such that $I + P$ is invertible arises as in part (b) from some skew-symmetric matrix $A$. 
-\begin{hint}
-Solve $P = (I - A)(I + A)^{-1}$ for $A$.
-\end{hint}
-
-\end{enumerate}
-%\begin{sol}
-%\begin{enumerate} 
-%\setcounter{enumi}{1}
-%\item  Because $I - A$ and $I + A$ commute, $PP^{T} = (I - A)(I + A)^{-1}[(I + A)^{-1}]^{T}(I - A)^{T} = (I - A)(I + A)^{-1}(I - A)^{-1}(I + A) = I$.
-
-%\end{enumerate}
-%\end{sol}
-\end{problem}
 
 \begin{problem}\label{prob:ortho25}
 Show that the following are equivalent for an $n \times n$ matrix $Q$.
@@ -853,6 +660,7 @@ Show that the following are equivalent for an $n \times n$ matrix $Q$.
 For (d) $\Rightarrow$ (a), show that column $i$ of $Q$ equals $Q\vec{e}_{i}$, where $\vec{e}_{i}$ is column $i$ of the identity matrix.
 \end{hint}
 \end{enumerate}
+
 \begin{remark}
     This exercise shows that linear transformations with orthogonal standard matrices are distance-preserving (b,c) and angle-preserving (d).
 \end{remark}
@@ -861,27 +669,6 @@ For (d) $\Rightarrow$ (a), show that column $i$ of $Q$ equals $Q\vec{e}_{i}$, wh
 
 
 
-\begin{problem}\label{prob:rotation_ortho}
-\begin{enumerate}
-    \item Show that $\begin{bmatrix}
-\cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
-\end{bmatrix}$ is an orthogonal matrix.
-
-    \item Show that every $2 \times 2$ orthogonal matrix has the form $\begin{bmatrix}
-\cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
-\end{bmatrix}$ or $\begin{bmatrix}
-\cos\theta & \sin\theta \\
-\sin\theta & -\cos\theta
-\end{bmatrix}$
- for some angle $\theta$.
- \begin{hint}
- If $a^{2} + b^{2} = 1$, then $a = \cos\theta$ and $b = \sin\theta$ for some angle $\theta$.
- \end{hint}
-\end{enumerate}
-
-\end{problem}
 
 \begin{problem}\label{prob:SchurChallenge}
 Modify the proof of Theorem~\ref{th:PrinAxes} to prove Theorem \ref{th:Schur}.
