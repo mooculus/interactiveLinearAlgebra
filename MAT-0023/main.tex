@@ -9,7 +9,9 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Block Matrix Multiplication}
+\end{onlineOnly}
 
 It is often useful to partition a matrix into smaller matrices, called \dfn{blocks}. A matrix viewed in this way is said to be \dfn{partitioned into blocks}.  For example, each column of a matrix can be considered to be a block.  Writing a matrix $B$ in the form
 \begin{equation*}
@@ -230,17 +232,6 @@ $A = \left[ \begin{array}{r|rr}
 \end{array} \right]
 $
 
-Click the arrow to see the answer.
-\begin{expandable}
-$
-A^{2k} = \left[ \begin{array}{rc|rr}
-1 & -2k & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-\hline
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
-\end{array} \right]$ for $k = 0, 1, 2, \dots$
-\end{expandable}
 
 \item
 $A = \left[ \begin{array}{rr|rr}
@@ -254,6 +245,15 @@ $
 
 Click the arrow to see the answer.
 \begin{expandable}
+$
+A^{2k} = \left[ \begin{array}{rc|rr}
+1 & -2k & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\hline
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array} \right]$ for $k = 0, 1, 2, \dots$
+
 $A^{2k + 1} = A^{2k}A = \left[ \begin{array}{rc|rr}
 1 & -(2k + 1) & 2 & -1 \\
 0 & 1 & 0 & 0 \\
