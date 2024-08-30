@@ -8,7 +8,9 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Linear Transformations of Abstract Vector Spaces}
+\end{onlineOnly}
 
 Recall that a transformation $T:\mathbb{R}^n\rightarrow \mathbb{R}^m$ is called a \dfn{linear transformation} if the following are true for all vectors ${\bf u}$ and ${\bf v}$ in $\mathbb{R}^n$, and scalars $k$.
 \begin{equation*}
@@ -232,7 +234,8 @@ Answer:$$T(4-x+3x^2)=\begin{bmatrix}\answer{6}&\answer{2}\\\answer{3}&\answer{6}
 
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:tracelintrans1}-\ref{prob:tracelintrans2}}
+
 Define $T:\mathbb{M}_{3,3}\rightarrow \RR$ by $T(A)=\mbox{tr}(A)$.  (Recall that $\mbox{tr}(A)$ denotes the \dfn{trace} of $A$, which is the sum of the main diagonal entries of $A$.)
 
 \begin{problem}\label{prob:tracelintrans1}
@@ -244,9 +247,10 @@ Answer: $$T\left(\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}\right)=\answer{
 \begin{problem}\label{prob:tracelintrans2}
 Is $T$ a linear transformation?  If so, prove it.  If not, give a counterexample.
 \end{problem}
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:lintransr2toM22part1}-\ref{prob:lintransr2toM22part2}}
+
 Define $T:\RR^2\rightarrow\mathbb{M}_{2,2}$ by $T\left(\begin{bmatrix}a\\b\end{bmatrix}\right)=\begin{bmatrix}a&1\\1&b\end{bmatrix}$.
 
 \begin{problem}\label{prob:lintransr2toM22part1}
@@ -254,12 +258,15 @@ Find $T\left(\begin{bmatrix}2\\-1\end{bmatrix}\right)$.
 
 Answer: $$T\left(\begin{bmatrix}2\\-1\end{bmatrix}\right)=\begin{bmatrix}\answer{2}&\answer{1}\\\answer{1}&\answer{-1}\end{bmatrix}$$
 \end{problem}
+
 \begin{problem}\label{prob:lintransr2toM22part2}
 Is $T$ a linear transformation?  If so, prove it.  If not, give a counterexample.
 \end{problem}
-\end{problem}
 
-\begin{problem}  This problem requires the knowledge of how to compute a $3\times 3$ determinant. (For a quick reminder, see Definition \ref{def:threedetcrossprod} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0080/main}{Cross Product and its Properties}.)
+
+\emph{Problems \ref{prob:detlintrans1}-\ref{prob:detlintrans2}}
+
+This problem requires the knowledge of how to compute a $3\times 3$ determinant. (For a quick reminder, see Definition \ref{def:threedetcrossprod} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0080/main}{Cross Product and its Properties}.)
 Define $T:\mathbb{M}_{3,3}\rightarrow \RR$ by $T(A)=\det(A)$.  
 
 \begin{problem}\label{prob:detlintrans1}
@@ -271,9 +278,10 @@ Answer: $$T\left(\begin{bmatrix}1&2&3\\4&5&6\\7&8&9\end{bmatrix}\right)=\answer{
 \begin{problem}\label{prob:detlintrans2}
 Is $T$ a linear transformation?  If so, prove it.  If not, give a counterexample.
 \end{problem}
-\end{problem}
 
-\begin{problem}
+
+\emph{Problems \ref{prob:lintransderivative1}-\ref{prob:lintransderivative2}}
+
 Define $T:\mathbb{P}^3\rightarrow\mathbb{P}^2$ by $T(p(x))=p'(x)$.  (In other words, $T$ maps a polynomial to its derivative.)
 
 \begin{problem}\label{prob:lintransderivative1}
@@ -285,7 +293,7 @@ Answer: $$T(4x^3-2x^2+x+6)=\answer{12}x^2-\answer{4}x+\answer{1}$$
 \begin{problem}\label{prob:lintransderivative2}
 Is $T$ a linear transformation?  If so, prove it.  If not, give a counterexample.
 \end{problem}
-\end{problem}
+
 
 % \begin{problem}
 % Define $T:\mathbb{P}^2\rightarrow\mathbb{P}^3$ by $T(p(x))=xp(x)$.  
