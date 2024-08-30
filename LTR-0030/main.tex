@@ -11,7 +11,9 @@
 
 Note to Student:  In this section we will often use $U$, $V$ and $W$ to denote subspaces of $\RR^n$, or any other finite-dimensional vector space, such as those we study in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/XLAChapter_vecSpaces/main}{Vector Spaces}. 
 
+\begin{onlineOnly}
 \section*{Composition and Inverses of Linear Transformations}
+\end{onlineOnly}
 
 \subsection*{Composition of Linear Transformations}
 \begin{definition}\label{def:compoflintrans} Let $U$, $V$ and $W$ be vector spaces, and let $T:U\rightarrow V$ and $S:V\rightarrow W$ be linear transformations.  The \dfn{composition} of $S$ and $T$ is the transformation $S\circ T:U\rightarrow W$ given by
@@ -219,14 +221,17 @@ Let $T:\RR^2\rightarrow \RR^2$ and $S:\RR^2\rightarrow \RR^2$ be linear transfor
 $$M_T=\begin{bmatrix}2&-4\\1&2\end{bmatrix}\quad\text{and}\quad M_S=\begin{bmatrix}1&-1\\2&1\end{bmatrix}$$
 respectively.  Describe the actions of $T$, $S$, and $S\circ T$ geometrically, as in Example \ref{ex:transcomp}.
 \end{problem}
+
 \begin{problem}\label{prob:geometryoflintrans2}
 Let $T:\RR^3\rightarrow \RR^2$ and $S:\RR^2\rightarrow \RR^2$ be linear transformations with standard matrices 
 $$M_T=\begin{bmatrix}1&0&-1\\2&1&0\end{bmatrix}\quad\text{and}\quad M_S=\begin{bmatrix}-1&2\\1&-2\end{bmatrix}$$
 respectively.  Describe the actions of $T$, $S$, and $S\circ T$ geometrically, as in Example \ref{ex:transcomp}.
 \end{problem}
+
 \begin{problem}\label{prob:completeinverseverify}
 Complete the Explanation of Example \ref{ex:inverseverify} by verifying that $T\circ S=\id_{\RR^2}$.
 \end{problem}
+
 \begin{problem}\label{prob:candidateforinv}
 Let $T:\RR^2\rightarrow \RR^2$ be a linear transformation given by 
 $$T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}2x-5y\\-x+3y\end{bmatrix}$$
@@ -234,11 +239,14 @@ Propose a candidate for the inverse of $T$ and verify your choice using Definiti
 
 $$T^{-1}\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}\answer{3}x+\answer{5}y\\x+\answer{2}y\end{bmatrix}$$
 \end{problem}
+
 \begin{problem}\label{prob:noinversetrans}Explain why linear transformation $T:\RR^2\rightarrow\RR^2$ given by $$T\left(\begin{bmatrix}x\\y\end{bmatrix}\right)=\begin{bmatrix}2x+2y\\-3x-3y\end{bmatrix}$$ does not have an inverse.
 \end{problem}
+
 \begin{problem}\label{prob:inverseislinear}
 Prove Theorem \ref{th:inverseislinear}.  
 \end{problem}
+
 \begin{problem}\label{prob:compofinvisinvofcomp} Suppose $T:U\rightarrow V$ and $S:V\rightarrow W$ are linear transformations with inverses $T'$ and $S'$ respectively.  Prove that $T'\circ S'$ is the inverse of $S\circ T$.
 \end{problem}
 
