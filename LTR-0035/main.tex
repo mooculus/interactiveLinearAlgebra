@@ -8,7 +8,9 @@
  \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Existence of the Inverse of a Linear Transformation}
+\end{onlineOnly}
 
 In Exploration \ref{ep:inverse} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0030/main}{Composition and Inverses of Linear Transformations} we examined a linear transformation $T:\RR^2\rightarrow \RR^2$ that doubles all input vectors, and its inverse $S:\RR^2\rightarrow \RR^2$, that halves all input vectors.  We observed that the composite functions $S\circ T$ and $T\circ S$ are both identity transformations.  Diagrammatically, we can represent $T$ and $S$ as follows:
  
@@ -79,6 +81,7 @@ Second, observe that our definition of an inverse of $T:V\rightarrow W$ requires
 
 
 We now illustrate these potential issues with specific examples.
+
 \begin{example}\label{ex:notonetoone} Let $T:\RR^2\rightarrow \RR^2$ be a linear transformation whose standard matrix is
 $$\begin{bmatrix}1&1\\2&2\end{bmatrix}$$
 Does $T$ have an inverse? Show that multiple vectors of the domain map to $\vec{0}$ in the codomain.  
@@ -173,9 +176,11 @@ Our next goal is to develop vocabulary that would allow us to discuss issues ill
 
 \subsection*{One-to-one Linear Transformations}
 Figure $1$ gave us a diagrammatic representation of a transformation that maps two distinct elements, $\vec{v}_1$ and $\vec{v}_2$ to the same element $\vec{w}$, making it impossible for us to ``reverse the arrows" in an attempt to find the inverse transformation.  Based on this example, it is reasonable to conjecture that for a transformation to be invertible, the transformation must be such that each output is the image of exactly one input.  Such transformations are called \dfn{one-to-one}.  
+
 \begin{definition}[One-to-One]\label{def:onetoone} A linear transformation $T:V\rightarrow W$ is \dfn{one-to-one} if 
 $$T(\vec{v}_1)=T(\vec{v}_2)\quad \text{implies that}\quad \vec{v}_1=\vec{v}_2$$
 \end{definition}
+
 The transformation in Figure $1$ is not one-to-one because $\vec{v}_1$ and $\vec{v}_2$ map to the same vector $\vec{w}$, (i.e. $T(\vec{v}_1)=T(\vec{v}_2)$), yet the diagram suggests that $\vec{v}_1\neq\vec{v}_2$.
 
 \begin{example}\label{ex:notonetoone2}
@@ -205,6 +210,7 @@ Since transformation in Example \ref{ex:notonto} is one-to-one but not invertibl
 
 \subsection*{``Onto" Linear Transformations}
 Figure $2$ makes a convincing case that for a transformation to be invertible every element of the codomain must have something mapping to it. Transformations such that every element of the codomain is an image of some element of the domain are called \dfn{onto}.
+
 \begin{definition}[Onto]\label{def:onto} A linear transformation $T:V\rightarrow W$ is \dfn{onto} if for every element $\vec{w}$ of $W$, there exists an element $\vec{v}$ of $V$ such that $T(\vec{v})=\vec{w}$.
 \end{definition}
 
