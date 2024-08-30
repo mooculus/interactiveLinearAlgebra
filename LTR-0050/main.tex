@@ -10,7 +10,10 @@
 
 Note to Student:  In this section we will often use $U$, $V$ and $W$ to denote subspaces of $\RR^n$, or any other finite-dimensional vector space, such as those we study in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/XLAChapter_vecSpaces/main}{Vector Spaces}. 
 
+\begin{onlineOnly}
 \section*{Image and Kernel of a Linear Transformation}
+\end{onlineOnly}
+
 \subsection*{The Image of a Linear Transformation}
 \begin{definition}\label{def:imageofT}
 Let $V$ and $W$ be vector spaces, and let $T:V\rightarrow W$ be a linear transformation.  The \dfn{image} of $T$, denoted by $\mbox{im}(T)$, is the set
@@ -184,6 +187,7 @@ Recall that the \dfn{null space} of a matrix $A$ is defined to be set of all sol
 $$\mbox{ker}(T)=\mbox{null}(A)$$
 
 We know that $\mbox{null}(A)$ of an $m\times n$ matrix is a subspace of $\RR^n$. (See Theorem \ref{th:nullsubspacern}.)  We conclude this section by showing that even when vector spaces other than $\RR^n$ are involved, the kernel of a linear transformation is a subspace of the domain of the transformation.
+
 \begin{theorem}\label{th:kersubspace} Let $T:V\rightarrow W$ be a linear transformation, then $\mbox{ker}(T)$ is a subspace of $V$.
 \end{theorem}
 \begin{proof}
@@ -279,8 +283,9 @@ $$\mbox{dim}(\mbox{ker}(T))+\mbox{dim}(\mbox{im}(T))=s+r=n$$
 \end{proof}
 
 \section*{Practice Problems}
-\begin{problem}
+\emph{Problems \ref{prob:imagerankoflintrans1}-\ref{prob:imagerankoflintrans2}}
 Describe the image and find the rank for each linear transformation $T:\RR^n\rightarrow \RR^m$ with standard matrix $A$ given below.
+
   \begin{problem}\label{prob:imagerankoflintrans1}
   $T:\RR^5\rightarrow \RR^2$, $A=\begin{bmatrix}3&2&4&7&1\\-1&-9&7&6&8\end{bmatrix}$.
   
@@ -308,13 +313,13 @@ Describe the image and find the rank for each linear transformation $T:\RR^n\rig
   
   $\mbox{rank}(T)=\answer{1}$
   \end{problem}
-\end{problem}
+
 
 
 \begin{problem}\label{prob:sametrans} Suppose linear transformations $T:\RR^2\rightarrow \RR^2$ and $S:\RR^2\rightarrow \RR^2$ are such that  $\mbox{im}(T)=\mbox{im}(S)=\mbox{span}\left(\begin{bmatrix}1\\-3\end{bmatrix}\right)$.  Does this mean that $T$ and $S$ are the same transformation?  Justify your claim.
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:kerandnullityT1}-\ref{prob:kerandnullityT3}}
 Describe the kernel and find the nullity for each linear transformation $T:\RR^n\rightarrow \RR^m$ with standard matrix $A$ given below.
 
 \begin{problem}\label{prob:kerandnullityT1}
@@ -357,7 +362,7 @@ $T:\RR^3\rightarrow \RR^5$, $A=\begin{bmatrix}1&2&-1\\1&2&-1\\1&2&-1\\1&2&-1\\1&
 
 $\mbox{nullity}(T)=\answer{2}$
 \end{problem}
-\end{problem}
+
 
 \begin{problem}\label{prob:ranknullityT4}
 Suppose a linear transformation $T:\RR^3\rightarrow \RR^3$ is such that $\mbox{im}(T)$ is a plane in $\RR^3$.  Then
@@ -374,6 +379,7 @@ $$A=\begin{bmatrix}2&-1&1&-2&1&1\\1&2&3&6&-4&1\\0&2&2&4&-2&-1\\1&3&2&6&-3&2\end{
 Find $\mbox{im}(T)$ and $\mbox{ker}(T)$ if the reduced row-echelon form of $A$ is 
 $$\text{rref}(A)=\begin{bmatrix}1&0&0&1&-1&0\\0&1&0&1&0&0\\0&0&1&1&-1&0\\0&0&0&0&0&1\end{bmatrix}$$
 \end{problem}
+
 \begin{problem}\label{prob:findimageandkernellintrans} Let $V=\mbox{span}\left(\begin{bmatrix}1\\1\end{bmatrix}\right)$, and let $T:V\rightarrow \RR^2$ be a linear transformation defined by 
 $T(\vec{v})=2\vec{v}$.  Find $\mbox{im}(T)$ and $\mbox{ker}(T)$.
 \end{problem}
@@ -381,8 +387,5 @@ $T(\vec{v})=2\vec{v}$.  Find $\mbox{im}(T)$ and $\mbox{ker}(T)$.
 \begin{problem}\label{prob:ranknullitytrans}
 Suppose a linear transformation $T$ is induced by a $4\times 6$ matrix $A$.  Let $S$ be a linear transformation induced by $A^T$.  Find $\mbox{nullity}(S)$, if $\mbox{nullity}(T)=3$.  Prove your claim.
 \end{problem}
-
-
-
 
 \end{document}
