@@ -10,7 +10,9 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Linear Systems as Matrix and Linear Combination Equations}
+\end{onlineOnly}
 
 \subsection*{A Linear System as a Matrix Equation}
 
@@ -213,6 +215,7 @@ Suppose $A\vec{x}=\vec{0}$ has only the trivial solution.  This means that $x_1=
 Not all square matrices are nonsingular.  For example,
 $$\mbox{rref}\left(\begin{bmatrix}2&-1&1\\1&1&1\\3&0&2\end{bmatrix}\right)=\begin{bmatrix}1&0&2/3\\0&1&1/3\\0&0&0\end{bmatrix}\neq I$$
 By Theorem \ref{th:nonsingularequivalency1}, a matrix equation $A\vec{x}=\vec{b}$ involving a singular matrix $A$ cannot have a unique solution. The following example illustrates the two scenarios that arise when solving equations that involve singular matrices.
+
 \begin{example}\label{ex:infinfeasible}
 Let $$A=\begin{bmatrix}2&-1&1\\1&1&1\\3&0&2\end{bmatrix}$$  Solve the equation $A\vec{x}=\vec{b}$ or show that the equation is inconsistent.
 \begin{enumerate}
@@ -314,8 +317,10 @@ $\begin{array}{ccccccc}
     \end{array}$
 \end{center}
 \end{problem}
-\begin{problem}
+
+\emph{Problems \ref{prob:lincombeq1}-\ref{prob:lincombeq2}}
 Use an augmented matrix and elementary row operations to find coefficients $x_1$ and $x_2$ that make the expression true, or demonstrate that such coefficients do not exist.
+
  \begin{problem}\label{prob:lincombeq1}
 
     $$ x_1\begin{bmatrix}
@@ -350,10 +355,10 @@ If coefficients $x_1$ and $x_2$ do not exist, enter NA in each answer box.
  $$x_1=\answer{NA}, x_2=\answer{NA}$$ 
   \end{problem}
 
-\end{problem}
  
- \begin{problem}
+\emph{Problems \ref{prob:spanofvect1}-\ref{prob:spanofvect3}}
  In each problem below determine whether vector $\vec{b}$ is in the span of the given set of vectors.
+ 
  \begin{problem}\label{prob:spanofvect1}
  $\vec{b}=\begin{bmatrix}2\\14\\7\end{bmatrix}$ and $\left\{\begin{bmatrix}2\\-1\\1\end{bmatrix}, \begin{bmatrix}-3\\4\\1\end{bmatrix}, \begin{bmatrix}1\\-3\\-2\end{bmatrix}\right\}$
  \begin{multipleChoice}
@@ -378,7 +383,4 @@ If coefficients $x_1$ and $x_2$ do not exist, enter NA in each answer box.
  \end{multipleChoice}
  \end{problem}
  
- \end{problem}
-
-
 \end{document} 
