@@ -10,7 +10,10 @@
 \end{abstract}
 \maketitle
 
+\begin{onlineOnly}
 \section*{Elementary Matrices}
+\end{onlineOnly}
+
 \subsection*{Definition and Examples}
 
 \begin{exploration}\label{init:elementarymat2}
@@ -102,10 +105,8 @@ In general, if a square matrix $E$ is obtained from the identity matrix $I$ by a
 The matrices $B,C,D, F, G$ of Explorations \ref{init:elementarymat2}, \ref{init:elementarymat1} and \ref{init:elementarymat3} are known as \dfn{elementary matrices} because they perform elementary row operations on appropriately sized matrices.
 
 \begin{definition} \label{def:elemmatrix}
-  
-An \dfn{elementary matrix} is a square matrix formed by applying a single elementary row operation to the identity matrix.
-  
-\end{definition}
+  An \dfn{elementary matrix} is a square matrix formed by applying a single elementary row operation to the identity matrix.
+  \end{definition}
 
 Suppose $A$ is an $m \times n$ matrix.  If $E$ is an $m \times m$ elementary matrix formed by performing a certain row operation on the $m \times m$ identity matrix, then multiplying any matrix $A$ on the left by $E$ is equivalent to performing that same row operation on $A$.  As there are three types of elementary row operations, there are three types of elementary matrices.
 
@@ -135,7 +136,6 @@ As part of the Practice Problem set you are asked to find the inverse of each of
 \begin{theorem}\label{th:elemmatricesinvertible}
 Elementary matrices are invertible, and the inverse of an elementary matrix is an elementary matrix.
 \end{theorem}
-
 \begin{proof}
 Suppose $E$ is obtained from $I$ by switching rows $i$ and $j$.  To find the inverse of $E$, we need to find a matrix $F$ such that $FE=I$.  To get from $E$ back to $I$, rows $i$ and $j$ of $E$ must be switched.  This can be accomplished by multiplying $E$ by itself on the left.  So, $E$ is its own inverse.
 
