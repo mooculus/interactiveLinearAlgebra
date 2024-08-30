@@ -15,7 +15,17 @@ The templates in this section provide sample Octave code for solving systems of 
 When solving systems by hand, you utilized Gauss-Jordan elimination to find rref.  Having the reduced row echelon form available made it easy to write out the solution(s) or determine that the system is inconsistent.  We can find rref and the rank of a matrix using Octave as follows.
 
 \begin{template}\label{temp:rref}
-We will use the same system of equations as in Template \ref{temp:systems1}.
+Consider the system
+\begin{equation}
+\begin{array}{ccccccccc}
+      x &- &y&&&&&= &0 \\
+	 2x& -&2y&+&z&+&2w&=&4\\
+     & &y&&&+&w&=&0\\
+     & &&&2z&+&w&=&5
+    \end{array}
+    \end{equation}
+
+ (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system by finding the reduced row echelon form of the corresponding augmented matrix in Octave.  
     \begin{verbatim}
 % Define the augmented matrix 
 % corresponding to the coefficient matrix A and vector b
@@ -50,10 +60,35 @@ A_b=[A b]
     \end{verbatim}
 
 \href{https://sagecell.sagemath.org/?z=eJxFjrEKAyEQRHvBf5jmyoNVkkqukOQvjiOoWROL80BMyOdHIZLtHjvMvAlXjikz6pMRDo4xhcS5Yne1pA-sFBYLVoVZgUBGCvTTmDUU9GBCf6s_UouorbEU09h4c6hHgZfC904yJ0PmPEKXwq4yXIZ7PfbmwPefRXO4-WW18NsXtMsrmQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-    
-\end{remark}
+    \end{remark}
 \end{template}
 
+\begin{warning}
+    The \emph{rref} function utilizes a modified version of the Gauss-Jordan elimination algorithm (\href{https://www.mathworks.com/help/matlab/ref/rref.html}{Reference Link}).  For some matrices, implementing this algorithm directly leads to round-off errors and other problems that are outside of the scope of this text.  %While the backslash operator ($\setminus$) is a relatively robust operator, it too, can lead to computational problems.  
+    We illustrate what can happen in the next example.   
+\end{warning}
+
+\begin{example}\label{ex:rrefFail}
+    We will use a $12\times 12$ Hilbert matrix to illustrate how the \emph{rref} function can fail.  You can learn more about Hilbert matrices \href{https://en.wikipedia.org/wiki/Hilbert_matrix}{here}.
+
+\begin{verbatim}
+% Use a 12 by 12 Hilbert matrix
+A=hilb(12);
+
+% Theoretical rank of A is 12, but the following computation shows a rank of 11
+rank(A)
+
+% rref of A should be the identity matrix, but the following result contains a row of zeros
+rref(A)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxtjjEOwjAMRfdKuYOXSkViSVfE0I0DwAGS1iUWaYwSR6WcnrSFjcWyrP_fcw23hGBAt2CXdV7IW4wCk5FIL1V1Z1cujW4PJ1WpqoarQ44o1BsP0YQH8AgdUCrlI9gsIA5hZO95pnCHnqdnFiPEAZLjORXZr6a1qta96Q47O0Ycd16JZj-AxQ1HAwYhWb5f_fNETNlL0QUxFDYLzyvrjZFT8RR08XwAMi9N1g==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+\end{example}
+
+\subsection*{Acknowledgements}
+
+The inspiration for Example \ref{ex:rrefFail} came from \href{https://stackoverflow.com/questions/42893111/matlab-rref-function-precision-error-after-12th-column-of-hilbert-matrices}{this} \emph{Stack Overflow} comment.
 
 
   

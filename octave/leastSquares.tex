@@ -12,6 +12,8 @@ The templates in this section provide code samples for implementing the least sq
 
 %When implementing least squares by hand, you probably utilize the process established by the following theorem.
 
+The following theorem establishes one way to implement least squares.
+
 \begin{theorem}[\ref{th:bestApprox}]
     Let $A$ be an $m\times n$ matrix, let $\vec{b}$ be a column vector in $\RR^m$.  Consider the matrix equation
     $$A\vec{x}=\vec{b}$$
@@ -24,7 +26,7 @@ The templates in this section provide code samples for implementing the least sq
     \end{enumerate}
     \end{theorem}
 
-We can implement the process suggested by the theorem as follows.
+We can implement this process as follows.
 
 \begin{template}\label{temp:leastSq}
     We show how to find a least squares solution to 
@@ -51,48 +53,6 @@ z=inv(transpose(A)*A)*transpose(A)*b
     Finding matrix inverses is both computationally expensive and unstable.  For this reason, various factoring/decomposition techniques such as $LU$ and $QR$ factorizations are used.  
 \end{warning}
 
-\begin{template}\label{temp:systems1}
-Consider the system
-\begin{equation}
-\begin{array}{ccccccccc}
-      x &- &y&&&&&= &0 \\
-	 2x& -&2y&+&z&+&2w&=&4\\
-     & &y&&&+&w&=&0\\
-     & &&&2z&+&w&=&5
-    \end{array}
-    \end{equation}
-
- (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system with Octave.   
-\begin{verbatim}
-% Define the coefficient matrix A
-A = [1 -1 0 0;
-     2 -2 1 2;
-     0 1 0 1;
-     0 0 2 1];
-
-% Define vector b
-b = [0;4;0;5];
-
-% Solve the system 
-x = A \ b
-\end{verbatim}
-
-\href{https://sagecell.sagemath.org/?z=eJxFjsEKwjAQRO-B_Ye59FjYBD0FDwH_wGP1YMIGA7aBNpT69yZIcG-PeczsgKvEtAjKSxCyxJhCkqVgfpY1HXCkHC6YNEYNBltSaGcwGmiYzowW6z9yVfSjMqmhb-wSSl7hSfnWyfZk2Z67dMvv_ffH9tmKzCB1VM3hDv8FLh8nkA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-
-\begin{warning}
-    The system above has a unique solution.  Try manipulating the system so that it has infinitely many solutions or no solutions.  Run the code to see what happens.  You will observe the following:
-
-\begin{itemize}
-    \item If a system has infinitely many solutions, Octave will find one particular solution.
-    \item If a system has no solutions, Octave will find an approximate solution using least-squares.  %We will cover this method in \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/RTH-0030/main}{Least-Squares Approximation}.
-\end{itemize}
-\end{warning}
-
-\end{template}
-
-%Due to how the backslash operator ($\setminus$) functions (see the warning above), we recommend that you solve systems by using the reduced row echelon form.  
-
-%As remarked in Template \ref{temp:systems1},
 The 
 backslash operator ($\setminus$) can be used to implement least squares in Octave.  Depending on the type of matrix, backslash uses different techniques to compute the least squares solution more efficiently.  The following template will allow you to compare answers and computing times for the two implementations of least squares.
 
@@ -135,42 +95,58 @@ toc
 Each time you run the algorithm, you will get slightly different run times for each implementation.  Most of the time, you will see that the backslash operator outperforms our initial method. 
 \end{template}
 
-\begin{warning}
-    The \emph{rref} function utilizes a modified version of the Gauss-Jordan elimination algorithm (\href{https://www.mathworks.com/help/matlab/ref/rref.html}{Reference Link}).  For some matrices, implementing this algorithm directly leads to round-off errors and other problems that are outside of the scope of this text.  While the backslash operator ($\setminus$) is a relatively robust operator, it too, can lead to computational problems.  We illustrate what can happen in the next example.   
-\end{warning}
 
-\begin{example}\label{ex:rrefFail}
-    We will use a $12\times 12$ Hilbert matrix to illustrate how the \emph{rref} function and the backslash operator ($\setminus$) can fail.  You can learn more about Hilbert matrices \href{https://en.wikipedia.org/wiki/Hilbert_matrix}{here}.
 
+The 
+backslash operator ($\setminus$) can also be used to solve systems of equations when a solution exists.  Here is an example.
+
+\begin{example}\label{temp:systems1}
+Consider the system
+\begin{equation}
+\begin{array}{ccccccccc}
+      x &- &y&&&&&= &0 \\
+	 2x& -&2y&+&z&+&2w&=&4\\
+     & &y&&&+&w&=&0\\
+     & &&&2z&+&w&=&5
+    \end{array}
+    \end{equation}
+
+ (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system with Octave.   
 \begin{verbatim}
-% Use a 12 by 12 Hilbert matrix
-A=hilb(12);
+% Define the coefficient matrix A
+A = [1 -1 0 0;
+     2 -2 1 2;
+     0 1 0 1;
+     0 0 2 1];
 
-% Theoretical rank of A is 12, but the following computation shows a rank of 11
-rank(A)
+% Define vector b
+b = [0;4;0;5];
 
-% rref of A should be the identity matrix, but the following result contains a row of zeros
-rref(A)
-
-% We will now attempt to solve the system Ax=b, for the given b
-b=[1;1;1;1;1;1;1;1;1;1;1;1.1];
-
-% We'll use backslash to attempt to find a solution
-x=A\b
-
-% Test to see if Ax=b
-A*x
-
+% Solve the system 
+x = A \ b
 \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxtkcFqwzAMhu8Gv4MuZe0og_RacshtD7Cxw7aDnSiNqGMXW26SPf2UpB07FIMxP9L__ZI38J4QDBQHsNN8v5KzGBl6w5FGraqyE2VbHHZHrbTawFuHISJTbRxE488QWqiAkjTvwWYG7hDa4FwYyJ-gDv0ls2EKHlIXhiSwe1tRaDW_t9Vu9Y4R29VPSrNrwOJiRw16Jp5uqR5xIqbsWHCeDfmFEobZ6wdjSMIR6z_OB8JAzoGXEsOM_UXsAqTgriswTUlUqMbS7gUSF_FEV_RgtbLlZ3F8eF6K7-Md8SSALMu1pj4nZ1I3I_7RWvKNxBRonrej1VhWX_a2ZExrIpTh2yWHfMXz-AvduIbw&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\href{https://sagecell.sagemath.org/?z=eJxFjsEKwjAQRO-B_Ye59FjYBD0FDwH_wGP1YMIGA7aBNpT69yZIcG-PeczsgKvEtAjKSxCyxJhCkqVgfpY1HXCkHC6YNEYNBltSaGcwGmiYzowW6z9yVfSjMqmhb-wSSl7hSfnWyfZk2Z67dMvv_ffH9tmKzCB1VM3hDv8FLh8nkA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
-Observe that $A\vec{x}\neq\vec{b}$. 
+\begin{warning}
+    The system above has a unique solution.  Try manipulating the system so that it has infinitely many solutions or no solutions.  Run the code to see what happens.  You will observe the following:
+
+\begin{itemize}
+    \item If a system has infinitely many solutions, Octave will find one particular solution.
+    \item If a system has no solutions, Octave will find an approximate solution using least-squares.  %We will cover this method in \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/RTH-0030/main}{Least-Squares Approximation}.
+\end{itemize}
+The way the answer is presented, you cannot tell the difference!
+\end{warning}
+
 \end{example}
 
-\subsection*{Acknowledgements}
+%Due to how the backslash operator ($\setminus$) functions (see the warning above), we recommend that you solve systems by using the reduced row echelon form.  
 
-The inspiration for Example \ref{ex:rrefFail} came from \href{https://stackoverflow.com/questions/42893111/matlab-rref-function-precision-error-after-12th-column-of-hilbert-matrices}{this} \emph{Stack Overflow} comment.
+%As remarked in Template \ref{temp:systems1},
+
+
+
+
 
 
 \end{document}
