@@ -11,7 +11,12 @@
 
 \end{abstract}
 \maketitle
+
+\begin{onlineOnly}
 \section*{Subspaces of $\RR^n$ Associated with Matrices}
+\end{onlineOnly}
+
+
 \subsection*{Row Space of a Matrix}
 Recall that in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/SYS-0030/main}{Gaussian Elimination and Rank}, we claimed that every row-echelon form of a given matrix has the same number of nonzero rows.  This result suggests that there are certain characteristics associated with the rows of a matrix that are not affected by elementary row operations.  We are now in the position to examine this question and to supply the proof we omitted earlier.
 \begin{definition}\label{def:rowspace} Let $A$ be an $m\times n$ matrix.  The \dfn{row space} of $A$, denoted by $\mbox{row}(A)$, is the subspace of $\RR^n$ spanned by the rows of $A$.
@@ -243,6 +248,7 @@ Fortunately, we do not have to start from scratch.  Observe that crossing out th
 \end{exploration}
 
 The approach we took to find a basis for $\mbox{col}(B)$ in Exploration \ref{init:colspace} uses the reduced row-echelon form of $B$. It is true, however, that {\it any} row-echelon form of $B$ could have been used in place of $\mbox{rref}(B)$.  (Why?). We generalize the steps as follows:
+
 \begin{procedure}\label{proc:colspace}
 Given a matrix $B$, a basis for $\mbox{col}(B)$ can be found as follows:
 \begin{enumerate}
@@ -261,6 +267,7 @@ have the same solution set.  This means that any non-trivial relation among the 
 By Theorems \ref{th:rowsrreflinind} and \ref{th:rowsofreflinind}, the pivot columns of $\mbox{rref}(B)$ (or $B'$) are linearly independent.  Therefore the corresponding columns of $B$ are linearly independent.  Non-pivot columns can be expressed as linear combinations of the pivot columns, therefore they contribute nothing to the span and can be removed from the spanning set. 
 \end{proof}
 The proof of Procedure \ref{proc:colspace} shows that the number of basis elements for the column space of a matrix is equal to the number of pivot columns.  But the number of pivot columns is the same as the number of pivots in a row-echelon form, which is equal to the number of nonzero rows and the rank of the matrix.  This gives us the following important result.
+
 \begin{theorem}\label{th:dimroweqdimcoleqrank}
 Let $A$ be a matrix.
 $$\mbox{dim}\Big(\mbox{row}(A)\Big)=\mbox{rank}(A)=\mbox{dim}\Big(\mbox{col}(A)\Big)$$
@@ -349,7 +356,7 @@ $$\mbox{rank}(A)+\mbox{nullity}(A)=n$$
 We will see the geometric implications of this theorem when we study linear transformations.
 
 \section*{Practice Problems}
-\begin{problem}
+\emph{Problems \ref{prob:colrowmatrixA1}-\ref{prob:colrowmatrixA4}}
 Let
 $$A=\begin{bmatrix}2&0&2&4\\1&3&-2&-1\\-1&-2&1&0\end{bmatrix}$$
 
@@ -376,9 +383,7 @@ Basis for $\mbox{col}(A):\quad
 \left\{ \begin{bmatrix}\answer{2}\\\answer{1}\\\answer{-1}\end{bmatrix}, \begin{bmatrix}\answer{0}\\\answer{3}\\\answer{-2}\end{bmatrix}\right\}$
 \end{problem}
 
-\end{problem}
-
-\begin{problem} 
+\emph{Problems \ref{prob:colrowmatrixB1}-\ref{prob:colrowmatrixB4}} 
 Let
 $$B=\begin{bmatrix}1&2&3\\-1&1&3\\2&0&-2\\1&-2&-5\\0&1&2\end{bmatrix}$$
 
@@ -405,12 +410,6 @@ Basis for $\mbox{col}(B):\quad
 \left\{ \begin{bmatrix}\answer{1}\\\answer{-1}\\\answer{2}\\\answer{1}\\\answer{0}\end{bmatrix}, \begin{bmatrix}\answer{2}\\\answer{1}\\\answer{0}\\\answer{-2}\\\answer{1}\end{bmatrix}\right\}$
 \end{problem}
 
-\end{problem}
-
-
-
-
-
 \begin{problem}\label{prob:rankoftranspose}
 Prove that $\mbox{rank}(A)=\mbox{rank}(A^T)$
 \end{problem}
@@ -423,7 +422,7 @@ Find a basis for the column space of a matrix whose columns are the given vector
 \end{hint}
 \end{problem}
 
-\begin{problem}
+\emph{Problems \ref{prob:nullABC1}-\ref{prob:nullABC2}}
 This problem will refer to matrices $A$ and $B$ of Problems \ref{prob:colrowmatrixA1} and \ref{prob:colrowmatrixB1}.
 
 \begin{problem}\label{prob:nullABC1}
@@ -444,10 +443,8 @@ Basis for $\mbox{null}(B):\quad \left\{ \begin{bmatrix}\answer{1}\\\answer{-2}\\
 Demonstrate that the Rank-Nullity Theorem (Theorem \ref{th:matrixranknullity}) holds for $B$.
 \end{problem}
 
-\end{problem}
 
-
-\begin{problem}
+\emph{Problems \ref{prob:nullM1}-\ref{prob:nullM2}}
 Suppose matrix $M$ is such that 
 $$\mbox{rref}(M)=\begin{bmatrix}1&0&2&0&3&1\\0&1&-1&0&1&-2\\0&0&0&1&-2&1\\0&0&0&0&0&0\end{bmatrix}$$
 
@@ -463,7 +460,7 @@ Let $\vec{v}_1,\ldots,\vec{v}_6$ denote the columns of $M$.  Express $\vec{v}_3$
 Answer:
 $$\vec{v}_3=\answer{2}\vec{v}_1+\answer{-1}\vec{v}_2$$
 \end{problem}
-\end{problem}
+
 
 \begin{problem}\label{prob:truefalse3by5}
 Suppose $A$ is a $3\times 5$ matrix.  Which of the following statements could be true?
