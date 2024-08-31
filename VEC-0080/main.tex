@@ -8,7 +8,10 @@
 \begin{abstract}
 \end{abstract}
 \maketitle
+\begin{onlineOnly}
 \section*{Cross Product and its Properties}
+\end{onlineOnly}
+
 In \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VEC-0050/main}{Dot Product and its Properties} we introduced the \dfn{dot product}, one of two important products for vectors.  We will now introduce the second type of product, called the \dfn{cross product}.  There are several important distinctions to keep in mind.  First, the dot product is defined for two vectors of $\RR^n$, for any  natural number $n$; the cross-product will only be defined for vectors of $\RR^3$.  Second, the dot product is a scalar; the cross product of two vectors will be a vector.  Finally, we will find that unlike the dot product, the cross product is not commutative.  
 
 The cross product has many applications in physics and engineering.  It also has important geometric properties which will be addressed in this section and in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0070/main}{Determinants as Areas and Volumes}.
@@ -178,6 +181,7 @@ $$\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$$
 The proof is left to the reader.  (See Practice Problem \ref{prob:corssuvnegcrossvu})
 \end{proof}
 The next theorem lists two additional properties of the cross product.  Proofs of these properties are routine and are left to the reader.  (See Practice Problems \ref{prob:scalarassocofcrossprod} and \ref{prob:distofrossprod})
+
 \begin{theorem}\label{th:crossproductproperties}
 Let $\vec{u}$, $\vec{v}$ and $\vec{w}$ be vectors in $\mathbb{R}^3$, and $k$ be a scalar, then\\
 \begin{enumerate}
@@ -211,7 +215,7 @@ $$\vec{u}\times\vec{v}=\begin{bmatrix}-78\\-25\\-8\end{bmatrix}\quad\text{and}\q
 We will now compute the dot product of $\vec{v}\times\vec{u}$ with each of the original vectors $\vec{u}$ and $\vec{v}$.
 $$\vec{u}\dotp(\vec{v}\times\vec{u})=\begin{bmatrix}3\\ -10\\ 2\end{bmatrix}\dotp\begin{bmatrix}78\\25\\8\end{bmatrix}=0$$
 $$\vec{v}\dotp(\vec{v}\times\vec{u})=\begin{bmatrix}-2\\ 4\\ 7\end{bmatrix}\dotp\begin{bmatrix}78\\25\\8\end{bmatrix}=0$$
-It is also easy to verify that $\vec{u}\dotp(\vec{u}\times\vec{v})=0$ and $\vec{v}\dotp(\vec{u}\times\vec{v})=0$.  Recall that the dot product of two vectors is $0$ if and only if the two vectors are orthogonal. (Theorem \ref{th:orth})
+It is also easy to verify that $\vec{u}\dotp(\vec{u}\times\vec{v})=0$ and $\vec{v}\dotp(\vec{u}\times\vec{v})=0$.  Recall that the dot product of two vectors is $0$ if and only if the two vectors are orthogonal. (Definition \ref{def:orthovectors})
 We conclude that, at least in this case, the cross product of two vectors is orthogonal to each of the vectors.  
 
 \end{exploration}
@@ -273,7 +277,9 @@ $\vec{k}\times\vec{i}=$
   \end{multipleChoice}
 \end{problem}
 
-\begin{problem} Find the cross product $\vec{u}\times\vec{v}$, and verify that $\vec{u}\times\vec{v}$ is orthogonal to both $\vec{u}$ and $\vec{v}$.
+\emph{Problems \ref{prob:crossuv1}-\ref{prob:crossuv2}} 
+
+Find the cross product $\vec{u}\times\vec{v}$, and verify that $\vec{u}\times\vec{v}$ is orthogonal to both $\vec{u}$ and $\vec{v}$.
 
 \begin{problem}\label{prob:crossuv1}
 $\vec{u}=\begin{bmatrix}2\\-1\\4\end{bmatrix}$, $\vec{v}=\begin{bmatrix}0\\3\\1\end{bmatrix}$.
@@ -287,7 +293,6 @@ $\vec{u}=\begin{bmatrix}-1\\5\\-3\end{bmatrix}$, $\vec{v}=\begin{bmatrix}2\\-1\\
 
 Answer:
 $$\vec{u}\times\vec{v}=\begin{bmatrix}\answer{-23}\\\answer{-10}\\\answer{-9}\end{bmatrix}$$
-\end{problem}
 \end{problem}
 
 \begin{problem}\label{prob:corssuvnegcrossvu}
