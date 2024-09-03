@@ -1,3 +1,16 @@
+## Don't push ximeraserve
+*.ximeraserve*
+## Graphics - may be not ignored
+*.jpg
+## Graphics - recommend to be ignored
+*.svg
+*.png
+*.pdf
+## Don't ignore things in ./graphics 
+pictures/*
+!pictures/*.jpg
+!pictures/*.pdf
+!pictures/*.png
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -24,8 +37,6 @@
 !*-pics.pdf
 !ximera-downloads/**
 
-## Generated if empty string is given at "Please type another file name for output:"
-.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -279,14 +290,15 @@ TSWLatexianTemp*
 *~
 */output/*
 Thumbs.db
-ans*.tex
+
+# For exam-stuff ... ?
+ans[0-9]*.tex
 *.jax
 *.ids
 *.oc
 
 
-*.svg
-*.png
+
 *.html
 *.sagetex.sage.py
 metadata.json
@@ -298,6 +310,4 @@ metadata.json
 ximera-downloads
 .gpgkey
 gpgkey
-.ximeraserve
-
 *.xbb
