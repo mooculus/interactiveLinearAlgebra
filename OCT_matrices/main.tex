@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Octave Problems for Ch 3} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Octave Problems for Chapter 3}
+
+To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+
+\begin{problem}\label{prob_oct_7}
+    Let $$A=\begin{bmatrix}2 & 6 & -4 & 1 & 1\\
+-1 & 0 & 2 & 2 & 4\\
+-2 & 1 & 3 & -2 & 1\\
+1 & 1 & 0 & 0 & 6\\
+-3 & 4 & 1 & -2 & 0\end{bmatrix}, \quad \vec{b}=\begin{bmatrix}-12\\
+ 6\\
+ -2\\
+ -7\\
+ -8\end{bmatrix}$$
+Solve $A\vec{x}=\vec{b}$ in two different ways.  First, use the reduced row-echelon form of $[A|\vec{b}]$, second multiply both sides of the equation by $A^{-1}$.  Verify that both methods produce the same answer.
+\end{problem}
+
+\begin{problem}\label{prob_oct_mat1}
+Let $A=\begin{bmatrix} 0 & 1\\5 & 3\end{bmatrix}$.  Find $A^{-1}$ in two different ways.  First, use the \emph{inv} function.  Second, find $\text{rref}[A|I]$.
+    \begin{hint}
+        To allow for an $n\times n$ input matrix, you can use \emph{length} to automatically detect matrix size.
+        
+        \begin{verbatim}
+            M = [A eye(length(A))]  
+        \end{verbatim}
+    \end{hint}
+\end{problem}   
+
+\begin{problem}\label{prob_oct_mat2}
+Write a routine that multiplies an $n\times m$ matrix by a vector by computing the linear combination of the columns of the matrix. (See Example \ref{exp:matrixvectormultdef} for reference.)  
+\end{problem}
+
+\begin{problem}\label{prob_oct_mat3}
+Write a routine that multiplies an $n\times m$ matrix by a vector using the dot product definition of matrix-vector multiplication. (See Definition \ref{def:matrixvectormult}.)
+    
+\end{problem}
+
+\begin{problem}\label{prob_oct_6}
+    Write a routine that multiplies an $n\times m$ matrix by an $m\times k$ matrix.  
+
+    \begin{hint}
+        You can use \href{https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm}{this Wikipedia page} for reference.
+    \end{hint}    
+\end{problem}
+
+\end{document}

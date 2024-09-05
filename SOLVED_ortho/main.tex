@@ -1,0 +1,153 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Solved Problems for Ch 8} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Solved Problems for Chapter 8}
+
+\begin{problem}\label{prob:orth_basis1}
+    Find an orthonormal basis for the span of the following set of
+vectors.
+
+
+$\left[
+\begin{array}{r}
+ 3 \\
+-4 \\
+0
+\end{array}
+\right] ,\left[
+\begin{array}{r}
+ 7 \\
+-1 \\
+0
+\end{array}
+\right] ,\left[
+\begin{array}{r}
+ 1 \\
+7 \\
+1
+\end{array}
+\right] $
+
+Click the arrow to see answer.
+\begin{expandable}
+We will use Gram-Schmidt orthogonalization algorithm.
+$$\vec{f}_1=\begin{bmatrix}3\\-4\\0\end{bmatrix}$$
+$$\vec{f}_2=\begin{bmatrix}7\\-1\\0\end{bmatrix}-\frac{25}{25}\begin{bmatrix}3\\-4\\0\end{bmatrix}=\begin{bmatrix}4\\3\\0\end{bmatrix}$$
+$$\vec{f}_3=\begin{bmatrix}1\\7\\1\end{bmatrix}-\frac{-25}{25}\begin{bmatrix}3\\-4\\0\end{bmatrix}-\frac{25}{25}\begin{bmatrix}4\\3\\0\end{bmatrix}=\begin{bmatrix}0\\0\\1\end{bmatrix}$$
+
+Normalizing each vector we get:
+\[
+\left[
+\begin{array}{c}
+\frac{3}{5} \\
+-\frac{4}{5} \\
+0
+\end{array}
+\right] ,\left[
+\begin{array}{c}
+\frac{4}{5} \\
+\frac{3}{5} \\
+0
+\end{array}
+\right] ,\left[
+\begin{array}{c}
+0 \\
+0 \\
+1
+\end{array}
+\right]
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prob:use_GS_on_span}
+Using the Gram Schmidt process find an
+orthonormal basis for the following span:
+ \[
+\mbox{span} \left\{ \left[
+\begin{array}{r}
+1 \\
+2 \\
+1
+\end{array}
+\right] ,\left[
+\begin{array}{r}
+2 \\
+-1 \\
+3
+\end{array}
+\right] , \left[
+\begin{array}{r}
+1 \\
+0 \\
+0
+\end{array}
+\right] \right\}
+\]
+
+Click the arrow to see the answer.
+\begin{expandable}
+\[
+\left[
+\begin{array}{c}
+\frac{1}{6}\sqrt{6} \\
+\frac{1}{3}\sqrt{6} \\
+\frac{1}{6}\sqrt{6}
+\end{array}
+\right] ,\left[
+\begin{array}{c}
+\frac{3}{10}\sqrt{2} \\
+-\frac{2}{5}\sqrt{2} \\
+\frac{1}{2}\sqrt{2}
+\end{array}
+\right] ,\left[
+\begin{array}{c}
+\frac{7}{15}\sqrt{3} \\
+-\frac{1}{15}\sqrt{3} \\
+-\frac{1}{3}\sqrt{3}
+\end{array}
+\right]
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{OrthoDecomp1} Write $\vec{x}$ as the sum of a vector in $W$ and a vector in $W^\perp$ if
+$$\vec{x} = \begin{bmatrix}1\\ 5\\ 7\end{bmatrix},\quad W = \mbox{span}\left(\begin{bmatrix}1\\ -2\\ 3\end{bmatrix}, \begin{bmatrix}-1\\ 1\\ 1\end{bmatrix}\right)$$
+
+Click the arrow to see the answer.
+\begin{expandable}
+Observe that the two vectors that span $W$ are orthogonal.  We will refer to these vectors as $\vec{f}_1$ and $\vec{f}_2$.
+$$\vec{w}=\text{proj}_W(\vec{x})=\text{proj}_{\vec{f}_1}(\vec{x})+\text{proj}_{\vec{f}_2}(\vec{x})=\frac{12}{14}\begin{bmatrix}1\\-2\\3\end{bmatrix}+\frac{11}{3}\begin{bmatrix}-1\\1\\1\end{bmatrix}=\frac{1}{21}\begin{bmatrix}-59\\41\\131\end{bmatrix}$$
+$$\vec{w}^{\perp}=\vec{x}-\vec{w}=\frac{1}{21}\begin{bmatrix}80\\64\\16\end{bmatrix}$$
+$$\vec{x}=\vec{w}+\vec{w}^{\perp}$$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{OrthoDecomp3}  Write $\vec{x}$ as the sum of a vector in $W$ and a vector in $W^\perp$ if
+$$\vec{x} = \begin{bmatrix}3\\ 1\\ 5\\ 9\end{bmatrix}, \quad W = \mbox{span}\left(\begin{bmatrix}1\\ 0\\ 1\\ 1\end{bmatrix}, \begin{bmatrix}0\\ 1\\ -1\\ 1\end{bmatrix}, \begin{bmatrix}-2\\ 0\\ 1\\ 1\end{bmatrix}\right)$$
+
+Click the arrow to see the answer.
+\begin{expandable}
+Observe that the three vectors that span $W$ form an orthogonal set.  We will refer to these vectors as $\vec{f}_1$, $\vec{f}_2$ and $\vec{f}_3$.
+$$\vec{w}=\text{proj}_W(\vec{x})=\text{proj}_{\vec{f}_1}(\vec{x})+\text{proj}_{\vec{f}_2}(\vec{x})+\text{proj}_{\vec{f}_3}(\vec{x})=$$
+$$=\frac{17}{3}\begin{bmatrix}1\\0\\1\\1\end{bmatrix}+\frac{5}{3}\begin{bmatrix}0\\1\\-1\\1\end{bmatrix}+\frac{8}{6}\begin{bmatrix}-2\\0\\1\\1\end{bmatrix}=\frac{1}{3}\begin{bmatrix}9\\5\\16\\26\end{bmatrix}$$
+$$\vec{w}^{\perp}=\vec{x}-\vec{w}=\frac{1}{3}\begin{bmatrix}0\\-2\\-1\\1\end{bmatrix}$$
+$$\vec{x}=\vec{w}+\vec{w}^{\perp}$$
+\end{expandable}
+\end{problem}
+
+
+\section*{Bibliography}
+Some of the problems come from the end of Chapter 7 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 433--438. 
+
+\end{document}

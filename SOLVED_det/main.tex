@@ -1,0 +1,357 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Solved Problems for Ch 6} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Solved Problems for Chapter 6}
+
+\begin{problem}\label{prb:7.2} Let $A = \left[ \begin{array}{rrr}
+1 & 2 & 4 \\
+0 & 1 & 3 \\
+-2 & 5 & 1
+\end{array} \right]$. When doing cofactor expansion along the top row, we encounter three minor matrices.  What are they?
+
+Click the arrow to see answer.
+\begin{expandable}
+$$\begin{bmatrix}1&3\\5&1\end{bmatrix},\quad\begin{bmatrix}0&3\\-2&1\end{bmatrix},\quad\begin{bmatrix}0&1\\-2&5\end{bmatrix}$$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.4} Find the following determinant by (a) expanding along the first row, (b)
+second column.
+$$\begin{vmatrix}
+1 & 2 & 1 \\
+2 & 1 & 3 \\
+2 & 1 & 1
+\end{vmatrix}$$
+
+Click the arrow to see answer.
+\begin{expandable}
+
+$$\begin{vmatrix}
+1 & 2 & 1 \\
+2 & 1 & 3 \\
+2 & 1 & 1
+\end{vmatrix}=1\begin{vmatrix}1 & 3 \\1 & 1\end{vmatrix}-2\begin{vmatrix}2 & 3\\2 & 1\end{vmatrix}+1\begin{vmatrix}2 & 1\\2 & 1\end{vmatrix}=6$$
+
+$$\begin{vmatrix}
+1 & 2 & 1 \\
+2 & 1 & 3 \\
+2 & 1 & 1
+\end{vmatrix}=-2\begin{vmatrix}2 & 3 \\2 & 1\end{vmatrix}+1\begin{vmatrix}1 & 1\\2 & 1\end{vmatrix}-1\begin{vmatrix}1 & 1\\2 & 3\end{vmatrix}=6$$
+
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.7} Compute the determinant by co-factor expansion. Pick the easiest row or
+column to use.
+$$\begin{vmatrix}
+1 & 0 & 0 & 1 \\
+2 & 1 & 1 & 0 \\
+0 & 0 & 0 & 2 \\
+2 & 1 & 3 & 1
+\end{vmatrix}$$
+
+Click the arrow to see answer.
+\begin{expandable}
+Expand along the third row.
+$$\begin{vmatrix}
+1 & 0 & 0 & 1 \\
+2 & 1 & 1 & 0 \\
+0 & 0 & 0 & 2 \\
+2 & 1 & 3 & 1
+\end{vmatrix}=-2\begin{vmatrix}
+    1 & 0 & 0\\2 & 1 & 1\\2 & 1 & 3
+\end{vmatrix}=-2\left(1\begin{vmatrix}
+    1 & 1\\1 & 3
+\end{vmatrix}\right)=-2(2)=-4$$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.9} An operation is done to get from the first matrix to the second.
+Identify what was done and tell how it will affect the value of the
+determinant.
+\begin{equation*}
+\left[
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right]  \rightarrow \cdots \rightarrow \left[
+\begin{array}{cc}
+a & c \\
+b & d
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+It does not change the determinant. This was just taking the transpose.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.10} An operation is done to get from the first matrix to the second.
+Identify what was done and tell how it will affect the value of the
+determinant.
+\begin{equation*}
+\left[
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right] \rightarrow \cdots \rightarrow \left[
+\begin{array}{cc}
+c & d \\
+a & b
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+In this case two rows were switched and so the resulting determinant is $-1$
+times the first.
+\end{expandable}
+\end{problem}
+
+
+\begin{problem}\label{prb:7.11} An operation is done to get from the first matrix to the second.
+Identify what was done and tell how it will affect the value of the
+determinant.
+\begin{equation*}
+\left[
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right] \rightarrow \cdots \rightarrow \left[
+\begin{array}{cc}
+a & b \\
+a+c & b+d
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+The determinant is unchanged. It was just the first row added to the second.
+\end{expandable}
+\end{problem}
+
+
+\begin{problem}\label{prb:7.12} An operation is done to get from the first matrix to the second.
+Identify what was done and tell how it will affect the value of the
+determinant.
+\begin{equation*}
+\left[
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right] \rightarrow \cdots \rightarrow \left[
+\begin{array}{cc}
+a & b \\
+2c & 2d
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+The second row was multiplied by 2 so the determinant of the result is 2
+times the original determinant.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.13} An operation is done to get from the first matrix to the second.
+Identify what was done and tell how it will affect the value of the
+determinant.
+\begin{equation*}
+\left[
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}
+\right] \rightarrow \cdots \rightarrow \left[
+\begin{array}{cc}
+b & a \\
+d & c
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+In this case the two columns were switched so the determinant of the second
+is $-1$ times the determinant of the first.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.14} Let $A$ be an $n\times n$ matrix and suppose there are $n-1$ rows
+such that all rows are linear combinations of these $n-1$
+rows. Show $\det \left( A\right) =0$.
+
+Click the arrow to see answer.
+\begin{expandable}
+If the determinant is nonzero, then it will remain nonzero with row operations applied to the matrix.
+In this case, you can obtain a row of zeros by doing row
+operations. Thus the determinant must be zero.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.16} Construct $2\times 2$ matrices $A$ and $B$ to illustrate the property that
+$\det A \det B = \det (AB)$.
+
+Click the arrow to see answer.
+\begin{expandable}
+\[
+\det
+\left( \left[
+\begin{array}{cc}
+1 & 2 \\
+3 & 4
+\end{array}
+\right] \left[
+\begin{array}{rr}
+-1 & 2 \\
+-5 & 6
+\end{array}
+\right] \right) = -8
+\]
+\[
+\det \left[
+\begin{array}{cc}
+1 & 2 \\
+3 & 4
+\end{array}
+\right] \det \left[
+\begin{array}{rr}
+-1 & 2 \\
+-5 & 6
+\end{array}
+\right] = -2 \times 4 = -8
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.18} An $n\times n$ matrix is called \dfn{nilpotent}
+if for some positive integer, $k$ it follows $A^{k}=O.$ If
+$A$ is a nilpotent matrix and $k$ is the smallest possible integer such that
+$A^{k}=O,$ what are the possible values of $\det \left( A\right)$?
+
+Click the arrow to see answer.
+\begin{expandable}
+$\det{A}=0$ because $0=\det \left( 0\right) =\det \left( A^{k}\right) =\left( \det
+\left( A\right) \right) ^{k}.$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.19}A matrix is said to be \dfn{orthogonal} if
+$A^{T}A=I.$ Thus the inverse of an orthogonal matrix is just its transpose.
+What are the possible values of $\det \left( A\right) $ if $A$ is an
+orthogonal matrix?
+
+Click the arrow to see answer.
+\begin{expandable}
+You would need $\det \left( AA^{T}\right) =\det
+\left( A\right) \det \left( A^{T}\right) =\det \left( A\right) ^{2}=1$ and
+so $\det \left( A\right) =1,$ or $-1$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.20} Let $A$ and $B$ be two $n\times n$ matrices. We say that $A$ is \textbf{similar} to $B$ and write $A\sim B$
+provided that there exists an invertible matrix $P$
+such that $A=P^{-1}BP.$ Show that if $A\sim B,$ then
+$\det \left( A\right) =\det \left( B\right)$.
+
+Click the arrow to see answer.
+\begin{expandable}
+$\det \left( A\right) =\det
+\left( S^{-1}BS\right) =\det \left( S^{-1}\right) \det \left( B\right) \det
+\left( S\right) =\det \left( B\right) \det \left( S^{-1}S\right) =\det
+\left( B\right) $.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.21} Determine whether each statement is true or false. If true, provide a proof. If false, provide a counter example.
+\begin{enumerate}
+
+\item If any two columns of a square matrix are equal, then the determinant
+of the matrix equals zero.
+
+\item If $A^{-1}$ exists then $\det \left( A^{-1}\right) =\det \left(
+A\right) ^{-1}.$
+
+\item If $A$ is a real $n\times n$ matrix, then $\det \left( A^{T}A\right)
+\geq 0.$
+
+\item If $AX=0$ for some $X \neq 0,$ then $\det \left(
+A\right) =0.$
+\end{enumerate}
+
+Click the arrow to see answer.
+\begin{expandable}
+All of the statements are true.
+\begin{enumerate}
+\item $\det(A)=\det(A^T)$.  If two columns of $A$ are equal, then two rows of $A^T$ are equal.  Applying row operations to $A^T$ will produce a matrix with a row of zeros.
+\item Suppose $A$ is invertible.  Then 
+$$1=\det(I)=\det(AA^{-1})=\det(A)\det(A^{-1})$$  Divide both right and left side by $\det(A)$ to obtain the result.
+\item This follows from the fact that $\det(A)=\det(A^T)$.
+\item If $AX=0$ for some $X \neq \vec{0}$ then there is a non-trivial linear combination of the columns of $A$ that is equal to $\vec{0}$.  This means that the columns of $A$ are linearly dependent.  This implies that the rows are also linearly dependent (why?).  Applying elementary row operations will lead us to a row of zeros.
+\end{enumerate}
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.30} Let
+\begin{equation*}
+A =
+\left[
+\begin{array}{rrr}
+1 & 0 & 3 \\
+1 & 0 & 1 \\
+3 & 1 & 0
+\end{array}
+\right]
+\end{equation*}
+Determine whether the matrix $A$ has an inverse by finding whether the
+determinant is non-zero. 
+
+Click the arrow to see answer.
+\begin{expandable}
+\[
+\det \left[
+\begin{array}{rrr}
+1 & 0 & 3 \\
+1 & 0 & 1 \\
+3 & 1 & 0
+\end{array}
+\right] = 2
+\]
+and so it has an inverse. The inverse turns out to equal
+\[
+\left[
+\begin{array}{rrr}
+-\frac{1}{2} & \frac{3}{2} & 0 \\
+\frac{3}{2} & -\frac{9}{2} & 1 \\
+\frac{1}{2} & -\frac{1}{2} & 0
+\end{array}
+\right]
+\]
+\end{expandable}
+\end{problem}
+
+
+
+\section*{Bibliography}
+Some of the problems come from the end of Chapter 3 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 272--315.  
+
+\end{document}

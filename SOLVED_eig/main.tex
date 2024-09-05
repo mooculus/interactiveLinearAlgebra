@@ -1,0 +1,368 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Solved Problems for Ch 7} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Solved Problems for Chapter 7}
+
+
+\begin{problem}\label{prb:8.1} If $A$ is an invertible $n\times n$ matrix, compare the eigenvalues of
+$A$ and $A^{-1}$. More generally, for $m$ an arbitrary integer, compare the
+eigenvalues of $A$ and $A^{m}$.
+
+Click the arrow to see answer.
+\begin{expandable}
+$A^{m}X=\lambda ^{m}X$ for
+any integer. In the case of $-1,A^{-1}\lambda X=AA^{-1}X=X$
+so $A^{-1}X =\lambda ^{-1}X$. Thus the eigenvalues of $A^{-1}$ are just $\lambda ^{-1}$ where $\lambda $ is an eigenvalue of $A$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.2} If $A$ is an $n\times n$ matrix and $c$ is a nonzero constant, compare
+the eigenvalues of $A$ and $cA$. 
+
+Click the arrow to see answer.
+\begin{expandable}
+Say $AX=\lambda X.$ Then $
+cAX=c\lambda X$ and so the eigenvalues of $cA$ are just $
+c\lambda $ where $\lambda $ is an eigenvalue of $A$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.3} Let $A,B$ be invertible $n\times n$ matrices which commute. That is, $AB=BA$. Suppose $X$ is an eigenvector of $B$. Show that then
+$AX$ must also be an eigenvector for $B$.
+
+Click the arrow to see answer.
+\begin{expandable}
+ $BAX=ABX
+=A\lambda X=\lambda AX$. Here it is assumed that $BX=\lambda X$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.4} Suppose $A$ is an $n\times n$ matrix and it satisfies $A^{m}=A$ for
+some $m$ a positive integer larger than 1. Show that if $\lambda $ is an
+eigenvalue of $A$ then $\left\vert \lambda \right\vert $ equals either 0 or $
+1$. 
+
+Click the arrow to see answer.
+\begin{expandable}
+Let $X$ be the eigenvector. Then $A^{m}X=\lambda ^{m}
+X,A^{m}X=AX=\lambda X$ and so
+\[
+\lambda ^{m}=\lambda
+\]
+Hence if $\lambda \neq 0,$ then
+\[
+\lambda ^{m-1}=1
+\]
+and so $\left\vert \lambda \right\vert =1.$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.5} Show that if $AX=\lambda X$ and $AY=\lambda Y$, then whenever $k,p$ are scalars,
+\begin{equation*}
+A\left( kX+pY\right) =\lambda \left( kX+pY\right)
+\end{equation*}
+Does this imply that $kX+pY$ is an eigenvector? Explain.
+
+Click the arrow to see answer.
+\begin{expandable}
+The formula follows from properties of matrix multiplications. However,
+this vector might not be an eigenvector because it might equal $0$
+and eigenvectors cannot equal $0$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.12} Find the eigenvalues and eigenvectors of the matrix
+\begin{equation*}
+\left[
+\begin{array}{rrr}
+6 & 76 & 16 \\
+-2 & -21 & -4 \\
+2 & 64 & 17
+\end{array}
+\right]
+\end{equation*}
+One eigenvalue is $-2.$
+
+Click the arrow to see answer.
+\begin{expandable}
+The characteristic polynomial of this matrix is $-\lambda^3+2\lambda^2+5\lambda-6$.  Knowing one of the eigenvalues gives us one factor, $(\lambda+2)$.  Use long division of polynomials to finish factoring $-\lambda^3+2\lambda^2+5\lambda-6=-(\lambda+2)(\lambda-1)(\lambda-3)$.  Now we have the following eigenvalues: $\lambda_1=-2$, $\lambda_2=1$, and $\lambda_3=3$.
+
+The corresponding eigenvectors are: $\vec{v}_1=\begin{bmatrix}7\\-2\\6\end{bmatrix}$, $\vec{v}_2=\begin{bmatrix}8\\-2\\7\end{bmatrix}$, and $\vec{v}_3=\begin{bmatrix}4\\-1\\4\end{bmatrix}$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.13} Find the eigenvalues and eigenvectors of the matrix
+\begin{equation*}
+\left[
+\begin{array}{rrr}
+3 & 5 & 2 \\
+-8 & -11 & -4 \\
+10 & 11 & 3
+\end{array}
+\right]
+\end{equation*}
+One eigenvalue is $-3$.
+
+Click the arrow to see answer.
+\begin{expandable}
+Characteristic polynomial: $-\lambda^3-5\lambda^2-7\lambda-3=-(\lambda+3)(\lambda+1)^2$.
+    $$\lambda_1=-3,\quad \vec{v}_1=\begin{bmatrix}1\\-2\\2\end{bmatrix}$$
+    $$\lambda_2=-1,\quad \begin{bmatrix}1\\-2\\3\end{bmatrix}$$
+\end{expandable}
+
+\end{problem}
+
+\begin{problem}\label{prb:8.14} Is it possible for a nonzero matrix to have only $0$ as an eigenvalue?
+
+Click the arrow to see answer.
+\begin{expandable}
+Yes. $\left[
+\begin{array}{cc}
+0 & 1 \\
+0 & 0%
+\end{array}
+\right] $ works.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.17} Let $T\,$\ be the linear transformation which reflects vectors about
+the $x$ axis. Find a matrix for $T$ and then find its eigenvalues and
+eigenvectors.
+
+Click the arrow to see answer.
+
+\begin{expandable}
+The matrix of $T$ is $\left[
+\begin{array}{rr}
+1 & 0 \\
+0 & -1
+\end{array}
+\right]$. 
+
+The eigenvalues and eigenvectors are:
+$$\lambda_1=-1,\quad \vec{v}_1=\begin{bmatrix}0\\1\end{bmatrix}$$
+$$\lambda_2=1,\quad \vec{v}_2=\begin{bmatrix}1\\0\end{bmatrix}$$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.19} Let $T$ be the linear transformation which reflects all vectors in $
+\mathbb{R}^{3}$ through the $xy$ plane. Find a matrix for $T$ and then
+obtain its eigenvalues and eigenvectors.
+
+Click the arrow to see answer.
+\begin{expandable}
+The matrix of $T$ is $\left[
+\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & -1
+\end{array}
+\right]$
+The eigenvalues are $\lambda_1=-1$, $\lambda_2=1$.  Bases for the corresponding eigenspaces are:
+\[
+\mathcal{S}_{\lambda_1}=\left\{
+\begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix} \right\}, \mathcal{S}_{\lambda_2}=\left\{
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix}
+ ,
+\begin{bmatrix}
+0 \\
+1 \\
+0
+\end{bmatrix} \right\}
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.20} Find the eigenvalues and eigenvectors of the matrix
+\begin{equation*}
+\left[
+\begin{array}{rrr}
+5 & -18 & -32 \\
+0 & 5 & 4 \\
+2 & -5 & -11
+\end{array}
+\right]
+\end{equation*}
+One eigenvalue is $1.$ Diagonalize if possible.
+
+Click the arrow to see answer.
+\begin{expandable}
+The eigenvalues are $-1, -1, 1$. The eigenvectors corresponding to the eigenvalues are:
+\[
+\left\{ \left[
+\begin{array}{c}
+10 \\
+-2 \\
+3
+\end{array}
+\right] \right\} \leftrightarrow -1,  \left\{ \left[
+\begin{array}{c}
+7 \\
+-2 \\
+2
+\end{array}
+\right] \right\} \leftrightarrow 1
+\]
+Therefore this matrix is not diagonalizable.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.21} Find the eigenvalues and eigenvectors of the matrix
+\begin{equation*}
+\left[
+\begin{array}{rrr}
+-13 & -28 & 28 \\
+4 & 9 & -8 \\
+-4 & -8 & 9
+\end{array}
+\right]
+\end{equation*}
+One eigenvalue is $3.$ Diagonalize if possible.
+
+Click the arrow to see answer.
+\begin{expandable}
+The eigenvectors and eigenvalues are:
+\[
+\left\{ \left[
+\begin{array}{c}
+2 \\
+0 \\
+1
+\end{array}
+\right] \right\} \leftrightarrow 1, \left\{ \left[
+\begin{array}{c}
+-2 \\
+1 \\
+0
+\end{array}
+\right] \right\} \leftrightarrow 1, \left\{ \left[
+\begin{array}{c}
+7 \\
+-2 \\
+2
+\end{array}
+\right] \right\} \leftrightarrow 3
+\]
+The matrix $P$ needed to diagonalize the above matrix is
+\[
+\left[
+\begin{array}{rrr}
+2 & -2 & 7 \\
+0 & 1 & -2 \\
+1 & 0 & 2
+\end{array}
+\right]
+\]
+and the diagonal matrix $D$ is
+\[
+\left[
+\begin{array}{rrr}
+1 & 0 & 0  \\
+0 & 1 & 0 \\
+0 & 0 & 3
+\end{array}
+\right]
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:8.22} Find the eigenvalues and eigenvectors of the matrix
+\begin{equation*}
+\left[
+\begin{array}{rrr}
+89 & 38 & 268 \\
+14 & 2 & 40 \\
+-30 & -12 & -90
+\end{array}
+\right]
+\end{equation*}
+One eigenvalue is $-3.$ Diagonalize if possible.
+
+Click the arrow to see answer.
+\begin{expandable}
+The eigenvectors and eigenvalues are:
+\[
+\left\{ \left[
+\begin{array}{c}
+-6 \\
+-1 \\
+-2
+\end{array}
+\right] \right\} \leftrightarrow 6, \left\{ \left[
+\begin{array}{c}
+-5 \\
+-2 \\
+2
+\end{array}
+\right] \right\} \leftrightarrow -3, \left\{ \left[
+\begin{array}{c}
+-8 \\
+-2 \\
+3
+\end{array}
+\right] \right\} \leftrightarrow -2
+\]
+The matrix $P$ needed to diagonalize the above matrix is
+\[
+\left[
+\begin{array}{rrr}
+-6 & -5 & -8 \\
+-1 & -2 & -2 \\
+2 & 2 & 3
+\end{array}
+\right]
+\]
+and the diagonal matrix $D$ is
+\[
+\left[
+\begin{array}{rrr}
+6 & 0 & 0  \\
+0 & -3 & 0 \\
+0 & 0 & -2
+\end{array}
+\right]
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prob:moresimilarproperties}
+If $A \sim B$ and $A$ has any of the following properties, show that $B$ has the same property.
+
+\begin{enumerate}
+\item\label{prob:moresimilarproperties_idempotent} A is \dfn{Idempotent}, that is $A^{2} = A$.
+
+\item\label{prob:moresimilarproperties_nilpotent} A is \dfn{Nilpotent}, that is $A^{k} = 0$ for some $k \geq 1$.
+
+Click the arrow to see answer.
+\begin{expandable}
+If $B = P^{-1}AP$ and $A^{k} = 0$, then $B^{k} = (P^{-1}AP)^{k} = P^{-1}A^{k}P = P^{-1}0P = 0$.
+\end{expandable}
+
+\item\label{prob:moresimilarproperties_invertible} A is Invertible.
+
+\end{enumerate}
+
+\end{problem}
+
+\section*{Bibliography}
+These problems come from Chapter 7 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 359--401. 
+
+\end{document}

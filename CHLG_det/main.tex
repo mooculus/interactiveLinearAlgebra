@@ -1,0 +1,103 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Challenge Problems for Ch 6} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Challenge Problems for Chapter 6}
+
+\begin{problem}\label{prb:7.32} Consider the matrix
+\begin{equation*}
+A =
+\left[
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & \cos t & -\sin t \\
+0 & \sin t & \cos t
+\end{array}
+\right]
+\end{equation*}
+Does there exist a value of $t$ for which this matrix fails to have an
+inverse? Explain.
+
+Click the arrow to see answer.
+\begin{expandable}
+ No. It has a nonzero determinant for all $t$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.41} If $A,B,$ and $C$ are each $n\times n$ matrices and $ABC$ is
+invertible, show why each of $A,B,$ and $C$ are invertible.
+
+Click the arrow to see answer.
+
+\begin{expandable}
+This follows
+because $\det \left( ABC\right) =\det \left( A\right) \det \left( B\right)
+\det \left( C\right) $ and if this product is nonzero, then each determinant
+in the product is nonzero and so each of these matrices is invertible.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:7.37} Suppose $A,B$ are $n\times n$ matrices and that $AB=I.$ Show that then
+$BA=I.$ 
+\begin{hint}
+First explain why
+$\det \left( A\right) ,\det \left( B\right) $ are both nonzero. Then $\left(
+AB\right) A=A$ and then show $BA\left( BA-I\right) =0.$ Now use what
+is given to conclude $A\left( BA-I\right) =0.$ 
+\end{hint}
+\end{problem}
+
+\begin{problem}\label{prb:7.40} Suppose $A$ is an upper triangular matrix. Show that $A^{-1}$ exists
+if and only if all elements of the main diagonal are non zero. Is it true
+that $A^{-1}$ will also be upper triangular? Explain. Could the same be concluded for lower triangular matrices?
+\begin{hint}
+The given condition is what it takes for the
+determinant to be non zero. Recall that the determinant of an upper
+triangular matrix is just the product of the entries on the main diagonal.
+\end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:nich3.2.3}
+Let $A$, $B$, and $C$ denote $n\times n$ matrices.  Assume that $\det A=-1$, $\det B=2$, and $\det C=3$.  Evaluate
+\begin{enumerate}
+    \item $\det (A^3BC^TB^{-1})$
+    \item $\det (B^2C^{-1}AB^{-1}C^T)$
+    \item $\det (A^{-1}B^{-1}AB)$
+\end{enumerate}
+    
+\end{problem}
+
+\begin{problem}\label{prob:nich3.2.12}
+If $A$ and $B$ are $n\times n$ matrices such that $AB =-BA$, and if $n$ is odd, show that either $A$ or $B$ has no inverse.
+\end{problem}
+
+\begin{problem}\label{prob:nich3.2.16}
+    Show that no $3\times 3$ matrix $A$ exists such
+that $A^2+I = O$. Find a $2\times 2$ matrix $A$ with this property.
+\end{problem}
+
+\begin{problem}\label{prob:nich3.2.17}
+    Show that $\det (A+B^T ) = \det (A^T +B)$
+for any $n\times n$ matrices $A$ and $B$.
+\end{problem}
+
+
+
+\section*{Bibliography}
+
+These problems come from Chapter 3 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 272--315.  
+
+Several problems came from the end of Chapter 3 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 167. 
+
+\end{document}

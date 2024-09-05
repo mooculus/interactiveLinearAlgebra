@@ -1,0 +1,122 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Challenge Problems for Ch 8} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Challenge Problems for Chapter 8}
+
+\begin{problem}\label{prob:8_1_13}
+If $U$ is a subspace of $\RR^n$, show that $\left(U^{\perp}\right)^\perp = U$. 
+\begin{hint}
+Show that $U \subseteq \left(U^{\perp}\right)^\perp$, then use Theorem~\ref{th:023783c} twice.
+\end{hint}
+\end{problem}
+
+
+\begin{problem}\label{prob:8_1_14}
+If $W$ is a subspace of $\RR^n$, show how to find an $n \times n$ matrix $A$ such that $W = \{\vec{x} \mid A\vec{x} = \vec{0}\}$. 
+
+%\begin{hint}
+%Use Problem~\ref{prob:8_1_13}.
+%\end{hint}
+
+%\begin{hint}
+%Let $\{\vec{y}_{1}, \vec{y}_{2}, \dots, \vec{y}_{m}\}$ be a basis of $W^\perp$, and let $A$ be the $n \times n$ matrix with rows $\vec{y}^T_1, \vec{y}^T_2, \dots, \vec{y}^T_m, 0, \dots, 0$. Then $A\vec{x} = \vec{0}$ if and only if $\vec{y}_{i} \dotp \vec{x} = 0$ for each $i = 1, 2, \dots, m$; if and only if $\vec{x}$ is in $W^{\perp \perp} = U$.
+%\end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:8_1_16}
+If $U$ and $W$ are subspaces, define $U+W$ to be the set of all possible sums of elements of $U$ with elements of $W$.
+
+\begin{enumerate} 
+\item Is $U+W$ a subspace?
+Show that $(U + W)^\perp = U^\perp \cap W^\perp$. 
+\item Illustrate this result with a diagram in $\RR^3$ where $U$ and $W$ are two distinct lines through the origin.  What does $U+W$ look like?  What do $U^{\perp}$ and $W^{\perp}$ look like?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:8_1_17.2}
+A square matrix $E$ satisfying $E^2=E=E^T$ is called a \emph{projection matrix}.  If $E$ is a projection matrix, show that $I - E$ is also a projection matrix.
+\end{problem}
+
+
+\begin{problem}\label{prob:8_1_17.1}
+\item Let $E$ be an $n \times n$ matrix, and let $W = \{\vec{x} E \mid \vec{x} \mbox{ in } \RR^n\}$. Show that the following are equivalent.
+
+
+\begin{enumerate}
+\item $E^{2} = E = E^{T}$ ($E$ is a \dfn{projection matrix}).
+
+\item $(\vec{x} - \vec{x}E) \dotp (\vec{y}E) = 0$ for all $\vec{x}$ and $\vec{y}$ in $\RR^n$.
+
+\item $\mbox{proj}_W(\vec{x}) = \vec{x}E$ for all $\vec{x}$ in $\RR^n$.
+\begin{hint}
+For (ii) implies (iii): Write $\vec{x} = \vec{x}E + (\vec{x} - \vec{x}E)$ and use the uniqueness argument preceding the definition of $\mbox{proj}_W(\vec{x})$. For (iii) implies (ii): $\vec{x} - \vec{x}E$ is in $W^\perp$ for all $\vec{x}$ in $\RR^n$.
+\end{hint}
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}\label{prob:8_1_17.3}
+If $EF = 0 = FE$ and $E$ and $F$ are projection matrices, show that $E + F$ is also a projection matrix.
+
+\end{problem}
+
+\begin{problem}\label{prob:8_1_17.4}
+If $A$ is $m \times n$ and $AA^{T}$ is invertible, show that $E = A^{T}(AA^{T})^{-1}A$ is a projection matrix.
+
+Click the arrow to see answer.
+
+\begin{expandable}
+    $E^T = A^T[(AA^T)^-1]^T(A^T)^T  = A^T[(AA^T)^T]^{-1}A = A^T[AA^T]^{-1}A = E$
+\end{expandable}
+
+\end{problem}
+
+
+
+
+\begin{problem}\label{prob:ortho11}
+Consider $A = \begin{bmatrix}
+0 & a & 0 \\
+a & 0 & c \\
+0 & c & 0
+\end{bmatrix}$
+ where one of $a, c \neq 0$. Show that the characteristic polynomial (see Definition \ref{def:char_poly_complex}) is given by $c_{A}(z) = z(z - k)(z + k)$, where $k = \sqrt{a^2 + c^2}$, and find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diagonal.
+
+Click the arrow to see the answer.
+\begin{expandable}
+$Q = \frac{1}{\sqrt{2}k}\begin{bmatrix}
+c\sqrt{2} & a & a \\
+0 & k & -k \\
+-a\sqrt{2} & c & c
+\end{bmatrix}$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prob:ortho13}
+Given $A = \begin{bmatrix}
+b & a \\
+a & b
+\end{bmatrix}$, show that the characteristic polynomial (see Definition \ref{def:char_poly_complex}) is given by $c_{A}(z) = (z - a - b)(z + a - b)$, and find an orthogonal matrix $Q$ such that $Q^{-1}AQ$ is diagonal.
+\end{problem}
+
+
+\section*{Bibliography}
+
+Some of these problems come from Section 7.4 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 433--438.  
+
+Other problems come from the second part of Section 8.1 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, p. 422--423 
+
+\end{document}

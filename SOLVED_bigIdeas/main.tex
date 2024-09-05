@@ -1,0 +1,201 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Solved Problems for Ch 2} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Solved Problems for Chapter 2}
+
+\begin{problem}\label{prb:3.3}
+If possible, express the vector
+\begin{equation*}
+\vec{v}= 
+\begin{bmatrix}
+4 \\
+4 \\
+-3
+\end{bmatrix}
+\end{equation*}
+as a linear combination of the vectors
+
+\begin{equation*}
+\vec{u}_1 = 
+\begin{bmatrix}
+3 \\
+1 \\
+-1
+\end{bmatrix}
+\mbox{ and  }
+\vec{u}_2 =
+\begin{bmatrix}
+2 \\
+-2\\
+1
+\end{bmatrix}.
+\end{equation*}
+
+Click the arrow to see answer.
+\begin{expandable}
+    We start with a linear combination equation $a\begin{bmatrix}3\\1\\-1\end{bmatrix}+b\begin{bmatrix}2\\-2\\1\end{bmatrix}=\begin{bmatrix}4\\4\\-3\end{bmatrix}$.  This gives us the following:
+    $$\left[
+\begin{array}{rr|r}
+3 & 2 & 4 \\
+1 & -2 & 4\\
+-1 & 1 & -3
+\end{array}
+\right] \rightsquigarrow \left[
+\begin{array}{rr|r}1& 0& 2\\
+ 0& 1 &-1\\
+ 0& 0& 0\end{array}
+\right]$$
+This gives us $\vec{v}=2\vec{u}_1 -\vec{u}_2$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:3.4}
+Decide whether
+$$
+\vec{v}= 
+\begin{bmatrix}
+4 \\
+4 \\
+4
+\end{bmatrix}
+$$
+is a linear combination of the vectors
+$$
+\vec{u}_1 = 
+\begin{bmatrix}
+3 \\
+1 \\
+-1
+\end{bmatrix}
+\mbox{ and  }
+\vec{u}_2 =
+\begin{bmatrix}
+2 \\
+-2\\
+1
+\end{bmatrix}.
+$$
+
+Click the arrow to see answer.
+
+\begin{expandable}
+$$\left[
+\begin{array}{rr|r}
+3 & 2 & 4 \\
+1 & -2 & 4\\
+-1 & 1 & 4
+\end{array}
+\right] \rightsquigarrow \left[
+\begin{array}{rr|r}1& 0& 0\\
+ 0& 1 & 0\\
+ 0& 0& 1\end{array}
+\right]$$
+The last row indicates that there is no solution to the linear combination equation $a\vec{u}_1+b\vec{u}_2=\vec{v}$.  Therefore, $\vec{v}$ is not a linear combination of $\vec{u}_1$ and $\vec{u}_2$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:sovedCh2_1}
+Determine whether the following set of vectors is linearly independent.
+$$\left\{\begin{bmatrix}
+    2\\ -3\\0
+\end{bmatrix}, \begin{bmatrix}
+    1\\0\\1
+\end{bmatrix}, \begin{bmatrix}
+    1\\1\\4
+\end{bmatrix}\right\}$$
+
+Click the arrow for answer.
+
+\begin{expandable}
+    The linear combination equation $a\begin{bmatrix}
+    2\\ -3\\0
+\end{bmatrix}+ b\begin{bmatrix}
+    1\\0\\1
+\end{bmatrix}+ c\begin{bmatrix}
+    1\\1\\4
+\end{bmatrix}=\vec{0}$ has only the trivial solution.  We can see this as follows.
+$$\text{rref}\left(\begin{bmatrix}2 & 1 & 1\\-3 & 0 & 1\\0 & 1 & 4\end{bmatrix}\right)=\begin{bmatrix}
+    1 & 0 & 0\\0 & 1 &0\\ 0 & 0 &1
+\end{bmatrix}$$
+Therefore the given set of vectors is linearly independent.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:solvedCh2_2}
+Determine whether the following set of vectors is linearly independent.
+$$\left\{\begin{bmatrix}
+    2\\ -3\\0
+\end{bmatrix}, \begin{bmatrix}
+    4\\-1\\8
+\end{bmatrix}, \begin{bmatrix}
+    1\\1\\4
+\end{bmatrix}\right\}$$
+
+Click the arrow for answer.
+
+\begin{expandable}
+    The linear combination equation $a\begin{bmatrix}
+    2\\ -3\\0
+\end{bmatrix}+ b\begin{bmatrix}
+    4\\-1\\8
+\end{bmatrix}+ c\begin{bmatrix}
+    1\\1\\4
+\end{bmatrix}=\vec{0}$ has a non-trivial solution.  We can see this as follows.
+$$\text{rref}\left(\begin{bmatrix}2 & 4 & 1\\-3 & -1 & 1\\0 & 8 & 4\end{bmatrix}\right)=\begin{bmatrix}
+    1 & 0 & -1/2\\0 & 1 &1/2\\ 0 & 0 &0
+\end{bmatrix}$$
+Therefore the given set of vectors is linearly dependent.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:3.14} Suppose $\left\{ \vec{x}_{1},\ldots ,\vec{x}_{k}\right\} $ is a
+set of vectors from $\RR^{n}.$ Show that $\vec{0}$ is in $\mbox{
+span}\left\{ \vec{x}_{1},\ldots ,\vec{x}_{k}\right\} .$
+
+Click the arrow to see answer.
+\begin{expandable}
+Let all of the coefficients in the linear combination be zero: 
+ $\sum_{i=1}^{k}0\vec{x}_{k}=\vec{0}$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prob:solvedCh2_3}
+    True or false?
+
+    Click the arrow to see each answer.
+
+    \begin{enumerate}
+        \item The span of any one vector in $\RR^n$ is a line.
+
+        \begin{expandable}
+            This is technically false because the span of the zero vector is a point.  For all non-zero vectors this statement is true.
+        \end{expandable}
+
+        \item The span of two non-zero vectors in $\RR^n$ is a plane.
+
+        \begin{expandable}
+            This is false.  If two vectors are scalar multiples of each other (i.e. they are linearly dependent), then their span is a line, not a plane.
+        \end{expandable}
+
+        \item Given two linearly independent vectors, $\vec{v}$ and $\vec{w}$, let $\vec{n}$ be a normal vector to the plane spanned by $\vec{v}$ and $\vec{w}$.  The set $\left\{\vec{v}, \vec{w}, \vec{n}\right\}$ is linearly independent.
+
+        \begin{expandable}
+            This is true.  A normal to the plane is a vector perpendicular to the plane.  Only vectors that lie in the plane spanned by $\vec{v}$ and $\vec{w}$ can be expressed as a linear combination of $\vec{v}$ and $\vec{w}$.  Since $\vec{n}$ is not in the plane, it cannot be expressed as a linear combination of $\vec{v}$ and $\vec{w}$.  Therefore the set $\left\{\vec{v}, \vec{w}, \vec{n}\right\}$ is linearly independent.
+        \end{expandable}
+    \end{enumerate}
+\end{problem}
+
+\section*{Bibliography}
+Some of the Review Exercises come from the end of Chapter 4 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 151--152.
+
+\end{document}

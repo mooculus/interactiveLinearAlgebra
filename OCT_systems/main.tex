@@ -1,0 +1,147 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Octave Problems for Ch 1} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Octave Problems for Chapter 1}
+
+To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+
+\begin{problem}\label{prob_oct_0}
+    Given the code below, write out the system of equations and the corresponding solution(s).
+
+    \begin{verbatim}
+% Coefficient matrix A
+A=[2 -4 1 1 3;
+0 2 -1 4 -1;
+2 -2 1 1 4];
+
+% Column vector b
+b=[-2; 1; 4];
+
+% Augmented matrix A_b
+A_b=[A b];
+
+% Reduced row-echelon form
+rref_A_b=rref(A_b)
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxFjcEKwjAQRO-B_MNcCnoI2NpbySH4B16LFJtuNNA0sKTq57sVVBaGGeaxU-GUKYToIy0F6Vo4vuC0crZvYFrUcsdOqwMk1mhFJIlvPlV7kaRVJV_mNS14kC-ZMWo12t40Heruz7j1lmSFpt_OIKCI7R3GL3WmafXCcH4a8nea84KQOWnFTGHY8M3sxOzf0oYzHQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
+\end{problem}
+
+\begin{problem}\label{prob_oct_1}
+    Solve each of the following systems of equations using the backslash ($\setminus$) operator, and the \emph{rref} command.  Reconcile the seeming differences.
+
+    \begin{enumerate}
+        \item 
+        \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+	 &&y&+&z&=&1\\
+     -2x&&&+&3z&=&1
+    \end{array}
+    \end{equation}
+  
+    
+    What is true about this system?
+    
+    \begin{multipleChoice}
+    \choice[correct]{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+
+       \item 
+    \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+	 x&-&y&+&2z&=&4\\
+     -2x&+&y&-&3z&=&-3
+    \end{array}
+    \end{equation}
+
+    What is true about this system?
+    \begin{multipleChoice}
+    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice[correct]{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+
+    \item 
+    \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+	 x&-&y&+&2z&=&1\\
+     -2x&+&y&-&3z&=&1
+    \end{array}
+    \end{equation}
+
+    What is true about this system?
+    \begin{multipleChoice}
+    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice[correct]{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+
+         \end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob_oct_2}
+Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (See Templates \ref{temp:randMat} and \ref{temp:rref} for coding reference.)
+
+Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
+
+What are the possibilities for the rank of $[A | \vec{b}]$?  
+
+\begin{multipleChoice}
+    \choice{The rank can be any positive integer less than or equal to $20$.}
+    \choice{The rank can be any positive integer less than or equal to $3$.}
+    \choice{The rank is always equal to $4$.}
+    \choice[correct]{The rank can be any non-negative integer less than or equal to $4$.}
+\end{multipleChoice}
+
+What are the possibilities for the number of solutions of $[A | \vec{b}]$?
+
+\begin{multipleChoice}
+    \choice{This system could have a unique solution.}
+    \choice[correct]{This system has either no solutions or infinitely many solutions.}
+    \choice{This system will always have infinitely many solutions.}
+    \choice{This system will always be infeasible.}
+\end{multipleChoice}
+
+There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
+
+Here is a fun piece of code.  Try to figure out what it does.
+
+\begin{verbatim}
+for i=1:200
+% Define the coefficient matrix A
+A = randi([0 1],5,3);
+
+% Define vector b
+b = randi([0 1],5,1);
+
+% Create an augmented matrix
+A_b=[A b];
+
+% Find the rank
+rank_A_b=rank(A_b)
+end
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxljssKwjAQRfeB-YfZCC10kShulC6C4k-UUvKY6CBNIUTx802kguBmuItz75mwJOReHbZSgtjgmQJHwnwjdAuFwI4pZpxNTvxCDUJjj8lEz80gUY3dvtu1RxA_3Se5XEYtCPvHqi97SmQyoYloHte5KMivkqKYbD9otOPKXjj6z0dl6w6i3qkyNTQltCAo-jehYTnK&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+Why did we have better luck generating $[A | \vec{b}]$ of rank less than $4$?
+    
+\end{problem}
+
+\end{document}

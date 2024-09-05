@@ -1,0 +1,338 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Solved Problems for Ch 1} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Solved Problems for Chapter 1}
+
+
+\begin{problem}\label{prb:2.3} You have a system of $k$ equations in two variables, $k\geq 2$.
+Explain the geometric significance of
+
+\begin{enumerate}
+\item No solution.
+
+\begin{expandable}
+    The $k$ lines do not have a point common to all of them.
+\end{expandable}
+\item A unique solution.
+
+\begin{expandable}
+    All $k$ lines intersect at a single point.
+\end{expandable}
+\item An infinite number of solutions.
+
+\begin{expandable}
+    The $k$ lines coincide.
+\end{expandable}
+\end{enumerate}
+Click the arrow to see answer.
+
+\end{problem}
+
+\begin{problem}\label{prb:2.7}
+Consider the following augmented matrix in which $\ast $ denotes an arbitrary
+number and $\blacksquare $ denotes a nonzero number. Determine whether the
+given augmented matrix corresponds to a consistent system. If consistent, is the solution unique?
+\begin{equation*}
+\left[
+\begin{array}{ccccc|c}
+\blacksquare & \ast & \ast & \ast & \ast & \ast \\
+0 & \blacksquare & \ast & \ast & 0 & \ast \\
+0 & 0 & 0 & 0 & \blacksquare & 0 \\
+0 & 0 & 0 & 0 & \blacksquare & \blacksquare
+\end{array}
+\right]
+\end{equation*}
+Click the arrow to see answer. 
+\begin{expandable}
+The third equation implies that $x_5 = 0$.  The fourth equation implies that $x_5 \ne 0$.  We conclude that the system is inconsistent.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.8}
+Suppose a system of equations has fewer equations than variables. Will such a system necessarily be consistent? If so, explain why and if not, give an example which is not consistent.
+
+Click the arrow to see answer.
+\begin{expandable}
+No. Consider $x+y+z=2$ and $x+y+z=1.$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.9}
+If a system of equations has more equations than variables, can it
+have a solution? If so, give an example and if not, explain why not.
+
+Click the arrow to see answer. 
+\begin{expandable}
+These can
+have a solution. For example, $x+y=1,2x+2y=2,3x+3y=3$ even has an infinite
+set of solutions.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.10}
+Find $h$ such that
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+2 & h & 4 \\
+3 & 6 & 7
+\end{array}
+\right]
+\end{equation*}
+is the augmented matrix of an \textit{inconsistent} system.
+
+\begin{expandable}
+ $\left[
+\begin{array}{cc|c}
+2 & h & 4 \\
+3 & 6 & 7
+\end{array}
+\right]\rightsquigarrow \left[
+\begin{array}{cc|c}
+3 & (3/2)h & 6 \\
+3 & 6 & 7
+\end{array}
+\right]$.  The system is inconsistent for $h=4$.
+\end{expandable}
+
+\end{problem}
+
+\begin{problem}\label{prb:2.11}
+Find $h$ such that
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+1 & h & 3 \\
+2 & 4 & 6
+\end{array}
+\right]
+\end{equation*}
+is the augmented matrix of a \textit{consistent} system.
+
+Click the arrow to see answer. 
+\begin{expandable}
+ The reduced row-echelon form will never have a row of the form $[0\, 0|1]$. The system is consistent for all $h$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.14}
+Choose $h$ and $k$ such that the augmented matrix shown has each of the following:
+\begin{enumerate}
+\item one solution
+\item no solution
+\item infinitely many solutions
+\end{enumerate}
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+1 & 2 & 2 \\
+2 & h & k
+\end{array}
+\right]
+\end{equation*}
+Click the arrow to see answer. 
+\begin{expandable}
+If $h\neq 4,$ then there is exactly one solution. If $h=4$ and $k\neq 4,$
+then there are no solutions. If $h=4$ and $k=4,$ then there are infinitely
+many solutions.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.15}
+Determine if the system is consistent. If so, is the solution unique?
+$$\begin{array}{ccccccccc}
+      x & +&2y&+&z&-&w&= &2 \\
+	 x& -&y&+&z&+&w&=&1\\
+     2x& +&y&-&z&&&=&1\\
+     4x&+&2y&+&z&&&=&5
+    \end{array}$$
+
+Click the arrow to see answer. 
+\begin{expandable}
+There is no solution because the rref of the augmented matrix contains a row of the form $\begin{bmatrix}0 & 0 & 0 & 0 & | & 1\end{bmatrix}$ $$\mbox{rref}\left(\left[
+\begin{array}{rrrr|r}
+1 & 2 & 1 & -1 & 2 \\
+1 & -1 & 1 & 1 & 1 \\
+2 & 1 & -1 & 0 & 1 \\
+4 & 2 & 1 & 0 & 5
+\end{array}
+\right]\right) = \left[
+\begin{array}{rrrr|r}
+1 & 0 & 0 &  \frac{1}{3} & 0 \\
+0 & 1 & 0 & - \frac{2}{3} & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1
+\end{array}
+\right] .$$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.16}
+Determine if the system is consistent. If so, is the solution unique?
+
+$$\begin{array}{ccccccccc}
+      x & +&2y&+&z&-&w&= &2 \\
+	 x& -&y&+&z&+&w&=&0\\
+     2x& +&y&-&z&&&=&1\\
+     4x&+&2y&+&z&&&=&3
+    \end{array}$$
+
+Click the arrow to see answer. 
+\begin{expandable}
+$$\text{rref}\left(\left[
+\begin{array}{rrrr|r}
+1 & 2 & 1 & -1 & 2 \\
+1 & -1 & 1 & 1 & 0 \\
+2 & 1 & -1 & 0 & 1 \\
+4 & 2 & 1 & 0 & 3
+\end{array}
+\right]\right)=\left[
+\begin{array}{rrrr|r}
+1 & 0 & 0 & 1/3 & 1/3 \\
+0 & 1 & 0 & -2/3 & 2/3 \\
+0 & 0 & 1 & 0 & 1/3 \\
+0 & 0 & 0 & 0 & 0
+\end{array}
+\right] $$
+There are infinitely many solutions: $w=t$, $z=\frac{1}{3}$, $y=\frac{2}{3}+\frac{2}{3}t$, $x=\frac{1}{3}-\frac{1}{3}t$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.25} Find the solution of the system whose augmented matrix is
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+1 & 2 & 0 & 2 \\
+1 & 3 & 4 & 2 \\
+1 & 0 & 2 & 1
+\end{array}
+\right]
+\end{equation*}
+
+Click the arrow to see answer. 
+\begin{expandable}
+
+$$\text{rref}\left(\left[
+\begin{array}{rrr|r}
+1 & 2 & 0 & 2 \\
+1 & 3 & 4 & 2 \\
+1 & 0 & 2 & 1
+\end{array}
+\right]\right)=\left[
+\begin{array}{rrr|r}
+1 & 0 & 0 & 6/5 \\
+0 & 1 & 0 & 2/5 \\
+0 & 0 & 1 & -1/10
+\end{array}
+\right]$$
+$x=\frac{6}{5}, y=\frac{2}{5}, z=-\frac{1}{10}$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.27} Solve the system whose augmented matrix is
+\begin{equation*}
+\left[
+\begin{array}{rrr|r}
+1 & 1 & 0 & 1 \\
+1 & 0 & 4 & 2
+\end{array}
+\right]
+\end{equation*}
+Click the arrow to see answer. 
+\begin{expandable}
+The reduced row echelon form is $\left[
+\begin{array}{rrr|r}
+1 & 0 & 4 & 2 \\
+0 & 1 & -4 & -1
+\end{array}
+\right] $ and so the solution is $z=t,y=4t,x=2-4t.$
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.28} Solve the system if the rref of its augmented matrix is
+$$\left[
+\begin{array}{rrrrr|r}
+1 & 0 & 0 & 0 & 9 & 3 \\
+0 & 1 & 0 & 0 & -4 & 0 \\
+0 & 0 & 1 & 0 & -7 & -1 \\
+0 & 0 & 0 & 1 & 6 & 1
+\end{array}
+\right] $$
+Click the arrow to see answer. 
+\begin{expandable}
+$x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.29} Solve the system if the rref of its augmented matrix is
+$$\left[
+\begin{array}{rrrrr|r}
+1 & 0 & 2 & 0 & -1/2 &  5/2 \\
+0 & 1 & 0 & 0 &  1/2 &  3/2 \\
+0 & 0 & 0 & 1 &  3/2 & -1/2 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\right] $$
+Click the arrow to see answer. 
+\begin{expandable}
+The free variables are $x_{5}=t,x_{3}=s$. The other variables are
+given by $x_{4}=-\frac{1}{2}-\frac{3}{2}t$, $x_{2}=\frac{3}{2}-\frac{1}{2}t$, $x_{1}=\frac{5}{2}+\frac{1}{2}t-2s$.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.39} Suppose a system of equations has fewer equations than variables and
+you have found a solution to this system of equations. Is it possible that
+your solution is the only one? Explain.
+
+Click the arrow to see answer. 
+\begin{expandable}
+No. The rank of the coefficient matrix in this case is smaller than the number of columns (variables).  So, there has to be a free variable.  The parameter ($t$ is a typical choice) assigned to the free variable will guarantee infinitely many solutions.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.55} Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
+always no larger than $\min \left( m,n\right).$
+
+Click the arrow to see answer. 
+\begin{expandable}
+It is because you cannot
+have more leading 1's than columns and you cannot have more leading 1's than rows.
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prb:2.53} Find the rank of the following matrix.
+$$\begin{bmatrix}
+4 & 4 & 20 & -1 & 17 \\
+1 & 1 & 5 & 0 & 5 \\
+1 & 1 & 5 & -1 & 2 \\
+3 & 3 & 15 & -3 & 6
+\end{bmatrix}$$
+
+Click the arrow to see answer. 
+\begin{expandable}
+$$\text{rref}\left(\begin{bmatrix}4 & 4 & 20 & -1 & 17 \\
+1 & 1 & 5 & 0 & 5 \\
+1 & 1 & 5 & -1 & 2 \\
+3 & 3 & 15 & -3 & 6\end{bmatrix}\right)=\begin{bmatrix}1 &1 &5 &0 &5\\
+ 0 & 0 &0 &1 &3\\
+ 0 &0 &0 &0 &0\\
+ 0& 0& 0& 0& 0\end{bmatrix}$$
+
+ The rank is the number of leading $1$'s.  The rank of the given matrix is $2$.
+\end{expandable}
+\end{problem}
+
+\section*{Bibliography}
+These problems come from the end of Chapter 1 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 42--49. 
+
+\end{document}

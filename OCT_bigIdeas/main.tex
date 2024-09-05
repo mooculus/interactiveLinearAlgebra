@@ -1,0 +1,56 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Octave Problems for Ch 2} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Octave Problems for Chapter 2}
+
+To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+
+\begin{problem}\label{prob_oct_3}
+    If possible, express vector $\vec{b}$ as a linear combination of the vectors in $W$.  If you find a linear combination, verify its correctness by hand.
+    \begin{enumerate}
+        \item $$\vec{b}=\begin{bmatrix}2\\-1\\0\\4\end{bmatrix},\quad W=\left\{\begin{bmatrix}1\\0\\1\\2\end{bmatrix}, \begin{bmatrix}-2\\4\\-1\\0\end{bmatrix},\begin{bmatrix}0\\-1\\4\\-1\end{bmatrix}\right\}$$
+
+        \begin{multipleChoice}
+            \choice{$\vec{b}$ is in $\text{span}(W)$.}
+            \choice[correct]{$\vec{b}$ is NOT in $\text{span}(W)$.}
+        \end{multipleChoice}
+
+        \item 
+        $$\vec{b}=\begin{bmatrix}4\\-6.5\\4.5\\1.5\end{bmatrix},\quad W=\left\{\begin{bmatrix}1\\0\\1\\2\end{bmatrix}, \begin{bmatrix}-2\\4\\-1\\0\end{bmatrix},\begin{bmatrix}0\\-1\\4\\-1\end{bmatrix}\right\}$$
+
+         \begin{multipleChoice}
+            \choice[correct]{$\vec{b}$ is in $\text{span}(W)$.}
+            \choice{$\vec{b}$ is NOT in $\text{span}(W)$.}
+        \end{multipleChoice}
+    \end{enumerate}
+    
+\end{problem}
+
+\begin{problem}\label{prob_oct_4}
+    Determine whether each of the following sets of vectors is linearly independent.  
+    \begin{enumerate}
+        \item $$\left\{\begin{bmatrix}-4\\-2\\1\\0\\1\end{bmatrix},\begin{bmatrix}8\\2\\3\\5\\7\end{bmatrix},\begin{bmatrix}1\\2\\1\\5\\-2\end{bmatrix}, \begin{bmatrix}5\\2\\1\\3\\2\end{bmatrix}\right\}$$
+
+        \item $$\left\{\begin{bmatrix}-4\\-2\\1\\0\\1\end{bmatrix},\begin{bmatrix}1\\2\\1\\5\\-2\end{bmatrix}, \begin{bmatrix}5\\2\\1\\3\\2\end{bmatrix},\begin{bmatrix}-1\\6\\1\\0\\4\end{bmatrix}\right\}$$
+    \end{enumerate}
+    
+\end{problem}
+
+\begin{problem}\label{prob_oct_5}
+Find the number of redundant vectors in the following set.
+$$\left\{\begin{bmatrix}2\\6\\-1\\4\\3\\5\end{bmatrix}, \begin{bmatrix}-1\\6\\-11\\9\\4\\4\end{bmatrix},\begin{bmatrix}-1\\4\\1\\1\\-2\\8\end{bmatrix},\begin{bmatrix}3\\1\\4\\-1\\2\\-1\end{bmatrix}, \begin{bmatrix}-1\\32\\3\\13\\-4\\50\end{bmatrix}, \begin{bmatrix}-1\\3\\7\\-3\\-5\\10\end{bmatrix}\right\}$$
+    
+\end{problem}
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Challenge Problems for Ch 4} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\section*{Challenge Problems for Chapter 4}
+
+\begin{problem}\label{prb:5.29} Suppose $V$ has dimension $p$ and $W$ has dimension $q$ and they
+are each contained in a subspace, $U$ which has dimension equal to $n$ where
+$n>\max \left( p,q\right).$ What are the possibilities for the dimension of
+$V\cap W$? 
+
+\begin{hint}
+Remember that a linearly independent set can be extended to form a basis.
+\end{hint}
+
+Click the arrow to see the answer.
+\begin{expandable}
+Let $\left\{ x_{1},\cdots ,x_{k}\right\} $ be a
+basis for $V\cap W.$ Then there is a basis for $V$ and $W$ which are
+respectively
+\[
+\left\{ x_{1},\cdots ,x_{k},y_{k+1},\cdots ,y_{p}\right\} ,\ \left\{
+x_{1},\cdots ,x_{k},z_{k+1},\cdots ,z_{q}\right\}
+\]
+It follows that you must have $k+p-k+q-k\leq n$ and so you must have
+\[
+p+q-n\leq k
+\]
+\end{expandable}
+\end{problem}
+
+\begin{problem}\label{prob:nich6.2}
+    Let $\{\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n\}$ be a basis of $\RR^n$.  Let $A$ be an $n\times n$ matrix.
+    \begin{enumerate}
+        \item If $A$ is invertible, show that $\{A\vec{v}_1, A\vec{v}_2, \dots, A\vec{v}_n\}$ is a basis of $\RR^n$.
+        \item If $\{A\vec{v}_1, A\vec{v}_2, \dots, A\vec{v}_n\}$ is a basis of $\RR^n$, show that $A$ is invertible.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob:nich6.4}
+    Show that $\text{null}(A)=\text{null}(A^TA)$ for any real matrix $A$. 
+\end{problem}
+
+\begin{problem}\label{prob:nich6.5}
+    Let $A$ be an $m\times n$ matrix of rank $r$.  Show that $\text{dim}(\text{null}(A))=n-r$.
+    \begin{hint}
+        Choose a basis $\{\vec{x}_1, \vec{x}_2, \dots, \vec{x}_k\}$ of $\text{null}A$ and extend it to a basis $\{\vec{x}_1, \vec{x}_2, \dots, \vec{x}_k, \vec{z}_1, \dots , \vec{z}_m\}$ of $\RR^n$.  Show that $\{A\vec{z}_1, \dots , A\vec{z}_m\}$ is a basis of $\text{col}(A)$.
+    \end{hint}
+\end{problem}
+
+\begin{problem}\label{prob:nich6.4.18}
+    Let $U$ and $W$ be subspaces of $\RR^3$.  If $\dim (U)=\dim (W)=2$, and $U\neq W$, show that $\dim (U\cap W)=1$.
+    \begin{hint}
+        See Problem \ref{prb:5.27}.
+    \end{hint}
+\end{problem}
+
+
+
+\section*{Bibliography}
+These problems came from Chapter 6 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 358--359, and p. 370.
+\end{document}
