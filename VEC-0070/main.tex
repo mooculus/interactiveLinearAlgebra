@@ -14,7 +14,7 @@
 Given a line $l$ and a vector $\vec{v}$ emanating from a point on $l$, it is sometimes convenient to express $\vec{v}$ as the sum of a vector $\vec{v}_{\parallel}$, parallel to $l$, and a vector $\vec{v}_{\perp}$, perpendicular to $l$.  If you have taken a physics course, you may have seen a force vector decomposed into the sum of two components: one parallel and one perpendicular to the direction of motion.
 
 \begin{center}
- \begin{tikzpicture}[scale=.8]
+ \begin{tikzpicture}[scale=1.5]
   \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
   \node[red] at (3.5, 2.2)   (a) {$\vec{v}_{\perp}$};
  \node[red] at (1.5, -0.95)   (b) {$\vec{v}_{\parallel}$};
@@ -52,7 +52,7 @@ $$\mbox{proj}_{\vec{d}}\vec{v}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2
 Find the projection of $\vec{v}$, shown below, onto the line given by $y=\frac{1}{2}x-1$.
 
 \begin{center}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=1.4]
 
 \draw[thin,gray!40] (-3,-3) grid (5,5);
   \draw[<->] (-3,0)--(5,0);
@@ -84,7 +84,7 @@ $$y=-t+1$$
 $$z=t-2$$
 
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1.2]
   
    \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
    \node[] at (5, 0.8)   (a) {$l$};
@@ -98,7 +98,7 @@ We will first construct a vector $\vec{v}$ by picking an arbitrary point $B$ on 
 $$\vec{v}=\overrightarrow{BA}=\begin{bmatrix}2-3\\-1-1\\1-(-2)\end{bmatrix}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}$$
 
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1.2]
   
    \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
     \node[] at (5, 0.8)   (a) {$l$};
@@ -117,7 +117,7 @@ $$\vec{d}=\begin{bmatrix}1\\-1\\1\end{bmatrix}$$
 We will now find the projection of $\overrightarrow{BA}$ onto $l$  $$\mbox{proj}_{\vec{d}} \overrightarrow{BA}=\left(\frac{\vec{v}\dotp\vec{d}}{\norm{\vec{d}}^2}\right)\vec{d}=\frac{4}{3}\begin{bmatrix}1\\-1\\1\end{bmatrix}=\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}$$
 
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1.2]
   
    \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
    \node[] at (5, 0.8)   (a) {$l$};
@@ -137,7 +137,7 @@ Next, we find $\vec{v}_{\perp}$.
 $$\vec{v}_{\perp}=\vec{v}-\vec{v}_{\parallel}=\begin{bmatrix}-1\\-2\\3\end{bmatrix}-\begin{bmatrix}4/3\\-4/3\\4/3\end{bmatrix}=\begin{bmatrix}-7/3\\-2/3\\5/3\end{bmatrix}$$
 
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1.2]
   \draw[line width=2pt,red,-stealth](3.6, 0.8)--(2,4);
    \draw [-,line width=1pt]  (-3,-2.5)--(5, 1.5);
    \node[] at (5, 0.8)   (a) {$l$};
@@ -178,7 +178,7 @@ Find $\mbox{proj}_{\vec{d}}\vec{v}$.
 Find the projection of vector $\vec{v}$ onto line $l$. (If entering answers in decimal form, round to the nearest one hundredth.)
 
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1.2]
 \draw[thin,gray!40] (-2,-2) grid (9,4);
   \draw[<->] (-2,0)--(9,0);
   \draw[<->] (0,-2)--(0,4);
@@ -197,7 +197,7 @@ $$\begin{bmatrix}\answer[tolerance=0.005]{-95/26}\\\answer[tolerance=0.005]{19/2
 Find the distance between point $A$ and line $l$.
 
 \begin{center}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=1.4]
 \draw[thin,gray!40] (0,-2) grid (9,4);
   \draw[->] (0,0)--(9,0);
   \draw[<->] (0,-2)--(0,4);

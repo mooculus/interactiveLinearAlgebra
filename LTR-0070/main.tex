@@ -29,16 +29,16 @@ Recall that by Observation \ref{obs:imagesOfijk} of \href{https://ximera.osu.edu
 \begin{exploration}\label{init:vertstretch} Let us attempt to find a matrix $M$ for the transformation $T$ that stretches an image vertically by a factor of 2, as shown in the figure below.  
 
 \begin{center}
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{gulls.jpg}};
+  {\includegraphics[width=100mm]{gulls.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,2);
        \end{tikzpicture}
   \quad\quad
-   \begin{tikzpicture}[scale=2]
+   \begin{tikzpicture}[scale=4]
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{stretchedgulls.jpg}};
+  {\includegraphics[width=50mm]{stretchedgulls.jpg}};
 \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,2);
     \end{tikzpicture}
@@ -47,7 +47,7 @@ Recall that by Observation \ref{obs:imagesOfijk} of \href{https://ximera.osu.edu
 Consider what this transformation does to the standard unit vectors.  We observe that $T(\vec{i})=\vec{i}$ and $T(\vec{j})=2\vec{j}$. 
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=3]
 
   \draw[<->] (-0.5,0)--(2.5,0);
   \draw[<->] (0,-0.5)--(0,2.5);
@@ -57,7 +57,7 @@ Consider what this transformation does to the standard unit vectors.  We observe
     \node[blue] at (-0.2, 0.5)   (b) {$\vec{j}$};
   \end{tikzpicture}
   \quad\quad
-    \begin{tikzpicture}[scale=1.5]
+    \begin{tikzpicture}[scale=3]
 \draw[<->] (-0.5,0)--(2.5,0);
   \draw[<->] (0,-0.5)--(0,2.5);
   \node[red] at (0.5, -0.2)   (a) {$T(\vec{i})$};
@@ -120,7 +120,7 @@ A \dfn{horizontal shear} is a transformation that takes an arbitrary point $(a, 
 %\begin{figure}[h]
 %\begin{image}[4in]
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=1.6]
 
   \draw[<->] (-2,0)--(4,0);
    \draw[<->] (0,-2)--(0,4);
@@ -153,7 +153,7 @@ A \dfn{horizontal shear} is a transformation that takes an arbitrary point $(a, 
    
   \end{tikzpicture}
    \quad\quad
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=1.6]
 
 \draw[<->] (-2,0)--(4,0);
   \draw[<->] (0,-2)--(0,4);
@@ -224,16 +224,16 @@ shears the plane vertically.
 %\begin{figure}[h]
 %\begin{image}[4in]
   \begin{center} 
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{gull.jpg}};
+  {\includegraphics[width=50mm]{gull.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,2);
        \end{tikzpicture}
   \quad\quad
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{shearedgull.jpg}};
+  {\includegraphics[width=50mm]{shearedgull.jpg}};
   
   \draw (0.5,0) arc (0:30:0.5);
   \node[] at (0.75, 0.2)   (a) {$30^{\circ}$};
@@ -252,7 +252,7 @@ Consider what this transformation does to the standard unit vectors.
 
 %\begin{image}[4in]
 \begin{center}
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
 
   \draw[<->] (-0.5,0)--(1.5,0);
   \draw[<->] (0,-0.5)--(0,1.5);
@@ -262,7 +262,7 @@ Consider what this transformation does to the standard unit vectors.
   \node[blue] at (-0.1, 0.5)   (b) {$\vec{j}$};
   \end{tikzpicture}
    \quad\quad
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
 
 \draw[<->] (-0.5,0)--(1.5,0);
   \draw[<->] (0,-0.5)--(0,1.5);
@@ -298,15 +298,15 @@ It turns out that rotations about the origin are also matrix transformations.  Y
 
 %\begin{image}[4in]
  \begin{center}   
-		\begin{tikzpicture}[scale=1.3]
+		\begin{tikzpicture}[scale=2.6]
 \node[inner sep=0pt] (tower) at (0,0)
-  {\includegraphics[width=45mm]{tower.jpg}};
+  {\includegraphics[width=90mm]{tower.jpg}};
   \draw[<->] (-2,0)--(2,0);
   \draw[<->] (0,-2)--(0,2);
        \end{tikzpicture}\quad
-\begin{tikzpicture}[scale=1.3]
+\begin{tikzpicture}[scale=2.6]
 \node[inner sep=0pt] (tower) at (0,0)
-  {\includegraphics[width=50mm]{rotatedtower.jpg}};
+  {\includegraphics[width=100mm]{rotatedtower.jpg}};
   \draw[<->] (-2,0)--(2,0);
   \draw[<->] (0,-2)--(0,2);
        \end{tikzpicture}
@@ -317,7 +317,7 @@ It turns out that rotations about the origin are also matrix transformations.  Y
 
 %\begin{image}[4.5in]   
 \begin{center}
-\begin{tikzpicture}[scale=2.2]
+\begin{tikzpicture}[scale=4.4]
     \node[red] at (0.5, -0.1)   (a) {$\vec{i}$};
     \node[blue] at (-0.1, 0.5)   (b) {$\vec{j}$};
   \draw[<->] (-0.5,0)--(1.5,0);
@@ -326,7 +326,7 @@ It turns out that rotations about the origin are also matrix transformations.  Y
     \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
   \end{tikzpicture}
   \quad
-  \begin{tikzpicture}[scale=2.2]
+  \begin{tikzpicture}[scale=4.4]
 \node[red] at (0.3, 0.5)   (a) {$T(\vec{i})$};
     \node[blue] at (-0.5, 0.2)   (b) {$T(\vec{j})$};
      \node[] at (-0.7, 0.9)   (c) {$(-\sin 45^{\circ}, \cos 45^{\circ})$};
@@ -372,7 +372,7 @@ $$M_{\theta}=\begin{bmatrix}
 In general, we find the rotation matrix by determining the images of vectors $\vec{i}$ and $\vec{j}$.
 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=5]
   \draw[<->] (-0.5,0)--(1.5,0);
   \draw[<->] (0,-0.5)--(0,1.5);
   \node[red] at (0.5, -0.1)   (a) {$\vec{i}$};
@@ -381,7 +381,7 @@ In general, we find the rotation matrix by determining the images of vectors $\v
     \draw[->,line width=1pt,blue,-stealth](0,0)--(0,1);
   \end{tikzpicture}
   \quad
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=5]
 \node[blue] at (-0.5, 0.5)   (a) {$R_{\theta}(\vec{j})$};
 \node[red] at (0.4, 0.4)   (b) {$R_{\theta}(\vec{i})$};
 
@@ -419,7 +419,7 @@ When a point is reflected about a line, its image is located on the opposite sid
 For example, the figure below shows the reflection of point $A$ about line $l$.  Note that the reflection lies on a line through $A$ perpendicular to $l$.
 
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=2.4]
 
    \draw[line width=1pt](-1,2)node[below, left]{$l$}--(1,-2);
   \draw[thin, dashed](-2,-1.5)--(2,0.5);
@@ -460,7 +460,7 @@ $$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}\quad\text{maps to}\quad\begin{bmatrix
 %\begin{figure}[h]
 %\begin{image}[2.2in]
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=2.4]
 
   \draw[<->] (-2,0)--(2,0);
   \draw[<->] (0,-2)--(0,2);
@@ -509,7 +509,7 @@ Next we need to find the image of $\vec{j}$. The head of $T(\vec{j})$ is located
 
 % \begin{image}[2.2in]
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=2.4]
 
   \draw[<->] (-2,0)--(2,0);
   \draw[<->] (0,-2)--(0,2);
@@ -552,18 +552,18 @@ Note that when $m=0$, expression (\ref{eq:reflectionymx}) is consistent with the
 %\begin{figure}[h]
 %\begin{image}[4in]
 \begin{center}
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{duck.jpg}};
+  {\includegraphics[width=50mm]{duck.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,1.5);
   \draw[red,thick] (0,0)--(2,1.2);
   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
        \end{tikzpicture}
    \quad
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
-  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+  {\includegraphics[width=55mm]{reflectedduck.jpg}};
   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
 \draw[red,thick] (0,0)--(2,1.2);
 \draw[<->] (-0.5,0)--(2,0);
@@ -645,7 +645,7 @@ M = M_2 M_1 =
 \item From unit circle trigonometry, we know that $\vec{v}$ makes a $\pi/3$ angle with the $x$-axis.  If we rotate $\vec{v}$ counterclockwise by $\pi /6$, it will point straight up.  
 
 \begin{center}
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
   \draw[<->] (-0.5,0)--(1,0);
   \draw[<->] (0,-0.5)--(0,1.5);
 \draw[line width=1pt, blue, stealth-](0.5,1.73/2)--(0,0);
@@ -718,7 +718,7 @@ The figure on the left illustrates the action of $T_1$ on a single point $A$.  F
 The figure on the right shows the action of $T_2$ on the same point $A$.  The point is first reflected about the line $y=x$, followed by a reflection about the line $y=-2x$.  The final images of point $A$ under $T_1$ and $T_2$ are clearly different.
 
 \begin{center}
-\begin{tikzpicture}[scale=.3]
+\begin{tikzpicture}[scale=.6]
 \draw[thin,gray!40] (-8,-8) grid (8,8);
   \draw[<->] (-8,0)--(8,0);
   \draw[<->] (0,-8)--(0,8);
@@ -732,7 +732,7 @@ The figure on the right shows the action of $T_2$ on the same point $A$.  The po
   \fill[] (7,-1)node[below=2mm]{$T_1(A)$} circle (0.3cm);
   \end{tikzpicture}
   \quad\quad
-\begin{tikzpicture}[scale=.3]
+\begin{tikzpicture}[scale=.6]
  
 \draw[thin,gray!40] (-8,-8) grid (8,8);
   \draw[<->] (-8,0)--(8,0);
@@ -777,17 +777,17 @@ $$M=\begin{bmatrix}\answer{2} & \answer{0}\\\answer{0} & \answer{3}\end{bmatrix}
 (Sheared Sheep) Find a matrix that induces the transformation shown in the figure. 
 %\begin{image}[4in]
    \begin{center}
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (8.75mm,0)
-  {\includegraphics[width=35mm]{sheep.jpg}};
+  {\includegraphics[width=70mm]{sheep.jpg}};
   \draw[<->] (-0.25,0)--(2,0);
   \draw[<->] (0,-0.25)--(0,1.8);
        \end{tikzpicture}
   \quad
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
  
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (12.35mm,0)
-  {\includegraphics[width=49.4mm]{shearedsheep.jpg}};
+  {\includegraphics[width=98.8mm]{shearedsheep.jpg}};
   \node[] at (2.4, 0.25)   (a) {$60^{\circ}$};
  \draw (22.3mm,0) arc (0:60:0.5) ;
 
@@ -805,18 +805,18 @@ $$M=\begin{bmatrix}\answer{2} & \answer{0}\\\answer{0} & \answer{3}\end{bmatrix}
 Suppose a 1 by 1 photo of a chipmunk was shifted as shown in the figure. 
 %\begin{image}[4.2in]  
 \begin{center}
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{chipmunk.jpg}};
+  {\includegraphics[width=50mm]{chipmunk.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,2);
   \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(12.5mm,0mm)node[below right]{$(1, 0)$};
   \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(0mm,12.5mm)node[above left]{$(0, 1)$};
        \end{tikzpicture}
   \quad\quad
-   \begin{tikzpicture}[scale=2]
+   \begin{tikzpicture}[scale=4]
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (11.25mm,5mm)
-  {\includegraphics[width=25mm]{chipmunk.jpg}};
+  {\includegraphics[width=50mm]{chipmunk.jpg}};
 \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,2);
   \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(17.5mm,5mm)node[below right]{$(1.4, 0.4)$};
@@ -856,9 +856,9 @@ The figure below shows a sequence of two matrix transformations that accomplishe
 %\begin{figure}[h]
 \begin{center}
      
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{duck.jpg}};
+  {\includegraphics[width=50mm]{duck.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-0.5)--(0,1.5);
   \draw[red,thick] (0,0)--(2,1.2);
@@ -867,9 +867,9 @@ The figure below shows a sequence of two matrix transformations that accomplishe
 \end{center}  
     
  \begin{center}      
-		\begin{tikzpicture}[scale=2]
+		\begin{tikzpicture}[scale=4]
 \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,-8.9mm)
-  {\includegraphics[width=25mm]{upsidedownduck.jpg}};
+  {\includegraphics[width=50mm]{upsidedownduck.jpg}};
   \draw[<->] (-0.5,0)--(2,0);
   \draw[<->] (0,-1.5)--(0,1.5);
   \draw[red,thick] (0,0)--(2,1.2);
@@ -879,9 +879,9 @@ The figure below shows a sequence of two matrix transformations that accomplishe
  \end{center}  
     
  \begin{center}
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=4]
  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
-  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+  {\includegraphics[width=110mm]{reflectedduck.jpg}};
   
   
 \draw[red,thick] (0,0)--(2,1.2);
