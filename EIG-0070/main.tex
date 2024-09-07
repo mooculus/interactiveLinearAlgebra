@@ -13,11 +13,11 @@
 \section*{The Power Method and the Dominant Eigenvalue}
 \end{onlineOnly}
 
-We know eigenvalues as the roots of a characteristic polynomial of a matrix.  In practice, the problem of finding eigenvalues is virtually never solved by finding roots of the characteristic polynomial, as this task is computationally prohibitive for large matrices.  Iterative methods are used instead.  In this section we describe the Power Method and some variations.  In \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0040/main}{QR Factorization} we will touch upon a better iterative method for approximating eigenvalues of a non-singular matrix called the QR-algorithm.  The methods we present in this text are a mere introduction to the iterative methods used to compute eigenvalues and eigenvectors.
+We know eigenvalues as the roots of a characteristic polynomial of a matrix.  In practice, the problem of finding eigenvalues is virtually never solved by finding roots of the characteristic polynomial, as this task is computationally prohibitive for large matrices.  Iterative methods are used instead.  In this section we describe the Power Method and some variations.  In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0040/main}{QR Factorization} we will touch upon a better iterative method for approximating eigenvalues of a non-singular matrix called the QR-algorithm.  The methods we present in this text are a mere introduction to the iterative methods used to compute eigenvalues and eigenvectors.
   
 \subsection*{Finding the Dominant Eigenvalue using the Power Method}
 
-In Exploration \ref{exp:motivate_diagonalization} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0050/main}{Diagonalizable Matrices and Multiplicity},
+In Exploration \ref{exp:motivate_diagonalization} of \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/EIG-0050/main}{Diagonalizable Matrices and Multiplicity},
  our initial rationale for diagonalizing matrices was to be able to
 compute the powers of a square matrix, and the eigenvalues were needed
 to do this. In this section, we are interested in efficiently computing

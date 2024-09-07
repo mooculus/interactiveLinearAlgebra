@@ -13,7 +13,7 @@
 \section*{Gershgorin's Theorem}
 \end{onlineOnly}
 
-We have seen that eigenvalues are the roots of the characteristic polynomial, and therefore may be complex numbers, even when a matrix has entries that are real.  This section is devoted to a remarkable theorem proved by S.A. Gershgorin in 1931. Gershgorin's theorem says that the $n$ eigenvalues of an $n \times n$ matrix can be found in a region in the complex plane consisting of $n$ disks.  We explore the theorem for the case $n=3$ before proving the result.  If you have never plotted complex numbers before, you may wish to try Exploration \ref{exp:geometry_complex_numbers} in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APX-0020/main}{Complex Numbers} before proceeding.
+We have seen that eigenvalues are the roots of the characteristic polynomial, and therefore may be complex numbers, even when a matrix has entries that are real.  This section is devoted to a remarkable theorem proved by S.A. Gershgorin in 1931. Gershgorin's theorem says that the $n$ eigenvalues of an $n \times n$ matrix can be found in a region in the complex plane consisting of $n$ disks.  We explore the theorem for the case $n=3$ before proving the result.  If you have never plotted complex numbers before, you may wish to try Exploration \ref{exp:geometry_complex_numbers} in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APX-0020/main}{Complex Numbers} before proceeding.
 
 \begin{exploration}\label{init:GershDisks3x3}
 In the GeoGebra exploration below, you can adjust any of the entries of the $3 \times 3$ matrix $A$.  The three eigenvalues are plotted as dots in the complex plane.  The Gershgorin region is the union of three closed disks whose boundaries are plotted in red.  Notice that the eigenvalues are always in the Gershgorin region.
@@ -31,7 +31,7 @@ As you experiment with the interactive, see if you can answer the following ques
 \pdfOnly{
 Access GeoGebra interactives through the online version of this text at 
 
-\href{https://ximera.osu.edu/oerlinalg}{https://ximera.osu.edu/oerlinalg}.
+\href{https://ximera.osu.edu/linearalgebradzv3}{https://ximera.osu.edu/linearalgebradzv3}.
 }
 
 \begin{onlineOnly}
@@ -69,7 +69,7 @@ $$
 Then the eigenvalues of $A$ are contained in the Gershgorin region $\Gamma(A)$.
 \end{theorem}
 
-The fact that (\ref{eqn:Gersh_disk}) represents a disk in the complex plane is a direct result of the complex distance formula  (see \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APX-0020/main}{Complex Numbers} for more information). Before proving Gershgorin's theorem, we provide an example and a video to aid in understanding exactly what the theorem says.
+The fact that (\ref{eqn:Gersh_disk}) represents a disk in the complex plane is a direct result of the complex distance formula  (see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APX-0020/main}{Complex Numbers} for more information). Before proving Gershgorin's theorem, we provide an example and a video to aid in understanding exactly what the theorem says.
 
 \youtube{D-87FPpLoXs}
 
@@ -90,7 +90,7 @@ Plot the eigenvalues and the Gershgorin region of each of the following matrices
 
 \begin{enumerate}
     \item $\Gamma(A)$ consists of two disks.  The first is centered at 1 with a radius of 1.  The second is centered at 0 with a radius of 2, so we see that the first disk is contained in the second.  The eigenvalues, 2 and $-1$, are both contained in $\Gamma(A)$ (with 2 being on the boundary).
-    \item $B$ is a matrix with complex entries, which makes for a more interesting Gershgorin region.  See \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0050/main}{Complex Matrices} for more on matrices like this one.
+    \item $B$ is a matrix with complex entries, which makes for a more interesting Gershgorin region.  See \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0050/main}{Complex Matrices} for more on matrices like this one.
     
     Since $B$ is upper triangular, its eigenvalues are its diagonal entries.  These are the centers of the Gershgorin disks, which proves that the eigenvalues of $B$ are contained in $\Gamma(B)$.  $\Gamma(B)$ consists of four disks.  The first is centered at $1+i$ with a radius of $2$, since the absolute value of $i$ is 1.   The second is centered at 4 with a radius of $\sqrt{2}$.  The third disk is centered at 2 with a radius of 1.  The fourth disk is centered at $-1$ with a radius of zero, so in fact, consists only of the eigenvalue $-1$.
 \end{enumerate}
@@ -118,8 +118,8 @@ Taking the absolute value of both sides, we have
     &\le \sum_{j\ne k} |a_{kj}| |x_k| \label{eqn:pr5}
 \end{align}
 Here equations \ref{eqn:pr1} and \ref{eqn:pr4} follow from property C2 of %\ref{eqn:complex_number_properties}
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APX-0020/main}{Complex Numbers}, inequality \ref{eqn:pr3} follows from the Triangle Inequality (C12 of %\ref{eqn:complex_number_properties}
-\href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APX-0020/main}{Complex Numbers}), and we arrive at inequality \ref{eqn:pr5} by replacing each $\vec{x}_j$ in inequality \ref{eqn:pr4} by $\vec{x}_k$.
+\href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APX-0020/main}{Complex Numbers}, inequality \ref{eqn:pr3} follows from the Triangle Inequality (C12 of %\ref{eqn:complex_number_properties}
+\href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APX-0020/main}{Complex Numbers}), and we arrive at inequality \ref{eqn:pr5} by replacing each $\vec{x}_j$ in inequality \ref{eqn:pr4} by $\vec{x}_k$.
 
 These inequalties show that $|\lambda - a_{kk}| \le \sum_{j\ne k} |a_{kj}|$, so $\lambda \in \Gamma_k(A)$, and hence $\lambda \in \Gamma(A)$, as desired.
 

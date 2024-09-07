@@ -18,7 +18,7 @@ One of the main virtues of orthogonal
 matrices is that they can be easily inverted---the transpose is the
 inverse. This fact, combined with the factorization theorem in this
 section, provides a useful way to simplify many matrix calculations (for
- example, in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0030/main}{least squares approximation}).
+ example, in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0030/main}{least squares approximation}).
 
 
 \begin{definition}\label{def:QR-factorization}
@@ -180,7 +180,7 @@ Write $Q = \left[ \begin{array}{cccc}
 \begin{equation*}
 Q_{1}^TQ = R_{1}R^{-1} = \left[ \begin{array}{c} t_{ij} \end{array}\right]
 \end{equation*}
-This matrix is upper triangular with positive diagonal elements (since this is true for $R$ and $R_{1}$), so $t_{ii} > 0$ for each $i$ and $t_{ij} = 0$ if $i > j$. On the other hand, the $(i, j)$-entry of $Q_{1}^TQ$ is $\vec{d}_{i}^T\vec{c}_{j} = \vec{d}_{i} \dotp \vec{c}_{j}$, so we have $\vec{d}_{i} \dotp \vec{c}_{j} = t_{ij}$ for all $i$ and $j$. But each $\vec{c}_{j}$ is in $\mbox{span}\{\vec{d}_{1}, \vec{d}_{2}, \dots, \vec{d}_{n}\}$ because $Q = Q_{1}(R_{1}R^{-1})$. We know how to write a vector as a linear combination of an orthonormal basis (using Corollary~\ref{cor:orthonormal} from \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0010/main}{Orthogonality and Projections}):
+This matrix is upper triangular with positive diagonal elements (since this is true for $R$ and $R_{1}$), so $t_{ii} > 0$ for each $i$ and $t_{ij} = 0$ if $i > j$. On the other hand, the $(i, j)$-entry of $Q_{1}^TQ$ is $\vec{d}_{i}^T\vec{c}_{j} = \vec{d}_{i} \dotp \vec{c}_{j}$, so we have $\vec{d}_{i} \dotp \vec{c}_{j} = t_{ij}$ for all $i$ and $j$. But each $\vec{c}_{j}$ is in $\mbox{span}\{\vec{d}_{1}, \vec{d}_{2}, \dots, \vec{d}_{n}\}$ because $Q = Q_{1}(R_{1}R^{-1})$. We know how to write a vector as a linear combination of an orthonormal basis (using Corollary~\ref{cor:orthonormal} from \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0010/main}{Orthogonality and Projections}):
 \begin{equation*}
 \vec{c}_{j} = (\vec{d}_{1} \dotp \vec{c}_{j})\vec{d}_{1} + (\vec{d}_{2} \dotp \vec{c}_{j})\vec{d}_{2} + \dots + (\vec{d}_{n} \dotp \vec{c}_{j})\vec{d}_{n} = t_{1j}\vec{d}_{1} + t_{2j}\vec{d}_{2} + \dots + t_{jj}\vec{d}_{i},
 \end{equation*}

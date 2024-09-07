@@ -23,14 +23,14 @@ extend easily to the complex case. It is not our intention here to give a
  full treatment of complex linear algebra. However, we will carry the
 theory far enough to give another proof of the Real Spectral Theorem (\ref{th:PrinAxes}).
 
-The set of complex numbers is denoted $\mathbb{C}$ . We will use only the most basic properties of these numbers (mainly conjugation and absolute values), and the reader can find this material in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/APX-0020/main}{Complex Numbers}.
+The set of complex numbers is denoted $\mathbb{C}$ . We will use only the most basic properties of these numbers (mainly conjugation and absolute values), and the reader can find this material in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APX-0020/main}{Complex Numbers}.
 
 If $n \ge 1$, we denote the set of all $n$-tuples of complex numbers by $\mathbb{C}^n$. As with $\RR^n$, these $n$-tuples will be written either as row or column matrices and will be referred to as \dfn{vectors}. We define vector operations on $\mathbb{C}^n$ as follows:
 \begin{align*}
 [v_{1},  v_{2}, \ldots, v_{n}] + [w_{1}, w_{2}, \ldots, w_{n}] &= [v_{1} + w_{1}, v_{2} + w_{2}, \ldots, v_{n} + w_{n}] \\
 u[v_{1}, v_{2}, \ldots, v_{n}] &= [uv_{1}, uv_{2}, \ldots, uv_{n}] \quad \mbox{ for } u \mbox{ in } \mathbb{C}
 \end{align*}
-With these definitions, $\mathbb{C}^n$ satisfies the axioms for a vector space (with complex scalars) given in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0050/main}{Abstract Vector Spaces}. Thus we can speak of spanning sets for $\mathbb{C}^n$, of linearly independent subsets, and of bases. In all cases, the definitions are identical to the real case, except that the scalars are allowed to be complex numbers. In particular, the standard basis of $\RR^n$ remains a basis of $\mathbb{C}^n$, called the \dfn{standard basis} of $\mathbb{C}^n$.
+With these definitions, $\mathbb{C}^n$ satisfies the axioms for a vector space (with complex scalars) given in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0050/main}{Abstract Vector Spaces}. Thus we can speak of spanning sets for $\mathbb{C}^n$, of linearly independent subsets, and of bases. In all cases, the definitions are identical to the real case, except that the scalars are allowed to be complex numbers. In particular, the standard basis of $\RR^n$ remains a basis of $\mathbb{C}^n$, called the \dfn{standard basis} of $\mathbb{C}^n$.
 
 
 \subsection*{A Generalization of the Dot Product for Complex Vectors}
@@ -56,7 +56,7 @@ If $\vec{z} = [2, 1 - i, 2i, 3 - i]$ and $\vec{w} = [1 - i, -1, -i, 3 + 2i]$, th
 \end{align*}
 \end{example}
 
-Note that $\langle \vec{z}, \vec{w} \rangle$ is a complex number in general, as opposed to requiring an inner product to be real as we do in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/VSP-0070/main}{Inner Product Spaces}. However, if $\vec{w} = \vec{z} = [z_{1}, z_{2}, \ldots, z_{n}]$, the definition gives $\langle \vec{z}, \vec{z} \rangle = |z_{1}|^{2} + \ldots  + |z_{n}|^{2}$ which is a nonnegative real number, equal to $0$ if and only if $\vec{z} = \vec{0}$. This explains the conjugation in the definition of $\langle \vec{z}, \vec{w} \rangle$, and it gives \ref{th:025575d} of the following theorem.
+Note that $\langle \vec{z}, \vec{w} \rangle$ is a complex number in general, as opposed to requiring an inner product to be real as we do in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0070/main}{Inner Product Spaces}. However, if $\vec{w} = \vec{z} = [z_{1}, z_{2}, \ldots, z_{n}]$, the definition gives $\langle \vec{z}, \vec{z} \rangle = |z_{1}|^{2} + \ldots  + |z_{n}|^{2}$ which is a nonnegative real number, equal to $0$ if and only if $\vec{z} = \vec{0}$. This explains the conjugation in the definition of $\langle \vec{z}, \vec{w} \rangle$, and it gives \ref{th:025575d} of the following theorem.
 
 
 \begin{theorem}\label{th:025575}
@@ -249,7 +249,7 @@ If $A$ is an $n \times n$ matrix, the characteristic polynomial $c_{A}(z)$ is a 
 \end{array}\right]$ then $c_{A}(z) = z^{2} + 1$ has roots $i$ and $-i$, where $i$ is a complex number satisfying $i^{2} = -1$. Therefore, we have to deal with the possibility that the eigenvalues of a (real) square matrix might be complex numbers.
 
 
-For a complex matrix, $c_{A}(z)$ has complex coefficients (possibly nonreal). However, an argument like that given in Exploration \ref{exp:slowdown} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/EIG-0020/main}{The Characteristic Equation} still works to show that the eigenvalues of $A$ are the roots (possibly complex) of $c_{A}(z)$.
+For a complex matrix, $c_{A}(z)$ has complex coefficients (possibly nonreal). However, an argument like that given in Exploration \ref{exp:slowdown} of \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/EIG-0020/main}{The Characteristic Equation} still works to show that the eigenvalues of $A$ are the roots (possibly complex) of $c_{A}(z)$.
 
 
 It is at this point that the advantage
@@ -339,7 +339,7 @@ The matrix $A = \left[ \begin{array}{rr}
 \end{array}\right]$.
 \end{example}
 
-Given a real symmetric matrix $A$, we saw in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/RTH-0035/main}{Orthogonal Matrices and Symmetric Matrices} a procedure for finding an orthogonal matrix $Q$ such that $Q^{T}AQ$ is diagonal (see Example~\ref{ex:DiagonalizeSymmetricMatrix}). The following example illustrates Theorem~\ref{th:025729} and shows that the technique works for complex matrices.
+Given a real symmetric matrix $A$, we saw in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0035/main}{Orthogonal Matrices and Symmetric Matrices} a procedure for finding an orthogonal matrix $Q$ such that $Q^{T}AQ$ is diagonal (see Example~\ref{ex:DiagonalizeSymmetricMatrix}). The following example illustrates Theorem~\ref{th:025729} and shows that the technique works for complex matrices.
 
 \begin{example}\label{ex:025794}
 Consider the Hermitian matrix $A = \left[ \begin{array}{cc}

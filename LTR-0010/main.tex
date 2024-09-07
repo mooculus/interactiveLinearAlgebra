@@ -232,7 +232,7 @@ It turns out that $T_2$ fails to satisfy this property.  Can you prove that this
 \end{exploration}
 
 Transformations satisfying (\ref{lin1}) and (\ref{lin2}), like $T_1$, are called \dfn{linear transformations}. Transformations like $T_2$ are not linear.
- You have already encountered several linear transformations in the form of matrix transformations in sections \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0005/main}{Matrix Transformations} and \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0070/main}{Geometric Transformations of the Plane}.  
+ You have already encountered several linear transformations in the form of matrix transformations in sections \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/LTR-0005/main}{Matrix Transformations} and \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/LTR-0070/main}{Geometric Transformations of the Plane}.  
 
   \begin{definition} \label{def:lin}
  A transformation $T:\RR^n\rightarrow \RR^m$ is called a \dfn{ linear transformation} if the following are true for all vectors $\vec{u}$ and $\vec{v}$ in $\RR^n$, and scalars $k$.
@@ -448,7 +448,7 @@ $T$ maps any line in $\RR^n$ to a line (or the zero vector) in $\RR^m$.
 To prove part \ref{item:zerotozero}, let $\vec{v}$ be any vector in $\RR^n$.  By linearity of $T$, we have:
 $$T(\vec{0})=T(\vec{v}-\vec{v})=T(\vec{v})-T(\vec{v})=\vec{0}$$
 
-Part \ref{item:linetoline} will become evident after we prove Theorem \ref{th:matlin} in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0020/main}{Standard Matrix of a Linear Transformation} and combine it with Practice Problem \ref{prb:linesToLines}.
+Part \ref{item:linetoline} will become evident after we prove Theorem \ref{th:matlin} in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/LTR-0020/main}{Standard Matrix of a Linear Transformation} and combine it with Practice Problem \ref{prb:linesToLines}.
 \end{proof}
 
 \begin{example}\label{ex:zerotozero}
@@ -499,7 +499,7 @@ Since $T_2(\vec{0})\neq\vec{0}$, $T_2$ is not linear.
 
 %\end{exploration}
 
-Recall that a transformation $T:\RR^n\rightarrow\RR^m$ defined by $T(\vec{v})=A\vec{v}$, where $A$ is some $m\times n$ matrix, is called a matrix transformation (or transformation induced by $A$).  As we had discovered in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/LTR-0005/main}{Matrix Transformations}, all matrix transformations are linear.  We now formalize this result as a theorem.
+Recall that a transformation $T:\RR^n\rightarrow\RR^m$ defined by $T(\vec{v})=A\vec{v}$, where $A$ is some $m\times n$ matrix, is called a matrix transformation (or transformation induced by $A$).  As we had discovered in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/LTR-0005/main}{Matrix Transformations}, all matrix transformations are linear.  We now formalize this result as a theorem.
 
  \begin{theorem}\label{th:matrixtran} Let $A$ be an $m\times n$ matrix.  Define $T:\RR^n\rightarrow\RR^m$ by $T(\vec{v})=A\vec{v}$.  Then $T$ is a linear transformation.
 \end{theorem}

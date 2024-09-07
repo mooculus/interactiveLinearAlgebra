@@ -16,9 +16,9 @@
 
 In this section we will define a function that assigns to each square matrix $A$ a scalar output called the \dfn{determinant of $A$}.  We will denote the determinant of $A$ by $\det{A}$.  For a matrix with real number entries, the output of the determinant function will always be a real number.
 
-One important property of the determinant is its connection to matrix inverses.  We will find that a matrix $A$ is singular if and only if $\det{A}=0$.  For nonsingular matrices, we will establish a formula that gives the inverse of a matrix exclusively in terms of determinants.  This property will be addressed in detail in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0040/main}{Properties of the Determinant}, and \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0060/main}{Determinants and Inverses of Nonsingular Matrices}.
+One important property of the determinant is its connection to matrix inverses.  We will find that a matrix $A$ is singular if and only if $\det{A}=0$.  For nonsingular matrices, we will establish a formula that gives the inverse of a matrix exclusively in terms of determinants.  This property will be addressed in detail in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0040/main}{Properties of the Determinant}, and \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0060/main}{Determinants and Inverses of Nonsingular Matrices}.
 
-Geometrically speaking, the determinant of a matrix of a linear transformation is the factor by which the area (or volume or hypervolume) is scaled by the transformation.  This will be discussed in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0070/main}{Determinants as Areas and Volumes}. 
+Geometrically speaking, the determinant of a matrix of a linear transformation is the factor by which the area (or volume or hypervolume) is scaled by the transformation.  This will be discussed in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0070/main}{Determinants as Areas and Volumes}. 
 
 \subsection*{Cofactor Expansion Along the Top Row}
 To start from the beginning, let us define the determinant of a $1\times 1$ matrix.
@@ -94,7 +94,7 @@ cross out the row and column that the corresponding coefficient is in.  For exam
   \draw[blue](m-2-2.north) -- (m-3-2.south);
  \end{tikzpicture}
  \end{center} 
- \item The process for finding the determinant described in Definition \ref{def:threebythreedet} is referred to as a \dfn{cofactor expansion along the top row}. % we will explain this term in more detail in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0050/main}{Proof of the Laplace Expansion Theorem}.
+ \item The process for finding the determinant described in Definition \ref{def:threebythreedet} is referred to as a \dfn{cofactor expansion along the top row}. % we will explain this term in more detail in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0050/main}{Proof of the Laplace Expansion Theorem}.
 \end{itemize}
 
 
@@ -232,10 +232,10 @@ $$\det(A)=5\big(4(\answer{-6})-2(\answer{-5})\big)=\answer{-70}$$
 \end{example}
 
 \subsection*{A Note on Equivalency}
-We initially introduced the determinant of a matrix via cofactor expansion along the top row.  We later observed that cofactor expansion along any row or column produces the same result.  We have to be careful, however, not to use a few examples as ``proof" that all cofactor expansions are equivalent.  Such claims need to be carefully supported with general proofs.  Unfortunately, in this case, the proofs are tedious and conceptually unenlightening.  An interested reader can find them in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0050/main}{Tedious Proofs Concerning Determinants}.
+We initially introduced the determinant of a matrix via cofactor expansion along the top row.  We later observed that cofactor expansion along any row or column produces the same result.  We have to be careful, however, not to use a few examples as ``proof" that all cofactor expansions are equivalent.  Such claims need to be carefully supported with general proofs.  Unfortunately, in this case, the proofs are tedious and conceptually unenlightening.  An interested reader can find them in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0050/main}{Tedious Proofs Concerning Determinants}.
 
 \subsection*{Determinants of Some Special Matrices}
-We know that we can find the determinant of a matrix by cofactor expansion along the top row or the first column.  (See Theorem \ref{th:rowcolexpequivalence} of \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/DET-0050/main}{Tedious Proofs Concerning Determinants} for proof.)  This property gives rise to a useful result.
+We know that we can find the determinant of a matrix by cofactor expansion along the top row or the first column.  (See Theorem \ref{th:rowcolexpequivalence} of \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0050/main}{Tedious Proofs Concerning Determinants} for proof.)  This property gives rise to a useful result.
 \begin{theorem}\label{th:detoftrans}
 Let $A$ be a square matrix, then
 $$\det{A^T}=\det{A}$$
@@ -263,7 +263,7 @@ As an immediate consequence of this theorem, we have the following result.
  $$\det{I}=1$$
  \end{corollary}
 
- We first introduced block matrices in \href{https://ximera.osu.edu/oerlinalg/LinearAlgebra/MAT-0023/main}{Block Matrix Multiplication}.  Matrices of the form $\begin{bmatrix}A & C\\O& B\end{bmatrix}$ and $\begin{bmatrix}A & O\\D& B\end{bmatrix}$, where $A$, $B$ are square matrices and $O$ is the zero matrix, are said to be \dfn{block triangular}.  The following theorem makes it easy to compute determinants of such matrices.
+ We first introduced block matrices in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/MAT-0023/main}{Block Matrix Multiplication}.  Matrices of the form $\begin{bmatrix}A & C\\O& B\end{bmatrix}$ and $\begin{bmatrix}A & O\\D& B\end{bmatrix}$, where $A$, $B$ are square matrices and $O$ is the zero matrix, are said to be \dfn{block triangular}.  The following theorem makes it easy to compute determinants of such matrices.
 
  \begin{theorem}\label{th:blockTriDet}
      Consider block triangular matrices $\begin{bmatrix}A & C\\O& B\end{bmatrix}$ and $\begin{bmatrix}A & O\\D& B\end{bmatrix}$, where $A$ and $B$ are square matrices.  Then
