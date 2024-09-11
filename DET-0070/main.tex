@@ -18,7 +18,7 @@
 Consider the parallelogram determined by vectors $\vec{u}$ and $\vec{v}$ in $\RR^3$.
 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.4]
 
   \filldraw[blue, opacity=0.3](0,0)--(4,2)--(5,4)--(1,2)--cycle;
 
@@ -31,7 +31,7 @@ Consider the parallelogram determined by vectors $\vec{u}$ and $\vec{v}$ in $\RR
 Recall that the area of a parallelogram is given by the product of the length of the base and the height.
 As shown in the diagram below, the length of the base is the magnitude of $\vec{u}$. The height, $h$, can be found using trigonometry $$h=\norm{\vec{v}}\sin\theta$$ 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.4]
 
   \filldraw[blue, opacity=0.3](0,0)--(4,2)--(5,4)--(1,2)--cycle;
 
@@ -86,7 +86,7 @@ Formula \ref{form:areaofparallelogram} can be easily adapted to parallelograms d
 \begin{example}\label{ex:areaofparallelogram}
 Find the area of the parallelogram in the diagram.
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray!40] (-3,-1) grid (4,4);
   \draw[<->] (-3,0)--(4,0);
   \draw[<->] (0,-1)--(0,4);
@@ -127,7 +127,7 @@ $$\mbox{Area}=\Big|{\det\begin{bmatrix}a&b\\c&d\end{bmatrix}}\Big|=\Big|\det\beg
 \begin{example}\label{exp:polyArea}
     Use Formula \ref{form:areaofparallelogramdeterminant} to find the area of the polygon shown below.
   \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray!40] (-3,-2) grid (3,4);
   \draw[<->] (-3,0)--(3,0);
   \draw[<->] (0,-2)--(0,4);
@@ -139,7 +139,7 @@ $$\mbox{Area}=\Big|{\det\begin{bmatrix}a&b\\c&d\end{bmatrix}}\Big|=\Big|\det\beg
 \begin{explanation}
     We will start by splitting this region into triangles.
     \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray!40] (-3,-2) grid (3,4);
   \draw[<->] (-3,0)--(3,0);
   \draw[<->] (0,-2)--(0,4);
@@ -158,7 +158,7 @@ $$\mbox{Area}=\Big|{\det\begin{bmatrix}a&b\\c&d\end{bmatrix}}\Big|=\Big|\det\beg
 \end{center} 
     We can find the total area of the polygon by finding the area of each triangle.  The area of each triangle is half of the area of the corresponding parallelogram.  For instance, $A_1$ is half of the area of the parallelogram depicted below. 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
 \draw[thin,gray!40] (-3,-2) grid (3,4);
   \draw[<->] (-3,0)--(3,0);
   \draw[<->] (0,-2)--(0,4);

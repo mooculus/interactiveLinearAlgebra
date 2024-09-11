@@ -137,7 +137,7 @@ line. The representation is achieved as follows:
 
 Introduce a rectangular coordinate system in the plane, and identify the complex number $a + bi$ with the point $(a, b)$, as shown in the figure below.
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-1,0)--(4,0);
   \draw[<->] (0,-1)--(0,3);
 %\draw[line width=1pt,blue](0,0)--(3,2);
@@ -159,7 +159,7 @@ absolute value and conjugate of a complex number $z = a + bi$. The absolute valu
  is just the distance from $z$ to the origin. This makes properties C8 and C9 quite obvious. The conjugate $\overline{z} = a-bi$ of $z$ is just the reflection of $z$ in the real axis ($x$ axis), a fact that makes properties C4 and C5 clear.
 
  \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-1,0)--(4,0);
   \draw[<->] (0,-3)--(0,3);
 \draw[line width=1pt,blue](0,0)--(3,2);
@@ -187,7 +187,7 @@ is just the distance between them. This gives the \dfn{complex distance formula}
 This useful fact yields a simple verification of the triangle inequality, property C12. Suppose $z$ and $w$ are given complex numbers. Consider the triangle in the figure below whose vertices are $0$, $w$, and $z + w$. 
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-2,0)--(3,0);
   \draw[<->] (0,-1)--(0,3);
 %\draw[line width=1pt,blue](0,0)--(3,2);
@@ -230,7 +230,7 @@ denote two complex numbers. We claim that the four points $0$, $z$, $w$, and $z 
 respectively, so these lines are parallel. (If it happens that $a = 0$, then both these lines are vertical.) 
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-1,0)--(4,0);
   \draw[<->] (0,-1)--(0,3);
 \draw[line width=0.5pt,blue,dashed](1,2)--(4,3);
@@ -270,7 +270,7 @@ to recall the general definition of the trigonometric functions sine and
 
 
 \begin{center}
-\begin{tikzpicture}[scale=3]
+\begin{tikzpicture}[scale=2]
 \node[blue] at (0.85, 0.8)   (c) {$P$};
 \node[] at (0.55, 0.25)   (b) {$\theta$};
 \draw[<->] (-1.3,0)--(1.3,0);
@@ -320,7 +320,7 @@ If $z \neq 0$, the angle $\theta$ shown in the figure below is called an \dfn{ar
 \end{equation*}
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-2,0)--(3,0);
   \draw[<->] (0,-1)--(0,3);
 \draw[line width=0.5pt, blue](2.5,2)--(0,0);
@@ -340,7 +340,7 @@ b &= r \sin \theta
 \end{align*}
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-2,0)--(3,0);
   \draw[<->] (0,-1)--(0,3);
 %\draw[line width=1pt,blue](0,0)--(3,2);
@@ -381,7 +381,7 @@ Write $z_{1} = -2 + 2i$ and $z_{2} = -i$ in polar form.
 The two numbers are plotted in the complex plane, as shown in the figure below. 
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1]
   \draw[<->] (-2.5,0)--(2.5,0);
   \draw[<->] (0,-2.5)--(0,2.5);
 \draw[line width=1pt, blue](-2,2)--(0,0);
@@ -451,7 +451,7 @@ Multiply $(1-i)(1+\sqrt{3}i)$ in two ways.
 We have $|1 - i| = \sqrt{2}$ and $|1 + \sqrt{3}i| = 2$.  Consider the figure below.
 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.5]
   \draw[<->] (-0.5,0)--(3,0);
   \draw[<->] (0,-1.5)--(0,2);
 \draw[line width=1pt, blue](1,1.73)--(0,0);
@@ -514,7 +514,7 @@ Verify that $(-1+\sqrt{3}i)^3 = 8$.
   We have $| -1 + \sqrt{3}i| =2$, so $-1 + \sqrt{3}i = 2e^{2\pi i /3}$ (see the figure below). 
   
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.5]
   \draw[<->] (-1,0)--(1,0);
   \draw[<->] (0,-0.5)--(0,2);
 \draw[line width=1pt, blue](-1,1.73)--(0,0);
@@ -565,7 +565,7 @@ seems at first glance to yield infinitely many different angles for $z$. However
 These are displayed in the figure below. 
 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.5]
   \draw[<->] (-1.5,0)--(1.5,0);
   \draw[<->] (0,-1.5)--(0,1.5);
 \draw[line width=1pt, blue](-1/2,1.73/2)--(0,0);
@@ -618,7 +618,7 @@ z = e^{2\pi ki/n}, \quad k = 0, 1, 2, \dots, n-1
 The $n$th roots of unity can be found geometrically as the points on the unit circle that cut the circle into $n$ equal sectors, starting at $1$. The case $n = 5$ is shown in the figure below, where the five fifth roots of unity are plotted.
 
 \begin{center}
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=1.5]
   \draw[<->] (-1.5,0)--(1.5,0);
   \draw[<->] (0,-1.5)--(0,1.5);
 \draw[line width=1pt, blue](0.31,0.95)--(0,0);

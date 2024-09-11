@@ -202,7 +202,7 @@ Geometrically, the graph of each equation is a line in $\RR^2$.  The point $(-1,
   The graph below shows the two lines intersecting at $(-1, 2)$.    
     
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 \draw[thin,gray!40] (-4,-4) grid (4,5);
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,5);
@@ -217,7 +217,7 @@ Given a system of two equations with two unknowns, there are three possible geom
 \item First, the graphs of the two equations intersect at a point.  If this is the case, the system has exactly one solution. We say that the system is \dfn{consistent} and has a \dfn{unique solution}.  
 
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -229,7 +229,7 @@ Given a system of two equations with two unknowns, there are three possible geom
 \end{center}
 \item Second, the two lines may have no points in common.  If this is the case, the system has no solutions.  We say that the system is \dfn{inconsistent}.  
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -241,7 +241,7 @@ Given a system of two equations with two unknowns, there are three possible geom
 \end{center}
 \item Finally, the two lines may coincide.  In this case, there are infinitely many points that satisfy both equations simultaneously.  We say that the system is consistent and has infinitely many solutions.
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -266,7 +266,7 @@ $$\begin{array}{cccccc}
     \end{array}$$
 This is where we run into a problem: there are no values of $x$ and $y$ that satisfy the second equation.  We conclude that the system is inconsistent.  Plotting the two lines in the same coordinate plane shows that the two lines are parallel.  
     \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 \draw[thin,gray!40] (-4,-4) grid (4,4);
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -299,7 +299,7 @@ When we plot the two equations of the original system, we find that the two line
 
 
     \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 \draw[thin,gray!40] (-4,-4) grid (4,4);
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);  
@@ -319,7 +319,7 @@ Given a linear system in two variables and more than two equations, we have a va
 \item First, it is possible for the graphs of all equations in the system to intersect at a single point, giving us a unique solution.  
 
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -335,7 +335,7 @@ Given a linear system in two variables and more than two equations, we have a va
 
 %\begin{center}[3in]
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -345,7 +345,7 @@ Given a linear system in two variables and more than two equations, we have a va
  \draw[line width=1pt](3, -1)--(-4,3);
     
 \end{tikzpicture}\quad\quad
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 
   \draw[<->] (-4,0)--(4,0);
   \draw[<->] (0,-4)--(0,4);
@@ -371,7 +371,7 @@ We found that the system has a unique solution $(1, 2, -1)$.  The graph of each 
     
 \begin{center}
 \tdplotsetmaincoords{70}{130}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=0.8]
 	\draw[->](-1,0,0)--(4,0,0) ;
     \draw[->](0,-4,0)--(0,2,0) ;
     \draw[->](0,0,-1)--(0,0,4) ;
@@ -405,7 +405,7 @@ Given a linear system of three equations in three variables, there are three way
 \item Second, the three planes can intersect in a line, forming a paddle-wheel shape.  In this case, every point along the line of intersection is a solution to the system, giving us infinitely many solutions.
     \begin{center}
 \tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=1.5]
+	\begin{tikzpicture}[scale=0.8]
 \filldraw[blue, opacity=0.3](0,-2,2)--(0,2,2)--(0,2,-2)--(0,-2,-2)--cycle;
 \filldraw[red, opacity=0.3] (2,0,2)--(-2,0,2)--(-2,0,-2)--(2,0,-2)--cycle;
 \filldraw[gray, opacity=0.5] (2,1,2)--(2,1,-2)--(-2,-1,-2)--(-2,-1,2)--cycle;
@@ -415,7 +415,7 @@ Given a linear system of three equations in three variables, there are three way
 \item Finally, the three planes can coincide.  If this is the case, there are infinitely many solutions.
      \begin{center}
 \tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=1.5]
+	\begin{tikzpicture}[scale=0.8]
 \filldraw[gray, opacity=0.5] (2,0,2)--(-2,0,2)--(-2,0,-2)--(2,0,-2)--cycle;
 \filldraw[blue, opacity=0.3] (1.5,0,1.5)--(-1.5,0,1.5)--(-1.5,0,-1.5)--(1.5,0,-1.5)--cycle;
 \filldraw[red, opacity=0.3] (1,0,1)--(-1,0,1)--(-1,0,-1)--(1,0,-1)--cycle;    	\end{tikzpicture}
@@ -425,24 +425,24 @@ There are four ways for a system to be inconsistent.  They are depicted below.
 %\begin{center}[4in]
 \begin{center}
 \tdplotsetmaincoords{70}{130}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=0.5]
    \filldraw[blue, opacity=0.3](0,0,2)--(0,2,2)--(0,2,-2)--(0,0,-2)--cycle;
    \filldraw[red, opacity=0.3] (2,0,2)--(0,0,2)--(0,0,-2)--(2,0,-2)--cycle;
    \filldraw[gray, opacity=0.5] (0,2,2)--(0,2,-2)--(2,0,-2)--(2,0,2)--cycle;
 \end{tikzpicture}\quad
-	\begin{tikzpicture}[scale=1]
+	\begin{tikzpicture}[scale=0.5]
 \filldraw[blue, opacity=0.3](-1,-1,2)--(0,2,2)--(0,2,-2)--(-1,-1,-2)--cycle;
 \filldraw[red, opacity=0.3] (2,0,2)--(-2,0,2)--(-2,0,-2)--(2,0,-2)--cycle;
 \filldraw[gray, opacity=0.5] (2,1,2)--(-2,1,2)--(-2,1,-2)--(2,1,-2)--cycle;
 \draw[-](-2/3,0,-2)--(-2/3,0,2) ;
 \draw[-](-1/3,1,-2)--(-1/3,1,2) ;
      \end{tikzpicture}\quad
-         \begin{tikzpicture}[scale=1]
+         \begin{tikzpicture}[scale=0.5]
 \filldraw[gray, opacity=0.5] (2,1.2,2)--(-2,1.2,2)--(-2,1.2,-2)--(2,1.2,-2)--cycle;
 \filldraw[red, opacity=0.3] (2,0,2)--(-2,0,2)--(-2,0,-2)--(2,0,-2)--cycle;
 \filldraw[blue, opacity=0.3] (-1.5,0,1.5)--(-1.5,0,-1.5)--(1.5,0,-1.5)--(1.5,0,1.5)--cycle;
 	\end{tikzpicture}\quad
-	\begin{tikzpicture}[scale=1]
+	\begin{tikzpicture}[scale=0.5]
 \filldraw[gray, opacity=0.5] (2,1.2,2)--(-2,1.2,2)--(-2,1.2,-2)--(2,1.2,-2)--cycle;
 \filldraw[red, opacity=0.3] (2,0,2)--(-2,0,2)--(-2,0,-2)--(2,0,-2)--cycle;
 \filldraw[blue, opacity=0.3] (2,-1.2,2)--(-2,-1.2,2)--(-2,-1.2,-2)--(2,-1.2,-2)--cycle;
@@ -580,7 +580,7 @@ The following figures show a geometric depiction of two equivalent systems.  (Th
 
  
  \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 \draw[thin,gray!40] (-2,-2) grid (6,6);
   \draw[<->] (-2,0)--(6,0);
   \draw[<->] (0,-2)--(0,6);
@@ -590,7 +590,7 @@ The following figures show a geometric depiction of two equivalent systems.  (Th
  \draw[line width=2pt,red](-2,3.5)--(6,-0.5) ;
     \node[red] at (5.2, 1)   (b) {$x+2y=5$};
 \end{tikzpicture}\quad\quad
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.5]
 \draw[thin,gray!40] (-2,-2) grid (6,6);
   \draw[<->] (-2,0)--(6,0);
   \draw[<->] (0,-2)--(0,6);
