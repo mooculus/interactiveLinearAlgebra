@@ -189,7 +189,7 @@ $$AB^2=(x_1-x_2)^2+(y_1-y_2)^2$$
 $$AB=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
 Why were we able to drop the absolute value brackets?
 
-The distance formula for points in $\RR^3$ can also be derived using the Pythagorean Theorem.  Let $A(x_1, y_1, z_1)$ and $B(x_2, y_2, z_2)$ be points of $\RR^3$.  Use the navigation bar in the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.
+The distance formula for points in $\RR^3$ can also be derived using the Pythagorean Theorem.  Let $A(x_1, y_1, z_1)$ and $B(x_2, y_2, z_2)$ be points of $\RR^3$.  Use the following GeoGebra interactive to walk through the steps of the derivation of the distance formula.  RIGHT-CLICK and DRAG to rotate the image.
 
 \pdfOnly{
 Access GeoGebra interactives through the online version of this text at 
@@ -202,6 +202,12 @@ Access GeoGebra interactives through the online version of this text at
 \geogebra{dc267r6v}{800}{600} 
 \end{center}
 \end{onlineOnly}
+
+Let points $A'(x_1, y_1, 0)$ and $B'(x_2, y_2,0)$ be projections of $A$ and $B$ onto the $xy$-plane.  By the distance formula in $\RR^2$, the distance between $A'$ and $B'$ is
+ $$A'B'=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
+ Let $C=(x_2, y_2, z_1)$.  Observe that $\triangle{ABC}$ is a right triangle with $AC=A'B'$, and $BC=|z_1-z_2|$.  By the Pythagorean theorem we have
+ $$AB^2=AC^2+BC^2=\left(\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}\right)^2+(z_1-z_2)^2=(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2$$
+ This gives us the following formula.
 
 \begin{formula}\label{form:distR3}
 Let $A(x_1, y_1, z_1)$ and $B(x_2, y_2, z_2)$ be points in $\RR^3$.  The distance between $A$ and $B$ is given by
