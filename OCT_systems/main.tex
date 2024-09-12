@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave Problems for Ch 1} \license{CC BY-NC-SA 4.0}
+\title{Octave for Ch 2} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,12 +9,70 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave Problems for Chapter 1}
+\section*{Octave for Chapter 2}
 
 To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+
+The templates in this section provide sample Octave code for solving systems of equations. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
+
 To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
-Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+
+\subsection*{Octave Tutorial}
+
+When solving systems by hand, you utilized Gauss-Jordan elimination to find rref.  Having the reduced row echelon form available made it easy to write out the solution(s) or determine that the system is inconsistent.  We can find rref and the rank of a matrix using Octave as follows.
+
+\begin{template}\label{temp:rref}
+Consider the system
+\begin{equation}
+\begin{array}{ccccccccc}
+      x &- &y&&&&&= &0 \\
+	 2x& -&2y&+&z&+&2w&=&4\\
+     & &y&&&+&w&=&0\\
+     & &&&2z&+&w&=&5
+    \end{array}
+    \end{equation}
+
+ (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system by finding the reduced row echelon form of the corresponding augmented matrix in Octave.  
+    \begin{verbatim}
+% Define the augmented matrix 
+% corresponding to the coefficient matrix A and vector b
+A_b = [1 -1 0 0 0;
+     2 -2 1 2 4;
+     0 1 0 1 0;
+     0 0 2 1 5];
+     
+% Find rref of A_b
+rref(A_b)
+
+% Find the rank of A_b
+rank(A_b)
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxFjsEKwjAMhu-FvsN_Gehh0A49iYfB8CVEpOvSWWSt1Co-vumkmBCS_-cjSYOBnA-EfCOY17xQyDRhMTn5D2xMiZ6PGCYfZuS4UjaSc956JivXw4QJb7I5JoxS9NcRR5w1Wg1V8iAFSnRoO2huu-oo6F_9DYXC7C_VkaLByfMBfsYhOvB6KYrY8LSVgoUJ91V8ASwdNw8=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
+
+\begin{remark}
+    If you start with a matrix $A$ and a separate vector $\vec{b}$, you can create an augmented matrix without re-typing as follows:
+    \begin{verbatim}
+% Define the coefficient matrix A
+A = [1 -1 0 0;
+     2 -2 1 2;
+     0 1 0 1;
+     0 0 2 1];
+
+% Define vector b
+b = [0;4;0;5];
+
+% Create an augmented matrix
+A_b=[A b]
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxFjrEKAyEQRHvBf5jmyoNVkkqukOQvjiOoWROL80BMyOdHIZLtHjvMvAlXjikz6pMRDo4xhcS5Yne1pA-sFBYLVoVZgUBGCvTTmDUU9GBCf6s_UouorbEU09h4c6hHgZfC904yJ0PmPEKXwq4yXIZ7PfbmwPefRXO4-WW18NsXtMsrmQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{remark}
+\end{template}
+
+\subsection*{Octave Problems}
 
 \begin{problem}\label{prob_oct_0}
     Given the code below, write out the system of equations and the corresponding solution(s).
@@ -36,63 +94,6 @@ rref_A_b=rref(A_b)
     \end{verbatim}
 
 \href{https://sagecell.sagemath.org/?z=eJxFjcEKwjAQRO-B_MNcCnoI2NpbySH4B16LFJtuNNA0sKTq57sVVBaGGeaxU-GUKYToIy0F6Vo4vuC0crZvYFrUcsdOqwMk1mhFJIlvPlV7kaRVJV_mNS14kC-ZMWo12t40Heruz7j1lmSFpt_OIKCI7R3GL3WmafXCcH4a8nea84KQOWnFTGHY8M3sxOzf0oYzHQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
-\end{problem}
-
-\begin{problem}\label{prob_oct_1}
-    Solve each of the following systems of equations using the backslash ($\setminus$) operator, and the \emph{rref} command.  Reconcile the seeming differences.
-
-    \begin{enumerate}
-        \item 
-        \begin{equation}
-\begin{array}{ccccccccc}
-      3x &- &y&+&4z&= &2 \\
-	 &&y&+&z&=&1\\
-     -2x&&&+&3z&=&1
-    \end{array}
-    \end{equation}
-  
-    
-    What is true about this system?
-    
-    \begin{multipleChoice}
-    \choice[correct]{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
-    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
-    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
-    \end{multipleChoice}
-
-       \item 
-    \begin{equation}
-\begin{array}{ccccccccc}
-      3x &- &y&+&4z&= &2 \\
-	 x&-&y&+&2z&=&4\\
-     -2x&+&y&-&3z&=&-3
-    \end{array}
-    \end{equation}
-
-    What is true about this system?
-    \begin{multipleChoice}
-    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
-    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
-    \choice[correct]{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
-    \end{multipleChoice}
-
-    \item 
-    \begin{equation}
-\begin{array}{ccccccccc}
-      3x &- &y&+&4z&= &2 \\
-	 x&-&y&+&2z&=&1\\
-     -2x&+&y&-&3z&=&1
-    \end{array}
-    \end{equation}
-
-    What is true about this system?
-    \begin{multipleChoice}
-    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
-    \choice[correct]{The system is inconsistent.  The backslash operator gives the least squares approximation.}
-    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
-    \end{multipleChoice}
-
-         \end{enumerate}
 \end{problem}
 
 \begin{problem}\label{prob_oct_2}
@@ -120,28 +121,57 @@ What are the possibilities for the number of solutions of $[A | \vec{b}]$?
 
 There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
 
-Here is a fun piece of code.  Try to figure out what it does.
+% Here is a fun piece of code.  Try to figure out what it does.
 
-\begin{verbatim}
-for i=1:200
-% Define the coefficient matrix A
-A = randi([0 1],5,3);
+% \begin{verbatim}
+% for i=1:200
+% % Define the coefficient matrix A
+% A = randi([0 1],5,3);
 
-% Define vector b
-b = randi([0 1],5,1);
+% % Define vector b
+% b = randi([0 1],5,1);
 
-% Create an augmented matrix
-A_b=[A b];
+% % Create an augmented matrix
+% A_b=[A b];
 
-% Find the rank
-rank_A_b=rank(A_b)
-end
-\end{verbatim}
+% % Find the rank
+% rank_A_b=rank(A_b)
+% end
+% \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxljssKwjAQRfeB-YfZCC10kShulC6C4k-UUvKY6CBNIUTx802kguBmuItz75mwJOReHbZSgtjgmQJHwnwjdAuFwI4pZpxNTvxCDUJjj8lEz80gUY3dvtu1RxA_3Se5XEYtCPvHqi97SmQyoYloHte5KMivkqKYbD9otOPKXjj6z0dl6w6i3qkyNTQltCAo-jehYTnK&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+% \href{https://sagecell.sagemath.org/?z=eJxljssKwjAQRfeB-YfZCC10kShulC6C4k-UUvKY6CBNIUTx802kguBmuItz75mwJOReHbZSgtjgmQJHwnwjdAuFwI4pZpxNTvxCDUJjj8lEz80gUY3dvtu1RxA_3Se5XEYtCPvHqi97SmQyoYloHte5KMivkqKYbD9otOPKXjj6z0dl6w6i3qkyNTQltCAo-jehYTnK&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
-Why did we have better luck generating $[A | \vec{b}]$ of rank less than $4$?
+% Why did we have better luck generating $[A | \vec{b}]$ of rank less than $4$?
     
 \end{problem}
+
+\begin{warning}
+    The \emph{rref} function utilizes a modified version of the Gauss-Jordan elimination algorithm (\href{https://www.mathworks.com/help/matlab/ref/rref.html}{Reference Link}).  For some matrices, implementing this algorithm directly leads to round-off errors and other problems that are outside of the scope of this text.  %While the backslash operator ($\setminus$) is a relatively robust operator, it too, can lead to computational problems.  
+    We illustrate what can happen in the next example.   
+\end{warning}
+
+\begin{example}\label{ex:rrefFail}
+    We will use a $12\times 12$ Hilbert matrix to illustrate how the \emph{rref} function can fail.  You can learn more about Hilbert matrices \href{https://en.wikipedia.org/wiki/Hilbert_matrix}{here}.
+
+\begin{verbatim}
+% Use a 12 by 12 Hilbert matrix
+A=hilb(12);
+
+% Theoretical rank of A is 12, but the following computation shows a rank of 11
+rank(A)
+
+% rref of A should be the identity matrix, but the following result contains a row of zeros
+rref(A)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxtjjEOwjAMRfdKuYOXSkViSVfE0I0DwAGS1iUWaYwSR6WcnrSFjcWyrP_fcw23hGBAt2CXdV7IW4wCk5FIL1V1Z1cujW4PJ1WpqoarQ44o1BsP0YQH8AgdUCrlI9gsIA5hZO95pnCHnqdnFiPEAZLjORXZr6a1qta96Q47O0Ycd16JZj-AxQ1HAwYhWb5f_fNETNlL0QUxFDYLzyvrjZFT8RR08XwAMi9N1g==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+\end{example}
+
+\subsection*{Acknowledgements}
+
+The inspiration for Example \ref{ex:rrefFail} came from \href{https://stackoverflow.com/questions/42893111/matlab-rref-function-precision-error-after-12th-column-of-hilbert-matrices}{this} \emph{Stack Overflow} comment.
+
+
 
 \end{document}
