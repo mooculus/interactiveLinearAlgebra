@@ -11,11 +11,11 @@
 
 \section*{Octave for Chapter 2}
 
-To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
-
 The templates in this section provide sample Octave code for solving systems of equations. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
-To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
 %Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
 
@@ -52,7 +52,6 @@ rank(A_b)
 
 \href{https://sagecell.sagemath.org/?z=eJxFjsEKwjAMhu-FvsN_Gehh0A49iYfB8CVEpOvSWWSt1Co-vumkmBCS_-cjSYOBnA-EfCOY17xQyDRhMTn5D2xMiZ6PGCYfZuS4UjaSc956JivXw4QJb7I5JoxS9NcRR5w1Wg1V8iAFSnRoO2huu-oo6F_9DYXC7C_VkaLByfMBfsYhOvB6KYrY8LSVgoUJ91V8ASwdNw8=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
 
-\begin{remark}
     If you start with a matrix $A$ and a separate vector $\vec{b}$, you can create an augmented matrix without re-typing as follows:
     \begin{verbatim}
 % Define the coefficient matrix A
@@ -69,10 +68,10 @@ A_b=[A b]
     \end{verbatim}
 
 \href{https://sagecell.sagemath.org/?z=eJxFjrEKAyEQRHvBf5jmyoNVkkqukOQvjiOoWROL80BMyOdHIZLtHjvMvAlXjikz6pMRDo4xhcS5Yne1pA-sFBYLVoVZgUBGCvTTmDUU9GBCf6s_UouorbEU09h4c6hHgZfC904yJ0PmPEKXwq4yXIZ7PfbmwPefRXO4-WW18NsXtMsrmQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-    \end{remark}
+
 \end{template}
 
-\subsection*{Octave Problems}
+\subsection*{Octave Exercises}
 
 \begin{problem}\label{prob_oct_0}
     Given the code below, write out the system of equations and the corresponding solution(s).
@@ -96,7 +95,33 @@ rref_A_b=rref(A_b)
 \href{https://sagecell.sagemath.org/?z=eJxFjcEKwjAQRO-B_MNcCnoI2NpbySH4B16LFJtuNNA0sKTq57sVVBaGGeaxU-GUKYToIy0F6Vo4vuC0crZvYFrUcsdOqwMk1mhFJIlvPlV7kaRVJV_mNS14kC-ZMWo12t40Heruz7j1lmSFpt_OIKCI7R3GL3WmafXCcH4a8nea84KQOWnFTGHY8M3sxOzf0oYzHQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
 \end{problem}
 
-\begin{problem}\label{prob_oct_2}
+\begin{problem}\label{prob_oct_sys_1}
+ Solve the following system using Octave.
+ \begin{equation}
+    \begin{array}{ccccccccccc}
+          x_1 &- &x_2&+&2x_3&&&+&x_5&= &-1 \\
+         -x_1&&&-&x_3&+&x_4&&&=&1\\
+         2x_1&+&2x_2&&&-&x_4&+&2x_5&=&1\\
+         x_1&&&&&+&2x_4&-&x_5&=&0
+        \end{array}
+        \end{equation}   
+
+\end{problem}
+
+\begin{problem}\label{prob_oct_sys_2}
+    Solve the following system using Octave.
+    \begin{equation}
+       \begin{array}{ccccccccccc}
+             3x_1&+&x_2&+&4x_3&-&x_4&+&2x_5&= &10 \\
+            x_1&&&+&2x_3&-&x_4&+&x_5&=&3\\
+            &&x_2&+&x_3&+&x_4&+&3x_5&=&2\\
+            2x_1&-&x_2&-&x_3&&&+&3x_5&=&-2\\
+            4x_1&+&x_2&-&5x_3&+&2x_4&+&x_5&=&1
+           \end{array}
+           \end{equation}   
+   \end{problem}
+
+\begin{problem}\label{prob_oct_sys_3}
 Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (See Templates \ref{temp:randMat} and \ref{temp:rref} for coding reference.)
 
 Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
