@@ -73,7 +73,7 @@ A_b=[A b]
 
 \subsection*{Octave Exercises}
 
-\begin{problem}\label{prob_oct_0}
+\begin{problem}\label{prob_oct_sys_0}
     Given the code below, write out the system of equations and the corresponding solution(s).
 
     \begin{verbatim}
@@ -169,6 +169,24 @@ There is a good chance that your experiments might have led you to believe that 
 % Why did we have better luck generating $[A | \vec{b}]$ of rank less than $4$?
     
 \end{problem}
+
+\begin{problem}\label{prob_oct_sys_4}
+    Set up a system of linear equations that can be used to find a function of the form $f(x)=ax^3+bx^2+cx+d$ whose graph passes through points $(-2, 1)$, $(0, 4)$, $(1, -2)$ and $(4, 5)$.   Solve the system using Octave, and sketch the graph to check your work.
+    
+    \begin{hint}
+    You need to find coefficients $a, b, c, d$ such that $f(-2)=1$, $f(0)=4$, $f(1)=-2$, $f(4)=5$.  For more information about this topic, see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting}.
+    \end{hint}
+    
+   % https://www.desmos.com/calculator/1mnsh5ytia
+
+    \begin{center} 
+        \desmos{1mnsh5ytia}
+    \end{center}
+   
+\end{problem}
+
+\subsection*{Further Considerations}
+Issues related to computational aspects of linear algebra are outside the scope of this text.  However, we want the reader to be aware of some potential problems that may arise.
 
 \begin{warning}
     The \emph{rref} function utilizes a modified version of the Gauss-Jordan elimination algorithm (\href{https://www.mathworks.com/help/matlab/ref/rref.html}{Reference Link}).  For some matrices, implementing this algorithm directly leads to round-off errors and other problems that are outside of the scope of this text.  %While the backslash operator ($\setminus$) is a relatively robust operator, it too, can lead to computational problems.  
