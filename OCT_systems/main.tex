@@ -121,8 +121,24 @@ rref_A_b=rref(A_b)
     \end{equation}   
 \end{problem}
 
+\begin{problem}\label{prob_oct_sys_4}
+    Suppose the graph of function $f$ of the form $f(x)=ax^3+bx^2+cx+d$ passes through points $(-2, 1)$, $(0, 4)$, $(1, -2)$ and $(4, 5)$.   Set up a system of linear equations to find the coefficients $a$, $b$, $c$ and $d$. Update the coefficients in the GeoGebra interactive below to sketch the graph.
+    
+    \begin{hint}
+        You need to find coefficients $a, b, c, d$ such that $f(-2)=1$, $f(0)=4$, $f(1)=-2$, $f(4)=5$.  For more information about this topic, see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting}.
+    \end{hint}
+    
+    %https://www.geogebra.org/calculator/xry6un6h
+
+   \begin{center} 
+    \geogebra{xry6un6h}{700}{800}   
+    \end{center}
+   
+\end{problem}
+
 \begin{problem}\label{prob_oct_sys_3}
-    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (See Templates \ref{temp:randMat} and \ref{temp:rref} for coding reference.)
+    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (Hint: The following code generates a random $m$ by $n$ matrix with integer entries between (and including) $a$ and $b$:  
+    A=randi([a,b],m,n))
 
     Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
 
@@ -146,21 +162,6 @@ rref_A_b=rref(A_b)
 
     There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
     
-\end{problem}
-
-\begin{problem}\label{prob_oct_sys_4}
-    Set up a system of linear equations that can be used to find a function of the form $f(x)=ax^3+bx^2+cx+d$ whose graph passes through points $(-2, 1)$, $(0, 4)$, $(1, -2)$ and $(4, 5)$.   Solve the system using Octave, and sketch the graph to check your work.
-    
-    \begin{hint}
-        You need to find coefficients $a, b, c, d$ such that $f(-2)=1$, $f(0)=4$, $f(1)=-2$, $f(4)=5$.  For more information about this topic, see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting}.
-    \end{hint}
-    
-    %https://www.geogebra.org/calculator/xry6un6h
-
-   \begin{center} 
-    \geogebra{xry6un6h}{700}{800}   
-    \end{center}
-   
 \end{problem}
 
 \subsection*{Further Considerations}
