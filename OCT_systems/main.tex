@@ -137,14 +137,30 @@ rref_A_b=rref(A_b)
 \end{problem}
 
 \begin{problem}\label{prob_oct_sys_3}
-    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  
+    The following code generates a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$, and a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  
+
+    \begin{verbatim} 
+        % A is a randomly generated 20 by 3 matrix whose entries are -1, 0, 1.
+        A=randi([-1,1],20,3);
+        
+        % b is a randomly generated column vector whose entries are -1, 0, 1.
+        b=randi([-1,1],20,1);
+        
+        % Augmented matrix A_b
+        A_b=[A b];
+        
+        % Reduced row-echelon form
+        rref_A_b=rref(A_b)
+        
+        % Rank of A_b
+        rank(A_b)
+    \end{verbatim}
+
+    \href{https://sagecell.sagemath.org/?z=eJx9jr0OgkAQhHsS3mEaEknAgJbG4l7BlhByB4sQubtkAX_e3kWxMtrtz8w3E0GhH6HB2jXeDg-cyRHriRrsMpgH9rB64v6OW-dHAjlZSBxMSPMEWYJ8GwbquAD6TSG3vEx2WbKPD2EQBhHMz4DaD7N1uFI9ef7PN1_8_MNX89mKS3hrUVUZKVSZY6FgylV1omauRcP-llLd0eAdWs82DJiprRb5MmxkiFeHdhf49o2T9Mvr9wQYpVrl&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
     
-    Hint: The following code generates a random $m$ by $n$ matrix with integer entries between (and including) $a$ and $b$:  
-    \begin{verbatim}A=randi([a,b],m,n)\end{verbatim}
+    Run the code several times to generate several random combinations of $A$ and $\vec{b}$ and find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Are you getting the answers you were expecting?  Answer the following questions based on your \emph{theoretical} knowledge.
 
-    Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
-
-    What are the possibilities for the rank of $[A | \vec{b}]$?  
+    What are the possibilities for the rank of such $[A | \vec{b}]$?  
 
     \begin{multipleChoice}
         \choice{The rank can be any positive integer less than or equal to $20$.}
@@ -153,7 +169,7 @@ rref_A_b=rref(A_b)
         \choice[correct]{The rank can be any non-negative integer less than or equal to $4$.}
     \end{multipleChoice}
 
-    What are the possibilities for the number of solutions of $[A | \vec{b}]$?
+    What are the possibilities for the number of solutions of such $[A | \vec{b}]$?
 
     \begin{multipleChoice}
         \choice{This system always has a unique solution.}
@@ -162,7 +178,7 @@ rref_A_b=rref(A_b)
         \choice{This system will always be infeasible.}
     \end{multipleChoice}
 
-    There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
+    There is a good chance that your experiments have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
     
 \end{problem}
 
