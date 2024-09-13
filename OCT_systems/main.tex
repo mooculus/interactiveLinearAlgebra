@@ -117,56 +117,34 @@ rref_A_b=rref(A_b)
             &&x_2&+&x_3&+&x_4&+&3x_5&=&2\\
             2x_1&-&x_2&-&x_3&&&+&3x_5&=&-2\\
             4x_1&+&x_2&-&5x_3&+&2x_4&+&x_5&=&1
-           \end{array}
-           \end{equation}   
-   \end{problem}
+        \end{array}
+    \end{equation}   
+\end{problem}
 
 \begin{problem}\label{prob_oct_sys_3}
-Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (See Templates \ref{temp:randMat} and \ref{temp:rref} for coding reference.)
+    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (See Templates \ref{temp:randMat} and \ref{temp:rref} for coding reference.)
 
-Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
+    Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
 
-What are the possibilities for the rank of $[A | \vec{b}]$?  
+    What are the possibilities for the rank of $[A | \vec{b}]$?  
 
-\begin{multipleChoice}
-    \choice{The rank can be any positive integer less than or equal to $20$.}
-    \choice{The rank can be any positive integer less than or equal to $3$.}
-    \choice{The rank is always equal to $4$.}
-    \choice[correct]{The rank can be any non-negative integer less than or equal to $4$.}
-\end{multipleChoice}
+    \begin{multipleChoice}
+        \choice{The rank can be any positive integer less than or equal to $20$.}
+        \choice{The rank can be any positive integer less than or equal to $3$.}
+        \choice{The rank is always equal to $4$.}
+        \choice[correct]{The rank can be any non-negative integer less than or equal to $4$.}
+    \end{multipleChoice}
 
-What are the possibilities for the number of solutions of $[A | \vec{b}]$?
+    What are the possibilities for the number of solutions of $[A | \vec{b}]$?
 
-\begin{multipleChoice}
-    \choice{This system could have a unique solution.}
-    \choice[correct]{This system has either no solutions or infinitely many solutions.}
-    \choice{This system will always have infinitely many solutions.}
-    \choice{This system will always be infeasible.}
-\end{multipleChoice}
+    \begin{multipleChoice}
+        \choice{This system could have a unique solution.}
+        \choice[correct]{This system has either no solutions or infinitely many solutions.}
+        \choice{This system will always have infinitely many solutions.}
+        \choice{This system will always be infeasible.}
+    \end{multipleChoice}
 
-There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
-
-% Here is a fun piece of code.  Try to figure out what it does.
-
-% \begin{verbatim}
-% for i=1:200
-% % Define the coefficient matrix A
-% A = randi([0 1],5,3);
-
-% % Define vector b
-% b = randi([0 1],5,1);
-
-% % Create an augmented matrix
-% A_b=[A b];
-
-% % Find the rank
-% rank_A_b=rank(A_b)
-% end
-% \end{verbatim}
-
-% \href{https://sagecell.sagemath.org/?z=eJxljssKwjAQRfeB-YfZCC10kShulC6C4k-UUvKY6CBNIUTx802kguBmuItz75mwJOReHbZSgtjgmQJHwnwjdAuFwI4pZpxNTvxCDUJjj8lEz80gUY3dvtu1RxA_3Se5XEYtCPvHqi97SmQyoYloHte5KMivkqKYbD9otOPKXjj6z0dl6w6i3qkyNTQltCAo-jehYTnK&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-
-% Why did we have better luck generating $[A | \vec{b}]$ of rank less than $4$?
+    There is a good chance that your experiments might have led you to believe that $\text{rank}[A | \vec{b}]=4$.  Can you manually construct $[A | \vec{b}]$, satisfying the condition of the problem, with a smaller rank?  How many solutions does your system have?  Why do you think it is so rare to randomly generate a system $[A | \vec{b}]$ of rank less than $4$?
     
 \end{problem}
 
@@ -174,7 +152,7 @@ There is a good chance that your experiments might have led you to believe that 
     Set up a system of linear equations that can be used to find a function of the form $f(x)=ax^3+bx^2+cx+d$ whose graph passes through points $(-2, 1)$, $(0, 4)$, $(1, -2)$ and $(4, 5)$.   Solve the system using Octave, and sketch the graph to check your work.
     
     \begin{hint}
-    You need to find coefficients $a, b, c, d$ such that $f(-2)=1$, $f(0)=4$, $f(1)=-2$, $f(4)=5$.  For more information about this topic, see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting}.
+        You need to find coefficients $a, b, c, d$ such that $f(-2)=1$, $f(0)=4$, $f(1)=-2$, $f(4)=5$.  For more information about this topic, see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting}.
     \end{hint}
     
    % https://www.desmos.com/calculator/1mnsh5ytia
@@ -196,18 +174,18 @@ Issues related to computational aspects of linear algebra are outside the scope 
 \begin{example}\label{ex:rrefFail}
     We will use a $12\times 12$ Hilbert matrix to illustrate how the \emph{rref} function can fail.  You can learn more about Hilbert matrices \href{https://en.wikipedia.org/wiki/Hilbert_matrix}{here}.
 
-\begin{verbatim}
-% Use a 12 by 12 Hilbert matrix
-A=hilb(12);
+    \begin{verbatim}
+    % Use a 12 by 12 Hilbert matrix
+    A=hilb(12);
 
-% Theoretical rank of A is 12, but the following computation shows a rank of 11
-rank(A)
+    % Theoretical rank of A is 12, but the following computation shows a rank of 11
+    rank(A)
 
-% rref of A should be the identity matrix, but the following result contains a row of zeros
-rref(A)
-\end{verbatim}
+    % rref of A should be the identity matrix, but the following result contains a row of zeros
+    rref(A)
+    \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxtjjEOwjAMRfdKuYOXSkViSVfE0I0DwAGS1iUWaYwSR6WcnrSFjcWyrP_fcw23hGBAt2CXdV7IW4wCk5FIL1V1Z1cujW4PJ1WpqoarQ44o1BsP0YQH8AgdUCrlI9gsIA5hZO95pnCHnqdnFiPEAZLjORXZr6a1qta96Q47O0Ycd16JZj-AxQ1HAwYhWb5f_fNETNlL0QUxFDYLzyvrjZFT8RR08XwAMi9N1g==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJxtjjEOwjAMRfdKuYOXSkViSVfE0I0DwAGS1iUWaYwSR6WcnrSFjcWyrP_fcw23hGBAt2CXdV7IW4wCk5FIL1V1Z1cujW4PJ1WpqoarQ44o1BsP0YQH8AgdUCrlI9gsIA5hZO95pnCHnqdnFiPEAZLjORXZr6a1qta96Q47O0Ycd16JZj-AxQ1HAwYhWb5f_fNETNlL0QUxFDYLzyvrjZFT8RR08XwAMi9N1g==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 \end{example}
 
