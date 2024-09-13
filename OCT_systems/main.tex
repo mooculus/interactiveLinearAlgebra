@@ -137,8 +137,10 @@ rref_A_b=rref(A_b)
 \end{problem}
 
 \begin{problem}\label{prob_oct_sys_3}
-    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  (Hint: The following code generates a random $m$ by $n$ matrix with integer entries between (and including) $a$ and $b$:  
-    A=randi([a,b],m,n))
+    Generate a random $20\times 3$ matrix $A$ whose entries are integers $-1$, $0$, and $1$.  Generate a random $20\times 1$ vector $\vec{b}$ whose components are integers $-1$, $0$, and $1$.  
+    
+    Hint: The following code generates a random $m$ by $n$ matrix with integer entries between (and including) $a$ and $b$:  
+    \begin{verbatim}A=randi([a,b],m,n)\end{verbatim}.
 
     Find the rank and the reduced row-echelon form of $[A | \vec{b}]$.  Experiment with several choices of $A$ and $\vec{b}$.  Are you getting the answers you were expecting?  Answer the following questions based on your theoretical knowledge.
 
