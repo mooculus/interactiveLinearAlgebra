@@ -1,0 +1,92 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Vector Operations} \license{CC BY-NC-SA 4.0}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+\section*{Vector Operations}
+
+The templates in this section provide sample Octave code for vector manipulations.  You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  Alternatively, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.  
+
+\begin{template}\label{temp:vectorOps}
+Here we present basic vector operations.
+\begin{verbatim}
+% Define vectors v and w
+v=[3;1;1;2;4];
+w=[-2;1;0;3;-1];
+
+% Find v+w  
+sum=v+w
+
+% Find 5v
+five_v=5*v
+
+% Find the dot product of v and w
+dot_v_w=dot(v,w)
+
+% Find the norm of v
+norm_v=norm(v)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxdTUsKwyAQ3QveYTaBpG2gSZqVuCu9RChSolIX0WDMeP2O3TSUWbw37zNTwd1Y5w2gmVOIGyC8vIbMGcppEB1NL25PwVmWU9vTehWDaLuicFbBw1EazxmAs21fJNGDMSJn1qFRKMcTHoz0NqBDgjUGvc8Jgv09Jl2hypKwxktu_mo-xOWb56xQOl2gxuYDFmw51w==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+\begin{remark}
+    Note that lines 2 and 3 of our code have a semi-column at the end while lines 6, 9, 12, and 15 do not.  Remove the semi-column from lines 2 and 3, add semi-columns to the other lines.  What happens?
+\end{remark}
+\end{template}
+
+\begin{example}\label{ex:angleInOctave}
+    Here we demonstrate how to find the angle between vectors $\vec{v}$ and $\vec{w}$ from the previous example.  Note the syntax for the $\arccos{}$ function.
+    \begin{explanation}
+        \begin{verbatim}
+% Define vectors v and w
+v=[3;1;1;2;4];
+w=[-2;1;0;3;-1];
+
+% Find the angle between v and w in radians and degrees
+angle_radians = acos(dot(v,w)/(norm(v)*norm(w)))
+angle_degrees = rad2deg(angle_radians)
+        \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxVjM8KAiEQxu-C7zCXBY2WWreb7C16iSXC1mkTSkFFX79pyUPMYfj-_L4OzvhwHqHgkkNMUMB4C5WzMs2jHuiUPl01Z3Wae0XyqEfdD1-Hsw4ujtr5iUStL4Q75oro2wo4D9FYZ3zaDItrREycbe1biyYwS0jChizKvsqD8CG-RZG77VcpZSN-A0QQq0iJvyX5AVWtQWc=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.        
+    \end{explanation}
+\end{example}
+
+\begin{template}\label{temp:cross}
+Here we show how to find the cross product of two vectors.
+\begin{verbatim}
+% Define vectors v and w
+v=[3;1;1];
+w=[-2;1;0];
+
+% Find the cross product v x w
+cross_v_w=cross(v,w)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS8qVihTSMxLUSjn5SqzjTa2NrQ2jLXm5Sq3jdY1AnIMQBxeLlUFt0ygopKMVIXkovziYoWCovyU0uQSoOYKkFawYHxZfLktmKVRplOuCQBmGSA1&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{template}
+
+\begin{example}\label{ex:orthInOctave}
+    Use vectors $\vec{v}$ and $\vec{w}$ from Template \ref{temp:cross} to illustrate that the cross product of two vectors is orthogonal to both vectors.
+    \begin{explanation}
+        \begin{verbatim}
+% Define vectors v and w
+v=[3;1;1];
+w=[-2;1;0];
+
+% Find the cross product v x w
+cross_v_w=cross(v,w)
+
+% Check to see that the cross product is orthogonal to both v and w
+dot(cross_v_w,v)
+dot(cross_v_w,w)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxtjsEKwjAQRO-B_sNeCg1UsHoMOSn-RJES09UEpSvJmvj5phUUxNvMMG9na9jj2U8ICS1TiJDATCPkSiTdb1WnuqOqRNb9alPMejaVqOHgS4kdgg0UI9wDjQ_LBX7O6BIOach6UU1qs3xzO4f2CkwQEQtv-M8RH4ECO7rQZG5z90Tsvn-NxM1noE3yN8nyBT-BRHk=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{explanation}
+\end{example}
+
+ 
+\end{document}
