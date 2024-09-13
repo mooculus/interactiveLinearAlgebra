@@ -1,14 +1,20 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Vector Operations} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapter 1} \license{CC BY-NC-SA 4.0}
 \begin{document}
 \begin{abstract}
 \end{abstract}
 \maketitle
-\section*{Vector Operations}
+\section*{Octave for Chapter 1}
 
-The templates in this section provide sample Octave code for vector manipulations.  You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  Alternatively, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.  
+The templates in this section provide sample Octave code for vector operations. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
+
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+\subsection*{Octave Tutorial}
 
 \begin{template}\label{temp:vectorOps}
 Here we present basic vector operations.
@@ -68,9 +74,20 @@ cross_v_w=cross(v,w)
 \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS8qVihTSMxLUSjn5SqzjTa2NrQ2jLXm5Sq3jdY1AnIMQBxeLlUFt0ygopKMVIXkovziYoWCovyU0uQSoOYKkFawYHxZfLktmKVRplOuCQBmGSA1&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{template}
 
-\begin{example}\label{ex:orthInOctave}
-    Use vectors $\vec{v}$ and $\vec{w}$ from Template \ref{temp:cross} to illustrate that the cross product of two vectors is orthogonal to both vectors.
-    \begin{explanation}
+\subsection*{Octave Exercises}
+
+\begin{problem}\label{prob_oct_vec_2}
+    Use Octave to find the angle (in degrees and radians) between vectors 
+    $$\vec{v}=\begin{bmatrix}2\\-4\\10\\-25\end{bmatrix},\quad\vec{w}=\begin{bmatrix}5\\3\\-20\\11\end{bmatrix}$$
+\end{problem}
+
+\begin{problem}\label{prob_oct_vec_3}
+Write Octave code to show that the points $A(1, -2, 3, 5)$, $B(-2, 0, 1, 1)$, $C(2, 4, -3, 2)$ are the vertices of a right triangle in $\RR^4$.
+\end{problem}
+
+\begin{problem}\label{prob_oct_vec_1}
+    Use vectors $\vec{v}$ and $\vec{w}$ from Template \ref{temp:cross} to illustrate that the cross product of two vectors is orthogonal to both vectors.  Pick another pair of vectors $\vec{v}$ and $\vec{w}$ and repeat the demonstration.
+    \begin{hint}
         \begin{verbatim}
 % Define vectors v and w
 v=[3;1;1];
@@ -85,8 +102,28 @@ dot(cross_v_w,w)
 \end{verbatim}
 
 \href{https://sagecell.sagemath.org/?z=eJxtjsEKwjAQRO-B_sNeCg1UsHoMOSn-RJES09UEpSvJmvj5phUUxNvMMG9na9jj2U8ICS1TiJDATCPkSiTdb1WnuqOqRNb9alPMejaVqOHgS4kdgg0UI9wDjQ_LBX7O6BIOach6UU1qs3xzO4f2CkwQEQtv-M8RH4ECO7rQZG5z90Tsvn-NxM1noE3yN8nyBT-BRHk=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-    \end{explanation}
-\end{example}
+    \end{hint}
+\end{problem}
 
+\begin{problem}\label{prob_oct_vec_4}
+    Write an Octave routine that allows the user to input three points and returns a normal vector to the plane containing these points.  Your code might start as follows:
+
+    \begin{verbatim}
+        % Enter coordinates of point A
+        A=[1 4 6];
+        
+        % Enter coordinates of point B
+        B=[-2 3 7]
+        
+        % Enter coordinates of point C
+        C=[1 -2 4]
+        
+        % Normal vector to the plane containing A, B, C is given by
+        
+    \end{verbatim}
+
+    What type of user inputs (other than all zeros) would result in the computed normal vector of $\vec{n}=\vec{0}$?  Explain this phenomenon geometrically.
+    
+    Use your code to find an equation for a plane containing points $(-2, 4, 0)$, $(-1, 8, 1)$, $(3, -1, 2)$.
  
 \end{document}
