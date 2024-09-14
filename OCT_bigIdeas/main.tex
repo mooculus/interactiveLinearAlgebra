@@ -16,18 +16,151 @@ You can write your own code using Octave software or online Octave cells.  To ac
 
 To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
-\subsection*{Octave Templates}
-\begin{template}\label{temp_span}
-    If possible, express vector $\vec{b}$ as a linear combination of the vectors in $W$.  
-\end{template}
+\subsection*{Octave Examples}
+\begin{example}\label{ex__oct_span}
+    If possible, express the vector $\vec{b}_i$ as a linear combination of the vectors in $W$.  
 
-\begin{template}\label{temp_lin_ind}
-    Determine whether the given set of vectors is linearly independent.  
-\end{template}
+    $$\vec{b}_1=\begin{bmatrix}0\\4\\1\\-1\\7\end{bmatrix},\quad \vec{b}_2=\begin{bmatrix}-4\\26\\-11\\-41\\10\end{bmatrix},\quad W=\left\{\begin{bmatrix}1\\0\\1\\2\end{bmatrix}, \begin{bmatrix}3\\6\\-1\\0\\4\end{bmatrix},\begin{bmatrix}1\\-2\\3\\5\\1\end{bmatrix}, \begin{bmatrix}-1\\0\\4\\-2\\3\end{bmatrix}\right\}$$
 
-\begin{template}\label{temp_redundant}
-    How many redundant vectors are in the set?  
-\end{template}
+    \begin{explanation}
+        We will attempt to solve the system $$a\vec{w}_1+b\vec{w}_2+c\vec{w}_3=\vec{b}_i$$
+        where $\vec{w}_1$, $\vec{w}_2$, $\vec{w}_3$ are vectors of $W$, ($i=1, 2$).
+    We will use the following code. 
+    \begin{verbatim}
+        % Let A_b1 and A_b2 be augmented matrices 
+        % whose columns are the vectors of W
+        % together with vectors b1 and b2, respectively.
+
+        w1=[3; 6;-1; 0; 4];
+        w2=[1; -2; 3; 5; 1];
+        w3=[-1; 0; 4; -2; 3];
+
+        b1=[0; 4; 1; -1; 7];
+        b2=[-4; 26; -11; -41; 10];
+
+        A_b1=[w1 w2 w3 b1];
+        A_b2=[w1 w2 w3 b2];
+
+        % Reduced row-echelon form
+        rref_A_b1=rref(A_b1)
+        rref_A_b2=rref(A_b2)
+    \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxNkD9vgzAQxXckvsNbkBqpVLFJ08Fi6N6pSwdURfw5AhLgyjax-u17F9K0g63n37t7ti_DGwW8nhqFeulEaDSEej3PtATqMNfBjS15pEmGOFhPaO20zotH7QhhIFyoDdZ52B4fUhXsmZg7xDEMd_d2Q6Mf4ch_MR0vNH0_pUmaRFVWhcHR5Mpgb3D4NAx1WfEx1wbsPRuoKy3K6rfqZgpOk4YzNihNvF6ENxySM9NHgeIceFP7rUf-XVZRIWrEgp8oWGbwH-qtNsM7dWvLI3E25tQONNkFvXVzmjhH_ekaJupB1O6P6jvVux-ACGWM&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+The reduced row-echelon form of $[A | \vec{b}_1]$ looks like this:
+\begin{verbatim}
+    rref_A_b1 =
+
+    1 0 0 0
+    0 1 0 0
+    0 0 1 0
+    0 0 0 1
+    0 0 0 0
+\end{verbatim}
+
+The last row $[0 0 0 | 0]$ indicates that the system is infeasible, so $\vec{b}_1$ cannot be written as a linear combination of vectors in $W$.
+
+The reduced row-echelon form of $[A | \vec{b}_2]$ looks like this:
+
+\begin{verbatim}
+    rref_A_b2 =
+
+    1 0 0 2
+    0 1 0 -7
+    0 0 1 3
+    0 0 0 0
+    0 0 0 0
+\end{verbatim}
+This shows that the system of equations
+$$a\vec{w}_1+b\vec{w}_2+c\vec{w}_3=\vec{b}_2$$
+has a solution: $a=2$, $b=-7$, $c=3$.  We write,
+$$\vec{b}_2=2\vec{w}_1-7\vec{w}_2+3\vec{w}_3$$
+    \end{explanation}
+
+\end{example}
+
+\begin{example}\label{ex_oct_lin_ind}
+    Determine whether the given vectors are linearly independent.  
+    $$\vec{w}_1=\begin{bmatrix}38\\15\\-11\end{bmatrix},\quad \vec{w}_2=\begin{bmatrix}64\\82\\14\end{bmatrix},\quad \vec{w}_3=\begin{bmatrix}-3\\13\\9\end{bmatrix}$$
+
+    \begin{explanation}
+        We will have to determine whether the equation
+        \begin{equation}\label{eq:oct_lin_comb}
+            a\vec{w}_1+b\vec{w}_2+c\vec{w}_3=\vec{0}\end{equation}
+        has a non-trivial solution.  To do this we will consider an augmented matrix $[\vec{w}_1 \vec{w}_2 \vec{w}_3 | \vec{0}]$.  In the following code, we will skip the zero vector.
+
+        \begin{verbatim}
+            % Define the vectors individually
+
+            w1=[38; 15; -11];
+            w2=[64; 82; 14];
+            w3=[-3; 13; 9];
+
+            A=[w1 w2 w3];
+
+            % Reduced row-echelon form
+            rref_A=rref(A)
+        \end{verbatim}
+
+        \href{https://sagecell.sagemath.org/?z=eJwlyMEKAiEUheG94DvczUAtXKhTTIgLoSdoKxGhV0YwBZsZ6e1zanH4Od8AVwwxIywzwoZuKfUNMfu4Rb8-U_pQQknj2spJAT8pYJzfVSeh7XlUMInO40-ktkz213fZgRKjbePQBDT5B0oGuKFfHXqopTF0M6aSIZT6oqRWDA-j9xzM8QvYDCpA&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+   
+    We get the following output
+
+    \begin{verbatim}
+        rref_A =
+
+        1 0 -0.5
+        0 1 0.25
+        0 0 0
+    \end{verbatim}
+We can see that there are infinitely many solutions $a=0.5t$, $b=-0.25t$, $c=t$.  Letting $t=4$, we write,
+$$2\vec{w}_1-\vec{w}_2+4\vec{w}_3=\vec{0}$$
+Since (\ref{eq:oct_lin_comb}) has a non-trivial solution, we conclude that the vectors are linearly dependent.
+\end{explanation}
+\end{example}
+
+\begin{example}\label{ex_oct_redundant}
+   From the set of vectors below, construct a linearly independent set that has the same span.
+    $$\left\{\begin{bmatrix}12\\10\\-20\\5\end{bmatrix}, \begin{bmatrix}3\\-14\\21\\11\end{bmatrix},\begin{bmatrix}-6\\-38\\62\\17\end{bmatrix},\begin{bmatrix}4\\-4\\23\\19\end{bmatrix}, \begin{bmatrix}-6\\6\\47\\30\end{bmatrix}, \begin{bmatrix}2\\11\\17\\8\end{bmatrix}\right\}$$
+    \begin{explanation}
+        We will refer to the vectors of $W$ as $\vec{w}_1\dots\vec{w}_6$, in order of appearance.
+        We will build a linearly independent set from these vectors by adding one vector to our set at a time, and checking for linear independence every time a vector is added.  If the resulting collection is linearly independent, we will keep the newly added vector, if the collection is not linearly independent we will discard the new vector and move on to the next. The following code accomplishes this.
+
+        \begin{verbatim}
+% Define the vectors individually
+
+w1=[12; 10; -20; 5];
+w2=[3; -14; 21; 11];
+w3=[-6; -38; 62; 17];
+w4=[4; -4; 23; 19];
+w5=[-6; 6; 47; 30];
+w6=[2; 11; 17; 8];
+
+% Clearly {w1} is linearly independent
+% Let's add w2 to the set and check.
+
+rref([w1 w2]) % Looks like w1 and w2 are linearly independent
+
+rref([w1 w2 w3]) % w3 is redundant of w1 and w2. We won't add it to the set
+
+rref([w1 w2 w4]) % these are linearly independent
+
+rref([w1 w2 w4 w5]) % w5 is redundant; don't add
+
+rref([w1 w2 w4 w6]) % this set is linearly independent!
+        \end{verbatim}
+
+        \href{https://sagecell.sagemath.org/?z=eJyNjz1rwzAURXeD_8NdQprBIfJXUoSnduzewXgw1jMxNnKQlYhQ-t_7pFDa0BYKRsPRvUfXKzxTP2iCPRIu1NnZLBi0Gi6DOrfTdI2jOHKiqkUqIXYSScpH0UimaVVnDEQukQq-FYFmVZ2UjLODROlL-4DzquZc4rNcEo8BFrcsf_leItsFWFa1r3kjw4NncbTC00Stma54c-Idw4KJVwfAa-lEfGjrcy9k1wtapeBS2Dn82EIWrVbojtSNW-8zhvqH2gkONRtwa55H7xwJDH2W262hP565E8BlweEyv8uQOmvVaou5_3Jt8crmWa9tmDbYb9N-6PKg49uF_r8hhytuM4q7GRLq89nfOmWz-QDgyJSO&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+        By starting with $\vec{w}_1$, adding vectors to our set one at a time and checking for linear independence we determined that $\vec{w}_3$ and $\vec{w}_5$ are redundant and can be removed from the set without changing the span.
+
+        \begin{question}
+        Explain why $$\text{span}(\vec{w}_1\dots\vec{w}_6)=\text{span}(\vec{w}_1, \vec{w}_2, \vec{w}_4, \vec{w}_6)$$
+        See discussion below Definition \ref{def:redundant} for guidance.
+        \end{question}
+    \end{explanation}
+\end{example}
 
 \subsection*{Octave Exercises}
 
@@ -66,6 +199,10 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 Find the number of redundant vectors in the following set.
 $$\left\{\begin{bmatrix}2\\6\\-1\\4\\3\\5\end{bmatrix}, \begin{bmatrix}-1\\6\\-11\\9\\4\\4\end{bmatrix},\begin{bmatrix}-1\\4\\1\\1\\-2\\8\end{bmatrix},\begin{bmatrix}3\\1\\4\\-1\\2\\-1\end{bmatrix}, \begin{bmatrix}-1\\32\\3\\13\\-4\\50\end{bmatrix}, \begin{bmatrix}-1\\3\\7\\-3\\-5\\10\end{bmatrix}\right\}$$
     There are $\answer{3}$ redundant vectors in the set.
+\end{problem}
+
+\begin{problem}\label{prob_oct_ideas_4}
+    In Example \ref{ex_oct_redundant}, we constructed a linearly independent set from vectors of $W$ by starting with $\vec{w}_1$ and adding one vector at a time to our set moving from left to right and checking for linear independence at every step.  Our resulting set $\{\vec{w}_1, \vec{w}_2, \vec{w}_4, \vec{w}_6\}$ has the same span as the original set $W$.  What if we had started this process with $\vec{w}_6$ and moved from right to left to identify and remove redundant vectors?  Would we have ended up with the same final set?  Modify the code of Example \ref{ex_oct_redundant} to find out. Does our final set have the same span as $W$?  Prove your claim.    
 \end{problem}
 
 \end{document}
