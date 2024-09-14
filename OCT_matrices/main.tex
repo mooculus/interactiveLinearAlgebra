@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave Problems for Ch 3} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapter 4} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,14 +9,94 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave Problems for Chapter 3}
+\section*{Octave for Chapter 4}
+The templates in this section provide sample Octave code for answering questions about linear combinations, span, and linear independence. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
-To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
-To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
 
-%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
-\begin{problem}\label{prob_oct_7}
+\subsection*{Octave Tutorial}
+
+\begin{template}\label{temp:matrixOps}
+
+    \begin{verbatim}
+        % Define matrices A, B, and C
+        A = [1 -1 0 0;
+            2 -2 1 2;
+            0 1 0 1];
+            
+        B = [2 3 -1 4;
+            1 -1 2 -2;
+            1 -2 0 3];   
+            
+        C = [1 -2 1 4;
+            2 -2 0 1;
+            -2 1 1 0;
+            1 3 -2 -1];     
+            
+        % Find A+B
+        sum=A+B
+        
+        % Find the transpose of A
+        % Copying and pasting A'  may not work because the prime comes through
+        % in a different font.
+        A_trans1=A'
+        % we can also use the transpose function
+        A_trans2=transpose(A)
+        
+        % Find AC
+        product=A*C
+        
+        % Find the inverse of C
+        inv_C=inv(C)
+    \end{verbatim}
+    
+    \href{https://sagecell.sagemath.org/?z=eJxdUMGOwiAUvDfpP8zFqLuaFPRmOFCMP2GMIZVmSVYwhe7-vg-0tcqBMDNv3rzHDHvTWmdw1bGzjQmQK9QraHeBKgsJgSPDmqFCtSsLpMOx5mDgA66QZHYacFnUycaxScbtQOc2yTshOBk3p102Pb3qGZkitm-RlDHgrLLXSCxlURHLvSbdZjhYWkV-12UR-qvIj5GOPwax0y7cfDDwLSStfM4ME3Ke6v4NGu2gf4NHT0XvlrZ3TbTejTYuRnEhl5MoSb956_ylb6KQX-pjCOv-TPcYgSRCZyXoXqjlHXo6X7Q=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{template}
+    
+    \begin{template}\label{temp:id_matrix}
+    Sometimes it is useful to generate a commonly used matrix or a vector (e.g. identity matrix, zero vector). 
+    
+    \begin{verbatim}
+        % 5 by 5 identity matrix
+        I_5=eye(5)
+        
+        % 5 by 5 zero matrix
+        O_5=zeros(5)
+        
+        % The zero vector in R^5
+        O_col=zeros(5,1)
+        
+        % Row of zeros
+        O_row=zeros(1,5)
+        
+        % Non-square zero matrix
+        O_block=zeros(2,3)
+        
+        % Matrix filled with 1s
+        One_block=ones(2,3)
+    \end{verbatim}
+    
+    \href{https://sagecell.sagemath.org/?z=eJxdzT0OwjAMBeA9Uu7gpRJIYSgoIwdgAKSKGdQfV40IsUgDoZyepk06sHiwv_ecgYRqGIdq0DjlBniUzqoPZ4eb3OOAK7nmjLMsuS9aWsx5NGHRL-rS4UzeWDuyoAwUVxlkTTpZkUddkAdqp0AfjCUfTS5S44nMpn--Sov_vytN9T36rdhFf5zu0CqtsQGvXAd5KDcYA2Rw9j9PMkr_&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{template}
+    
+    \begin{template}\label{temp:randMat}
+        When doing computational experiments you might need to create large matrices.  If the type of matrix is irrelevant, you may want to use random matrices.
+    
+        \begin{verbatim}
+            % Generate a random 3 by 3 matrix A with real-number values between 0 and 1
+            A=rand(3,3)
+            
+            % Generate a random 4 by 5 matrix B with integer values between -10 and 25
+            B=randi([-10,25],4,5)
+        \end{verbatim}
+    
+    \href{https://sagecell.sagemath.org/?z=eJxtzLEKwjAUheE9kHc4S6GFFGzTjA7t0ocQhxu8aKCJEFNb397U4qTLGX44X4GRA0dKDEKkcLl7aNhXHk8puhU9FpduiExTHWZvOeJJ08wPWE4Lc8AB-YdGiv64CaVWupJCiuKP3W22-drDbruQ-Prr1s0ut0aK4UO78pSjas1ZdcpUb3XOOqE=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
+    \end{template}
+
+\subsection*{Octave Exercises}
+\begin{problem}\label{prob_oct_mat5}
     Let $$A=\begin{bmatrix}2 & 6 & -4 & 1 & 1\\
 -1 & 0 & 2 & 2 & 4\\
 -2 & 1 & 3 & -2 & 1\\
@@ -39,6 +119,10 @@ Let $A=\begin{bmatrix} 0 & 1\\5 & 3\end{bmatrix}$.  Find $A^{-1}$ in two differe
         \end{verbatim}
     \end{hint}
 \end{problem}   
+
+\begin{problem}{prob_oct_mat4}
+    Generate a $12\times 14$ matrix filled with $3$'s.
+\end{problem}
 
 \begin{problem}\label{prob_oct_mat2}
 Write a routine that multiplies an $n\times m$ matrix by a vector by computing the linear combination of the columns of the matrix. (See Example \ref{exp:matrixvectormultdef} for reference.)  
