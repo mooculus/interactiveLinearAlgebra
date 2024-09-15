@@ -17,6 +17,7 @@ You can write your own code using Octave software or online Octave cells.  To ac
 To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
 \subsection*{Octave Tutorial}
+\subsubsection*{Basic Operations}
 
 \begin{template}\label{temp:matrixOps}
 
@@ -95,6 +96,69 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     \href{https://sagecell.sagemath.org/?z=eJxtzLEKwjAUheE9kHc4S6GFFGzTjA7t0ocQhxu8aKCJEFNb397U4qTLGX44X4GRA0dKDEKkcLl7aNhXHk8puhU9FpduiExTHWZvOeJJ08wPWE4Lc8AB-YdGiv64CaVWupJCiuKP3W22-drDbruQ-Prr1s0ut0aK4UO78pSjas1ZdcpUb3XOOqE=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
     \end{template}
 
+    \subsubsection*{Using Loops}
+
+    \begin{example}\label{ex:oct_mat_prod_def}
+        Implement Definition \ref{def:matrixvectormult} of matrix-vector multiplication in Octave.  Write a routine that computes the product $A\vec{x}$ of matrix $A$ and vector $\vec{x}$ of appropropriate dimensions.
+
+    \begin{explanation}
+    To allow the user to enter any appropriately sized combination of $A$ and $\vec{x}$, we will use the \emph{size} command.
+    \begin{verbatim}
+        % Find the size of matrix A
+        [m, n] = size(A);  % m is the number of rows, and n is the number of columns of A
+    \end{verbatim}
+    We will also have to check that the dimensions of $A$ and $\vec{x}$ are compatable.  To do this we will utilize the \emph{length} command to find the length of $\vec{x}$.
+    \begin{verbatim}
+        % Find the length of vector x
+        l=length(x);
+    \end{verbatim}
+    If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning.
+
+    Now we put it all together.
+
+    \begin{verbatim}
+        % User-defined matrix A
+        A=[4 -1 6 10 -2;
+        3 11 8 -3 4;
+        -5 2 14 6 -1;
+        3 2 -3 0 7];
+
+        % User-defined vector x
+        x=[-2; 4; 8; 2; 3];
+
+        % Find the size of matrix A
+        [m,n]=size(A); % m is the number of rows, and n is the number of columns of A
+
+        % Find the length of vector x
+        l=length(x);
+
+        if n ~= l
+            warning("Dimensions of A and x are incompatable.");
+        else
+            % if the dimensions are compatable, proceed with the multiplication
+
+            % Initialize the product matrix
+            A_x=zeros(m,1);
+
+            % Find the product Ax 
+            for i=1:m
+                for j=1:n
+                    A_x(i)=A_x(i)+A(i,j)*x(j);
+                end
+            end
+
+            % Print our answer
+            A_x
+
+            % Check our answer
+            correct_answer=A*x
+        end
+
+    \end{verbatim}
+
+    \end{explanation}   
+    \end{example}
+
     \begin{example}\label{ex:vandermonde}
         A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
         $$V=\begin{bmatrix}
@@ -123,6 +187,7 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     
     \end{example}    
 
+    \subsubsection*{$LU$-factorization}
     \begin{template}\label{temp:LU}
         We can find $LU$-factorization of a matrix as follows.  
         
