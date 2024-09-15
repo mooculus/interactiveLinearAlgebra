@@ -102,17 +102,20 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
         Implement Definition \ref{def:matrixvectormult} of matrix-vector multiplication in Octave.  Write a routine that computes the product $A\vec{x}$ of a user-defined matrix $A$ and vector $\vec{x}$.
 
     \begin{explanation}
-    We will use the \emph{size} command determine the size of the user-defined matrix $A$.  
+    We will use the followng outline for our code.
+    \begin{itemize}
+    \item The user will enter matrix $A$ and vector $\vec{x}$ at the top of the code.    
+    \item We will use the \emph{size} command determine the size of the user-defined matrix $A$.  
     \begin{verbatim}
         % Find the size of matrix A
         [m, n] = size(A);  % m is the number of rows, and n is the number of columns of A
     \end{verbatim}
-    We will utilize the \emph{length} command to find the length of $\vec{x}$.
+    \item We will utilize the \emph{length} command to find the length of $\vec{x}$.
     \begin{verbatim}
         % Find the length of vector x
         L=length(x);
     \end{verbatim}
-    We will also have to check that the dimensions of $A$ and $\vec{x}$ are compatable.  If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning.  we will use the following "If-then'' structure
+    \item We will check that the dimensions of $A$ and $\vec{x}$ are compatable.  If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning. 
     \begin{verbatim}
         if n ~= L  
             warning("Dimensions of A and x are incompatable.");  
@@ -120,8 +123,9 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
             % insert product code here ... 
         end    
     \end{verbatim}
+\end{itemize}
 
-    Here is our complete code.
+    Here is the complete code.
 
     \begin{verbatim}
         % User-defined matrix A
