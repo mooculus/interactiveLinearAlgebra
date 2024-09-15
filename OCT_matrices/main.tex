@@ -10,7 +10,7 @@
 \maketitle
 
 \section*{Octave for Chapter 4}
-The templates in this section provide sample Octave code for matrix operations. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
+The templates in this section provide sample Octave code for matrix operations and $LU$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
 You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
 
@@ -94,6 +94,66 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     
     \href{https://sagecell.sagemath.org/?z=eJxtzLEKwjAUheE9kHc4S6GFFGzTjA7t0ocQhxu8aKCJEFNb397U4qTLGX44X4GRA0dKDEKkcLl7aNhXHk8puhU9FpduiExTHWZvOeJJ08wPWE4Lc8AB-YdGiv64CaVWupJCiuKP3W22-drDbruQ-Prr1s0ut0aK4UO78pSjas1ZdcpUb3XOOqE=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.    
     \end{template}
+
+    \begin{example}\label{ex:vandermonde}
+        A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
+        $$V=\begin{bmatrix}
+    1&x_1&x_1^2&\dots&x_1^{n-1}\\
+    1&x_2&x_2^2&\dots&x_2^{n-1}\\
+    \vdots&\vdots&\vdots&\ddots&\vdots\\
+    1&x_n&x_n^2&\dots&x_n^{n-1}\end{bmatrix}$$
+    We will use a \emph{nested} loop to create a $5\times 5$ Vandermonde matrix for $x_1=2, x_2=-1, x_3=5, x_4=-2, x_5=3$.  We recommend that you create this matrix by hand first, then study and run the code.
+    
+    \begin{verbatim}
+    % Define the vector [x_1, ..., x_5]
+    w=[2 -1 5 -2 3];
+    
+    % This nested loop creates a 5x5 Vandermonde matrix
+    for i=1:5
+        for j=1:5
+            V(i,j)=w(i)^(j-1);
+        end
+    end
+    V
+    \end{verbatim}
+    
+    \href{https://sagecell.sagemath.org/?z=eJxFjEEKgzAURPeB3GE2goIKsWRTcdcjFDdiJeiXRjQpMdQcv7Fd9A08GAYmwY1mbQgKbxq9dejCIHKUZZkjDLLn7Gi6CoWARFHh0tecnUlwf-odhnZPE1ZrXxgdKU97vJJBolVmIrfZaGzKOx04m-O_bsRVcobIWZd_PWlTnS9Zc6Q6e6RLIbL6t5GZOPuq_QBP6C9I&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    
+    %You will see applications of the Vandermonde matrix in Least Squares, and Curve Fitting.
+    
+    \end{example}    
+
+    \begin{template}\label{temp:LU}
+        We can find $LU$-factorization of a matrix as follows.  
+        
+        \begin{verbatim}
+        % Define matrix A
+        A=[2 2 -1 2;
+           -1 2 2 1;
+           1 2 0 -2;
+           1 1 -2 -4];
+           
+        % Find LU factorization for A   
+        [L, U, P] = lu (A)
+        % where L is a lower triangular matrix,
+        % U is an upper triangular matrix, and
+        % P is an appropriate permutation matrix
+        
+        % Verify that this factorization is correct
+        productLU=L*U
+        productPA=P*A
+        \end{verbatim}
+        
+        \href{https://sagecell.sagemath.org/?z=eJxtjrFqwzAURXeB_-EugTbYEJtuxYOgdNLgRV1CBmHLjcCRxKtEmn59n-y0UCgC8Y507uPu8GJn5y0uJpH7hKyE7I8dOjQtuudKAOvEp92owAFN90Mtz2ieThtXYodX5ycojdmMKZD7MskFjzkQ5GocVQ1dYzihx5LxIB9L6nq2ZKHgPmCwhKslcCPj3_Ni6F6vLqJeFY8c478O_03FG-6eiZFCZC1ZcOKS01Zo0ytR3DdLbr4hnU3ii3N_u_PDGIjsmCrBy6Y8JqV7tde_OMh-2Mtvdaxh4w==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+        
+        \begin{remark}
+        \begin{itemize}
+        \item Observe that the permutation matrix $P$ is not the identity matrix.  What elementary row operation does multiplication by $P$ induce?
+            \item With the last two lines of our code we checked the correctness of our factorization.  Is it true that $PA=LU$?  Interpret the value $-2.77556e-17$ in the product $LU$.  What do you think caused this value to occur?  
+        \end{itemize}
+            \end{remark}
+            
+        \end{template}            
 
 \subsection*{Octave Exercises}
 \begin{problem}\label{prob_oct_mat5}
