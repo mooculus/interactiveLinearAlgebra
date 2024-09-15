@@ -99,22 +99,29 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     \subsubsection*{Using Loops}
 
     \begin{example}\label{ex:oct_mat_prod_def}
-        Implement Definition \ref{def:matrixvectormult} of matrix-vector multiplication in Octave.  Write a routine that computes the product $A\vec{x}$ of matrix $A$ and vector $\vec{x}$ of appropropriate dimensions.
+        Implement Definition \ref{def:matrixvectormult} of matrix-vector multiplication in Octave.  Write a routine that computes the product $A\vec{x}$ of a user-defined matrix $A$ and vector $\vec{x}$.
 
     \begin{explanation}
-    To allow the user to enter any appropriately sized combination of $A$ and $\vec{x}$, we will use the \emph{size} command.
+    We will use the \emph{size} command determine the size of the user-defined matrix $A$.  
     \begin{verbatim}
         % Find the size of matrix A
         [m, n] = size(A);  % m is the number of rows, and n is the number of columns of A
     \end{verbatim}
-    We will also have to check that the dimensions of $A$ and $\vec{x}$ are compatable.  To do this we will utilize the \emph{length} command to find the length of $\vec{x}$.
+    We will utilize the \emph{length} command to find the length of $\vec{x}$.
     \begin{verbatim}
         % Find the length of vector x
-        l=length(x);
+        L=length(x);
     \end{verbatim}
-    If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning.
+    We will also have to check that the dimensions of $A$ and $\vec{x}$ are compatable.  If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning.  we will use the following "If-then'' structure
+    \begin{verbatim}
+        if n ~= L  
+            warning("Dimensions of A and x are incompatable.");  
+        else  
+            % insert product code here ... 
+        end    
+    \end{verbatim}
 
-    Now we put it all together.
+    Here is our complete code.
 
     \begin{verbatim}
         % User-defined matrix A
@@ -130,9 +137,9 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
         [m,n]=size(A); % m is the number of rows, and n is the number of columns of A
 
         % Find the length of vector x
-        l=length(x);
+        L=length(x);
 
-        if n ~= l
+        if n ~= L
             warning("Dimensions of A and x are incompatable.");
         else
             % if the dimensions are compatable, proceed with the multiplication
@@ -153,8 +160,9 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
             % Check our answer
             correct_answer=A*x
         end
-
     \end{verbatim}
+
+    \href{https://sagecell.sagemath.org/?z=eJxlUU1r20AQvQv0H4aAQU6lYNluY2L2IFoChRx6yckEo0hjexztrtldxSKH_vbOaq0oaXTRzLyPGT1N4NGiyWrckcIaZOkMdVDEUSE2S8hy-AH5DLL5Oo4WkOewgmwBS-6y7zCHfMl4lvfg3CMzuH3iLo4mn31fsXLaQBdHndiwG1vAag1cLAb-Paka3AHB0huC3n24ZSNT9ST8PCmma5iABLI9V7XyGY1nG322KZTsob6ClW5aqawvi_-2Naj27uCR8cYHEaZJN-2Pox2b_hXwEEfAz7k0itQ-ufpFEpUlfXHut3dQGgRSlZan0pXPDd5ceRdsLAb5BNjPr65HudeMihRORlfIuZ2Jb_Nc2TaOTg1VpWOBPypY_VbkqGx8ZJ7Gurqt3CW7QCq2nXhDo20i0zx8UNC-ZzCoig4CtuMcSOR3MrTD6MgjNY4u5glNRXh9KxJKj9PrLjn6PQMHVR2avhi2_zGkHOjWcGz2jOb92JHy84DVyxdKpY3hX7UNM1Fcs4Kd_wE4wcc1&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
     \end{explanation}   
     \end{example}
