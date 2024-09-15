@@ -104,7 +104,7 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     \begin{explanation}
     We will use the followng outline for our code.
     \begin{itemize}
-    \item The user will enter matrix $A$ and vector $\vec{x}$ at the top of the code.    
+    \item The user will enter matrix $A$ and vector $\vec{x}$ at the top.    
     \item We will use the \emph{size} command determine the size of the user-defined matrix $A$.  
     \begin{verbatim}
         % Find the size of matrix A
@@ -115,7 +115,7 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
         % Find the length of vector x
         L=length(x);
     \end{verbatim}
-    \item We will check that the dimensions of $A$ and $\vec{x}$ are compatable.  If if the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning. 
+    \item We will check that the dimensions of $A$ and $\vec{x}$ are compatable.  If the number of columns of $A$ doesn't match the number of entries in $\vec{x}$, we will issue a warning. 
     \begin{verbatim}
         if n ~= L  
             warning("Dimensions of A and x are incompatable.");  
@@ -170,6 +170,47 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 
     \end{explanation}   
     \end{example}
+
+
+\begin{example}\label{ex_oct_mat_prod_dot}
+In Observation \ref{obs:mat0020_obs2} we noted that matrix-vector product can also be computed by dotting the rows of the matrix with the vector.  Demonstrate this method in Octave.
+    \begin{explanation}
+        We will use the following syntax to reference the entire row of a matrix.
+        \begin{verbatim}
+            A(2,:) % this is row 2 of matrix A
+        \end{verbatim}
+        Alternatively, if we ever need to reference a single column of a matrix, we would use the following:
+        \begin{verbatim}
+            A(:,5) % this is column 5 of matrix A
+        \end{verbatim}
+
+    Here is our code that utilizes the dot product to perform matrix-vector multiplication.
+
+    \begin{verbatim}
+        % Define matrix A 
+        A=[4 -1 6 10 -2;  
+        3 11 8 -3 4;  
+        -5 2 14 6 -1;  
+        3 2 -3 0 7];  
+        
+        % Define vector x  
+        x=[-2; 4; 8; 2; 3];  
+        
+        % Find the product Ax using the dot product method
+        for i=1:4  
+            A_x(i,1)=dot(A(i,:),x);  
+        end  
+        
+        % Print our answer  
+        A_x  
+        
+        % Check our answer  
+        correct_answer=A*x  
+    \end{verbatim}
+
+    \href{https://sagecell.sagemath.org/?z=eJxdj0FLAzEQhe-F_od3KXSlgWZ3raUlh6B49uKpSCmbqRukicxmNT_f2ahFDDnMvO_NG2aBBzr7QLicEvsMi_nMmkMLpbGBXkPVe4jWQGtsoRq0pVe3qKFb8Sj9Y6gnusbdS-nlL_A8ECtXFjh8UJciI080m8MULFnbPaRo_gw9-uCQesI7Rzd2CTZjHHx4LaKL6QoulPro5rOzxHqjd23JkGePeelXujLiXlopd9UqV2UFSfjvpif2ISGOjFMYPoknIKNXft9T9_aPd5FZDjl-K8be5C-N81KK&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{explanation}
+\end{example}
 
     \begin{example}\label{ex:vandermonde}
         A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
@@ -277,5 +318,14 @@ Write a routine that multiplies an $n\times m$ matrix by a vector using the dot 
         You can use \href{https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm}{this Wikipedia page} for reference.
     \end{hint}    
 \end{problem}
+
+\begin{problem}\label{prob_oct_mat_lu}
+    Use $LU$-factorization to solve the systems
+    $$\begin{bmatrix}2 &-2&0&2\\1&-2&2&2\\-1&2&0&0\\3&-3&1&4\end{bmatrix}\vec{x}=\begin{bmatrix}4\\-6\\4\\5\end{bmatrix}$$
+\end{problem}
+
+\section*{Text Source} Problem \ref{prob_oct_mat_lu} was adapted from Problem 2.7.3(d) of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, p. 127 
 
 \end{document}

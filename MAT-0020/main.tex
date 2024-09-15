@@ -85,7 +85,7 @@ or, equivalently,
 $$A\vec{x}=\begin{bmatrix}a_{11}x_1+a_{12}x_2+\ldots +a_{1n}x_n\\a_{21}x_1+a_{22}x_2+\ldots +a_{2n}x_n\\\vdots\\a_{m1}x_1+a_{m2}x_2+\ldots +a_{mn}x_n\end{bmatrix}$$
 \end{definition}
 We can now make a couple of observations about the matrix-vector product.  The first observation is part of the definition, but it is still worth pointing out.
-\begin{observation}
+\begin{observation}\label{obs:mat0020_obs1}
 In order for the product $A\vec{x}$ to exist, $A$ and $\vec{x}$ must have compatible dimensions.  In particular, vector $\vec{x}$ must have as many components as the number of columns of $A$.  (Otherwise, we would not be have a well-defined linear combination of the columns.)  So, if $A$ is an $m\times n$ matrix, $\vec{x}$ must be an $n\times 1$ vector.  If we write these dimensions next to each other, we will notice that the inner dimensions ($n$) must match, while the outer dimensions, $m$ and $1$, give us the dimensions of the product.
 $$\begin{array}{ccccc}
 A& & \vec{x} &=& A\vec{x}\\
@@ -93,7 +93,8 @@ A& & \vec{x} &=& A\vec{x}\\
 \end{array}$$
 \end{observation}
 
-\begin{observation} If you are familiar with the \dfn{dot product} (see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VEC-0050/main}{Dot Product and its Properties}), you may have noticed that each individual entry in the product matrix $A\vec{x}$ is the dot product of a row of $A$ with $\vec{x}$.  Thus, if the rows of $A$ are vectors $\vec{r}_1$, $\vec{r}_2,\ldots ,\vec{r}_n$ we can restate Definition \ref{def:matrixvectormult} as follows:
+\begin{observation}\label{obs:mat0020_obs2}
+    If you are familiar with the \dfn{dot product} (see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VEC-0050/main}{Dot Product and its Properties}), you may have noticed that each individual entry in the product matrix $A\vec{x}$ is the dot product of a row of $A$ with $\vec{x}$.  Thus, if the rows of $A$ are vectors $\vec{r}_1$, $\vec{r}_2,\ldots ,\vec{r}_n$ we can restate Definition \ref{def:matrixvectormult} as follows:
 $$A\vec{x}=\begin{bmatrix}-&\vec{r}_1&-\\-&\vec{r}_2&-\\ &\vdots & \\-&\vec{r}_n &-\end{bmatrix}\vec{x}=\begin{bmatrix}\vec{r}_1\dotp\vec{x}\\\vec{r}_2\dotp\vec{x}\\\vdots\\\vec{r}_n\dotp\vec{x}\end{bmatrix}$$
 \end{observation}
 
