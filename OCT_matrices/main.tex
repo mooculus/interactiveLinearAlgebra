@@ -98,6 +98,8 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 
     \subsubsection*{Using Loops}
 
+    We first introduced loops in \href{https://ximera.osu.edu/linearalgebradzv3/xOctave/OCT_vectors/main}{Octave for Chapter 1}.  Examples in this section and the corresponding exercises will allow you to practice using loops while also allowing you to delve deeper into various ways of thinking about matrix multiplication. 
+
     \begin{example}\label{ex:oct_mat_prod_def}
         Implement Definition \ref{def:matrixvectormult} of matrix-vector multiplication in Octave.  Write a routine that computes the product $A\vec{x}$ of a user-defined matrix $A$ and vector $\vec{x}$.
 
@@ -212,35 +214,46 @@ In Observation \ref{obs:mat0020_obs2} we noted that matrix-vector product can al
     \end{explanation}
 \end{example}
 
-    \begin{example}\label{ex:vandermonde}
-        A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
-        $$V=\begin{bmatrix}
-    1&x_1&x_1^2&\dots&x_1^{n-1}\\
-    1&x_2&x_2^2&\dots&x_2^{n-1}\\
-    \vdots&\vdots&\vdots&\ddots&\vdots\\
-    1&x_n&x_n^2&\dots&x_n^{n-1}\end{bmatrix}$$
-    We will use a \emph{nested} loop to create a $5\times 5$ Vandermonde matrix for $x_1=2, x_2=-1, x_3=5, x_4=-2, x_5=3$.  We recommend that you create this matrix by hand first, then study and run the code.
+    % \begin{example}\label{ex:vandermonde}
+    %     A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
+    %     $$V=\begin{bmatrix}
+    % 1&x_1&x_1^2&\dots&x_1^{n-1}\\
+    % 1&x_2&x_2^2&\dots&x_2^{n-1}\\
+    % \vdots&\vdots&\vdots&\ddots&\vdots\\
+    % 1&x_n&x_n^2&\dots&x_n^{n-1}\end{bmatrix}$$
+    % We will use a \emph{nested} loop to create a $5\times 5$ Vandermonde matrix for $x_1=2, x_2=-1, x_3=5, x_4=-2, x_5=3$.  We recommend that you create this matrix by hand first, then study and run the code.
     
-    \begin{verbatim}
-    % Define the vector [x_1, ..., x_5]
-    w=[2 -1 5 -2 3];
+    % \begin{verbatim}
+    % % Define the vector [x_1, ..., x_5]
+    % w=[2 -1 5 -2 3];
     
-    % This nested loop creates a 5x5 Vandermonde matrix
-    for i=1:5
-        for j=1:5
-            V(i,j)=w(i)^(j-1);
-        end
-    end
-    V
-    \end{verbatim}
+    % % This nested loop creates a 5x5 Vandermonde matrix
+    % for i=1:5
+    %     for j=1:5
+    %         V(i,j)=w(i)^(j-1);
+    %     end
+    % end
+    % V
+    % \end{verbatim}
     
-    \href{https://sagecell.sagemath.org/?z=eJxFjEEKgzAURPeB3GE2goIKsWRTcdcjFDdiJeiXRjQpMdQcv7Fd9A08GAYmwY1mbQgKbxq9dejCIHKUZZkjDLLn7Gi6CoWARFHh0tecnUlwf-odhnZPE1ZrXxgdKU97vJJBolVmIrfZaGzKOx04m-O_bsRVcobIWZd_PWlTnS9Zc6Q6e6RLIbL6t5GZOPuq_QBP6C9I&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    % \href{https://sagecell.sagemath.org/?z=eJxFjEEKgzAURPeB3GE2goIKsWRTcdcjFDdiJeiXRjQpMdQcv7Fd9A08GAYmwY1mbQgKbxq9dejCIHKUZZkjDLLn7Gi6CoWARFHh0tecnUlwf-odhnZPE1ZrXxgdKU97vJJBolVmIrfZaGzKOx04m-O_bsRVcobIWZd_PWlTnS9Zc6Q6e6RLIbL6t5GZOPuq_QBP6C9I&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
     
-    %You will see applications of the Vandermonde matrix in Least Squares, and Curve Fitting.
+    % %You will see applications of the Vandermonde matrix in Least Squares, and Curve Fitting.
     
-    \end{example}    
+    % \end{example}    
 
     \subsubsection*{$LU$-factorization}
+    
+    Before we proceed with the code, recall that if the elementary matrices used to reduce the given matrix to row-echelon form are all lower triangular, then we can find an $LU$ factorization.  In general, the following theorem applies.
+
+\begin{theorem}[\ref{th:LUPA}]
+Suppose an $m \times n$ matrix $A$ is transformed to a row-echelon matrix $U$ using Gaussian elimination. Let $P_1, P_2, \ldots, P_s$ be the elementary matrices corresponding (in order) to the row interchanges used,
+and write $P=P_s \cdots P_2 P_1$. (If no interchanges are used take $P = I$.) Then:
+\begin{enumerate}
+\item $PA$ is the matrix obtained from $A$ by doing these interchanges (in order) to A.
+\item $PA$ has an $LU$ factorization.
+\end{enumerate}
+\end{theorem}
     \begin{template}\label{temp:LU}
         We can find $LU$-factorization of a matrix as follows.  
         
@@ -312,6 +325,23 @@ Write a routine that multiplies an $n\times m$ matrix by a vector by computing t
     \begin{hint}
         You can use \href{https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm}{this Wikipedia page} for reference.
     \end{hint}    
+\end{problem}
+
+\begin{problem}\label{prob_oct_mat_vandermonde}
+    A \dfn{Vandermonde matrix} of order $n$ is a square matrix of the form 
+        $$V=\begin{bmatrix}
+    1&x_1&x_1^2&\dots&x_1^{n-1}\\
+    1&x_2&x_2^2&\dots&x_2^{n-1}\\
+    \vdots&\vdots&\vdots&\ddots&\vdots\\
+    1&x_n&x_n^2&\dots&x_n^{n-1}\end{bmatrix}$$  
+
+    If you studied section \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/APP-0070/main}{Curve Fitting} this matrix may look familiar to you. 
+
+    Use loops to create a $5\times 5$ Vandermonde matrix for $x_1=2, x_2=-1, x_3=5, x_4=-2, x_5=3$.
+
+    \begin{hint}
+        \href{https://sagecell.sagemath.org/?z=eJxFjEEKgzAURPeB3GE2goIKsWRTcdcjFDdiJeiXRjQpMdQcv7Fd9A08GAYmwY1mbQgKbxq9dejCIHKUZZkjDLLn7Gi6CoWARFHh0tecnUlwf-odhnZPE1ZrXxgdKU97vJJBolVmIrfZaGzKOx04m-O_bsRVcobIWZd_PWlTnS9Zc6Q6e6RLIbL6t5GZOPuq_QBP6C9I&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{hint}
 \end{problem}
 
 \begin{problem}\label{prob_oct_mat_lu}
