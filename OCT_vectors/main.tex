@@ -18,7 +18,7 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 \subsubsection*{Basic Operations}
 
 \begin{template}\label{temp:vectorOps}
-Here we present basic vector operations.
+Here are some basic vector operations.
 \begin{verbatim}
     % Define vectors v and w
     v=[3;1;1;2;4];
@@ -43,6 +43,8 @@ Here we present basic vector operations.
     Note that lines 2 and 3 of our code have a semi-column at the end while lines 6, 9, 12, and 15 do not.  Remove the semi-column from lines 2 and 3, add semi-columns to the other lines.  What happens?
 \end{remark}
 
+We can find the cross-product of two vectors in $\RR^3$ as follows.
+
 \begin{verbatim}
     % Define vectors v and w
     v=[3;1;1];
@@ -57,7 +59,7 @@ Here we present basic vector operations.
 \end{template}
 
 \begin{example}\label{ex:angleInOctave}
-    Find the angle between vectors $\vec{v}$ and $\vec{w}$ from the previous example.  (Note the syntax for the $\arccos{}$ function.)
+    Find the angle between vectors $\vec{v}=\begin{bmatrix}3\\1\\1\\2\\4\end{bmatrix}$ and $\vec{w}=\begin{bmatrix}-2\\1\\0\\3\\-1\end{bmatrix}$.
     \begin{explanation}
         \begin{verbatim}
 % Define vectors v and w
@@ -65,15 +67,16 @@ v=[3;1;1;2;4];
 w=[-2;1;0;3;-1];
 
 % Find the angle between v and w in radians and degrees
-angle_radians = acos(dot(v,w)/(norm(v)*norm(w)))
+angle_radians = acos(dot(v,w)/(norm(v)*norm(w))) % Note the syntax for the arccosine function
 angle_degrees = rad2deg(angle_radians)
         \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxVjM8KAiEQxu-C7zCXBY2WWreb7C16iSXC1mkTSkFFX79pyUPMYfj-_L4OzvhwHqHgkkNMUMB4C5WzMs2jHuiUPl01Z3Wae0XyqEfdD1-Hsw4ujtr5iUStL4Q75oro2wo4D9FYZ3zaDItrREycbe1biyYwS0jChizKvsqD8CG-RZG77VcpZSN-A0QQq0iJvyX5AVWtQWc=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.        
+\href{https://sagecell.sagemath.org/?z=eJxVj8EKwjAMhu-DvUMug1Ycus1b2U08-gJDpLaZFjSFtrb69nbTHSSH8Cf5_49UsMfREEJEFazzEEGShlQWsR860eRqxe4kyiL1Q91muRWdqJtpUhYVHEy-DjfMrusd4YIhIdKSAobASW0k-Xmg8eoQfVnM1-dl1YNU1jNtA4vrxDeMrHuwyFdzT5xzqOBoA84k_6YgXzBa9wU7lc3TC-OTVDCWlvgfLcdnUJsV-8PyD0ihUa8=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.        
     \end{explanation}
 \end{example}
 
 Sometimes it is useful to reference a single component of a vector.
+
 \begin{template}\label{temp:vectorComp}
     Given vector $\vec{v}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$, let's find the third component of $\vec{v}$.
 \begin{verbatim}
