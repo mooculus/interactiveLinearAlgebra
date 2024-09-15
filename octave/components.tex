@@ -10,49 +10,8 @@
 
 Sometimes it is useful to extract a single entry from a vector or a matrix, extract a row or a column from a matrix, or combine multiple vectors to form a matrix.  The templates in this section provide code samples for doing all of the above. You can access our Octave code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  Alternatively, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.  
 
-\begin{template}\label{temp:vectorComp}
-    Given vector $\vec{v}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$, let's find the third component of $\vec{v}$.
-\begin{verbatim}
-% Define vector v
-v=[1;-2;-5];
 
-% Find the third component of v
-v_3=v(3)
-\end{verbatim}
 
-    \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSwhnhj2zINY00AVTYWYw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-\end{template}
-
-\begin{template}\label{temp:matrixRowColEntry}
-    We can access individual rows, columns, and entries of a matrix.  Let $$A=\begin{bmatrix}2 & -1 & 3 & -1\\1 & 0 & 2 & 1\\1 & -1 & 1 & -2\end{bmatrix}$$
-\begin{verbatim}
-% Define a matrix 
-A=[2 -1 3 -1; 1 0 2 1; 1 -1 1 -2]
-
-% Third row of A
-row_3=A(3,:)
-
-% Second column of A
-col_2=A(:,2)
-
-% Second row third entry of A
-a_23=A(2,3)   
-\end{verbatim}
-\href{https://sagecell.sagemath.org/?z=eJxVjEEKwjAURPeB3GE2BQsR7M-u0kXAG9SdSAhtigGbQIhYb-9v7cbNMDM8XoWLn0L0cJhdyWGBFKa7EY4NNMcZDU4gbIU_DrpLIUWF6yPkETm9kSYYKbhZ3ZmDVm39I3o_pDhiSM_XHHeKhyWmWkX_1Coqm9LHkj877iytTlK6_gIqSCuZ&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-\end{template}
-
-\begin{example}\label{ex:gauss_octave}
-Use Octave code to show one step of Gaussian elimination by subtracting half of the first row from the second row of the given matrix $A$.
-\begin{verbatim}
-% Define matrix A
-A=[2 -1 3 -1; 1 0 2 1; 1 -1 1 -2] 
-
-% Replace the second row of A with second row minus half the first row.  
-A(2,:)=-1/2*A(1,:)+A(2,:)  
-\end{verbatim}
-
-\href{https://sagecell.sagemath.org/?z=eJxNjMsKwjAURPeB_MNsCvVRNXGndHHBL3ArLkK9IYE2kSRSP99YN26Gw5lhGlzY-sCYTEn-DZKC-ptGp3CscYbCARoLVFdD3yGFFA2u_BzNwCiOkXmI4YEUZ0QLwuyL-5eTD68MZ0a7zK1PuXyLHeoZtXp7WvWd2us1tary5qc-770qUw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-\end{example}
 
 \begin{template}\label{temp:colRow}
     We can create a matrix whose columns (or rows) are given as separate vectors.

@@ -20,21 +20,21 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 \begin{template}\label{temp:vectorOps}
 Here we present basic vector operations.
 \begin{verbatim}
-% Define vectors v and w
-v=[3;1;1;2;4];
-w=[-2;1;0;3;-1]; 
+    % Define vectors v and w
+    v=[3;1;1;2;4];
+    w=[-2;1;0;3;-1]; 
 
-% Find v+w  
-sum=v+w
+    % Find v+w  
+    sum=v+w
 
-% Find 5v
-five_v=5*v
+    % Find 5v
+    five_v=5*v
 
-% Find the dot product of v and w
-dot_v_w=dot(v,w)
+    % Find the dot product of v and w
+    dot_v_w=dot(v,w)
 
-% Find the norm of v
-norm_v=norm(v)
+    % Find the norm of v
+    norm_v=norm(v)
 \end{verbatim}
 
 \href{https://sagecell.sagemath.org/?z=eJxdTUsKwyAQ3QveYTaBpG2gSZqVuCu9RChSolIX0WDMeP2O3TSUWbw37zNTwd1Y5w2gmVOIGyC8vIbMGcppEB1NL25PwVmWU9vTehWDaLuicFbBw1EazxmAs21fJNGDMSJn1qFRKMcTHoz0NqBDgjUGvc8Jgv09Jl2hypKwxktu_mo-xOWb56xQOl2gxuYDFmw51w==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
@@ -42,10 +42,22 @@ norm_v=norm(v)
 \begin{remark}
     Note that lines 2 and 3 of our code have a semi-column at the end while lines 6, 9, 12, and 15 do not.  Remove the semi-column from lines 2 and 3, add semi-columns to the other lines.  What happens?
 \end{remark}
+
+\begin{verbatim}
+    % Define vectors v and w
+    v=[3;1;1];
+    w=[-2;1;0];
+    
+    % Find the cross product v x w
+    cross_v_w=cross(v,w)
+    \end{verbatim}
+    
+    \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS8qVihTSMxLUSjn5SqzjTa2NrQ2jLXm5Sq3jdY1AnIMQBxeLlUFt0ygopKMVIXkovziYoWCovyU0uQSoOYKkFawYHxZfLktmKVRplOuCQBmGSA1&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
 \end{template}
 
 \begin{example}\label{ex:angleInOctave}
-    Here we demonstrate how to find the angle between vectors $\vec{v}$ and $\vec{w}$ from the previous example.  Note the syntax for the $\arccos{}$ function.
+    Find the angle between vectors $\vec{v}$ and $\vec{w}$ from the previous example.  (Note the syntax for the $\arccos{}$ function.)
     \begin{explanation}
         \begin{verbatim}
 % Define vectors v and w
@@ -61,18 +73,18 @@ angle_degrees = rad2deg(angle_radians)
     \end{explanation}
 \end{example}
 
-\begin{template}\label{temp:cross}
-Here we show how to find the cross product of two vectors.
+Sometimes it is useful to reference a single component of a vector.
+\begin{template}\label{temp:vectorComp}
+    Given vector $\vec{v}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$, let's find the third component of $\vec{v}$.
 \begin{verbatim}
-% Define vectors v and w
-v=[3;1;1];
-w=[-2;1;0];
+% Define vector v
+v=[1;-2;-5];
 
-% Find the cross product v x w
-cross_v_w=cross(v,w)
+% Find the third component of v
+v_3=v(3)
 \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS8qVihTSMxLUSjn5SqzjTa2NrQ2jLXm5Sq3jdY1AnIMQBxeLlUFt0ygopKMVIXkovziYoWCovyU0uQSoOYKkFawYHxZfLktmKVRplOuCQBmGSA1&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSwhnhj2zINY00AVTYWYw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{template}
 
 \subsubsection*{Loops}
@@ -166,7 +178,7 @@ dot(cross_v_w,w)
 \end{problem}    
 
 \begin{problem}\label{prob_oct_vec_loop}
-    We left line 10 of the given code unfinished.  Finish the code so that it computes the dot product (dp) of two vectors.  Note that this code uses Definition \ref{def:dotproduct} directly, instead of relying on the built-in \emph{dot} function.
+    Due to a false fire alarm, a programmer left line 10 of the following code unfinished.  Finish the code so that it computes the dot product (dp) of two vectors.  Note that this code uses Definition \ref{def:dotproduct} directly, instead of relying on the built-in \emph{dot} function.
 
     \begin{verbatim}
         % Define vectors v and w

@@ -71,6 +71,38 @@ A_b=[A b]
 
 \end{template}
 
+\begin{template}\label{temp:matrixRowColEntry}
+    We can access individual rows, columns, and entries of a matrix.  Let $$A=\begin{bmatrix}2 & -1 & 3 & -1\\1 & 0 & 2 & 1\\1 & -1 & 1 & -2\end{bmatrix}$$
+\begin{verbatim}
+% Define a matrix 
+A=[2 -1 3 -1; 1 0 2 1; 1 -1 1 -2]
+
+% Third row of A
+row_3=A(3,:)
+
+% Second column of A
+col_2=A(:,2)
+
+% Second row third entry of A
+a_23=A(2,3)   
+\end{verbatim}
+\href{https://sagecell.sagemath.org/?z=eJxVjEEKwjAURPeB3GE2BQsR7M-u0kXAG9SdSAhtigGbQIhYb-9v7cbNMDM8XoWLn0L0cJhdyWGBFKa7EY4NNMcZDU4gbIU_DrpLIUWF6yPkETm9kSYYKbhZ3ZmDVm39I3o_pDhiSM_XHHeKhyWmWkX_1Coqm9LHkj877iytTlK6_gIqSCuZ&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{template}
+
+\begin{example}\label{ex:gauss_octave}
+Use Octave code to show one step of Gaussian elimination by subtracting half of the first row from the second row of the given matrix $A$.
+\begin{verbatim}
+% Define matrix A
+A=[2 -1 3 -1; 1 0 2 1; 1 -1 1 -2] 
+
+% Replace the second row of A with second row minus half the first row.  
+A(2,:)=-1/2*A(1,:)+A(2,:)  
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxNjMsKwjAURPeB_MNsCvVRNXGndHHBL3ArLkK9IYE2kSRSP99YN26Gw5lhGlzY-sCYTEn-DZKC-ptGp3CscYbCARoLVFdD3yGFFA2u_BzNwCiOkXmI4YEUZ0QLwuyL-5eTD68MZ0a7zK1PuXyLHeoZtXp7WvWd2us1tary5qc-770qUw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{example}
+
+
 \subsection*{Octave Exercises}
 
 \begin{problem}\label{prob_oct_sys_0}
