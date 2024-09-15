@@ -42,7 +42,9 @@ Here are some basic vector operations.
 \begin{remark}
     Note that lines 2 and 3 of our code have a semi-column at the end while lines 6, 9, 12, and 15 do not.  Remove the semi-column from lines 2 and 3, add semi-columns to the other lines.  What happens?
 \end{remark}
+\end{template}
 
+\begin{template}\label{temp_oct_vec_cross}
 We can find the cross-product of two vectors in $\RR^3$ as follows.
 
 \begin{verbatim}
@@ -77,8 +79,10 @@ angle_degrees = rad2deg(angle_radians)
 
 Sometimes it is useful to reference a single component of a vector.
 
-\begin{template}\label{temp:vectorComp}
-    Given vector $\vec{v}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$, let's find the third component of $\vec{v}$.
+\begin{example}\label{ex_oct_vec_component}
+    Given vector $\vec{v}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$, find the third component of $\vec{v}$.
+
+\begin{explanation}    
 \begin{verbatim}
 % Define vector v
 v=[1;-2;-5];
@@ -88,12 +92,15 @@ v_3=v(3)
 \end{verbatim}
 
     \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSwhnhj2zINY00AVTYWYw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-\end{template}
+\end{explanation}    
+\end{example}
 
 \subsubsection*{Loops}
-In this section we will introduce one of the most fundamental concepts in programming, a \emph{loop}.  Loops are used to generate sequences of objects (such as components of a vector) according to some rule.  We will start with a simple \emph{for} loop.  Every time you perform the steps inside the loop, you come back to the beginning, and increase the index $i$ by 1 until you reach the desired number of iterations.  Try to guess the outcome of the loop in each example, then run the code to verify your guess.
+In this section we will introduce one of the most fundamental concepts in programming, a \emph{loop}.  Loops are used to generate sequences of objects (such as components of a vector) according to some rule.  We will start with a simple \emph{for} loop.  Every time you perform the steps inside the loop, you come back to the beginning, and increase the index $i$ by 1 until you reach the desired number of iterations.  
 
 \begin{example}\label{ex:loop1}
+Here is an example of a loop.  Try to guess the outcome of the loop, then run the code to verify your guess.
+
         \begin{verbatim}
 % Enter the starting value
 n=10;
@@ -108,6 +115,8 @@ end
 \end{example}
 
 \begin{example}\label{ex:loop2}
+    Here is another loop.  Try to guess the outcome of the loop, then run the code to verify your guess.
+
     \begin{verbatim}
 % Enter the first component of vector v
 v(1)=1;
@@ -163,13 +172,13 @@ dot(cross_v_w,w)
 
     \begin{verbatim}
         % Enter coordinates of point A
-        A=[1 4 6];
+        A=[1; 4; 6];
         
         % Enter coordinates of point B
-        B=[-2 3 7]
+        B=[-2; 3; 7]
         
         % Enter coordinates of point C
-        C=[1 -2 4]
+        C=[1; -2; 4]
         
         % Normal vector to the plane containing A, B, C is given by
         
@@ -185,8 +194,8 @@ dot(cross_v_w,w)
 
     \begin{verbatim}
         % Define vectors v and w
-        v=[3 6 -1 7 12];
-        w=[-2 4 -3 5 11];
+        v=[3; 6; -1; 7; 12];
+        w=[-2; 4; -3; 5; 11];
 
         % Initialize the dot product (dp)
         dp=0;
@@ -205,6 +214,7 @@ dot(cross_v_w,w)
 
     \href{https://sagecell.sagemath.org/?z=eJxdjssKwjAQRfeB_MPdFHwVjPUBSlaK4M59EZEmxWBNyhgT9OtNqRud3cy9nDkZdro2ViPoyjt6IOBiFSJnQZYFlsgFVhCz04azKMt8hjnyAgsI0Z04y3CwxptLY94a_qqhnEdLTj0rj4Fqh5ypVk6_3b1J8P9WGEUoQ0mgeaEmd-8bnVciO8tZ7QhGivWCM6RJQNWOE1Jb1XOPZKzHyz0p6T-ipu5rH22vurr9RpWj7tu532VyGYRJHH4ATLJPyQ==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
+    Why did we have to initialize \emph{dp}?  What would happen if we didn't?
 \end{problem}
  
 \end{document}
