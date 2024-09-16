@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave Problems for Ch 4} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapters 4-5} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,13 +9,108 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave Problems for Chapter 4}
+\section*{Octave for Chapters 4-5}
 
-To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
-To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+The templates in this section provide sample Octave code for finding subspaces associated with matrices as well as the kernel and image of a linear transformation. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
-%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
 
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+\subsection*{Octave Tutorial}
+
+Recall that the column space of a matrix is the span of the columns of the matrix.  We have the following procedure for finding the column space.
+
+\begin{procedure}[\ref{proc:colspace}]
+Given a matrix $B$, a basis for $\mbox{col}(B)$ can be found as follows:
+\begin{enumerate}
+\item Find $\mbox{rref}(B)$ (or any row-echelon form $B'$ of $B$.)
+\item Identify the pivot columns of $\mbox{rref}(B)$ (or $B'$).
+\item The columns of $B$ corresponding to the pivot columns of $\mbox{rref}(B)$ (or $B'$) form a basis for $\mbox{col}(B)$.
+\end{enumerate}
+\end{procedure}
+
+We will implement this procedure in Octave.
+
+\begin{template}\label{temp:colSpace}
+We will use the matrix from Example \ref{ex:basiscolspace}.  Let $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$
+We can use Octave to find the reduced row-echelon form of $A$ (\emph{rref} command), and identify the pivot columns visually.  We can also take advantage of the expanded version of the \emph{rref} command to identify the pivot columns automatically, as shown below.
+
+\begin{verbatim}
+% Define A
+A = [2 -1 1 -4 1;
+    1 0 3 3 0;
+    -2 1 -1 5 2;
+    4 -1 7 2 1];
+
+% Compute rref of A
+[rref_A, pivot_cols] = rref(A);
+
+% the pivot column indices are...
+pivot_cols
+
+% Extract the pivot columns from A, using pivot column indices
+colSpace_basis = A(:, pivot_cols)
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxtTkEKwjAQvAfyh7kULNhiqiIoHoL6Ao9SSq2JBmxTklR8vhssKOjuZWeGmdkEe6VNpyA5k9jiVCATEMgWEBvOQCMww5x2NuKsiLrAEsXILCJcgfiSGM4S7GzbD0HBOaVhdUw_xbuSU_TmYUPV2LsvqTCyE5mOvnBTbx2kD20H011Mozxqp_I85-xjfhsOz-DqJvwYPbSzLahu8Ka7_g3ljPCxrxtVnWtvPH0jJ-vvB9MX3FlRVA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+Compare these findings to our answer in Example \ref{ex:basiscolspace}.
+\end{template}  
+
+\subsection*{Null Space of a Matrix (Kernel of a Linear Transformation)}
+
+Recall the following definition of the null space of a matrix.
+\begin{definition}[\ref{def:nullspace}] Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.
+\end{definition}
+
+We can use the reduced row-echelon form (\emph{rref} command) to find the null space, as shown in Example \ref{ex:dimnull}.  We will omit the details here.
+
+As you work with Octave, you may come across the \emph{null} command.  This command finds an orthonormal basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
+
+\begin{template}\label{temp:nullSpace}
+    We will use the matrix from Example \ref{ex:dimnull}.  Let 
+$$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$
+Find $\mbox{null}(A)$.
+
+\begin{verbatim}
+% Define A
+A = [2 -1 1 -4 1;
+    1 0 3 3 0;
+    -2 1 -1 5 2;
+    4 -1 7 2 1];
+
+% Basis for null(A)
+% Octave constructs an orthonormal basis, meaning that the basis elements are pairwise orthogonal unit vectors.
+B=null(A)
+
+% To find the dimension of the null space, find the number of columns in B
+[rows, cols]=size(B)
+
+% Verify that the columns of B are unit vectors
+for i=1:cols
+    NormOfCol=norm(B(:,i))
+end    
+
+% Verify that the columns of B are pairwise orthogonal (if more than one column)
+if cols==1
+    disp('The dimension of the null space is 1.');
+else    
+    for i=1:cols
+        counter=i+1;
+            while counter <= cols
+                DotProduct=dot(B(:,i),B(:,counter))
+                counter=counter+1;
+            end
+    end
+end  
+
+\end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJyNUstO5DAQvEfKP9QFkdHOIDLLaiXAhwmcFw5oL4hDSDpMS4l7ZDuM2K-nnQdvoe1Idlx2dXWXfYBLatgSNmmygcHtGqscOVYnyM_SBBo5jvFTv-NpvVrH_Ry_sJ6Qk7j8DcXvFEmTAxSlZ49GHGzfttlmEcGrKpSPhEqsD66vgkdpIS5sxYrryhb3kbVER6Vl-4CwLYMONOKgljqykeUIu5Ldnj2N_AexSu8tBzxSFcT5ozQpzIt2VL8RaKP1kLBmzeRZVL4ZgHgSfldWtHw9Zfvunlw8Uknbd9aDLYo0uXWy1zIV9HfG8z_KiknjLzlunl4Ln3maohjKfltimkR_2OSnMdPo5B814qq5kNZES7IiO13yQpOTlqTxnypfmZNxg050U2natp1pmpyHBr0x-VhEzX6XHd587xP0RvKjw4VeOLUqNVQXx89Nxaikt4Gc4R_zs5pjv-WW5n2cG7wnznEp4dpJrc_G1BImZ5ZxmqjRpo-kWXWaP2mrrSMw_OjwDIwb4og=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{template}
+
+\subsection*{Octave Exercises}
 \begin{problem}\label{prb:5.1} Let $H = \mbox{span}\left\{ \left[
 \begin{array}{r}
 2 \\
