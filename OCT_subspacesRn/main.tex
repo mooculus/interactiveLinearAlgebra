@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave for Chapters 4-5} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapters 5-6} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,7 +9,7 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave for Chapters 4-5}
+\section*{Octave for Chapters 5-6}
 
 The templates in this section provide sample Octave code for finding subspaces associated with matrices as well as the kernel and image of a linear transformation. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
@@ -18,7 +18,7 @@ You can write your own code using Octave software or online Octave cells.  To ac
 To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
 \subsection*{Octave Tutorial}
-
+\subsubsection*{Column Space of a Matrix (Image of a Linear Transformation)}
 Recall that the column space of a matrix is the span of the columns of the matrix.  We have the following procedure for finding the column space.
 
 \begin{procedure}[\ref{proc:colspace}]
@@ -58,7 +58,7 @@ colSpace_basis = A(:, pivot_cols)
 Compare these findings to our answer in Example \ref{ex:basiscolspace}.
 \end{template}  
 
-\subsection*{Null Space of a Matrix (Kernel of a Linear Transformation)}
+\subsubsection*{Null Space of a Matrix (Kernel of a Linear Transformation)}
 
 Recall the following definition of the null space of a matrix.
 \begin{definition}[\ref{def:nullspace}] Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.
@@ -299,7 +299,7 @@ and column spaces.
 \end{problem}
 
 \begin{problem}\label{prob_oct_Rn1}
-    In Template \ref{temp:colSpace} we used the \emph{null} command to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
+    In Template \ref{temp:nullSpace} we used the \emph{null} command to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
 
     \begin{enumerate}
         \item We followed up by verifying that the basis for the null space that Octave found are orthonormal.  Verify that the product of $A$ with of each element of the basis is $\vec{0}$.
