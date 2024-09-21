@@ -82,7 +82,7 @@ Recall the following properties of determinants.
   Let $$A=\begin{bmatrix}
   2 & -1 & 5\\0 & 3 & -4\\-2 & 1 & -1
   \end{bmatrix}$$
-  Illustrate the second property of the above theorem using the second row of matrix $A$, and constant $k=4$.
+  Illustrate part (b) of the above theorem using the second row of matrix $A$, and constant $k=4$.
   \begin{explanation}
     We will use the following code to illustrate the property.
     \begin{verbatim}
@@ -112,7 +112,41 @@ Recall the following properties of determinants.
 
 \end{example}
 
+For our next example, recall the following theorem, known as Cramer's Rule.
 
+\begin{theorem}[\ref{th:cramer}]
+  Let $A$ be a nonsingular $n\times n$ matrix, and let $\vec{b}$ be an $n\times 1$ vector.  Then the components of the solution vector $\vec{x}$ of $A\vec{x}=\vec{b}$ are given by
+  $$x_i=\frac{\det{A_i(\vec{b})}}{\det{A}}$$
+  where $A_i(\vec{b})$ is matrix $A$ with its $i^{th}$ column replaced by $\vec{b}$.
+  \end{theorem}
+
+\begin{example}\label{ex_oct_det_cramer}
+Use Octave to solve the following system for $x_1$ using Cramer's rule.
+$$\begin{bmatrix}1&2&-1\\-1&1&1\\0&3&1\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}-2\\3\\1\end{bmatrix}$$
+\begin{explanation}
+  We will use the following code.
+  \begin{verbatim}
+    % Define columns of matrix A
+    c_1=[1; -1; 0];
+    c_2=[2; 1;  3];
+    c_3=[-1; 1; 1];
+
+    % Combine the columns to form matrix A
+    A=[c_1 c_2 c_3];
+
+    % Define vector b
+    b=[-2; 3; 1];
+
+    % Form A_1 by replacing the first column of A with b
+    A_1=[b c_2 c_3];
+
+    % Find x_1
+    x_1=det(A_1)/det(A)
+  \end{verbatim}
+
+  \href{https://sagecell.sagemath.org/?z=eJxdj8EKgzAMhu9C3yEXYR7Gph6lh7LhS8gQW-ssWDtqt7m3X-Ick0FT2j_J9ycxnHVnRg3KDXc7TuA6sE3wZgbBIlWnvEoL2GMcLwUJGa-yAvAP-UfIeUVpOiSwKIaTs5KYof9xg4POebuBC14hHxCJkX9713EeWgXnQbJIIh8d8w2_JJDAXvkCr29Do8x4Xdw646ewetIqAp4m9IQRtIr8dyvN2MJcpyzCi7c67LAuOSyP5A0Xv09o&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{explanation}
+\end{example}
 
 \subsection*{Octave Exercises}
 
@@ -128,13 +162,17 @@ Determine whether each of the above matrices is singular in two different ways.
 Are the two methods used above in agreement?  Click the arrow on the right to learn more.
 
 \begin{expandable}
-Octave uses $LU$-decomposition to compute the determinant.  This method is susceptible to rounding errors (\href{https://www.mathworks.com/help/matlab/ref/det.html}{Reference}).  Because of this using the \emph{det} function to determine singularity is not a good idea.
+Octave uses $LU$-decomposition to compute the determinant.  This method is susceptible to rounding errors (\href{https://www.mathworks.com/help/matlab/ref/det.html}{Reference}).  Because of this, using the \emph{det} function to determine singularity is generally not a good idea.
 \end{expandable}
 
 If $A$ is non-singular, find $A^{-1}$, and $\det(A^{-1})$.  Illustrate the relationship between $\det(A)$ and $\det(A^{-1})$ computationally.
   \end{problem}
 
   \begin{problem}\label{prob_oct_det_prop}
-    Illustrate parts (a) and (c) of Theorem \ref{th:elemrowopsanddet}.
+    Modify Example \ref{ex_det_prop} to illustrate parts (a) and (c) of Theorem \ref{th:elemrowopsanddet}.  (Use rows and coefficients of your choice.)
+  \end{problem}
+
+  \begin{problem}\label{prob_oct_det_cramer}
+    Modify the code of Example \ref{ex_oct_det_cramer} to find $x_2$ and $x_3$.  
   \end{problem}
 \end{document}
