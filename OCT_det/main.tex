@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave Problems for Ch 6} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapter 7} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,12 +9,47 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave Problems for Chapter 6}
+\section*{Octave for Chapter 7}
 
-To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
-To ''save" or share your code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+The templates in this section provide sample Octave code for finding subspaces associated with matrices as well as the kernel and image of a linear transformation. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
-%Refer to \href{https://ximera.osu.edu/linearalgebrav3/XOctaveTutorial/octave/systems}{Octave Tutorial for Solving Systems of Equations}.
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
+
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+
+\subsection*{Octave Tutorial}
+\begin{warning}
+Computing the determinant is extremely inefficient.  As a result, determinants are rarely used in computational practice.  Examples and exercises in this section are designed to illustrate its theoretical properties and should not be taken as a templates for large-scale computational problems.
+\end{warning}
+
+We will use the \emph{det} function to find determinants in Octave.
+
+\begin{example}
+  Deterimine wheather each of the following matrices is singular.
+  $$A=\begin{bmatrix}-1 & 5 & -1\\7 & -4 & -1\\5 & 6 & -3\end{bmatrix},\quad B=\begin{bmatrix}6 & -1 & 2\\12 & -3 & 1\\-1 & 4 & 11\end{bmatrix}$$
+  \begin{explanation}
+  We find the determinant of each matrix.
+  \begin{verbatim}
+    % Define matrices A and B
+    A=[-1  5  -1;
+    7  -4  -1;
+    5  6 -3];
+
+    B=[6  -1  2;
+    12  -3  1;
+    -1  4  11];
+
+    % Find det(A) and det(B)
+    det(A)
+    det(B)
+  \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJwtjTsKgDAQRPtA7jCNYIoU67cQiwTxEsEiaIQUWqj3x42xmreP2d0CU9jjGXD454pruGHgzw1WCjM6TUALaBqk6Dmbn9l10PXCKIUdXZc8UPFMFXMNpFpyvEKUiwXmyKe38JRGfV8SWiVFVjmtegFjQB_C&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+We see that $\text{det}(A)=0$ and $\text{det}(B)\neq 0$.  We conclude that $A$ is singular and $B$ is not.
+
+  \end{explanation}
+\end{example}
 
 \begin{problem}\label{prob_oct_det1}
 Determine whether each of the following matrices is singular. (Try at least two different approaches.)  If $A$ is non-singular, find $A^{-1}$, $\det(A)$, and $\det(A^{-1})$.  Illustrate the relationship between $\det(A)$ and $\det(A^{-1})$ computationally.
