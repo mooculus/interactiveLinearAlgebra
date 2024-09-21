@@ -68,12 +68,13 @@ We can find the cross-product of two vectors in $\RR^3$ as follows.
 v=[3;1;1;2;4];
 w=[-2;1;0;3;-1];
 
-% Find the angle between v and w in radians and degrees
-angle_radians = acos(dot(v,w)/(norm(v)*norm(w))) % Note the syntax for the arccosine function
+% Find the angle between v and w in radians and degrees.  
+% To do so, use the arccosine function acos()
+angle_radians = acos(dot(v,w)/(norm(v)*norm(w))) 
 angle_degrees = rad2deg(angle_radians)
         \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJxVj8EKwjAMhu-DvUMug1Ycus1b2U08-gJDpLaZFjSFtrb69nbTHSSH8Cf5_49UsMfREEJEFazzEEGShlQWsR860eRqxe4kyiL1Q91muRWdqJtpUhYVHEy-DjfMrusd4YIhIdKSAobASW0k-Xmg8eoQfVnM1-dl1YNU1jNtA4vrxDeMrHuwyFdzT5xzqOBoA84k_6YgXzBa9wU7lc3TC-OTVDCWlvgfLcdnUJsV-8PyD0ihUa8=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.        
+\href{https://sagecell.sagemath.org/?z=eJxVjsEKgzAMhu9C3yEXoR3Kpu5WvI09wW4yRtdGV9haaGv7-qs6DyOHkJ98X1LCBUdtECLKYJ2HCMIoSKSI_dDxJlfLz3dOitQPdZvHE-943SwJKUq46rwdXpip6Y3wxJAQzW4BbcAJpYXxa6Bwcoh-AW8WlAVvK5g9bgYnpfXLL-NsZNDWgMgBZaRY5Y_d1G-5soHGKrEjNdZ9aGSHtSfGGOzI72BGMtzmif6p2BffHVEJ&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.        
     \end{explanation}
 \end{example}
 
@@ -88,15 +89,15 @@ Sometimes it is useful to reference a single component of a vector.
 v=[1;-2;-5];
 
 % Find the third component of v
-v_3=v(3)
+z=v(3)
 \end{verbatim}
 
-    \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSwhnhj2zINY00AVTYWYw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSQhirbMg1jTQAoTxXV&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{explanation}    
 \end{example}
 
 \subsubsection*{Loops}
-In this section we will introduce one of the most fundamental concepts in programming, a \emph{loop}.  Loops are used to generate sequences of objects (such as components of a vector) according to some rule.  We will start with a simple \emph{for} loop.  Every time you perform the steps inside the loop, you come back to the beginning, and increase the index $i$ by 1 until you reach the desired number of iterations.  
+In this section we will introduce one of the most fundamental concepts in programming, a \emph{loop}.  Loops are used to repeat a procedure multiple times.  We will start with a simple \emph{for} loop.  Every time you perform the steps inside the loop, you come back to the beginning, and increase the index $i$ by 1 until you reach the desired number of iterations.  
 
 \begin{example}\label{ex:loop1}
 Here is an example of a loop.  Try to guess the outcome of the loop, then run the code to verify your guess.
@@ -127,11 +128,11 @@ v(2)=1;
 % we continue to assign values to vector components
 for i=1:10
     v(i+2)=v(i)+v(i+1);
-    v(i) % this prints each component individually
 end
+v
     \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJx1jjEKwzAMRXeD76AlEJOl7tiQsQcxttwIUjnYiktvXwdKmqVapC_pfX4HdxbMIDNCpFwEfHquiZEFUoSKXlKGqlXtrZnsqJVW3Ykp6BOH_9D1B72wvbEQbwiSwJVCD4bqlg3Lvvhih1XRKjZNk73Zi1bQqvY0NMfWzLDP1ozHwUDXElGBNVODAZ2fT7mIA1UKm1uWt1bI4QOvKk6t&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+\href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoS00uyS9SKOPlKrONNrTWNbLWNY215uXi5VJVcMvMS1EoyUgF4syiFIXk_NyC_LzUvBKF_DSQhirbMg1jTQAoTxXV&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
 
 Do you recognize this famous sequence?
 \end{example}
@@ -148,7 +149,7 @@ Write Octave code to show that the points $A(1, -2, 3, 5)$, $B(-2, 0, 1, 1)$, $C
 \end{problem}
 
 \begin{problem}\label{prob_oct_vec_1}
-    Use vectors $\vec{v}$ and $\vec{w}$ from Template \ref{temp:cross} to illustrate that the cross product of two vectors is orthogonal to both vectors.  Pick another pair of vectors $\vec{v}$ and $\vec{w}$ and repeat the demonstration.
+    Use vectors $\vec{v}$ and $\vec{w}$ from Template \ref{temp_oct_vec_cross} to illustrate that the cross product of two vectors is orthogonal to both vectors.  Pick another pair of vectors $\vec{v}$ and $\vec{w}$ and repeat the demonstration.
     \begin{hint}
         \begin{verbatim}
 % Define vectors v and w
