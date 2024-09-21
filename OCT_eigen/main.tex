@@ -23,10 +23,12 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     
     \begin{verbatim}
     % Define A
-    A=[5 0 0; 1 2 -1; 1 3 -2];
+    A=[5 0 0; 
+    1 2 -1; 
+    1 3 -2];
     
     % Find eigenvalues of A
-    eigen=eig(A)
+    eigen_A=eig(A)
     
     % Find eigenvalues and eigenvectors of A
     [V,D]=eig(A)
@@ -34,11 +36,11 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
     % Columns of V are the eigenvectors of A 
     \end{verbatim}
     
-    \href{https://sagecell.sagemath.org/?z=eJx1jkELgkAUhO8L_oe5LBQkqNFJPCxJP8GLeFjyqQ90F9a1-vmpkEXU5Q0zzPcYiZwaNgQVCJWVJ0SIUsRIEMaLHhEmVRqIQEhc2NQgbsncdD_RCNss2Jpk892p_Z-i3jxdvXUvsiwOebWREjl47qJm3VqjewzaO37g3tmR3imZOV2eOoLv6MciibPtp8Gsvvgqfix4AsFaTeY=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJx1jsEKgkAYhO8L-w5zWShIUKOTeFiSHsGLSCz5qwvrLqxaPX5qZBF1-meG-X5GIKNaW4LkTKbFASHCBJxFiBFET7VHEJcJZ5wJnLStQLohe1VmpB6untElOct0uhu5_VNVq6fL4PyLLfJdVq6kQAY9dVFp1TirDDo1eH3HrXU9vVOyUzo_9YShpR-bBI7OjJ1dfP5V_FjwAJh4TrQ=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
     \end{template}
 
     \begin{template}\label{temp:charPoly}
-        We can find the characteristic polynomial of the matrix $A$ as follows.
+        We can find the characteristic polynomial of the given matrix $A$ as follows.
     
         \begin{verbatim}
     % Define A
@@ -110,11 +112,14 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
         
         \href{https://sagecell.sagemath.org/?z=eJx1jkEKgzAURPeB3GE2AYWWgtviQio9ghtxEepXAzHBGNsev1FoKqXdfOY_ZoYRKKlThlBwVuT1PDmfZOkpA45Rnznb8SibwDkTuCrTglRP5i71QjNst7ZtJA83KdI_Rhl_unnr3sm6OpRNTAqUUMGLVsneGqkxSu_UE4_BzvShZAJdSx3BD_RjkcDF6mU02199GXcLXu8oVg4=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
         
-        Each complex number in the output is presented using its real and imaginary parts as $x$ and $y$ coordinates of a point.  For example, the second eigenvalue, written as $(0.707107,-0.707107)$, is the complex number $\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i$.  Compare this to the eigenvalue in Example \ref{ex:eigsrotation}.  The corresponding eigenvector is the second column of the matrix $P$: $\begin{bmatrix}(0,-0.707107)\\(0.707107,-0)\end{bmatrix}$.  This should be interpreted as $\begin{bmatrix}(-\sqrt{2}/2)i\\\sqrt{2}/2\end{bmatrix}$.  Compare this to the eigenvector in Example \ref{ex:eigsrotation}.  There is a discrepancy!  Did we make a mistake?  How do we reconcile the two eigenvectors?
+        Each complex number in the output is presented using its real and imaginary parts as $x$ and $y$ coordinates of a point.  For example, the second eigenvalue, written as $(0.707107,-0.707107)$, is the complex number $\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i$.  Compare this to the eigenvalue in Example \ref{ex:eigsrotation}.  The corresponding eigenvector is the second column of the matrix $V$: $\begin{bmatrix}(0,-0.707107)\\(0.707107,-0)\end{bmatrix}$.  This should be interpreted as $\begin{bmatrix}(-\sqrt{2}/2)i\\\sqrt{2}/2\end{bmatrix}$.  Compare this to the eigenvector in Example \ref{ex:eigsrotation}.  There is a discrepancy!  Did we make a mistake?  How do we reconcile the two eigenvectors?
         \begin{hint}
             Recall that a scalar multiple of an eigenvector is also an eigenvector.  What happens if you multiply our current answer by $i$?
         \end{hint}
         \end{explanation}
         \end{example}
+
+\subsection*{Octave Exercises}       
+ 
 
 \end{document}
