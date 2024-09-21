@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Octave for Chapter 7} \license{CC BY-NC-SA 4.0}
+\title{Octave for Chapter 8} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -9,7 +9,7 @@
 \end{abstract}
 \maketitle
 
-\section*{Octave for Chapter 7}
+\section*{Octave for Chapter 8}
 
 Examples in this section provide sample Octave code for finding determinants and illustrating their uses and properties. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
@@ -18,161 +18,105 @@ You can write your own code using Octave software or online Octave cells.  To ac
 To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
 
 \subsection*{Octave Tutorial}
-\begin{warning}
-In practice, computing determinants using Laplace Expansion is computationally expensive.  $LU$-factorization can be used to improve efficiency, but may be numerically unstable. As a result, determinants are rarely used in computational practice.  Examples and exercises in this section are designed to illustrate theoretical properties and computational pitfalls associated with determinants and should not be interpreted as templates for large-scale computational problems.
-\end{warning}
 
-We will use the \emph{det} function to find determinants in Octave.
-
-\begin{example}\label{ex_oct_det_singular}
-  Deterimine wheather each of the following matrices is singular.
-  $$A=\begin{bmatrix}-1 & 5 & -1\\7 & -4 & -1\\5 & 6 & -3\end{bmatrix},\quad B=\begin{bmatrix}6 & -1 & 2\\12 & -3 & 1\\-1 & 4 & 11\end{bmatrix}$$
-  \begin{explanation}
-  We find the determinant of each matrix.
+\begin{template}\label{temp:eigen}
+  Find eigenvalues and the corresponding eigenvectors of the given matrix $A$.
+  
   \begin{verbatim}
-    % Define matrices A and B
-    A=[-1  5  -1;
-    7  -4  -1;
-    5  6 -3];
-
-    B=[6  -1  2;
-    12  -3  1;
-    -1  4  11];
-
-    % Find det(A) and det(B)
-    det_A=det(A)
-    det_B=det(B)
+  % Define A
+  A=[5 0 0; 1 2 -1; 1 3 -2];
+  
+  % Find eigenvalues of A
+  eigen=eig(A)
+  
+  % Find eigenvalues and eigenvectors of A
+  [V,D]=eig(A)
+  % D is a diagonal matrix whose diagonal entries are the eigenvalues of A
+  % Columns of V are the eigenvectors of A 
   \end{verbatim}
-
-\href{https://sagecell.sagemath.org/?z=eJwtjbsKgDAMRfdC_-Eugg4d4nOQDi3iT4iIaIUOOmj_H1PrlHMfSTIM7vCXw7mG22_ugcF67bBSGD0pAhpAUS9Fx7P-mb0WqpoZpbB6aqMPlKypZK6AWIserxClYobR8-ndhdwU35eItpCC52J0CpKyOmUvBfgj9w==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-
-We see that $\text{det}(A)=0$ and $\text{det}(B)\neq 0$.  We conclude that $A$ is singular and $B$ is not.
-
-  \end{explanation}
-\end{example}
-
-The following example illustrates a common technique for computing determinants numerically.
-\begin{example}\label{ex_oct_det_LU}
-  In Exploration \ref{init:LUfactorization}, we found that
-  $$A=\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}=LU=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}$$
-  Having a lower triangular/upper triangular factorization makes it easy to compute the determinant. Find the determinant of $A$ by sight.
-  \begin{explanation}
-    $$\text{det}(A)=\text{det}(LU)=\text{det}(L)\text{det}(U)=(1)(24)=24$$
-  \end{explanation} 
-\end{example}
-
-Unfortunately, $LU$-factorization is prone to round-off error, which may lead to erroneous or ambiguous outcomes, as you will see Problem \ref{prob_oct_det1}.
-
-Recall the following properties of determinants.
-
-\begin{theorem}[\ref{th:elemrowopsanddet}]
-  Let $A=\begin{bmatrix}a_{ij}\end{bmatrix}$ be an $n\times n$ matrix. 
-  \begin{enumerate}
-  \item\label{item:rowswapanddet}
-  If $B$ is obtained from $A$ by interchanging two different rows, then $$\det{B}=-\det{A}$$
-  \item \label{item:rowconstantmultanddet}
-  If $B$ is obtained from $A$ by multiplying one of the rows of $A$ by a non-zero constant $k$.  Then $$\det{B}=k\det{A}$$
-  \item \label{item:addmultotherrowdet}
-  If $B$ is obtained from $A$ by adding a multiple of one row of $A$ to another row, then
-  $$\det{B}=\det{A}$$
-  \end{enumerate}
-  \end{theorem}
-
-\begin{example}\label{ex_det_prop}
-  Let $$A=\begin{bmatrix}
-  2 & -1 & 5\\0 & 3 & -4\\-2 & 1 & -1
-  \end{bmatrix}$$
-  Illustrate part (b) of the above theorem using the second row of matrix $A$, and constant $k=4$.
-  \begin{explanation}
-    We will use the following code to illustrate the property.
-    \begin{verbatim}
-      % Define rows of matrix A
-      r_1=[2  -1  5];
-      r_2=[0  3  -4];
-      r_3=[-2  1  -1];
-
-      % Combine the rows to form matrix A
-      A=[r_1; r_2; r_3];
-
-      % Compute the determinant of A
-      det_A=det(A)
-
-      % Form matrix B by multiplying the second row of A by k=4
-      B=[r_1; 4*r_2; r_3];
-
-      % Compute the determinant of B
-      det_B=det(B)
-
-      % Compute 4*det(A)
-      det_A_times4=4*det(A)
-    \end{verbatim}
-
-    \href{https://sagecell.sagemath.org/?z=eJyVjrEKgzAURXfBf3iLUAWhajpJBtPSn5AiWmMbahKJkda_bxIV3EqXNxzuO5wALrRjgoKS7xFkB7zWin2g8D1VJbhMAeIE4HTLLUhxeQTIDEMLyHAZm0liV5b4XgBnyRtr1M_VqiV0UvGdusClsedgjPZku9dh0strSzVVnIlaaNtlvgypCmzuoQiX_XWnJdDMwKdes6GfmXg4yUjvUrQ2wzns5IWR75E1AEV_JJAlgbgEEv7co2hrdeWVZpyOCG_4C2FMb7M=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-  \end{explanation}
-
-\end{example}
-
-For our next example, recall the following theorem, known as Cramer's Rule.
-
-\begin{theorem}[\ref{th:cramer}]
-  Let $A$ be a nonsingular $n\times n$ matrix, and let $\vec{b}$ be an $n\times 1$ vector.  Then the components of the solution vector $\vec{x}$ of $A\vec{x}=\vec{b}$ are given by
-  $$x_i=\frac{\det{A_i(\vec{b})}}{\det{A}}$$
-  where $A_i(\vec{b})$ is matrix $A$ with its $i^{th}$ column replaced by $\vec{b}$.
-  \end{theorem}
-
-\begin{example}\label{ex_oct_det_cramer}
-Use Octave to solve the following system for $x_1$ using Cramer's rule.
-$$\begin{bmatrix}1&2&-1\\-1&1&1\\0&3&1\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}-2\\3\\1\end{bmatrix}$$
-\begin{explanation}
-  We will use the following code.
+  
+  \href{https://sagecell.sagemath.org/?z=eJx1jkELgkAUhO8L_oe5LBQkqNFJPCxJP8GLeFjyqQ90F9a1-vmpkEXU5Q0zzPcYiZwaNgQVCJWVJ0SIUsRIEMaLHhEmVRqIQEhc2NQgbsncdD_RCNss2Jpk892p_Z-i3jxdvXUvsiwOebWREjl47qJm3VqjewzaO37g3tmR3imZOV2eOoLv6MciibPtp8Gsvvgqfix4AsFaTeY=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+  \end{template}
+  
+  \begin{template}\label{temp:charPoly}
+      We can find the characteristic polynomial of the matrix $A$ as follows.
+  
+      \begin{verbatim}
+  % Define A
+  A=[5 0 0; 
+      1 2 -1; 
+      1 3 -2];
+  
+  % Find the coefficients of the char poly of A
+  char_poly = poly(A)
+      \end{verbatim}
+  
+  The output looks like this:
+  
   \begin{verbatim}
-    % Define columns of matrix A
-    c_1=[1; -1; 0];
-    c_2=[2; 1;  3];
-    c_3=[-1; 1; 1];
-
-    % Combine the columns to form matrix A
-    A=[c_1 c_2 c_3];
-
-    % Define vector b
-    b=[-2; 3; 1];
-
-    % Form A_1 by replacing the first column of A with b
-    A_1=[b c_2 c_3];
-
-    % Find x_1
-    x_1=det(A_1)/det(A)
+  char_poly =
+  
+   1 -5 -1 5
   \end{verbatim}
-
-  \href{https://sagecell.sagemath.org/?z=eJxdj8EKgzAMhu9C3yEXYR7Gph6lh7LhS8gQW-ssWDtqt7m3X-Ick0FT2j_J9ycxnHVnRg3KDXc7TuA6sE3wZgbBIlWnvEoL2GMcLwUJGa-yAvAP-UfIeUVpOiSwKIaTs5KYof9xg4POebuBC14hHxCJkX9713EeWgXnQbJIIh8d8w2_JJDAXvkCr29Do8x4Xdw646ewetIqAp4m9IQRtIr8dyvN2MJcpyzCi7c67LAuOSyP5A0Xv09o&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-\end{explanation}
-\end{example}
+  
+  \href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1Vw5OVytI02VTBQMLBW4OVSAAJDBSMFXUMEz1hB1yjWmpeLl0tVwS0zL0WhJCNVITk_NS0tMzkzNa-kWCE_DSKWkVikUJCfUwkSABoM4seD-bZgYQ1HTQCF1h-X&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+  
+  The output is a vector of coefficients, starting with the leading coefficient.  In this case, we see that the characteristic polynomial is $\lambda^3-5\lambda^2-\lambda+5$.
+  
+  \begin{warning}
+      In this text, we find the characteristic polynomial by computing $\det{\left(A-\lambda I\right)}$.  Octave, as well as some other textbooks, finds the characteristic polynomial based on $\det{\left(\lambda I-A\right)}$.  Note that setting these expressions equal to zero to find eigenvalues produces the same result. However, the coefficients of the characteristic polynomials from the two approaches are negatives of each other.  If you were to do this problem by hand, using the method in this text, you would get $-\lambda^3+5\lambda^2+\lambda-5$.
+  \end{warning}
+  \end{template}
+  
+  \begin{example}\label{ex:complexEig}
+  In Example \ref{ex:eigsrotation}, you found that the rotation matrix $M=\begin{bmatrix}
+  \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2}\\
+  \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+  \end{bmatrix}$ has complex eigenvalues.  Use the \emph{eig} command in Octave to compute the eigenvalues and eigenvectors of $M$.  
+  
+  \begin{explanation}
+  Here is the input code:
+  
+  \begin{verbatim}
+  % Define A
+  A=[sqrt(2)/2  -sqrt(2)/2;
+  sqrt(2)/2  sqrt(2)/2];
+  
+  % Find eigenvalues of A
+  eigen=eig(A)
+  
+  % Find eigenvalues and eigenvectors of A
+  [V,D]=eig(A)
+  % D is a diagonal matrix whose diagonal entries are the eigenvalues of A
+  % Columns of V are the eigenvectors of A
+  \end{verbatim}
+  
+  This is what we get for the output:
+  \begin{verbatim}
+  eigen =
+  
+   (0.707107,0.707107)
+   (0.707107,-0.707107)
+  
+  V =
+  
+   (0,0.707107) (0,-0.707107)
+   (0.707107,0) (0.707107,-0)
+  
+  D =
+  
+   (0.707107,0.707107) (0,0)
+   (0,0) (0.707107,-0.707107)
+  \end{verbatim}
+  
+  \href{https://sagecell.sagemath.org/?z=eJx1jkEKgzAURPeB3GE2AYWWgtviQio9ghtxEepXAzHBGNsev1FoKqXdfOY_ZoYRKKlThlBwVuT1PDmfZOkpA45Rnznb8SibwDkTuCrTglRP5i71QjNst7ZtJA83KdI_Rhl_unnr3sm6OpRNTAqUUMGLVsneGqkxSu_UE4_BzvShZAJdSx3BD_RjkcDF6mU02199GXcLXu8oVg4=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+  
+  Each complex number in the output is presented using its real and imaginary parts as $x$ and $y$ coordinates of a point.  For example, the second eigenvalue, written as $(0.707107,-0.707107)$, is the complex number $\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i$.  Compare this to the eigenvalue in Example \ref{ex:eigsrotation}.  The corresponding eigenvector is the second column of the matrix $P$: $\begin{bmatrix}(0,-0.707107)\\(0.707107,-0)\end{bmatrix}$.  This should be interpreted as $\begin{bmatrix}(-\sqrt{2}/2)i\\\sqrt{2}/2\end{bmatrix}$.  Compare this to the eigenvector in Example \ref{ex:eigsrotation}.  There is a discrepancy!  Did we make a mistake?  How do we reconcile the two eigenvectors?
+  \begin{hint}
+      Recall that a scalar multiple of an eigenvector is also an eigenvector.  What happens if you multiply our current answer by $i$?
+  \end{hint}
+  \end{explanation}
+  \end{example}
 
 \subsection*{Octave Exercises}
 
-\begin{problem}\label{prob_oct_det1}
-  Let 
-  $$A=\begin{bmatrix}1 &-2 & 1 & 6 & 1\\0 & -1 & 3 & 5 & -1\\2 & -1 & 8 & 4 & 2\\0 & 14 & -11 & -7 & 2\\3 & -3 & 9 & 10 & 3\end{bmatrix},\quad B=\begin{bmatrix}1 &-2 & 1 & 6 &1\\0 & -1 & 3 & 5 & 0\\2 & -1 & 8 & 4 & 1\\3 & 12 & -2 & 3 & 0\\2 & 0 & -11 & -9 & 5\end{bmatrix}$$
-
-Determine whether each of the above matrices is singular in two different ways. 
-\begin{itemize}
-\item Use the \emph{det} function
-\item Use an alternative approach
-\end{itemize}  
-Are the two methods used above in agreement?  Click the arrow on the right to learn more.
-
-\begin{expandable}
-Octave uses $LU$-decomposition to compute the determinant.  This method is susceptible to rounding errors (\href{https://www.mathworks.com/help/matlab/ref/det.html}{Reference}).  Because of this, using the \emph{det} function to determine singularity is generally not a good idea.
-\end{expandable}
-
-If $A$ is non-singular, find $A^{-1}$, and $\det(A^{-1})$.  Illustrate the relationship between $\det(A)$ and $\det(A^{-1})$ computationally.
-  \end{problem}
-
-  \begin{problem}\label{prob_oct_det_prop}
-    Modify Example \ref{ex_det_prop} to illustrate parts (a) and (c) of Theorem \ref{th:elemrowopsanddet}.  (Use rows and coefficients of your choice.)
-  \end{problem}
-
-  \begin{problem}\label{prob_oct_det_cramer}
-    Modify the code of Example \ref{ex_oct_det_cramer} to find $x_2$ and $x_3$.  
-  \end{problem}
-\end{document}
