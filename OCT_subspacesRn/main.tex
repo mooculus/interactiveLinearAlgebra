@@ -58,6 +58,8 @@ colSpace_basis = A(:, pivot_cols)
 Compare these findings to our answer in Example \ref{ex:basiscolspace}.
 \end{template}  
 
+When you study linear transformations, you will learn that the column space of a matrix is the image of the linear transformation induced by the matrix.  So, Template \ref{temp:colSpace} can be used to find the image of a linear transformation.
+
 \subsubsection*{Null Space of a Matrix (Kernel of a Linear Transformation)}
 
 Recall the following definition of the null space of a matrix.
@@ -66,7 +68,7 @@ Recall the following definition of the null space of a matrix.
 
 We can use the reduced row-echelon form (\emph{rref} command) to find the null space, as shown in Example \ref{ex:dimnull}.  We will omit the details here.
 
-As you work with Octave, you may come across the \emph{null} command.  This command finds an orthonormal basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
+As you work with Octave, you may come across the \emph{null} command.  This command finds an \emph{orthonormal} basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
 
 \begin{template}\label{temp:nullSpace}
     We will use the matrix from Example \ref{ex:dimnull}.  Let 
@@ -86,108 +88,77 @@ B=null(A)
 
 % To find the dimension of the null space, find the number of columns in B
 [rows, cols]=size(B)
-
-% Verify that the columns of B are unit vectors
-for i=1:cols
-    NormOfCol=norm(B(:,i))
-end    
-
-% Verify that the columns of B are pairwise orthogonal (if more than one column)
-if cols==1
-    disp('The dimension of the null space is 1.');
-else    
-    for i=1:cols
-        counter=i+1;
-            while counter <= cols
-                DotProduct=dot(B(:,i),B(:,counter))
-                counter=counter+1;
-            end
-    end
-end  
-
 \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJyNUstO5DAQvEfKP9QFkdHOIDLLaiXAhwmcFw5oL4hDSDpMS4l7ZDuM2K-nnQdvoe1Idlx2dXWXfYBLatgSNmmygcHtGqscOVYnyM_SBBo5jvFTv-NpvVrH_Ry_sJ6Qk7j8DcXvFEmTAxSlZ49GHGzfttlmEcGrKpSPhEqsD66vgkdpIS5sxYrryhb3kbVER6Vl-4CwLYMONOKgljqykeUIu5Ldnj2N_AexSu8tBzxSFcT5ozQpzIt2VL8RaKP1kLBmzeRZVL4ZgHgSfldWtHw9Zfvunlw8Uknbd9aDLYo0uXWy1zIV9HfG8z_KiknjLzlunl4Ln3maohjKfltimkR_2OSnMdPo5B814qq5kNZES7IiO13yQpOTlqTxnypfmZNxg050U2natp1pmpyHBr0x-VhEzX6XHd587xP0RvKjw4VeOLUqNVQXx89Nxaikt4Gc4R_zs5pjv-WW5n2cG7wnznEp4dpJrc_G1BImZ5ZxmqjRpo-kWXWaP2mrrSMw_OjwDIwb4og=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\href{https://sagecell.sagemath.org/?z=eJxFj0FrwzAMhe-B_Id3KbTQjCbr2GHkkLD7LruVHlxXaQ2JVCynhf36yW3ZLDDo83t68gKfNAQmdGXRocWuQVWjRrVF_VEWsFNjg1erzbOvmvxe4w3Nk2xz-w7jeyNlsUDvNCgGieB5HJfdKsMvn9yV4IU1xdknhWNITGdhiZMbcciuNSZyHPiEdHbJLnpw0EgTcXZFwsWFeAtKD_9J2Owzh4Qr-SRRX8qib_-yc_q3wD56vA88BpukQSx-uIOshF6cp_W_iufpQDFLvIzzxIrA6MtiF-VmaxrUfavhh5b96hc072Hf&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{template}
 
+In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} command returned an orthonormal basis for the null space.  In the next example we will verify that $B$ is indeed an orthonormal collection.  In Problem \ref{prob_oct_Rn1} you will verify that $B$ spans the null space of $A$.
+
+\begin{example}\label{ex_oct_orth}
+    Verify that $B$ in Template \ref{temp:nullSpace} is an orthonormal set.
+    \begin{explanation}
+    We will replicate the above code, then check that elements of $B$ are unit vectors and that they are pairwise orthogonal.
+        \begin{verbatim}
+            % Define A
+            A = [2 -1 1 -4 1;
+                1 0 3 3 0;
+                -2 1 -1 5 2;
+                4 -1 7 2 1];
+
+            % Basis for null(A)
+            % Octave constructs an orthonormal basis, meaning that the basis elements are pairwise orthogonal unit vectors.
+            B=null(A)
+
+            % To find the dimension of the null space, find the number of columns in B
+            [rows, cols]=size(B)
+
+            % Verify that the columns of B are unit vectors
+            for i=1:cols
+                NormOfCol=norm(B(:,i))
+            end    
+
+            % Verify that the columns of B are pairwise orthogonal (if more than one column)
+            if cols==1
+                disp('The dimension of the null space is 1.');
+            else    
+                for i=1:cols
+                    for j=i+1:cols
+                            DotProduct=dot(B(:,i),B(:,j))
+                    end
+                end
+            end
+        \end{verbatim}
+
+    \href{https://sagecell.sagemath.org/?z=eJyNUk1vwjAMvVfqf_AFUbSCCNs0iSkHOs5jB7QL4lBaF4zaBCUpaPv1c_oxpm2a5kpp8-JnP790AEssSCEswmABEjYzGAsQML4D8RgGwCFgCrf8TLv9eObPBdzDrEPu_PYBGN8yEgYDSFJLFgptQNVlGS1GHlxlLj0jZFpZZ-rMWUgVaOMOWmlTpSXsPCuGClNFag_ukDpesMUBS6xQeZZBOKVkLmSx5e-1YnqtyMEZM6eNnYRBIj97--5rDTxo3hTMiStZ0ty-aACfCfaUZhhfs1Rd7dD4lEyXdaUskIIkDDZGX1gmg3YrLb1jlHQ9XtFQ8XYV3vO4RNLI_ioxDLw_JMXcV2qdfGYjVsWTLqW3JEqieUwjLo4sieOfXX4zJ6ICKs2HTOOxVU_j4tQMaKUUrYic7Ckarv_2CfhGxGQ44gvHkls16vz6c6gePUq6-Y73sdTuxeic_wqZa9cNHvvX0c_fp7EP7ab54OUDMZzNzg==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \end{explanation}
+\end{example}
+
+If you are familiar with linear transformations, you may recall that the \emph{kernel} of a linear transformation induced by a matrix is the null space of the matrix.  The \emph{null} function gives us a way to compute the kernel.
+
 \subsection*{Octave Exercises}
-\begin{problem}\label{prb:5.1} Let $H = \mbox{span}\left\{ \left[
-\begin{array}{r}
-2 \\
-1 \\
-1 \\
-1
-\end{array}
-\right] ,\left[
-\begin{array}{r}
--1 \\
-0 \\
--1 \\
--1
-\end{array}
-\right] ,\left[
-\begin{array}{r}
-5 \\
-2 \\
-3 \\
-3
-\end{array}
-\right] ,\left[
-\begin{array}{r}
--1 \\
-1 \\
--2 \\
--2
-\end{array}
-\right] \right\} .$ Find the dimension of $H$ and determine a basis.
+For Problems \ref{prb:5.1} and \ref{prb:5.3} use Octave to find $\text{col}(A)$, $\text{ker}(A)$, and their respective dimensions.  Verify that the Rank-Nullity Theorem (\ref{th:matrixranknullity}) holds for $A$.
 
-\begin{hint}
-    \begin{verbatim}
-% Find a basis for column vectors
-v1=transpose([2 1 1 1]);
-v2=transpose([-1 0 -1 -1]);
-v3=transpose([5 2 3 3]);
-v4=transpose([-1 1 -2 -2]);
-A=[v1 v2 v3 v4];
-% We can answer all of these questions by performing Gauss-Jordan elimination.
-rref(A)
-\end{verbatim}
-\end{hint}
+\begin{problem}\label{prb:5.1} Let 
+    $$A = 
+\begin{bmatrix}
+2 & -1 & 5 & -1\\
+1 & 0 &2 & 1 \\
+1 & -1 & 3 & -2\\
+1 & -1 & 3 & -2
+\end{bmatrix}$$ 
 \end{problem}
 
-\begin{problem}\label{prb:5.3} Let $H$ denote $\mbox{span}\left\{ \left[
-\begin{array}{r}
--2 \\
-1 \\
-1 \\
--3
-\end{array}
-\right] ,\left[
-\begin{array}{r}
--9 \\
-4 \\
-3 \\
--9
-\end{array}
-\right] ,\left[
-\begin{array}{r}
--33 \\
-15 \\
-12 \\
--36
-\end{array}
-\right] ,\left[
-\begin{array}{r}
--22 \\
-10 \\
-8 \\
--24
-\end{array}
-\right] \right\} .$ Find the dimension of $H$ and determine a basis.
-
+\begin{problem}\label{prb:5.3} Let $$A=
+\begin{bmatrix}
+-2 & -9 & -33 & -22\\
+0 & 4 & 15 & 10\\
+1 & 3 & 12 & 10\\
+-3 & -9 &-36 & -24
+\end{bmatrix}$$ 
 \end{problem}
 
-\begin{problem}\label{prb:5.5} Let $H$ denote $\mbox{span}\left\{ \left[
+\begin{problem}\label{prb:5.5} Let $$H=\mbox{span}\left\{ \left[
 \begin{array}{r}
 2 \\
 3 \\
@@ -222,23 +193,21 @@ rref(A)
 6 \\
 3
 \end{array}
-\right] \right\} .$ Find the dimension of $H$ and determine a basis.
+\right] \right\} $$ 
+Find the dimension of $H$ and determine a basis.
 
 \end{problem}
 
 \begin{problem}\label{prb:5.32} Find the rank of the following matrix. Also find a basis for the row
 and column spaces.
 
-\begin{equation*}
-\left[
-\begin{array}{rrrrrr}
+
+$$\begin{bmatrix}
 1 & 3 & 0 & -2 & 0 & 3 \\
 3 & 9 & 1 & -7 & 0 & 8 \\
 1 & 3 & 1 & -3 & 1 & -1 \\
 1 & 3 & -1 & -1 & -2 & 10
-\end{array}
-\right]
-\end{equation*}
+\end{bmatrix}$$
 
 \begin{hint}
     \begin{verbatim}
@@ -255,65 +224,61 @@ rref(A)
 
 \begin{problem}\label{prb:5.33} Find the rank of the following matrix. Also find a basis for the row
 and column spaces.
-\begin{equation*}
-\left[
-\begin{array}{rrrrrr}
+
+$$\begin{bmatrix}
 1 & 3 & 0 & -2 & 7 & 3 \\
 3 & 9 & 1 & -7 & 23 & 8 \\
 1 & 3 & 1 & -3 & 9 & 2 \\
 1 & 3 & -1 & -1 & 5 & 4
-\end{array}
-\right]
-\end{equation*}
-%Click the arrow to see the answer.  \begin{expandable}
-%\end{expandable}
+\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}\label{prb:5.34} Find the rank of the following matrix. Also find a basis for the row
 and column spaces.
-\begin{equation*}
-\left[
-\begin{array}{rrrrrr}
+
+$$\begin{bmatrix}
 1 & 0 & 3 & 0 & 7 & 0 \\
 3 & 1 & 10 & 0 & 23 & 0 \\
 1 & 1 & 4 & 1 & 7 & 0 \\
 1 & -1 & 2 & -2 & 9 & 1
-\end{array}
-\right]
-\end{equation*}
-
+\end{bmatrix}$$
 \end{problem}
 
-\begin{problem}\label{prb:5.35} Find the rank of the following matrix. Also find a basis for the row and column spaces.
-\begin{equation*}
-\left[
-\begin{array}{rrr}
-1 & 0 & 3 \\
-3 & 1 & 10 \\
-1 & 1 & 4 \\
-1 & -1 & 2
-\end{array}
-\right]
-\end{equation*}
+% \begin{problem}\label{prb:5.35} Find the rank of the following matrix. Also find a basis for the row and column spaces.
+% \begin{equation*}
+% \left[
+% \begin{array}{rrr}
+% 1 & 0 & 3 \\
+% 3 & 1 & 10 \\
+% 1 & 1 & 4 \\
+% 1 & -1 & 2
+% \end{array}
+% \right]
+% \end{equation*}
 
-\end{problem}
+% \end{problem}
 
 \begin{problem}\label{prob_oct_Rn1}
     In Template \ref{temp:nullSpace} we used the \emph{null} command to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
 
     \begin{enumerate}
-        \item We followed up by verifying that the basis for the null space that Octave found are orthonormal.  Verify that the product of $A$ with of each element of the basis is $\vec{0}$.
+        \item We followed up by verifying that the basis for the null space found using the \emph{null} function are orthonormal.  Verify that the product of $A$ with of each element of the basis is $\vec{0}$.
         \item Use $\text{rref}(A)$ to find another basis for the null space.  
         \item The basis we found using the \emph{null} command and the basis you found in part (b) look very different.  Verify that they span the same subspace.
     \end{enumerate}
 \end{problem}
 
 \begin{problem}\label{prob_oct_Rn2}
-    Use some of the earlier matrices, or create your own examples to explore the relationship between the vectors of the null space of a matrix and the rows of the matrix.  Formulate a conjecture about the relationship and prove it.
+    Use some of our earlier matrices, together with their null spaces, for the following experiment.
+    \begin{itemize}
+        \item Given a matrix, find the product of the matrix with each of the vectors in its null space.  What do you observe?  why does this make sense?
+        \item Formulate a conjecture about the relationship between the rows of a matrix and the elements of its null space.
+        \item Prove your conjecture.
+    \end{itemize}
 \end{problem}
 
 \section*{Bibliography}
-The Review Exercises come from the end of Chapter 4 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
+Matrices used in Problems \ref{prb:5.1}-\ref{prb:5.34} come from the end of Chapter 4 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra}. (CC-BY)
 
 Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, pp. 227--232.  
 
