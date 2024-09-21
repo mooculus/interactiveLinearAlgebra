@@ -55,7 +55,7 @@ The following example illustrates a common technique for computing determinants 
 \begin{example}\label{ex_oct_det_LU}
   In Exploration \ref{init:LUfactorization}, we found that
   $$A=\begin{bmatrix}2&-1&2\\6&1&5\\-4&10&-3\end{bmatrix}=LU=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}\begin{bmatrix}2&-1&2\\0&4&-1\\0&0&3\end{bmatrix}$$
-  Having a lower triangular/upper triangular factorization available makes it easy to compute the determinant. Find the determinant of $A$ by sight.
+  Having a lower triangular/upper triangular factorization makes it easy to compute the determinant. Find the determinant of $A$ by sight.
   \begin{explanation}
     $$\text{det}(A)=\text{det}(LU)=\text{det}(L)\text{det}(U)=(1)(24)=24$$
   \end{explanation} 
@@ -103,7 +103,7 @@ Recall the following properties of determinants.
       % Compute the determinant of B
       det_B=det(B)
 
-      % Compute the determinant of 4*det(A)
+      % Compute 4*det(A)
       det_A_times4=4*det(A)
     \end{verbatim}
 
