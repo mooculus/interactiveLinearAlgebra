@@ -34,7 +34,7 @@ We will implement this procedure in Octave.
 
 \begin{template}\label{temp:colSpace}
 We will use the matrix from Example \ref{ex:basiscolspace}.  Let $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$
-We can use Octave to find the reduced row-echelon form of $A$ (\emph{rref} command), and identify the pivot columns visually.  We can also take advantage of the expanded version of the \emph{rref} command to identify the pivot columns automatically, as shown below.
+We can use Octave to find the reduced row-echelon form of $A$ (\emph{rref} function), and identify the pivot columns visually.  We can also take advantage of the expanded version of the \emph{rref} function to identify the pivot columns automatically, as shown below.
 
 \begin{verbatim}
 % Define A
@@ -66,9 +66,9 @@ Recall the following definition of the null space of a matrix.
 \begin{definition}[\ref{def:nullspace}] Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.
 \end{definition}
 
-We can use the reduced row-echelon form (\emph{rref} command) to find the null space, as shown in Example \ref{ex:dimnull}.  We will omit the details here.
+We can use the reduced row-echelon form (\emph{rref} function) to find the null space, as shown in Example \ref{ex:dimnull}.  We will omit the details here.
 
-As you work with Octave, you may come across the \emph{null} command.  This command finds an \emph{orthonormal} basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
+We can also use the \emph{null} function to find a basis for the null space of a matrix.  This function finds an \emph{orthonormal} basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
 
 \begin{template}\label{temp:nullSpace}
     We will use the matrix from Example \ref{ex:dimnull}.  Let 
@@ -93,7 +93,7 @@ B=null(A)
 \href{https://sagecell.sagemath.org/?z=eJxFj0FrwzAMhe-B_Id3KbTQjCbr2GHkkLD7LruVHlxXaQ2JVCynhf36yW3ZLDDo83t68gKfNAQmdGXRocWuQVWjRrVF_VEWsFNjg1erzbOvmvxe4w3Nk2xz-w7jeyNlsUDvNCgGieB5HJfdKsMvn9yV4IU1xdknhWNITGdhiZMbcciuNSZyHPiEdHbJLnpw0EgTcXZFwsWFeAtKD_9J2Owzh4Qr-SRRX8qib_-yc_q3wD56vA88BpukQSx-uIOshF6cp_W_iufpQDFLvIzzxIrA6MtiF-VmaxrUfavhh5b96hc072Hf&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{template}
 
-In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} command returned an orthonormal basis for the null space.  In the next example we will verify that $B$ is indeed an orthonormal collection.  In Problem \ref{prob_oct_Rn1} you will verify that $B$ spans the null space of $A$.
+In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} function returns an orthonormal basis for the null space.  In the next example we will verify that $B$ is indeed an orthonormal collection.  In Problem \ref{prob_oct_Rn1} you will verify that $B$ spans the null space of $A$.
 
 \begin{example}\label{ex_oct_orth}
     Verify that $B$ in Template \ref{temp:nullSpace} is an orthonormal set.
@@ -137,7 +137,7 @@ In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} com
 If you are familiar with linear transformations, you may recall that the \emph{kernel} of a linear transformation induced by a matrix is the null space of the matrix.  The \emph{null} function gives us a way to compute the kernel.
 
 \subsection*{Octave Exercises}
-For Problems \ref{prb:5.1} and \ref{prb:5.3} use Octave to find $\text{col}(A)$, $\text{ker}(A)$, and their respective dimensions.  Verify that the Rank-Nullity Theorem (\ref{th:matrixranknullity}) holds for $A$.
+For Problems \ref{prb:5.1} and \ref{prb:5.3}, use Octave to find $\text{col}(A)$, $\text{ker}(A)$, and their respective dimensions.  Verify that the Rank-Nullity Theorem (\ref{th:matrixranknullity}) holds for $A$.
 
 \begin{problem}\label{prb:5.1} Let 
     $$A = 
@@ -159,44 +159,44 @@ For Problems \ref{prb:5.1} and \ref{prb:5.3} use Octave to find $\text{col}(A)$,
 \end{problem}
 
 \begin{problem}\label{prb:5.5} Let $$H=\mbox{span}\left\{ \left[
-\begin{array}{r}
-2 \\
-3 \\
-2 \\
-1
-\end{array}
-\right] ,\left[
-\begin{array}{r}
-8 \\
-15 \\
-6 \\
-3
-\end{array}
-\right] ,\left[
-\begin{array}{r}
-3 \\
-6 \\
-2 \\
-1
-\end{array}
-\right] ,\left[
-\begin{array}{r}
-4 \\
-6 \\
-6 \\
-3
-\end{array}
-\right] ,\left[
-\begin{array}{r}
-8 \\
-15 \\
-6 \\
-3
-\end{array}
-\right] \right\} $$ 
-Find the dimension of $H$ and determine a basis.
-
-\end{problem}
+    \begin{array}{r}
+    2 \\
+    3 \\
+    2 \\
+    1
+    \end{array}
+    \right] ,\left[
+    \begin{array}{r}
+    8 \\
+    15 \\
+    6 \\
+    3
+    \end{array}
+    \right] ,\left[
+    \begin{array}{r}
+    3 \\
+    6 \\
+    2 \\
+    1
+    \end{array}
+    \right] ,\left[
+    \begin{array}{r}
+    4 \\
+    6 \\
+    6 \\
+    3
+    \end{array}
+    \right] ,\left[
+    \begin{array}{r}
+    8 \\
+    15 \\
+    6 \\
+    3
+    \end{array}
+    \right] \right\} $$ 
+    Find the dimension of $H$ and determine a basis.
+    
+    \end{problem}
 
 \begin{problem}\label{prb:5.32} Find the rank of the following matrix. Also find a basis for the row
 and column spaces.
@@ -259,19 +259,19 @@ $$\begin{bmatrix}
 % \end{problem}
 
 \begin{problem}\label{prob_oct_Rn1}
-    In Template \ref{temp:nullSpace} we used the \emph{null} command to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
+    In Template \ref{temp:nullSpace} we used the \emph{null} function to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
 
     \begin{enumerate}
         \item We followed up by verifying that the basis for the null space found using the \emph{null} function are orthonormal.  Verify that the product of $A$ with of each element of the basis is $\vec{0}$.
         \item Use $\text{rref}(A)$ to find another basis for the null space.  
-        \item The basis we found using the \emph{null} command and the basis you found in part (b) look very different.  Verify that they span the same subspace.
+        \item The basis we found using the \emph{null} function and the basis you found in part (b) look very different.  Verify that they span the same subspace.
     \end{enumerate}
 \end{problem}
 
 \begin{problem}\label{prob_oct_Rn2}
     Use some of our earlier matrices, together with their null spaces, for the following experiment.
     \begin{itemize}
-        \item Given a matrix, find the product of the matrix with each of the vectors in its null space.  What do you observe?  why does this make sense?
+        \item Given a matrix, find the product of the matrix with some vector in its null space.  What do you observe?  why does this make sense?
         \item Formulate a conjecture about the relationship between the rows of a matrix and the elements of its null space.
         \item Prove your conjecture.
     \end{itemize}
