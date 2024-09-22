@@ -69,26 +69,25 @@ The following two examples illustrate the two implementations of least squares s
   
       \begin{verbatim}
         % Define matrix A
-        A=[9 -3 3;
-            1 -1 1;
-            4 0 1;
-            1 1 1; 
-            9 -1 2;
+        A=[4 -1 0;
+            2 -1 1;
+            6 3 1;
+            -1 1 2; 
+            3 1 -2;
             -2 8 7;
             1 1 -5];
                 
         % Define vector b
-        b=[3;1;1;2;4;1;-3];
+        b=[-2;4;1;2;-5;1;-3];
         
         % Implement least squares using our original method
         z1=inv(transpose(A)*A)*transpose(A)*b
         
         % Implement least squares using the backslash operator
-        z2=A\b
-        
+        z2=A\b        
       \end{verbatim}
   
-  \href{https://sagecell.sagemath.org/?z=eJyNTsGKwjAQvQfyD-8i6ELAtC6rlB4KXvwGdw-JO2uDbVKTVMSvN8Equ7edNwzzmDfzZoYt_RhL6FX05oqGs6bebyBKlBVnSCEhJOREVli-eplR4UE2WVVME1FgjY9fMvH-NbEcnM2ethc6ROehOdP1vqxkQlGtUhVl3sjKXT901JON6EiFiHAelaeAMRh7hBs9nDdHY1WHnmLrvjm7ydrYyzx6ZcPgAs2bxVvKP1z_53psCVodTqFToYUbyKv0bjIo6uZT3wFXCVT6&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+  \href{https://sagecell.sagemath.org/?z=eJyNjstqwzAQRfcC_cPdBNKAIFZeBeGFoZt-Q5qFlExiUVtyJDmUfn0l4hSyyzAwc2buPGb4oLN1hF6nYH_QcNbU-zVEhaXiDNlkgWqCLVb_eSlDKtwp1yHkoyXxjt0ERSY2h4mKcTZ73L3RMfkAw5mp93l-rSolldjkIFZlpmg_-6GjnlxCRzomxOuoA0WM0boL_Bjgg71Ypzv0lFp_4uy3qq27zVPQLg4-0rx5W2R_YvPK9tQSjD5-x07HFn6goPPD-YCsmy_zB_2HVXs=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
   
   \end{example}
   
@@ -141,7 +140,7 @@ Consider the system
     \end{array}
     \end{equation}
 
- (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system with Octave.   
+ (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system using the backslash operator ($\setminus$).   
 \begin{verbatim}
 % Define the coefficient matrix A
 A = [1 -1 0 0;
@@ -181,13 +180,12 @@ Recall the definition of $QR$-factorization.
 Let $A$ be an $m \times n$ matrix with independent columns. A \dfn{QR-factorization} of $A$ expresses it as $A = QR$ where $Q$ is $m \times n$ with orthonormal columns and $R$ is an invertible and upper triangular matrix with positive diagonal entries.
 \end{definition}
 
-\begin{template}\label{temp:qr}
+We use the following code to find the $QR$-factorization of $A$.
 
 \begin{verbatim}
-% Find the QR-factorization of A
 [Q,R]=qr(A)
 \end{verbatim}
-\end{template}
+
 
 \begin{example}\label{ex:qrOrthonormalQ}
 Find the $QR$-factorization of 
@@ -198,31 +196,29 @@ $$A=\begin{bmatrix}2 & -1 & 4 & 0\\
 and demonstrate that matrix $Q$ is orthogonal (columns are orthonormal).     
 \begin{explanation}
     \begin{verbatim}
-% Define A
-A=[2 -1 4 0;
-    3 1 1 -2;
-    1 5 -1 6;
-    -3 4 0 7];
-
-% Find the QR-factorization of A
-[Q,R]=qr(A)
-
-% Verify that the columns of Q are unit vectors
-for i=1:4
-    normOfCol=norm(Q(:,i))
-end    
-
-% Verify that the columns of Q are pairwise orthogonal
-for i=1:3
-    counter=i+1;
-        while counter <= 4
-            dotProduct=dot(Q(:,i),Q(:,counter))
-            counter=counter+1;
-        end
-end
+      % Define A
+      A=[2 -1 4 0;
+          3 1 1 -2;
+          1 5 -1 6;
+          -3 4 0 7];
+      
+      % Find the QR-factorization of A
+      [Q,R]=qr(A)
+      
+      % Verify that the columns of Q are unit vectors
+      for i=1:4
+          normOfCol=norm(Q(:,i))
+      end    
+      
+      % Verify that the columns of Q are pairwise orthogonal
+      for i=1:3
+          for j=i+1:4;
+             dotProduct=dot(Q(:,i),Q(:,j))
+          end
+      end
     \end{verbatim}
   
-\href{https://sagecell.sagemath.org/?z=eJyNT8FOwzAMvVfqP_gyqROtRNYC0iCHCsQVugOXaYeodailLoY0ZYKvJ1kzDW57PtiW_d6zF_CEmgxCnSa13K6gEFDB9X2agEcJwkexiq2AmzC_jW1RhlW42_k-TRbwTKYD1yM0m0Kr1rGlH-WIDbAO-tsm3-zkp83q5Ux4Q0v621OUO_JaHqa9GcN6A8oiTIYcfGGQGtNEswWSYl3N9obt_kU_8iBDlTXZOqelV0Z_hceFFh-K7IFGBLau53c2ajg7lbNTy5NxaCVdifh6wKGnAU8zeJBQnWcBHbtXy93UOunLeF8eUuSEY_8STjYx_zPzTx0_-wUZ_XQT&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\href{https://sagecell.sagemath.org/?z=eJyNTz1PwzAQ3SPlP9xSKRWJ1DQFpCIPEYgV0oGl6mAlNr0q9ZWLA4Jfz10TiZXnwffkex9ewJPzGBzUaVKb_RqKEjawekgTEFRQyinWMy3hVt_vZlpUugr3B-FpsoBnDB3Eo4NmV3jbRmL8sREpAHn13zf57mA-OKuXk-DNMfpvkdh41bXUj-cw6HoDlh2MASN8OrUa0sQTA5pyu5niA_H5xT9Sb3TKmmyb41KcnbQQ_DPiYpG_cHBAHI_0TsH2f0nVlKT0ZPBGouevCzqKr0zd2EYj4xyf63XSFroiTa51fgHN8l_0&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{explanation}  
 In this example we used a $4\times 4$ square matrix.  Can you think of a way to modify the code for a generic $m\times n$ matrix?
 \end{example}
