@@ -11,7 +11,7 @@
 
 \section*{Octave for Chapter 9}
 
-Examples in this section provide sample Octave code for least squares and $QR$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
+Examples in this section provide sample Octave code for least squares, and $QR$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
 You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
 
@@ -323,13 +323,17 @@ Observe that the main diagonal entries are approaching the eigenvalues of $A$.
 \end{problem}
 
 \begin{problem}\label{prob_oct_lineFit}
-  Use least squares to find a line of best fit for the points shown in the GeoGebra interactive below. Find the residual, $\norm{\vec{b}-A\vec{z}}$.  
+  Use least squares to find a line of best fit for the points shown in the GeoGebra interactive below. 
   Enter the equation of the line into the GeoGebra interactive to view your result.
 
   \begin{center}
-    \geogebra{kmt5ukhc}{700}{600}  
+    \geogebra{kmt5ukhc}{700}{500}  
   \end{center}
-The original line, $y=x+1$ shown in the interactive, visually appeared to be a pretty good fit.  Find the residual for the line $y=x+1$ and compare it to the residual you got for your line.  Is your line a better fit?
+  
+  \begin{enumerate}
+    \item Find the residual, $\norm{\vec{b}-A\vec{z}}$, for your line of best fit.  
+    \item The original line, $y=x+1$ initially shown in the interactive, visually appeared to be a pretty good fit.  Find the residual for the line $y=x+1$ and compare it to the residual you got for your line.  Is your line a better fit?
+  \end{enumerate}
 \end{problem}
 
 \begin{problem}\label{prob_oct_qr1}
