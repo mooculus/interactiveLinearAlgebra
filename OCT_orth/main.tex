@@ -36,7 +36,7 @@ The following theorem establishes one way to implement least squares.
 We can implement this process as follows.
 
 \begin{template}\label{temp:leastSq}
-    We show how to find a least squares solution to 
+    We show how to find a least squares solution to $A\vec{x}=\vec{b}$.
 
     \begin{verbatim}
 % Define matrix A
@@ -57,54 +57,78 @@ z=inv(transpose(A)*A)*transpose(A)*b
 \end{template}
 
 \begin{warning}
-    Finding matrix inverses is both computationally expensive and unstable.  For this reason, various factoring/decomposition techniques such as $LU$ and $QR$ factorizations are used.  
+    Finding matrix inverses is both computationally expensive and unstable.  
 \end{warning}
 
-To do least squares in Octave, we use the backslash operator ($\setminus$). Depending on the type of matrix, backslash uses different techniques to compute the least squares solution more efficiently.  The following template will allow you to compare answers and computing times for the two implementations of least squares.
+To do least squares in Octave, we use the backslash operator ($\setminus$). Depending on the type of matrix, backslash uses different techniques to compute the least squares solution more efficiently.  For more information about \emph{inv} and the backslash operator ($\setminus$) see \href{https://www.mathworks.com/help/matlab/ref/inv.html}{Reference}.
 
-\begin{template}\label{temp:LeastSquaresComp}
-We will compare the performance of two implementations of least squares for a $7\times 3$ coefficient matrix.
+The following two examples illustrate the two implementations of least squares side-by-side.
+
+\begin{example}\label{ex:LeastSquaresComp1}
+  We will compare the results of two implementations of least squares for a $7\times 3$ coefficient matrix.
+  
+      \begin{verbatim}
+        % Define matrix A
+        A=[9 -3 3;
+            1 -1 1;
+            4 0 1;
+            1 1 1; 
+            9 -1 2;
+            -2 8 7;
+            1 1 -5];
+                
+        % Define vector b
+        b=[3;1;1;2;4;1;-3];
+        
+        % Implement least squares using our original method
+        z1=inv(transpose(A)*A)*transpose(A)*b
+        
+        % Implement least squares using the backslash operator
+        z2=A\b
+        
+      \end{verbatim}
+  
+  \href{https://sagecell.sagemath.org/?z=eJyNTsGKwjAQvQfyD-8i6ELAtC6rlB4KXvwGdw-JO2uDbVKTVMSvN8Equ7edNwzzmDfzZoYt_RhL6FX05oqGs6bebyBKlBVnSCEhJOREVli-eplR4UE2WVVME1FgjY9fMvH-NbEcnM2ethc6ROehOdP1vqxkQlGtUhVl3sjKXT901JON6EiFiHAelaeAMRh7hBs9nDdHY1WHnmLrvjm7ydrYyzx6ZcPgAs2bxVvKP1z_53psCVodTqFToYUbyKv0bjIo6uZT3wFXCVT6&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+  
+  \end{example}
+  
+
+\begin{example}\label{ex:LeastSquaresComp2}
+We will compare the performance of two implementations of least squares for a $2000\times 20$ coefficient matrix.
 
     \begin{verbatim}
-% Define matrix A
-A=[9 -3 3;
-    1 -1 1;
-    4 0 1;
-    1 1 1; 
-    9 -1 2;
-    -2 8 7;
-    1 1 -5];
-        
-% Define vector b
-b=[3;1;1;2;4;1;-3];
-
-% Start the timer
-tic
-
-% Implement least squares using our original method
-z1=inv(transpose(A)*A)*transpose(A)*b
-
-% Stop the timer
-toc
-
-% Start the timer
-tic
-
-z2=A\b
-
-% Stop the timer
-toc
+      % Define matrix A
+      A=rand(2000,20);
+              
+      % Define vector b
+      b=rand(2000,1);
+      
+      % Start the timer
+      tic
+      
+      % Implement least squares using our original method
+      z1=inv(transpose(A)*A)*transpose(A)*b;
+      
+      % Stop the timer
+      timeINV=toc
+      
+      % Start the timer
+      tic
+      
+      % Implement least squares using the backslash operator
+      z2=A\b;
+      
+      % Stop the timer
+      timeBSlash=toc
     \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJx9TkFqwzAQvAv0h7kE0oKgslPaYHww9NJzjkkPsrtNBJbkSusQ8vpYxCnNod1Zlh12htkF3ujLeoIzHO0JjRRNvV1DlSgrKTCVhtLQM1nh6WfXGRWuZJ1VxXxRBV7x8kumnj9mlkuKxS32SB2HiFaKtt6WlZ5QVKtpqjI7snLDJjL4QGDrKErBtrte3t3QkyPP6MkkRvoeTaSEMVm_RxgjQrR7600PR3wIn1KcdW39ccnR-DSERMvm4XHqO97ecsNwFxu6_x86F3Wz-9t8Af-UXbs=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+\href{https://sagecell.sagemath.org/?z=eJylkD0LwkAMhveD-w9ZhCoOtat0qLi4uBScXNIa7WHvrubSIv56e_iBLi6GLCFPeF4ygTUdjSOwKGyuUGhV5IzukGRpms6zdLrUCp6l1eSFD1SLZ6i0qj7wRaQjVQqygDQEYiyxVmLqx2Zju5YsOYGWMAiES49MAfpg3Al8z-DZnIzDFixJ4w9a3Ra5cUMioyd0PlBSTGdjf83VW-y7b6-lzXaXi6__SxYvKqzPocXQgO-IcXzAGC7Li_0v-6qMFzHAHTlDb7g=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
 
 Each time you run the algorithm, you will get slightly different run times for each implementation.  Most of the time, you will see that the backslash operator outperforms our initial method. 
-\end{template}
-
-
+\end{example}
 
 The 
-backslash operator ($\setminus$) can also be used to solve systems of equations when a solution exists.  Here is an example.
+backslash operator ($\setminus$) can be used to solve systems of equations when a solution exists.  Here is an example.
 
 \begin{example}\label{temp:systems1}
 Consider the system
