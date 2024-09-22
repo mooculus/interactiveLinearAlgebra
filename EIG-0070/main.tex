@@ -64,12 +64,14 @@ The eigenvalues of $A$ are $2$ and $-1$, with eigenvectors $\left[ \begin{array}
   -2
   \end{array}\right]$, as we can verify using Octave. 
   
-To do so, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
-
 \begin{verbatim}
 A=[1 1; 2 0]
 [EIGENVECTORS,EIGENVALUES] = eig(A)
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxztI02VDC0VjBSMIjl5Yp29XR39QtzdQ7xDwrWgXAcfUJdg2MVbBVSM9M1HDUBKv8Mmw==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+For more information on using Octave to find eigenvalues, please refer to the \href{https://ximera.osu.edu/linearalgebradzv3/xOctave}{Octave Tutorial} section of this text.
 
   
 If we take $\vec{x}_{0} = \left[ \begin{array}{rr}
@@ -108,7 +110,7 @@ r_{1} = \frac{7}{5}, r_{2} = \frac{27}{13}, r_{3} = \frac{115}{61}, r_{4} = \fra
 and these are approaching the dominant eigenvalue $2$.
 
 \begin{enumerate}
-    \item\label{exp:2x2PowerMethod_a} Verify the above calculations using the following Octave window.
+    \item\label{exp:2x2PowerMethod_a} Verify the above calculations using the following Octave code.
     \item\label{exp:2x2PowerMethod_b} Try a different starting vector.  Do we still get convergence?
     \item\label{exp:2x2PowerMethod_c} What happens if the starting vector is changed to $\vec{x}_{0} = \left[ \begin{array}{rr}
   1 \\
@@ -119,8 +121,6 @@ and these are approaching the dominant eigenvalue $2$.
   -2.01
   \end{array}\right]$.  You may need to increase the number of iterations to see convergence.
 \end{enumerate}
-
-To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
 
 \begin{verbatim}
 % The Power Method
@@ -143,6 +143,8 @@ end
 VECTORS
 RQUOTIENTS
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxVkEFLAzEQhe-B_Id3Key2gq3gxW2EUnroQavt6kVEYhvZQDep2azN_nuTTaTrHJLMvDffDBmhrASe9FkYPAhb6QMlC_Y2w6zADabvBUZrdWotOJrvlhuBmlsjHSXuY-p9xdCiIJW0kh_xI_ZWG0pq7qQFu_WeZaV1I6Da-tPPklYYbqVWjSeBwdMKSva6Vd6O8DYsnPBxruRRIGpz9MgodMwlS0Asxl3KQsiv1HHvabjUDcus4ao5-WWyLh-7_Pp_ocsHlO3zy6Zcrx7LXdbTcmYGqlCHmPztHe-J_7xYf10ty812l91dpe6wb9-VFEouE34BmX5s1w==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 \end{exploration}
 
@@ -175,7 +177,7 @@ Use the Power Method to approximate a dominant eigenvector and eigenvalue of $A 
 -8 & 2 & -5
 \end{array}\right]$
 
-You can use Octave to employ the power method.  To do so, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+You can use Octave to employ the power method.
 
 \begin{verbatim}
 % The Power Method
@@ -202,6 +204,8 @@ RQUOTIENTS
 [EIGENVECTORS, EIGENVALUES]=eig(A)
 VECTORS(:,maxit)/norm(VECTORS(:,maxit))
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxdUF9LwzAQfy_0O9zLoJkrs4PJtEYoo8hAN107X0of4hZtYE1mmrr225u0mZte4HJ3vz85MoC0oPAijlTCM1WF2LlOhLNbmMAs1Mm_AX8Sgj8z9TQPYbDgh1oBgeqrJpJCSZRkjes0jDOFsyDUJw9d58TjYABG9vBNt0pI1ylJwxTgYGpY80KIigKvy3e9AVNUEsUEr7QhYOhMNW0raq4lcK1riU0GHceC7Sn02D10tj3Q4sZSjEk0bG1ngn1YxYN2g_NcYk9JwquDXsdr0bBB47-DFl24rF83q3QRL9PE69wQlhco5bu-Oe3d31cQWNJbPE9X68S7G1m12bdTWcR1zi-4ThYvHuOlhUbQd9HTJk5yTNmnF6FfobbsPgKNuZCl93-KfgAGNIiM&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 We observe that the Rayleigh quotients approach $-3$, which is the dominant eigenvalue.  We can confirm this using the command `eig'.  To see that our vectors are approaching the dominant eigenvector, in the last step we divide our final approximate vector by its norm to obtain a unit vector. Note that we get the same result as the `eig' command.  In practice, we achieve greater accuracy if we normalize the approximate eigenvector at each iteration rather than waiting until the end.
 
@@ -235,7 +239,6 @@ Now use Octave to verify that $A=\left[ \begin{array}{rrr}
 -22/3 & -17/3 & -29/3
 \end{array}\right]$ and that the eigenvalues of $A$ are indeed the reciprocals of the eigenvalues of $M$.
 
-To do so, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
 \begin{verbatim}
 % Eigenvalues of the inverse are reciprocals of eigenvalues of the matrix
 M=[9 2 8; 2 -6 -2; -8 2 -5];
@@ -243,6 +246,8 @@ eig(M)
 A=inv(M)
 eig(A)
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxTVXDNTE_NK0vMKU0tVshPUyjJSFXIzCtLLSpOVUgsSlUoSk3OLCjKT07MAUunYqrOTSwpyqzg5fK1jbZUMFKwsAYSumYKukbWCroWILZprDUvF1Cjhq8mL5ejLdB0MAsk4qgJAPGVJtk=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 If we now apply the Power Method to $A$, the Rayleigh quotients converge toward the dominant eigenvalue of $A$, which is $-1$.  If we take the reciprocal of the dominant eigenvalue of $A$, we will have found the ``least dominant'' eigenvalue of $M$, i.e., the eigenvalue closest to zero.  Sure enough, the reciprocal of $-1$ is $-1$, which is the eigenvalue of $M$ closest to zero.
 
@@ -270,34 +275,38 @@ Using Octave, you can verify that $A=\left[ \begin{array}{rrr}
 -8 & 2 & -2
 \end{array}\right]$ and that the eigenvalues of $A$ are obtained by subtracting $c=-3$ from (i.e. by adding 3 to) each eigenvalue of $M$.  The dominant eigenvalue of $M$ gives us an eigenvalue of zero for $A$ (you may find it gives a number very close to zero, due to rounding error).  So if we apply the Power Method to $A$ to find its dominant eigenvalue (which is 5), we can add $-3$ to get the ``second largest'' eigenvalue of $M$ (i.e., the eigenvalue second-farthest from zero), which is 2.
 
-To see this, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+To see this, we will use Octave.
 
 \begin{verbatim}
-% The shifted power method
-M=[9 2 8; 2 -6 -2; -8 2 -5];
-eig(M)
-c=-3;
-A=M-c*eye(3) %I love the fact that eye(n) is the command for the identity matrix
-eig(A)
-xinit=[1;1;1]; %Input an initial vector
-maxit =15; %Choose number iterations
-x = xinit;
-count = 0;
-r=0;
-    while count < maxit
-    y=x;
-    x = A*y;
-        if count > 0; 
-        r=(y`*x)/(y`*y);
-        RQUOTIENTS(count)=r;
-        end
-    count = count + 1;
-    VECTORS(:,count)=x;
-end
-VECTORS
-RQUOTIENTS
-RQUOTIENTS(maxit-1)+c
+    % The shifted power method
+    M=[9 2 8; 
+    2 -6 -2; 
+    -8 2 -5];
+    eig(M)
+    c=-3;
+    A=M-c*eye(3) 
+    eig(A)
+    xinit=[1;1;1]; %Input an initial vector
+    maxit =15; %Choose number iterations
+    x = xinit;
+    count = 0;
+    r=0;
+        while count < maxit
+        y=x;
+        x = A*y;
+            if count > 0; 
+            r=(transpose(y)*x)/(transpose(y)*y);
+            RQUOTIENTS(count)=r;
+            end
+        count = count + 1;
+        VECTORS(:,count)=x;
+    end
+    VECTORS
+    RQUOTIENTS
+    RQUOTIENTS(maxit-1)+c
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxVT01vgzAMvSPxH3yplLSLNlp16sYyCVU99MCqtWyXqgcG6YhUEhTCCv9-5mMqc6TE9vN7fplAlAkoM3m2IoVCX4WBXNhMp64T8uMTzGHlg-vMgT0Cm7cpW2GTLU--6wj5TULqOglnCywDHrJkKhpBFhR6NEC0lkpafvR8PCcfJltVVBZiBW1fxhf4EYnVxnXyuJYWuLfEoXWmdSlAVfkXWpJWmNhKrUqUAw6dJG5MdKWQAQ-YG97egHHN5EVAj71Ap9oDDa-HkVYkmDZD1YY8D4xXVINb33BiTazKAu2Qhk5rev-_0dCRyv79YxdtN2_RgXRqlJsRKlTaF3---3cG3jD0uVlHu_2BPN8N7NZvxxoQ17ltGOek-yXz6Cz5Bb3rfN0=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 \subsubsection*{The Shifted Inverse Power Method}
 
@@ -327,7 +336,7 @@ Using Octave, you can verify that $A=\left[ \begin{array}{rrr}
 -6.5 & -4 & -7.5
 \end{array}\right]$.  When we apply the Power Method to $A$ to find its dominant eigenvalue, our Rayleigh quotients approach 1.  This means that the eigenvalue of $M$ closest to our target $\tau = 1$ is $1+\tau$, or 2.
 
-To do so, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+We will use Octave.
 
 \begin{verbatim}
 % The shifted inverse power method
@@ -355,6 +364,8 @@ VECTORS
 RQUOTIENTS
 RQUOTIENTS(maxit-1)+tau
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxVUcFuwjAMvVfqP_iC1MCqrUxMbF0mIcSBA0MDtgvikLXpGokmKHWh_fs5bSdYKiV-fvbzszqAXS6hzFWGMgWlz9KWEk7mIi0UEnOT-t6K759hDNOYrvAJwnEM4dTFk0Pse1L9BCvmeygqHhGecVIJViHhoWxk8MgYDJZwNGcJSLMykSAFAsGxmoEq23xiikLoFDJjW6xSqVFhA4VAq-pu0IwG1Uor5Psopu8Qk7Y-VQhCg8srcYSzTNBY3ytErRB4NKGieW4MLaar4ps2UyitQGV0SXLAoZUk74mpNHXAA8WWuxvoXHJ1dP4c9wqtakc0vO5LnMhs2PTIHZX1HW-kBte85QFaocsT2QkaNqzZ_f9Ew25UNh-f691y8b7bBq0a4_aGlTrtwJ_v7h1B1Bd9Lea79WYbvNz13c5v29UzvnedcBsH7ZZhxEb0G38BGwObqA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
 \section*{Practice Problems}
 

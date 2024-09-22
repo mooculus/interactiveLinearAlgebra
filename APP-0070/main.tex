@@ -89,22 +89,24 @@ In general (provided that no one point lies directly above another), given $n$ p
 In Practice Problems \ref{prob:systemProblems1} and \ref{prob:systemProblems2} you will show that the matrix equation in (\ref{eq:matEq}) has a unique solution if and only if no two of the given points share an $x$-coordinate.
 
 \subsection*{Using Technology}
-Throughout this section we have omitted the tedious process of solving matrix equations.  It is useful to practice solving smaller  matrix equations by hand, but for larger matrices, we can use technology.  Below is the Octave code that can be used to find the solution to Exploration \ref{exp:curveFitParabola}.  You will be able to modify this code to solve some of the practice problems.
-
-To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+Throughout this section we have omitted the tedious process of solving matrix equations.  It is useful to practice solving smaller  matrix equations by hand, but for larger matrices, we can use technology.  Below is the Octave code that can be used to find the solution to Exploration \ref{exp:curveFitParabola}.  You will be able to modify this code to solve some of the practice problems.  
 
 \begin{verbatim}
-% Define the coefficient matrix
-A=[4 -2 1;0 0 1;1 1 1];
-% Define vector b
-b=[2;-1;5];
-% We can find the solution in two ways
-% Method 1: ans1=A^(-1)b  
-ans1=inv(A)*b
-% Method 2
-ans2=A\b
-% If A is invertible, both methods produce the same result.
+    % Define the coefficient matrix
+    A=[4 -2 1;
+    0 0 1;
+    1 1 1];
+    
+    % Define vector b
+    b=[2;-1;5];
+    
+    % Find the solution
+    x=inv(A)*b
 \end{verbatim}
+
+\href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1UoyUhVSM5PTUvLTM5MzStRyE0sKcqs4OVytI02UdA1UjC05uUyUDAA04YKQBgLZPByqcL0l6Uml-QXKSTxciXZRhtZ6xpam8JUuGXmpYDNL87PKS3JzM_j5aqwzcwr03DU1EoCAP6FIxo=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+
+For more information on using Octave, please refer to the \href{https://ximera.osu.edu/linearalgebradzv3/xOctave}{Octave Tutorial} section of this text.
 
 \subsection*{On the Dangers of Overfitting}
 It is exciting to know that we can fit a function to a set of data points, but before we get carried away fitting a 299-degree polynomial function to 300 points, let's consider the following situation.
