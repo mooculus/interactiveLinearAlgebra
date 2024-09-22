@@ -65,7 +65,7 @@ To do least squares in Octave, we use the backslash operator ($\setminus$). Depe
 The following two examples illustrate the two implementations of least squares side-by-side.
 
 \begin{example}\label{ex:LeastSquaresComp1}
-  We will compare the results of two implementations of least squares for a $7\times 3$ coefficient matrix.
+  We will compare the results of the two implementations of least squares for a $7\times 3$ coefficient matrix.
   
       \begin{verbatim}
         % Define matrix A
@@ -93,7 +93,7 @@ The following two examples illustrate the two implementations of least squares s
   
 
 \begin{example}\label{ex:LeastSquaresComp2}
-We will compare the performance of two implementations of least squares for a $2000\times 20$ coefficient matrix.
+We will compare the performance of two the implementations of least squares for a $2000\times 20$ coefficient matrix.
 
     \begin{verbatim}
       % Define matrix A
@@ -180,13 +180,6 @@ Recall the definition of $QR$-factorization.
 Let $A$ be an $m \times n$ matrix with independent columns. A \dfn{QR-factorization} of $A$ expresses it as $A = QR$ where $Q$ is $m \times n$ with orthonormal columns and $R$ is an invertible and upper triangular matrix with positive diagonal entries.
 \end{definition}
 
-We use the following code to find the $QR$-factorization of $A$.
-
-\begin{verbatim}
-[Q,R]=qr(A)
-\end{verbatim}
-
-
 \begin{example}\label{ex:qrOrthonormalQ}
 Find the $QR$-factorization of 
 $$A=\begin{bmatrix}2 & -1 & 4 & 0\\
@@ -220,7 +213,7 @@ and demonstrate that matrix $Q$ is orthogonal (columns are orthonormal).
   
 \href{https://sagecell.sagemath.org/?z=eJyNTz1PwzAQ3SPlP9xSKRWJ1DQFpCIPEYgV0oGl6mAlNr0q9ZWLA4Jfz10TiZXnwffkex9ewJPzGBzUaVKb_RqKEjawekgTEFRQyinWMy3hVt_vZlpUugr3B-FpsoBnDB3Eo4NmV3jbRmL8sREpAHn13zf57mA-OKuXk-DNMfpvkdh41bXUj-cw6HoDlh2MASN8OrUa0sQTA5pyu5niA_H5xT9Sb3TKmmyb41KcnbQQ_DPiYpG_cHBAHI_0TsH2f0nVlKT0ZPBGouevCzqKr0zd2EYj4xyf63XSFroiTa51fgHN8l_0&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{explanation}  
-In this example we used a $4\times 4$ square matrix.  Can you think of a way to modify the code for a generic $m\times n$ matrix?
+
 \end{example}
 
 Recall the following algorithm for using $QR$-factorization to approximate eigenvalues.
@@ -328,5 +321,13 @@ Observe that the main diagonal entries are approaching the eigenvalues of $A$.
 
          \end{enumerate}
 \end{problem}
+
+\begin{problem}\label{prob_oct_qr1}
+Modify the code in Example \ref{ex:qrEig} to approximate the eigenvalues of $A=\begin{bmatrix} 9 & 2 & 8\\ 2 & -6 & -2\\ -8 & 2 & -5\end{bmatrix}$.  Compare your answers to the answers you got for Problem \ref{prob:3x3fromKuttler1}. 
+\end{problem}
+
+\begin{problem}\label{prob_oct_qr2}
+  Modify the code in Example \ref{ex:qrEig} for the matrix $A=\begin{bmatrix} 0 & -1\\ 1 & 0 \end{bmatrix}$.  What are you observing?  Are we getting close to finding the eigenvalues of $A$?  Explain what is happening and why.
+  \end{problem}
 
 \end{document}
