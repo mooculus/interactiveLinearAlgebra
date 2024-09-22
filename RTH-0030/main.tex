@@ -309,20 +309,21 @@ $$(-3, 3), (-1, 1), (0, 1), (1, 2), (3, 4)$$
     Multiplying on the left by $A^T$ gives us the normal equations.
     $$A^TA\vec{z}=A^T\vec{b}$$
     $$\begin{bmatrix}164&0&20\\0&20&0\\20&0&5\end{bmatrix}\vec{z}=\begin{bmatrix}66\\11\\4\end{bmatrix}$$
-    It turns out that $A^TA$ is invertible, so it is easy to solve for $\vec{z}$.  You can use technology to accomplish this.  We will demonstrate how to do this using Octave.  
+     It turns out that $A^TA$ is invertible, so it is easy to solve for $\vec{z}$.  You can use technology to accomplish this.  
+%We will demonstrate how to do this using Octave.  
 
-To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
+% To use Octave, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, copy the code below into the cell, select OCTAVE as the language, and press EVALUATE.
 
-\begin{verbatim}
-% Define matrix A
-A=[9 -3 1;1 -1 1;0 0 1;1 1 1; 9 3 1];
-% Define vector b
-b=[3;1;1;2;4];
-% Let B be the inverse of A^TA.  
-B= inv(transpose(A)*A);
-% Now we solve for z
-ans=B*transpose(A)*b
-\end{verbatim}
+% \begin{verbatim}
+% % Define matrix A
+% A=[9 -3 1;1 -1 1;0 0 1;1 1 1; 9 3 1];
+% % Define vector b
+% b=[3;1;1;2;4];
+% % Let B be the inverse of A^TA.  
+% B= inv(transpose(A)*A);
+% % Now we solve for z
+% ans=B*transpose(A)*b
+% \end{verbatim}
     
     We arrive at the solution
     $$\vec{z}=\begin{bmatrix}0.26\\0.20\\1.15\end{bmatrix}$$
@@ -335,9 +336,10 @@ ans=B*transpose(A)*b
 \end{center}
 \end{onlineOnly}
 
-Before the end of this section we will return to this problem with a more computationally efficient approach.
 \end{explanation}
  \end{example}
+
+ For more information about doing least squares with Octave, please see \href{https://ximera.osu.edu/linearalgebradzv3/xOctave/OCT_orth/main}{Octave for Chapter 9}.
 
  \begin{example}\label{ex:leastSq3}
      Given the data points $(-1, 0)$, $(0,1)$, and $(1,4)$, find the least squares approximating function of the form $f(x)=ax+b2^x$.
