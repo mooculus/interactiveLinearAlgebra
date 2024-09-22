@@ -113,24 +113,14 @@ In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} fun
             % To find the dimension of the null space, find the number of columns in B
             [rows, cols]=size(B)
 
-            % Verify that the columns of B are unit vectors
-            for i=1:cols
-                NormOfCol=norm(B(:,i))
-            end    
+            % Verify that columns of B are pairwise orthogonal unit vectors
+            transpose(B)*B
 
-            % Verify that the columns of B are pairwise orthogonal (if more than one column)
-            if cols==1
-                disp('The dimension of the null space is 1.');
-            else    
-                for i=1:cols-1
-                    for j=i+1:cols
-                            DotProduct=dot(B(:,i),B(:,j))
-                    end
-                end
-            end
+            % You may get values close to zero but not zero due to rounding errors.
+            % How does this verify that columns of B are orthogonal unit vectors?
         \end{verbatim}
 
-    \href{https://sagecell.sagemath.org/?z=eJyNUk1vwjAMvVfqf_AFUbQWUcY0iSkHOs5jB7QL4lBaF4zaBCUpaPv1c_oxepimuVLavNjPzy8dwRoLkggr31uBgN0cohhiiBYQv_gecMQwg0d-Zt0-mrvzGJ5g3iELt30GxveM-N4IktSQgUJpkHVZBquJAzeZTa8ImZLG6jqzBlIJStuTkkpXaQkHVxVChakkeQR7Si0v2OKAJVYoXZVGuKSkb2SwrT8qyeW1JAtXzKzSZup7ifjp7bpvFfCgeUOYEzMZUty-aACXCeaSZhjes2RdHVC7lEyVdSUNkITE93Za3Vgmg2YvDH1hkHQ9PlBT8XkX3tcxRdLIHkr0PecPiXjpmFon39iITfGqSuEsCZJgGdKEyZElcfyzy2_mBFRApfiQy3hs2ZcxOTUDGiHiVkRO5hKMt3_7BHwj8XQ84QvHkls16tw6HCrqGHv8LOhhOO4w1sq-a5XzfyFyZbvRQ_c6Owf6NHai3TQfvHwDxYbOLA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJyNUE1rwkAQvQfyH95FsEWLsZYeihRDD731UgpFPKzJRBeSGdkPRX99Z41tTy3uwsK8ee_N2xnghRrLhEWeLTDHcopxgQLjGYqnPIOeAhPc651c6vE09Qs8YHpBZql8hOIrRfJsgNJ469GIA8e2HS5uEvhWBbMnVMI-uFgFD8MQF7bC4jrTYp1UI3Rk2PIGYWuCPtTjoJY64qRyhJ2x7mA99fqNsMoj24A9VUGcv8uzcv4zO01_F-hH67NhbdXJW9HxzRlITPidqWj0y-LYrcklSiVt7NjDMso8Wzo5aEwF_Wru7YmG5WXGBznbHPvg3xqVl1dFzrPgDPud-GR4W_aWnxLRmSM2pETTRvKoWqUgCE7kBOsYwBL6oo7nhpPIdVohOdcvY4BXOaAWlYetLnP_X9I_Aj5_AYgZsTc=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
     \end{explanation}
 \end{example}
 

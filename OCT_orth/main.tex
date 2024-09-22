@@ -198,20 +198,15 @@ and demonstrate that matrix $Q$ is orthogonal (columns are orthonormal).
       % Find the QR-factorization of A
       [Q,R]=qr(A)
       
-      % Verify that the columns of Q are unit vectors
-      for i=1:4
-          normOfCol=norm(Q(:,i))
-      end    
-      
-      % Verify that the columns of Q are pairwise orthogonal
-      for i=1:3
-          for j=i+1:4;
-             dotProduct=dot(Q(:,i),Q(:,j))
-          end
-      end
+      % Verify that columns of Q are orthonormal
+      % You may get numbers that are close to zero but not zero
+      % due to round-off error
+      transpose(Q)*Q
+
+      % why does this verify that the columns are orthonormal?
     \end{verbatim}
   
-\href{https://sagecell.sagemath.org/?z=eJyNTz1PwzAQ3SPlP9xSKRWJ1DQFpCIPEYgV0oGl6mAlNr0q9ZWLA4Jfz10TiZXnwffkex9ewJPzGBzUaVKb_RqKEjawekgTEFRQyinWMy3hVt_vZlpUugr3B-FpsoBnDB3Eo4NmV3jbRmL8sREpAHn13zf57mA-OKuXk-DNMfpvkdh41bXUj-cw6HoDlh2MASN8OrUa0sQTA5pyu5niA_H5xT9Sb3TKmmyb41KcnbQQ_DPiYpG_cHBAHI_0TsH2f0nVlKT0ZPBGouevCzqKr0zd2EYj4xyf63XSFroiTa51fgHN8l_0&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\href{https://sagecell.sagemath.org/?z=eJxdj8tqwzAQRfcG_8PdBJJSQZ30sSihGEr3yqJQQhaKPaoFtqYdSy3O11eKUyiVVpc5Z7izwDNZ5wl1WdTb_Rqqwi1uHssC6W1Qpa_Wl1jhLs_vL1FtMoqHQ8plscCL8y1CR9A7ZU0TWNzJBMcebPP-vb7eHbafsqxXs_BK4uyUFBPQcB8HP2ZUwwiBJXTsWQbTZ_aNIwYz4Z0CfByOJOMsZrbpeSQExomEcYwJ4XAOWW3jeSYcfavYWpAIS1kEMX78SOZSr670XOm7m9Ay5d1uxNefgvmw35L_-j39ACBmYSg=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{explanation}  
 
 \end{example}
