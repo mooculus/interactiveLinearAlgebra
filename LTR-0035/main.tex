@@ -192,6 +192,8 @@ In other words, we have more than one vector that maps to the zero vector.
 \end{explanation}
 \end{example}
 
+Example \ref{ex:notonetoone2} provides us with an important insight.  Recall that the collection of all vectors that map to zero under a linear transformation constitute the \emph{kernel} of the linear transformation.  (See \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/LTR-0050/main}{Image and Kernel of a Linear Transformation}) It is clear that when $\text{ker}(T)\neq\{\vec{0}\}$ the transformation is not one-to-one.  This implication goes the other way as well.  In Problem \ref{prob:kerneliszero} you will show that a linear transformation $T$ is one-to-one if and only if $\text{ker}(T)=\{\vec{0}\}$.
+
 \begin{example}\label{ex:notontoisonetoone}
 Prove that the transformation in Example \ref{ex:notonto} is one-to-one.
 \begin{proof}
@@ -355,4 +357,8 @@ You will need to demonstrate that $T$ is one-to-one and onto.
  $$T\left(\begin{bmatrix}1\\0\\1\end{bmatrix}\right)=\begin{bmatrix}0\\1\end{bmatrix}\quad \text{and}\quad T\left(\begin{bmatrix}0\\1\\0\end{bmatrix}\right)=\begin{bmatrix}-1\\1\end{bmatrix}$$
  Prove that $T$ has an inverse.
  \end{problem}
+
+ \begin{problem} \label{prob:kerneliszero}
+  Prove that a linear transformation $T:V\rightarrow W$ is one-to-one if and only if $\text{ker}(T)=\{\vec{0}\}$.
+  \end{problem}
 \end{document}
