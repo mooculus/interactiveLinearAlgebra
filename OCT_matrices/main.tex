@@ -99,8 +99,7 @@ Here are some matrix operations.
     \begin{example}\label{ex:oct_mat_prod_def}
         In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/MAT-0020/main}{Matrix Multiplication} we gave the followng definition of matrix-vector multiplication.  
         
-            Let $A$ be an $m\times n$ matrix, and let $\vec{x}$ be an $n\times 1$ vector.  The product $A\vec{x}$ is the $m\times 1$ vector given by:
-            $$A\vec{x}=\begin{bmatrix}
+                      $$A\vec{x}=\begin{bmatrix}
                        a_{11} & a_{12}&\dots&a_{1n}\\
                        a_{21}&a_{22} &\dots &a_{2n}\\
                     \vdots & \vdots&\ddots &\vdots\\
@@ -108,7 +107,7 @@ Here are some matrix operations.
                      \end{bmatrix}\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}=
                      \begin{bmatrix}a_{11}x_1+a_{12}x_2+\ldots +a_{1n}x_n\\a_{21}x_1+a_{22}x_2+\ldots +a_{2n}x_n\\\vdots\\a_{m1}x_1+a_{m2}x_2+\ldots +a_{mn}x_n\end{bmatrix}$$
         
-        Write a routine that computes the product $A\vec{x}$ of a user-defined matrix $A$ and vector $\vec{x}$.
+        Write a routine that uses this definition to compute the product $A\vec{x}$ of a user-defined matrix $A$ and vector $\vec{x}$.
 
     \begin{explanation}
     We will use the followng outline for our code.
@@ -182,7 +181,7 @@ Here are some matrix operations.
 
 
 \begin{example}\label{ex_oct_mat_prod_dot}
-In Observation \ref{obs:mat0020_obs2} we noted that a matrix-vector product can also be computed by dotting the rows of the matrix with the vector as follows:
+    In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/MAT-0020/main}{Matrix Multiplication} we noted that a matrix-vector product can also be computed by dotting the rows of the matrix with the vector as follows:
 
 $$A\vec{x}=\begin{bmatrix}-&\vec{r}_1&-\\-&\vec{r}_2&-\\ &\vdots & \\-&\vec{r}_n &-\end{bmatrix}\vec{x}=\begin{bmatrix}\vec{r}_1\dotp\vec{x}\\\vec{r}_2\dotp\vec{x}\\\vdots\\\vec{r}_n\dotp\vec{x}\end{bmatrix}$$
 
