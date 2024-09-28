@@ -11,7 +11,7 @@
 
 \section*{Octave for Chapter 9}
 
-Examples in this section provide sample Octave code for least squares, and $QR$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
+Examples and Templates in this section provide sample Octave code for least squares, and $QR$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more!  
 
 You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE.  
 
@@ -209,9 +209,13 @@ and demonstrate that matrix $Q$ is orthogonal (columns are orthonormal).
 \href{https://sagecell.sagemath.org/?z=eJxdj8tqwzAQRfcG_8PdBJJSQZ30sSihGEr3yqJQQhaKPaoFtqYdSy3O11eKUyiVVpc5Z7izwDNZ5wl1WdTb_Rqqwi1uHssC6W1Qpa_Wl1jhLs_vL1FtMoqHQ8plscCL8y1CR9A7ZU0TWNzJBMcebPP-vb7eHbafsqxXs_BK4uyUFBPQcB8HP2ZUwwiBJXTsWQbTZ_aNIwYz4Z0CfByOJOMsZrbpeSQExomEcYwJ4XAOWW3jeSYcfavYWpAIS1kEMX78SOZSr670XOm7m9Ay5d1uxNefgvmw35L_-j39ACBmYSg=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{explanation}  
 
+\begin{question}
+In the code above, we used the product $Q^TQ$ to verify that the columns of $Q$ are orthonormal.  What do you expect this product to look like if the columns are orthonormal?  What will the product look like if they are not?  You will be asked to explain your reasoning in Problem \ref{prob_oct_orth}.
+\end{question}
+
 \end{example}
 
-Recall the following algorithm for using $QR$-factorization to approximate eigenvalues.
+Recall the following algorithm for using $QR$-factorization to approximate eigenvalues from \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0040/main}{$QR$-Factorization}.
 
 \begin{algorithm}[\ref{alg:qrEig}]
 Let $A$ be an invertible matrix.
@@ -329,6 +333,10 @@ Observe that the main diagonal entries are approaching the eigenvalues of $A$.
     \item Find the residual, $\norm{\vec{b}-A\vec{z}}$, for your line of best fit.  
     \item The original line, $y=x+1$ initially shown in the interactive, visually appeared to be a pretty good fit.  Find the residual for the line $y=x+1$ and compare it to the residual you got for your line.  Is your line a better fit?
   \end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob_oct_orth}
+  Explain how to interpret the product $Q^TQ$ to determine whether matrix $Q$ has orthonormal columns.  Prove your claims.
 \end{problem}
 
 \begin{problem}\label{prob_oct_qr1}
