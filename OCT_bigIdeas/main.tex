@@ -143,16 +143,16 @@ Since (\ref{eq:oct_lin_comb}) has a non-trivial solution, we conclude that the v
 
         rref([w1 w2]) % Looks like w1 and w2 are linearly independent
 
-        rref([w1 w2 w3]) % w3 is redundant of w1 and w2. We won't add it to the set
+        rref([w1 w2 w3]) % w3 is redundant - this set is linearly dependent. We won't add w3 to the set
 
         rref([w1 w2 w4]) % these are linearly independent
 
         rref([w1 w2 w4 w5]) % w5 is redundant; don't add
 
-        rref([w1 w2 w4 w6]) % this set is linearly independent!
+        rref([w1 w2 w4 w6])
     \end{verbatim}
 
-        \href{https://sagecell.sagemath.org/?z=eJyNjz1rwzAURXeD_8NdQprBIfJXUoSnduzewXgw1jMxNnKQlYhQ-t_7pFDa0BYKRsPRvUfXKzxTP2iCPRIu1NnZLBi0Gi6DOrfTdI2jOHKiqkUqIXYSScpH0UimaVVnDEQukQq-FYFmVZ2UjLODROlL-4DzquZc4rNcEo8BFrcsf_leItsFWFa1r3kjw4NncbTC00Stma54c-Idw4KJVwfAa-lEfGjrcy9k1wtapeBS2Dn82EIWrVbojtSNW-8zhvqH2gkONRtwa55H7xwJDH2W262hP565E8BlweEyv8uQOmvVaou5_3Jt8crmWa9tmDbYb9N-6PKg49uF_r8hhytuM4q7GRLq89nfOmWz-QDgyJSO&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+        \href{https://sagecell.sagemath.org/?z=eJyNj09rgzAYxu-C3-G5lK4HS2PUdgRP23H3HcSDmLdUlDg0bShj331vIhst22AQcvjl-ZcVnunYGYI9ES7U2nGa0RndXTp9bobhGkdx5ERZiVRB7BSSlK-8VkzTspIMRKaQCn4VgcqySgrG8qBQeNM-4KysWJd4LZvEY4D5ouWT7RXkLsCirLzNJzI8eBZHKzwN1EzDFe9OfKCbMfDqAHgtvRFfxnrdC9n1jEZruBR2DB-byaIxGu2J2n7r86aJjg-VEyyqN2DXOPY-sycw9Fp2NxP9UXMXACdDhpN-10T6bHRjLBLuZuDLb_d-x2zxym2jWdtlrryZ-6MiCxX8OtP_d2Vw-TItv5umoL9qf_MU9eYT4y-cZg==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
         \begin{question}
         Explain why $$\text{span}(\vec{w}_1\dots\vec{w}_6)=\text{span}(\vec{w}_1, \vec{w}_2, \vec{w}_4, \vec{w}_6)$$

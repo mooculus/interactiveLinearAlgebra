@@ -38,22 +38,18 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
             
         % Find A+B
         sum=A+B
-        
+
         % Find the transpose of A
-        % Copying and pasting A'  may not work because the prime comes through
-        % in a different font.
-        A_trans1=A'
-        % we can also use the transpose function
-        A_trans2=transpose(A)
-        
+        A_trans=transpose(A)
+
         % Find AC
         product=A*C
-        
+
         % Find the inverse of C
         inv_C=inv(C)
     \end{verbatim}
     
-    \href{https://sagecell.sagemath.org/?z=eJxdUMGOwiAUvDfpP8zFqLuaFPRmOFCMP2GMIZVmSVYwhe7-vg-0tcqBMDNv3rzHDHvTWmdw1bGzjQmQK9QraHeBKgsJgSPDmqFCtSsLpMOx5mDgA66QZHYacFnUycaxScbtQOc2yTshOBk3p102Pb3qGZkitm-RlDHgrLLXSCxlURHLvSbdZjhYWkV-12UR-qvIj5GOPwax0y7cfDDwLSStfM4ME3Ke6v4NGu2gf4NHT0XvlrZ3TbTejTYuRnEhl5MoSb956_ylb6KQX-pjCOv-TPcYgSRCZyXoXqjlHXo6X7Q=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+    \href{https://sagecell.sagemath.org/?z=eJxdUEsOgyAU3Jtwh9mYaD-JoDvDAml6iaZpjGLqwk-U9vx90GptWRBmhpnhEeJkmrY36Eo7tZWZoQ4oDij7GpoFChIXjiNHgiRnAdwSOApwiAUncDK_LpgFhbMJpM6YLbSPcd4NIciYXnNv-nj1p9JVZD-V1LFgr_Lvk7jrokvcZ23SQpxbGkXtCxbMj076w0rbu4Gdyn4eh9lgaKBo5Jtn5MpHKt5YFP3KOA31o7JS7fRfWNs_zfSOIonQTUvaIx2_APV4TSE=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
     \end{template}
     
     \begin{template}\label{temp:id_matrix}
@@ -345,7 +341,7 @@ Write a routine that multiplies an $n\times m$ matrix by a vector by computing t
 \end{problem}
 
 \begin{problem}\label{prob_oct_mat_lu}
-    Use $LU$-factorization to solve the systems
+    Use $LU$-factorization to solve the system
     $$\begin{bmatrix}2 &-2&0&2\\1&-2&2&2\\-1&2&0&0\\3&-3&1&4\end{bmatrix}\vec{x}=\begin{bmatrix}4\\-6\\4\\5\end{bmatrix}$$
 \end{problem}
 
