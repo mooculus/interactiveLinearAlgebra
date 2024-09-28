@@ -19,7 +19,7 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
 
 \subsection*{Octave Tutorial}
 \subsubsection*{Column Space of a Matrix (Image of a Linear Transformation)}
-Recall that the column space of a matrix is the span of the columns of the matrix.  We have the following procedure for finding the column space.
+Recall that the column space of a matrix is the span of the columns of the matrix.  In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0040/main}{Subspaces of $\RR^n$ Associated with Matrices} we introduced the following procedure for finding the column space.
 
 \begin{procedure}[\ref{proc:colspace}]
 Given a matrix $B$, a basis for $\mbox{col}(B)$ can be found as follows:
@@ -33,8 +33,10 @@ Given a matrix $B$, a basis for $\mbox{col}(B)$ can be found as follows:
 We will implement this procedure in Octave.
 
 \begin{template}\label{temp:colSpace}
-We will use the matrix from Example \ref{ex:basiscolspace}.  Let $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$
-We can use Octave to find the reduced row-echelon form of $A$ (\emph{rref} function), and identify the pivot columns visually.  We can also take advantage of the expanded version of the \emph{rref} function to identify the pivot columns automatically, as shown below.
+Let $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$
+In Example \ref{ex:basiscolspace} we found that columns $1$, $2$ and $4$ of $A$ constitute a basis for $\text{col}(A)$.  We will now verify this using Octave.
+
+We can find the reduced row-echelon form of $A$ using the \emph{rref} function, and identify the pivot columns visually.  We can also take advantage of the expanded version of the \emph{rref} function to identify the pivot columns automatically, as shown below.
 
 \begin{verbatim}
 % Define A
@@ -55,18 +57,17 @@ colSpace_basis = A(:, pivot_cols)
 
 \href{https://sagecell.sagemath.org/?z=eJxtTkEKwjAQvAfyh7kULNhiqiIoHoL6Ao9SSq2JBmxTklR8vhssKOjuZWeGmdkEe6VNpyA5k9jiVCATEMgWEBvOQCMww5x2NuKsiLrAEsXILCJcgfiSGM4S7GzbD0HBOaVhdUw_xbuSU_TmYUPV2LsvqTCyE5mOvnBTbx2kD20H011Mozxqp_I85-xjfhsOz-DqJvwYPbSzLahu8Ka7_g3ljPCxrxtVnWtvPH0jJ-vvB9MX3FlRVA==&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 
-Compare these findings to our answer in Example \ref{ex:basiscolspace}.
 \end{template}  
 
 When you study linear transformations, you will learn that the column space of a matrix is the image of the linear transformation induced by the matrix.  So, Template \ref{temp:colSpace} can be used to find the image of a linear transformation.
 
 \subsubsection*{Null Space of a Matrix (Kernel of a Linear Transformation)}
 
-Recall the following definition of the null space of a matrix.
+Recall the following definition of the null space of a matrix from \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0040/main}{Subspaces of $\RR^n$ Associated with Matrices}.
 \begin{definition}[\ref{def:nullspace}] Let $A$ be an $m\times n$ matrix.  The \dfn{null space} of $A$, denoted by $\mbox{null}(A)$, is the set of all vectors $\vec{x}$ in $\RR^n$ such that $A\vec{x}=\vec{0}$.
 \end{definition}
 
-We can use the reduced row-echelon form (\emph{rref} function) to find the null space, as shown in Example \ref{ex:dimnull}.  We will omit the details here.
+We can use the reduced row-echelon form (\emph{rref} function) to find the null space, as shown in Example \ref{ex:dimnull} of \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0040/main}{Subspaces of $\RR^n$ Associated with Matrices}.  We will omit the details here.
 
 We can also use the \emph{null} function to find a basis for the null space of a matrix.  This function finds an \emph{orthonormal} basis for the null space.  An orthonormal set of vectors consists of unit vectors that are pairwise orthogonal.  We demonstrate the \emph{null} function below.
 
@@ -93,36 +94,37 @@ B=null(A)
 \href{https://sagecell.sagemath.org/?z=eJxFj0FrwzAMhe-B_Id3KbTQjCbr2GHkkLD7LruVHlxXaQ2JVCynhf36yW3ZLDDo83t68gKfNAQmdGXRocWuQVWjRrVF_VEWsFNjg1erzbOvmvxe4w3Nk2xz-w7jeyNlsUDvNCgGieB5HJfdKsMvn9yV4IU1xdknhWNITGdhiZMbcciuNSZyHPiEdHbJLnpw0EgTcXZFwsWFeAtKD_9J2Owzh4Qr-SRRX8qib_-yc_q3wD56vA88BpukQSx-uIOshF6cp_W_iufpQDFLvIzzxIrA6MtiF-VmaxrUfavhh5b96hc072Hf&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
 \end{template}
 
-In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} function returns an orthonormal basis for the null space.  In the next example we will verify that $B$ is indeed an orthonormal collection.  In Problem \ref{prob_oct_Rn1} you will verify that $B$ spans the null space of $A$.
+% In Template \ref{temp:nullSpace} we took it for granted that the \emph{null} function returns an orthonormal basis for the null space.  In the next example we will verify that $B$ is indeed an orthonormal collection.  
+The basis for the null space we found in Template \ref{temp:nullSpace} looks different from what you would have found by hand using the \emph{rref} function. In Problem \ref{prob_oct_Rn1} you will verify that $B$ in Template \ref{temp:nullSpace} spans the null space of $A$.
 
-\begin{example}\label{ex_oct_orth}
-    Verify that $B$ in Template \ref{temp:nullSpace} is an orthonormal set.
-    \begin{explanation}
-    We will replicate the above code, then check that elements of $B$ are unit vectors and that they are pairwise orthogonal.
-        \begin{verbatim}
-            % Define A
-            A = [2 -1 1 -4 1;
-                1 0 3 3 0;
-                -2 1 -1 5 2;
-                4 -1 7 2 1];
+% \begin{example}\label{ex_oct_orth}
+%     Verify that $B$ in Template \ref{temp:nullSpace} is an orthonormal set.
+%     \begin{explanation}
+%     We will replicate the above code, then check that elements of $B$ are unit vectors and that they are pairwise orthogonal.
+%         \begin{verbatim}
+%             % Define A
+%             A = [2 -1 1 -4 1;
+%                 1 0 3 3 0;
+%                 -2 1 -1 5 2;
+%                 4 -1 7 2 1];
 
-            % Basis for null(A)
-            % Octave constructs an orthonormal basis, meaning that the basis elements are pairwise orthogonal unit vectors.
-            B=null(A)
+%             % Basis for null(A)
+%             % Octave constructs an orthonormal basis, meaning that the basis elements are pairwise orthogonal unit vectors.
+%             B=null(A)
 
-            % To find the dimension of the null space, find the number of columns in B
-            [rows, cols]=size(B)
+%             % To find the dimension of the null space, find the number of columns in B
+%             [rows, cols]=size(B)
 
-            % Verify that columns of B are pairwise orthogonal unit vectors
-            transpose(B)*B
+%             % Verify that columns of B are pairwise orthogonal unit vectors
+%             transpose(B)*B
 
-            % You may get values close to zero but not zero due to rounding errors.
-            % How does this verify that columns of B are orthogonal unit vectors?
-        \end{verbatim}
+%             % You may get values close to zero but not zero due to rounding errors.
+%             % How does this verify that columns of B are orthogonal unit vectors?
+%         \end{verbatim}
 
-    \href{https://sagecell.sagemath.org/?z=eJyNUE1rwkAQvQfyH95FsEWLsZYeihRDD731UgpFPKzJRBeSGdkPRX99Z41tTy3uwsK8ee_N2xnghRrLhEWeLTDHcopxgQLjGYqnPIOeAhPc651c6vE09Qs8YHpBZql8hOIrRfJsgNJ469GIA8e2HS5uEvhWBbMnVMI-uFgFD8MQF7bC4jrTYp1UI3Rk2PIGYWuCPtTjoJY64qRyhJ2x7mA99fqNsMoj24A9VUGcv8uzcv4zO01_F-hH67NhbdXJW9HxzRlITPidqWj0y-LYrcklSiVt7NjDMso8Wzo5aEwF_Wru7YmG5WXGBznbHPvg3xqVl1dFzrPgDPud-GR4W_aWnxLRmSM2pETTRvKoWqUgCE7kBOsYwBL6oo7nhpPIdVohOdcvY4BXOaAWlYetLnP_X9I_Aj5_AYgZsTc=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
-    \end{explanation}
-\end{example}
+%     \href{https://sagecell.sagemath.org/?z=eJyNUE1rwkAQvQfyH95FsEWLsZYeihRDD731UgpFPKzJRBeSGdkPRX99Z41tTy3uwsK8ee_N2xnghRrLhEWeLTDHcopxgQLjGYqnPIOeAhPc651c6vE09Qs8YHpBZql8hOIrRfJsgNJ469GIA8e2HS5uEvhWBbMnVMI-uFgFD8MQF7bC4jrTYp1UI3Rk2PIGYWuCPtTjoJY64qRyhJ2x7mA99fqNsMoj24A9VUGcv8uzcv4zO01_F-hH67NhbdXJW9HxzRlITPidqWj0y-LYrcklSiVt7NjDMso8Wzo5aEwF_Wru7YmG5WXGBznbHPvg3xqVl1dFzrPgDPud-GR4W_aWnxLRmSM2pETTRvKoWqUgCE7kBOsYwBL6oo7nhpPIdVohOdcvY4BXOaAWlYetLnP_X9I_Aj5_AYgZsTc=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+%     \end{explanation}
+% \end{example}
 
 If you are familiar with linear transformations, you may recall that the \emph{kernel} of a linear transformation induced by a matrix is the null space of the matrix.  The \emph{null} function gives us a way to compute the kernel.
 
@@ -249,10 +251,10 @@ $$\begin{bmatrix}
 % \end{problem}
 
 \begin{problem}\label{prob_oct_Rn1}
-    In Template \ref{temp:nullSpace} we used the \emph{null} function to find the null of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
+    In Template \ref{temp:nullSpace} we used the \emph{null} function to find a basis $B$ for the null space of matrix $$A=\begin{bmatrix}2&-1&1&-4&1\\1&0&3&3&0\\-2&1&-1&5&2\\4&-1&7&2&1\end{bmatrix}$$ 
 
     \begin{enumerate}
-        \item We followed up by verifying that the basis for the null space found using the \emph{null} function are orthonormal.  Verify that the product of $A$ with of each element of the basis is $\vec{0}$.
+        \item Verify that the product of $A$ with of each element of the basis $B$ is $\vec{0}$.
         \item Use $\text{rref}(A)$ to find another basis for the null space.  
         \item The basis we found using the \emph{null} function and the basis you found in part (b) look very different.  How do we know that they span the same subspace?
     \end{enumerate}
@@ -261,7 +263,7 @@ $$\begin{bmatrix}
 \begin{problem}\label{prob_oct_Rn2}
     Use some of our earlier matrices, together with their null spaces, for the following experiment.
     \begin{itemize}
-        \item Given a matrix, find the product of the matrix with some vector in its null space.  What do you observe?  why does this make sense?
+        \item Given a matrix, find the product of the matrix with some vector in its null space.  What do you observe?  Why does this make sense?
         \item Formulate a conjecture about the relationship between the rows of a matrix and the elements of its null space.
         \item Prove your conjecture.
     \end{itemize}
