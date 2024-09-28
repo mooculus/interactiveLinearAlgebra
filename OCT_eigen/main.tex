@@ -119,7 +119,56 @@ To ''save" or share your online code, click on the \emph{Share} button, select \
         \end{explanation}
         \end{example}
 
-\subsection*{Octave Exercises}       
+\subsection*{Octave Exercises}   
+\begin{problem}\label{prob_oct_eig0}
+    Let $A=\begin{bmatrix}-148 & 16 & -528\\
+        71 & -28 & 292\\
+        39 & -4 & 140\end{bmatrix}$.  
+        \begin{enumerate}
+        \item Use Octave to find the eigenvalues of $A$.  
+        \item Find the eigenvalues of $4A$.  How do they compare?
+        \item Formulate and prove a conjecture about the relationship between the eigenvalues of $A$ and the eigenvalues of $kA$, where $k$ is a constant.
+        \item How are the eigenvectors of $A$ compare to the eigenvectors of $kA$?  Prove your claim.
+        \end{enumerate}
+        
+\end{problem}
+
+\begin{problem}\label{prob_oct_eig1}
+Let $$A=\begin{bmatrix}2 & -20 & 36\\-1 & 8 & -14\\0 & 5 & -7\end{bmatrix}$$
+\begin{enumerate}
+    \item
+Find the eigenvalues of $A$ using Octave.  List the eigenvalues below in increasing order.
+$$\lambda_1=\answer{-2},\quad\lambda_2=\answer{2},\quad\lambda_3=\answer{3}$$
+\item By hand, find the corresponding eigenvectors of $A$.  List them below.
+$$\vec{x}_{\lambda_1}=\begin{bmatrix}\answer{-4}\\\answer{1}\\1\end{bmatrix},\quad\vec{x}_{\lambda_2}=\begin{bmatrix}\answer{-16}\\\answer{9}\\5\end{bmatrix},\quad\vec{x}_{\lambda_3}=\begin{bmatrix}\answer{-4}\\\answer{2}\\1\end{bmatrix}$$
+\item Use Octave to find the eigenvectors of $A$.  Reconcile your answers from the previous part with the answers you got from Octave.
+\end{enumerate}
+\end{problem}   
+
+\begin{problem}\label{prob_oct_eig2}
+    Use Octave to find the eigenvalues of $A=\begin{bmatrix}
+    0 & 1\\-1 & 0
+    \end{bmatrix}$.  Interpret the numbers you are seeing.  Interpret your results geometrically.
+\end{problem}
+
+\begin{problem}\label{prob_oct_eig3}
+    Let $$A=\begin{bmatrix}1 & 2 & 3\\4 & 5& 6\\7 & 8 & 9\end{bmatrix}$$
+    When we use Octave to find the eigenvalues of $A$, we get the following printout.
+    \begin{verbatim}
+        ans =
+
+ 16.1168
+ -1.11684
+ -1.30368e-15
+    \end{verbatim}
+
+Can you interpret the last eigenvalue as $0$, or is it a really small non-zero number?  How can you be sure of your answer in this particular case?
+\end{problem}
+
+\begin{problem}\label{prob_oct_eig4}
+    Use the Power Method described in \href{}{Power Method} to approximate the dominant eigenvalue of 
+    $A=\begin{bmatrix}-4 & 64\\ 16 & 44\end{bmatrix}$.  Experiment with the number of iterations.  Compare your answer to the answer you get when using the \emph{eig} function.
+\end{problem}
  
 
 \end{document}
