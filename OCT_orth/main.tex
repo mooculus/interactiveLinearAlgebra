@@ -97,7 +97,7 @@ We will compare the performance of two the implementations of least squares for 
 
     \begin{verbatim}
       % Define matrix A
-      A=rand(2000,20);
+      A=rand(2000,20); % rand(m,n) creates an m by n matrix whose entries are between 0 and 1
               
       % Define vector b
       b=rand(2000,1);
@@ -121,7 +121,7 @@ We will compare the performance of two the implementations of least squares for 
       timeBSlash=toc
     \end{verbatim}
 
-\href{https://sagecell.sagemath.org/?z=eJylkD0LwkAMhveD-w9ZhCoOtat0qLi4uBScXNIa7WHvrubSIv56e_iBLi6GLCFPeF4ygTUdjSOwKGyuUGhV5IzukGRpms6zdLrUCp6l1eSFD1SLZ6i0qj7wRaQjVQqygDQEYiyxVmLqx2Zju5YsOYGWMAiES49MAfpg3Al8z-DZnIzDFixJ4w9a3Ra5cUMioyd0PlBSTGdjf83VW-y7b6-lzXaXi6__SxYvKqzPocXQgO-IcXzAGC7Li_0v-6qMFzHAHTlDb7g=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+\href{https://sagecell.sagemath.org/?z=eJylkDFPwzAQhXdL_g9viZSgDk7WKkMQSxeWSkxd7ORoLGI72Je28OtxgCK6sHC65e7d0_d0BR7o2XqC0xztBZ0UXRu1H8pGKbVpVLUFis-F2_gKfSTNlKA9HMwb_NV4HkMikM_DKkeCIT4Teah8PKCWAt8lRXGlnqjnEGGkML-odbWVYr3as44MHglsHUUp2PZfys7NE7mMw0Q6MdLrkpkJS7L-iLBEhGiP1usJjngMgxTvdWv9qeTMSXMOW3bVXe6b2fyAw3zLdbR7fGo59P9LtjqM7l_SpNOIMFPU-QE5XNN2h7_o9_vVsQb4AOCph5E=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
 
 Each time you run the algorithm, you will get slightly different run times for each implementation.  Most of the time, you will see that the backslash operator outperforms our initial method. 
 \end{example}
