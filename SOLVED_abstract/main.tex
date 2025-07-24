@@ -16,7 +16,7 @@ defined as the set of all $m+n$ where $m\in M$ and $n\in N$. Show that $M+N$
 is a subspace of $V$.
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
     We need to show that $M+N$ is closed under addition and scalar multiplication. 
  (See Theorem \ref{th:subspacetestabstract}.)  Suppose $\vec{x}$ and $\vec{y}$ are in $M+N$.  Then $\vec{x}=m_1+n_1$ and $\vec{y}=m_2+n_2$, where $m_i$ is in $M$ and $n_i$ is in $N$.  To see that $M+N$ is closed under scalar multiplication, consider $a\vec{x}=a(m_1+n_1)=am_1+an_1$.  Since $am_1$ is in $M$, and $an_1$ is in $N$, $\vec{x}$ is in $M+N$.  Next, we show that $M+N$ is closed under vector addition. $\vec{x}+\vec{y}=(m_1+m_2)+(n_1+n_2)$.  Since $(m_1+m_2)$ is an element of $M$, and $(n_1+n_2)$ is an element of $N$ we have closure under addition.
 \end{expandable}
@@ -27,7 +27,7 @@ of all vectors which are in both $M$ and $N$. Show that $M\cap N$ is a
 subspace of $V$.
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
     If a vector is in both subspaces $M$ and $N$, then its scalar multiple must also be in both.  Same is true about the sum of two elements of $M\cap N$.
 \end{expandable}
 \end{problem}
@@ -38,7 +38,7 @@ M $ is not necessarily a subspace of $\mathbb{R}^{2}$ by giving an example
 where $N\cup M$ fails to be a subspace.
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
     As our example, let $M$ to be the first quadrant, and let $N$ be the third quadrant.
 \end{expandable}
 \end{problem}
@@ -52,7 +52,7 @@ Define $T:\mathbb{P}^2\rightarrow\mathbb{P}^3$ by $T(p(x))=xp(x)$.
 
 Click the arrow to see answer.
 
-\begin{expandable}
+\begin{expandable}{}{}
     \begin{enumerate}
         \item $T(-x^2+2x-4)=-x^3+2x^2-4x$
         \item $T(ap(x)+bq(x))=x(ap(x)+bq(x))=axp(x)+bxq(x)=aT(p(x))+bT(p(x))$.  $T$ is a linear transformation.
@@ -70,7 +70,7 @@ Click the arrow to see answer.
  \end{enumerate}
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
     \begin{enumerate}
         \item Apply the definition of span directly.  We are looking for coefficients $a$, $b$ and $c$ such that 
         $$ax^2+ax+bx^2-b-cx+2c=4x^2-x$$
@@ -104,7 +104,7 @@ Is the vector $\begin{bmatrix}4\\-1\\0\end{bmatrix}$ in the span of the three ve
 \begin{problem}\label{prb:10.25} Let $p(x) = - x^2 + x + 2 $. Is $p(x)$ in $\mbox{span} \left( x^2 + x + 1, 2x^2 + x \right)$?
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
     $p(x)$ is not in the span of the given vectors.  The system 
     $$\left[
 \begin{array}{rr|r}
@@ -123,7 +123,7 @@ is infeasible.
 \end{equation*}
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
 There is a isomorphism from $\mathbb{R}^{3}$ to $\mathbb{P}
 _{2}$, defined as follows:
 $$
@@ -188,7 +188,7 @@ If the above three vectors do not yield a basis, exhibit one of them as a
 linear combination of the others. 
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
 This is the situation in
 which you have a spanning set and you want to cut it down to form a linearly
 independent set which is also a spanning set. Use the same isomorphism as
@@ -212,7 +212,7 @@ Show that $T$ is one to one.
 
 Click the arrow to see answer.
 
-\begin{expandable}
+\begin{expandable}{}{}
     We need to show that $T(\vec{v})=T(\vec{w})$ implies that $\vec{v}=\vec{w}$. Suppose $$\begin{bmatrix}1 & 0\\1 & 1\\0& 1\end{bmatrix}\begin{bmatrix}v_1\\v_2\end{bmatrix}=\begin{bmatrix}1 & 0\\1 & 1\\0& 1\end{bmatrix}\begin{bmatrix}w_1\\w_2\end{bmatrix}$$
     Performing matrix-vector multiplication on both sides shows that $v_1=w_1$, and $v_2=w_2$.  Therefore, $\vec{v}=\vec{w}$. 
 \end{expandable}
@@ -233,7 +233,7 @@ Is $T$ onto?
 
 Click the arrow to see answer.
 
-\begin{expandable}
+\begin{expandable}{}{}
     $T$ is not onto.  One way to show this is by finding a counter-example.  We need a vector in $\RR^3$ that is not an image of any element of $\RR^2$ under $T$.  Try $\begin{bmatrix}2\\0\\3\end{bmatrix}$.
 \end{expandable}
 
@@ -246,7 +246,7 @@ Click the arrow to see answer.
 
     Click the arrow to see answer.
 
-    \begin{expandable}
+    \begin{expandable}{}{}
         We need to find coefficients $a$, $b$, $c$, and $d$ such that
         $$a\begin{bmatrix}1&1\\0&0\end{bmatrix}+ b\begin{bmatrix}1&0\\1&0\end{bmatrix}+ c\begin{bmatrix}0&0\\1&1\end{bmatrix}+ d\begin{bmatrix}1&0\\0&1\end{bmatrix}=\begin{bmatrix}1 &2\\-1&0\end{bmatrix}$$
         This leads to the following system of equations:
@@ -263,7 +263,7 @@ Click the arrow to see answer.
 
     Click the arrow to see answer.
 
-    \begin{expandable}
+    \begin{expandable}{}{}
         We start with a diagram:
 \begin{center}
  \begin{tikzpicture}[scale=0.8]

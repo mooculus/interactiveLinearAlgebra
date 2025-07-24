@@ -18,17 +18,17 @@ Explain the geometric significance of
 \begin{enumerate}
 \item No solution.
 
-\begin{expandable}
+\begin{expandable}{}{}
     The $k$ lines do not have a point common to all of them.
 \end{expandable}
 \item A unique solution.
 
-\begin{expandable}
+\begin{expandable}{}{}
     All $k$ lines intersect at a single point.
 \end{expandable}
 \item An infinite number of solutions.
 
-\begin{expandable}
+\begin{expandable}{}{}
     The $k$ lines coincide.
 \end{expandable}
 \end{enumerate}
@@ -51,7 +51,7 @@ given augmented matrix corresponds to a consistent system. If consistent, is the
 \right]
 \end{equation*}
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 The third equation implies that $x_5 = 0$.  The fourth equation implies that $x_5 \ne 0$.  We conclude that the system is inconsistent.
 \end{expandable}
 \end{problem}
@@ -60,7 +60,7 @@ The third equation implies that $x_5 = 0$.  The fourth equation implies that $x_
 Suppose a system of equations has fewer equations than variables. Will such a system necessarily be consistent? If so, explain why and if not, give an example which is not consistent.
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
 No. Consider $x+y+z=2$ and $x+y+z=1.$
 \end{expandable}
 \end{problem}
@@ -70,7 +70,7 @@ If a system of equations has more equations than variables, can it
 have a solution? If so, give an example and if not, explain why not.
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 These can
 have a solution. For example, $x+y=1,2x+2y=2,3x+3y=3$ even has an infinite
 set of solutions.
@@ -89,7 +89,7 @@ Find $h$ such that
 \end{equation*}
 is the augmented matrix of an \textit{inconsistent} system.
 
-\begin{expandable}
+\begin{expandable}{}{}
  $\left[
 \begin{array}{cc|c}
 2 & h & 4 \\
@@ -118,7 +118,7 @@ Find $h$ such that
 is the augmented matrix of a \textit{consistent} system.
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
  The reduced row-echelon form will never have a row of the form $[0\, 0|1]$. The system is consistent for all $h$.
 \end{expandable}
 \end{problem}
@@ -139,7 +139,7 @@ Choose $h$ and $k$ such that the augmented matrix shown has each of the followin
 \right]
 \end{equation*}
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 If $h\neq 4,$ then there is exactly one solution. If $h=4$ and $k\neq 4,$
 then there are no solutions. If $h=4$ and $k=4,$ then there are infinitely
 many solutions.
@@ -156,7 +156,7 @@ $$\begin{array}{ccccccccc}
     \end{array}$$
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 There is no solution because the rref of the augmented matrix contains a row of the form $\begin{bmatrix}0 & 0 & 0 & 0 & | & 1\end{bmatrix}$ $$\mbox{rref}\left(\left[
 \begin{array}{rrrr|r}
 1 & 2 & 1 & -1 & 2 \\
@@ -186,7 +186,7 @@ $$\begin{array}{ccccccccc}
     \end{array}$$
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 $$\text{rref}\left(\left[
 \begin{array}{rrrr|r}
 1 & 2 & 1 & -1 & 2 \\
@@ -218,7 +218,7 @@ There are infinitely many solutions: $w=t$, $z=\frac{1}{3}$, $y=\frac{2}{3}+\fra
 \end{equation*}
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 
 $$\text{rref}\left(\left[
 \begin{array}{rrr|r}
@@ -247,7 +247,7 @@ $x=\frac{6}{5}, y=\frac{2}{5}, z=-\frac{1}{10}$
 \right]
 \end{equation*}
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 The reduced row echelon form is $\left[
 \begin{array}{rrr|r}
 1 & 0 & 4 & 2 \\
@@ -267,7 +267,7 @@ $$\left[
 \end{array}
 \right] $$
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 $x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
 \end{expandable}
 \end{problem}
@@ -282,7 +282,7 @@ $$\left[
 \end{array}
 \right] $$
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 The free variables are $x_{5}=t,x_{3}=s$. The other variables are
 given by $x_{4}=-\frac{1}{2}-\frac{3}{2}t$, $x_{2}=\frac{3}{2}-\frac{1}{2}t$, $x_{1}=\frac{5}{2}+\frac{1}{2}t-2s$.
 \end{expandable}
@@ -293,7 +293,7 @@ you have found a solution to this system of equations. Is it possible that
 your solution is the only one? Explain.
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 No. The rank of the coefficient matrix in this case is smaller than the number of columns (variables).  So, there has to be a free variable.  The parameter ($t$ is a typical choice) assigned to the free variable will guarantee infinitely many solutions.
 \end{expandable}
 \end{problem}
@@ -302,7 +302,7 @@ No. The rank of the coefficient matrix in this case is smaller than the number o
 always no larger than $\min \left( m,n\right).$
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 It is because you cannot
 have more leading 1's than columns and you cannot have more leading 1's than rows.
 \end{expandable}
@@ -317,7 +317,7 @@ $$\begin{bmatrix}
 \end{bmatrix}$$
 
 Click the arrow to see answer. 
-\begin{expandable}
+\begin{expandable}{}{}
 $$\text{rref}\left(\begin{bmatrix}4 & 4 & 20 & -1 & 17 \\
 1 & 1 & 5 & 0 & 5 \\
 1 & 1 & 5 & -1 & 2 \\
