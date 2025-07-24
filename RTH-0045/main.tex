@@ -261,7 +261,7 @@ Find the Cholesky decomposition of each of the following matrices.
 \end{array}\right]$
 
 Click the arrow to see the answer.
-\begin{expandable}
+\begin{expandable}{}{}
 $U = \frac{\sqrt{2}}{2} \left[ \begin{array}{rr}
 2 & -1 \\
 0 & 1
@@ -281,7 +281,7 @@ $U = \frac{\sqrt{2}}{2} \left[ \begin{array}{rr}
 \end{array}\right]$
 
 Click the arrow to see the answer.
-\begin{expandable}
+\begin{expandable}{}{}
 $U = \frac{1}{30} \left[ \begin{array}{ccc}
 60\sqrt{5} & 12\sqrt{5} & 15\sqrt{5} \\
 0 & 6\sqrt{30} & 10\sqrt{30} \\
@@ -320,7 +320,7 @@ a & b
 If $A$ and $B$ are positive definite and $r > 0$, show that $A + B$ and $rA$ are both positive definite.
 
 Click the arrow to see the answer.
-\begin{expandable}
+\begin{expandable}{}{}
 If $\vec{x} \neq \vec{0}$, then $\vec{x}^{T}A\vec{x} > 0$ and $\vec{x}^{T}B\vec{x} > 0$. Hence $\vec{x}^{T}(A + B)\vec{x} = \vec{x}^{T}A\vec{x} + \vec{x}^{T}B\vec{x} > 0$ and $\vec{x}^{T}(rA)\vec{x} = r(\vec{x}^{T}A\vec{x}) > 0$, as $r > 0$.
 \end{expandable}
 
@@ -359,7 +359,7 @@ If $A$ is positive definite, show that \\ $A = CC^{T}$ where $C$ has orthogonal 
 If $A$ is positive definite, show that $A = C^{2}$ where $C$ is positive definite.
 
 Click the arrow for answer.
-\begin{expandable}
+\begin{expandable}{}{}
 Let $P^{T}AP = D = \mbox{diag}(\lambda_{1}, \dots, \lambda_{n})$ where $P^{T} = P$. Since $A$ is positive definite, each eigenvalue $\lambda_{i} > 0$. If $B = \mbox{diag}(\sqrt{\lambda_{1}}, \dots, \sqrt{\lambda_{n}})$ then $B^{2} = D$, so $A = PB^{2}P^{T} = (PBP^{T})^{2}$. Take $C = PBP^{T}$. Since $C$ has eigenvalues $\sqrt{\lambda_{i}} > 0$, it is positive definite.
 \end{expandable}
 \end{problem}
@@ -376,7 +376,7 @@ Let $A$ be a positive definite matrix. If $a$ is a real number, show that $aA$ i
 \end{enumerate}
 
 Click the arrow for answer.
-\begin{expandable}
+\begin{expandable}{}{}
 If $A$ is positive definite, use Theorem~\ref{thm:024815} to write $A = U^{T}U$ where $U$ is upper triangular with positive diagonal $D$. Then $A = (D^{-1}U)^{T}D^{2}(D^{-1}U)$ so $A = L_{1}D_{1}U_{1}$ is such a factorization if $U_{1} = D^{-1}U$, $D_{1} = D^{2}$, and $L_{1} = U^T_1$. Conversely, let $A^{T} = A = LDU$ be such a factorization. Then $U^{T}D^{T}L^{T} = A^{T} = A = LDU$, so $L = U^{T}$ by \textbf{(a)}. Hence $A = LDL^{T} = V^{T}V$ where $V = LD_{0}$ and $D_{0}$ is diagonal with $D^2_0 = D$ (the matrix $D_{0}$ exists because $D$ has positive diagonal entries). Hence $A$ is symmetric, and it is positive definite by Example~\ref{exa:024865}.
 \end{expandable}
 \end{problem}
