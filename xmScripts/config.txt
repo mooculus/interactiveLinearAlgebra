@@ -21,7 +21,7 @@ YOUR_EMAIL="snapp.14@osu.edu"
 # !! DO NOT SAVE THE KEY IN THIS config.txt FILE   !!
 #
 
-## : "${XIMERA_NAME:=coreLA}"
+ : "${XIMERA_NAME:=coreLA}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://xerxes.ximera.org/}"
  : "${XIMERA_URL:=https://ximera.osu.edu/}"
