@@ -437,7 +437,7 @@ $A_{3} = \frac{1}{109}\left[ \begin{array}{rr}
 If $A$ is symmetric, show that each matrix $A_{k}$ in the QR-algorithm is also symmetric. Deduce that they converge to a diagonal matrix.
 
 Click the arrow to see answer.
-\begin{expandable}
+\begin{expandable}{}{}
 Use induction on $k$. If $k = 1$, $A_{1} = A$. In general $A_{k+1} = Q_{k}^{-1}A_{k}Q_{k} = Q_{k}^{T}A_{k}Q_{k}$, so the fact that $A_{k}^{T} = A_{k}$ implies $A_{k+1}^{T} = A_{k+1}$. The eigenvalues of $A$ are all real (Theorem \ref{cor:ews_symmetric_real}), so the $A_{k}$ converge to an upper triangular matrix $T$. But $T$ must also be symmetric (it is the limit of symmetric matrices), so it is diagonal.
 \end{expandable}
 \end{problem}
