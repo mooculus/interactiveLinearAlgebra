@@ -1,0 +1,106 @@
+name: Ximera Workflow
+
+on:
+  push:      
+
+jobs:
+  build-ximera:
+    name: Build and preview Ximera Courses
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full 
+
+      - name: Setup cache
+        uses: actions/cache@v4
+        with:
+          path: | 
+            **/*.html
+            **/*.pdf
+            **/*.svg
+            **/*.aux
+            **/*.xref
+            **/*.toc
+            !xmPictures/**
+            !.git/**
+            !.github/**
+          key: ximera-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            ximera-${{ github.ref_name }}-
+            ximera-
+
+
+      - name: Build and publish Ximera courses
+        env:
+          # GPG_KEY: ${{ secrets.GPG_KEY }}
+          # GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          # XIMERA_URL: ${{ vars.XIMERA_URL }}
+          # XIMERA_URL: "https://test.xronos.clas.ufl.edu/"
+          XIMERA_URL: "https://xerxes.ximera.org/"
+          # XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
+          XIMERA_NAME: testlinalg
+          XM_COMPILE_SEQUENCE: "html,handout.pdf"
+        run: |
+          ls -alrt
+          chmod +x xmScripts/xmlatex
+          rm -rf ximera-downloads/with-answers
+          # git config --global http.postBuffer 524288000
+          # git config --global core.compression 9
+          ./xmScripts/xmlatex bake --compile "html,handout.pdf"
+          ./xmScripts/xmlatex frost
+          ./xmScripts/xmlatex name
+          ./xmScripts/xmlatex serve
+          # ./xmScripts/xmlatex ghaction
+          echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
+
+      - name: Setup ximera serve cache (only .git)
+        id: serve-cache
+        uses: actions/cache/save@v4
+        with:
+          path: | 
+            xmScripts/**
+            .git/**
+          key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
+
+
+  publish-ximera:
+    name: Publish Ximera Courses
+    needs: build-ximera # Waits for the build job to complete
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+
+
+      - name: Restore ximera serve cache (only .git)
+        id: serve-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          fail-on-cache-miss: true
+          path: | 
+            xmScripts/**
+            .git/**
+          key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
+          
+      - name: Serve
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          # XIMERA_URL: ${{ vars.XIMERA_URL }}
+          XIMERA_URL: "https://xerxes.ximera.org/"
+          XIMERA_NAME: ${{ vars.XIMERA_NAME }}
+        run: |
+          chmod +x xmScripts/xmlatex
+          ./xmScripts/xmlatex name         
+          ./xmScripts/xmlatex serve
+          echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
+
+
+
