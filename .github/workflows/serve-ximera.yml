@@ -46,7 +46,8 @@ jobs:
           # XIMERA_URL: "https://test.xronos.clas.ufl.edu/"
           # XIMERA_URL: "https://xerxes.ximera.org/"
           XIMERA_URL: "https://ximera.osu.edu/"
-          XIMERA_NAME: "corela*main"
+          # XIMERA_NAME: "corela*main"
+          XIMERA_NAME: "corela"
           # XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
           XM_COMPILE_SEQUENCE: "html,handout.pdf"
         run: |
