@@ -2,8 +2,8 @@
 # version of Ximera xake container to use (with xmlatex)
 #
 # : "${XAKE_BASE:=ximeralatex}"
-# : "${XAKE_VERSION:=v2.7.2}"
- : "${XAKE_VERSION:=v2.7.2-full}"    # with texlive_full
+# : "${XAKE_VERSION:=v2.7.3}"
+: "${XAKE_VERSION:=v2.7.3-full}"    # with texlive_full
 #
 # For publishing you'll need a GPG Key
 # To generate a key-pair, fill in your name and email, and run 'xmlatex genKey'
@@ -24,7 +24,7 @@ YOUR_EMAIL="snapp.14@osu.edu"
  : "${XIMERA_NAME:=corela}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://xerxes.ximera.org/}"
- : "${XIMERA_URL:=https://ximera.osu.edu/}"
+# : "${XIMERA_URL:=https://ximera.osu.edu/}"
 ## : "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
 ## : "${XIMERA_URL:=https://set.kuleuven.be/voorkennis/}"
 
