@@ -42,12 +42,11 @@ jobs:
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          # XIMERA_URL: ${{ vars.XIMERA_URL }}
-          # XIMERA_URL: "https://test.xronos.clas.ufl.edu/"
-          # XIMERA_URL: "https://xerxes.ximera.org/"
           XIMERA_URL: "https://ximera.osu.edu/"
-          # XIMERA_NAME: "corela*main"
           XIMERA_NAME: "corela"
+          # XIMERA_URL: "https://xerxes.ximera.org/"
+          # XIMERA_NAME: "corela*main"
+          # XIMERA_URL: ${{ vars.XIMERA_URL }}
           # XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
           XM_COMPILE_SEQUENCE: "html,handout.pdf"
         run: |
@@ -59,7 +58,7 @@ jobs:
           ./xmScripts/xmlatex bake --compile "html,handout.pdf"
           ./xmScripts/xmlatex frost
           ./xmScripts/xmlatex name
-          ./xmScripts/xmlatex serve
+          ./xmScripts/xmlatex serve -f
           # ./xmScripts/xmlatex ghaction
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
@@ -95,9 +94,11 @@ jobs:
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          # XIMERA_URL: ${{ vars.XIMERA_URL }}
           XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: ${{ vars.XIMERA_NAME }}
+          XIMERA_NAME: "corela"
+          # XIMERA_URL: ${{ vars.XIMERA_URL }}
+          # XIMERA_NAME: ${{ vars.XIMERA_NAME }}
+
         run: |
           chmod +x xmScripts/xmlatex
           ./xmScripts/xmlatex name         
