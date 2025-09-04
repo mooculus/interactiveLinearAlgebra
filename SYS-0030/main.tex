@@ -16,7 +16,7 @@
 
 \subsection*{Row Echelon and Reduced Row Echelon Forms}
 
-In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}, we learned to write linear systems in \dfn{augmented matrix} form and use elementary row operations to transform an augmented matrix to \dfn{row-echelon form} and the \dfn{reduced row-echelon form} in order to solve linear systems.  
+In \textit{Augmented Matrix Notation and Elementary Row Operations}, we learned to write linear systems in \dfn{augmented matrix} form and use elementary row operations to transform an augmented matrix to \dfn{row-echelon form} and the \dfn{reduced row-echelon form} in order to solve linear systems.  
 
 Recall that a matrix (or augmented matrix) is in \dfn{row-echelon form} if:
 \begin{itemize}
@@ -130,7 +130,7 @@ $$\begin{array}{ccccccccc}
     
 Because both systems are equivalent to the original system, it is not surprising that back substitution yields the same solution for both systems. 
 
-$$x=\answer{0},\quad y=\answer{-1},\quad z=\answer{-1}$$
+$$x=0,\quad y=-1,\quad z=-1$$
 
 %From the last equation we get $z=-1$.  
 %Next, from the second equation we have $12y-18(-1)=6$, which yields $y=-1$.
@@ -554,13 +554,7 @@ Follow the indicated steps of the Gauss-Jordan algorithm to transform the matrix
 $$\left[\begin{array}{ccc|c}  2&1&1&3\\-1&0&1&2\\1&1&-2&0
   \end{array}\right]$$
 
-  \begin{pdfOnly}
-Access interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}.
-\end{pdfOnly}
-
-\begin{onlineOnly}
+  
  \begin{prompt}  $\frac{1}{2}R_1\rightarrow R_1$.
 $$ \left[\begin{array}{ccc|c}   \answer{1}&\answer{1/2}&\answer{1/2}&\answer{3/2}\\-1&0&1&2\\1&1&-2&0
   \end{array}\right]$$
@@ -618,7 +612,7 @@ $$ \left[\begin{array}{ccc|c}
   \end{problem}
   \end{problem}
  \end{problem}
- \end{onlineOnly}
+
  \end{problem}
  
  \begin{problem}\label{prob:twowaystorref2}
@@ -627,14 +621,8 @@ The following reduction steps do not follow the algorithm but are easier for a h
 $$\left[\begin{array}{ccc|c}  2&1&1&3\\-1&0&1&2\\1&1&-2&0
  \end{array}\right]$$
 
- \begin{pdfOnly}
-Access interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}.
-\end{pdfOnly}
 
 
-\begin{onlineOnly}
  \begin{prompt} $R_1+R_2\rightarrow R_1$.
 $$\left[\begin{array}{ccc|c}  
  \answer{1}&\answer{1}&\answer{2}&\answer{5}\\-1&0&1&2\\1&1&-2&0
@@ -697,15 +685,13 @@ $\left[\begin{array}{ccc|c}
      \end{problem}
       \end{problem}
        \end{problem}
-       \end{onlineOnly}
+     
         \end{problem}
 
 
-\emph{Problems \ref{prob:rankofmat1}-\ref{prob:rankofmat4}}
-
-Find the rank of each matrix.
 
 \begin{problem}\label{prob:rankofmat1}
+Find the rank $A$.
 $$A=\begin{bmatrix}4&3&-1\\-8&-6&2\end{bmatrix}$$
 Answer:
 
@@ -713,6 +699,7 @@ $$\mbox{rank}(A)=\answer{1}$$
 \end{problem}
 
 \begin{problem}\label{prob:rankofmat2}
+Find the rank $B$.
 $$B=\begin{bmatrix}1&1\\2&-2\\3&-1\end{bmatrix}$$
 Answer:
 
@@ -720,6 +707,7 @@ $$\mbox{rank}(B)=\answer{2}$$
 \end{problem}
 
 \begin{problem}\label{prob:rankofmat3}
+Find the rank $C$.
 $$C=\begin{bmatrix}1&0&1\\2&1&3\\0&1&-2\end{bmatrix}$$
 Answer:
 
@@ -727,6 +715,7 @@ $$\mbox{rank}(C)=\answer{3}$$
 \end{problem}
 
 \begin{problem}\label{prob:rankofmat4}
+Find the rank $D$.
 $$D=\begin{bmatrix}1&1&2\\-1&-2&1\\1&0&5\end{bmatrix}$$
 Answer:
 
@@ -735,7 +724,7 @@ $$\mbox{rank}(D)=\answer{2}$$
 
 
 \begin{problem}\label{prob:rankofmat5}
-Suppose $A$ is a $5\times 7$ matrix.  Which of the following can be true?
+Suppose $A$ is a matrix with 5 rows and 7 columns.  Which of the following can be true?
 \begin{multipleChoice}
  \choice{$\mbox{rank}(A)=7$}
  \choice{$\mbox{rank}(A)=6$}
@@ -760,12 +749,12 @@ Suppose $A$ is a matrix such that $\mbox{rref}(A)$ has $5$ leading $1's$.  What 
  \choice[correct]{$A$ has at least $25$ entries}
  \choice[correct]{Any row-echelon form of $A$ will have exactly $5$ nonzero rows}
  \choice{Some row-echelon forms of $A$ may have more than $5$ nonzero rows}
- \choice{Some row-echelon forms of $A$ may have less than $5$ nonzero rows}
+ \choice{Some row-echelon forms of $A$ may have fewer than $5$ nonzero rows}
  \end{selectAll}
 \end{problem}
 
 \begin{problem}\label{prob:rankaugvscoeff}
-In this problem we will discuss how the rank of the {\it coefficient matrix} associated with a linear system compares to the rank of the {\it augmented matrix} associated with the system.  
+In this problem we will consider how the rank of the {\it coefficient matrix} associated with a linear system compares to the rank of the {\it augmented matrix} associated with the system.  
 \begin{enumerate}
 \item Explain why the rank of the augmented matrix has to be greater than or equal to the rank of the coefficient matrix.
     \item Prove that for a {\it consistent} system the rank of the coefficient matrix will be the same as the rank of the {\it augmented} matrix.
