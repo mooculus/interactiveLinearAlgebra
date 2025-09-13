@@ -98,7 +98,7 @@ We have
 $$\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix}\right)$$
 
  We conclude that vector $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ is redundant.  Can each of the other two vectors in the set 
- $\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$ be considered redundant?  You will address this question in Practice Problem \ref{prob:redundant1}.
+ $\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$ be considered redundant?  You will address this question in the problem set. %Practice Problem \ref{prob:redundant1}.
 \end{exploration}
  
  Collections of vectors that do not contain redundant vectors are very important in linear algebra.  We will refer to such collections as \dfn{linearly independent}.  Collections of vectors that contain redundant vectors will be called \dfn{linearly dependent}.  The following section offers a definition that will allow us to easily determine linear dependence and independence of vectors.
@@ -119,16 +119,16 @@ Given a set of vectors $X=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\}$ we can now as
 \item Can we write one element of $X$ as a linear combination of the others?
     \item Does $X$ contain redundant vectors?
 \end{enumerate}
-It turns out that these questions are equivalent.  In other words, if the answer to one of them is ``YES", the answer to the other two is also ``YES".  Conversely, if the answer to one of them is ``NO", then the answer to the other two is also ``NO".  We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency.
+It turns out that these questions are equivalent.  In other words, if the answer to one of them is ``YES", the answer to the other two is also ``YES".  Conversely, if the answer to one of them is ``NO", then the answer to the other two is also ``NO".  We will start by illustrating this idea with an example, then conclude this section by formally proving the equivalency in Theorem \ref{th:lindeplincombofother}.
 \end{remark}
 
 \begin{example}\label{ex:linind}What can we say about the following sets of vectors in light of Remark \ref{remark:LinIndEquiv}?
 
 \begin{enumerate}
 \item \label{item:linindpart1}
-$$\begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}$$
+$$\left\{\begin{bmatrix}2\\-3\end{bmatrix}, \begin{bmatrix}0\\3\end{bmatrix},\begin{bmatrix}1\\-1\end{bmatrix},\begin{bmatrix}1\\-2\end{bmatrix}\right\}$$
 
-\item \label{item:linindpart2} $$\begin{bmatrix}2\\1\\4\end{bmatrix},\begin{bmatrix}-3\\1\\1\end{bmatrix}$$
+\item \label{item:linindpart2} $$\left\{\begin{bmatrix}2\\1\\4\end{bmatrix},\begin{bmatrix}-3\\1\\1\end{bmatrix}\right\}$$
 \end{enumerate}
 \begin{explanation} \ref{item:linindpart1}
 We will start by addressing linear independence.  To do so, we will solve the vector equation
@@ -186,6 +186,8 @@ We find that the answer to all questions in Remark \ref{remark:LinIndEquiv} is `
 Finally, we observe that removing either vector would change the span from a plane in $\RR^3$ to a line in $\RR^3$, so the answer to all three questions in Remark \ref{remark:LinIndEquiv} is ``NO".
 \end{explanation}
 \end{example}
+
+We now formalize Remark \ref{remark:LinIndEquiv} as a theorem.
 
 \begin{theorem}\label{th:lindeplincombofother}
 Let $\vec{v}_1,\vec{v}_2,\dots ,\vec{v}_k$ be  a set of vectors in $\RR^n$ containing two or more vectors.  The following conditions are equivalent.
@@ -355,13 +357,8 @@ and demonstrated that $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ is redundant by usi
 \end{enumerate}
 \end{problem}
 
-
-
-\emph{Problems \ref{prob:linindmultchoice1}-\ref{prob:linindmultchoice4}}
-
- Are the given vectors linearly independent?
-
-\begin{problem}\label{prob:linindmultchoice1}
+ \begin{problem}\label{prob:linindmultchoice1}
+ Are the vectors below linearly independent?
 $$\begin{bmatrix}-1\\0\end{bmatrix}, \begin{bmatrix}2\\3\end{bmatrix},\begin{bmatrix}4\\-1\end{bmatrix}$$
 
 \begin{multipleChoice}
@@ -374,6 +371,7 @@ $$\begin{bmatrix}-1\\0\end{bmatrix}, \begin{bmatrix}2\\3\end{bmatrix},\begin{bma
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice2}
+ Are the vectors below linearly independent?
 $$\begin{bmatrix}1\\0\\5\end{bmatrix}, \begin{bmatrix}2\\2\\3\end{bmatrix},\begin{bmatrix}-1\\0\\1\end{bmatrix}$$
 
 \begin{multipleChoice}
@@ -386,6 +384,7 @@ If we let $A$ be the matrix whose columns are these vectors, then $\mbox{rref}(A
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice3}
+ Are the vectors below linearly independent?
 $$\begin{bmatrix}3\\0\\5\end{bmatrix}, \begin{bmatrix}2\\0\\2\end{bmatrix},\begin{bmatrix}-1\\0\\-5\end{bmatrix}$$
 
 \begin{multipleChoice}
@@ -398,6 +397,7 @@ $$\begin{bmatrix}3\\0\\5\end{bmatrix}, \begin{bmatrix}2\\0\\2\end{bmatrix},\begi
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice4}
+ Are the vectors below linearly independent?
 $$\begin{bmatrix}3\\1\\4\\1\end{bmatrix}, \begin{bmatrix}-2\\1\\1\\1\end{bmatrix}$$
 
 \begin{multipleChoice}
@@ -410,13 +410,8 @@ $$\begin{bmatrix}3\\1\\4\\1\end{bmatrix}, \begin{bmatrix}-2\\1\\1\\1\end{bmatrix
 
 \end{problem}
 
-
-\emph{Problems \ref{prob:TFlinind1}-\ref{prob:TFlinind2}}
-
-True or False?
-
 \begin{problem}\label{prob:TFlinind1}
-Any set containing the zero vector is linearly dependent.
+(True or False?) Any set containing the zero vector is linearly dependent.
 \begin{multipleChoice}
  \choice[correct]{TRUE}
   \choice{FALSE}
@@ -427,7 +422,7 @@ Any set containing the zero vector is linearly dependent.
  \end{problem}
  
 \begin{problem}\label{prob:TFlinind2}
-A set containing five vectors in $\RR^2$ is linearly dependent.
+(True or False?) A set containing five vectors in $\RR^2$ is linearly dependent.
 \begin{multipleChoice}
  \choice[correct]{TRUE}
   \choice{FALSE}
@@ -438,12 +433,10 @@ A set containing five vectors in $\RR^2$ is linearly dependent.
 \end{problem}
 
 
-\emph{Problems \ref{prob:linindmultchoice5}-\ref{prob:linindmultchoice7}}
-
-Each problem below provides information about vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3$.  If possible, determine whether the vectors are linearly dependent or independent.
-
 \begin{problem}\label{prob:linindmultchoice5}
+Given that
 $$0\vec{v}_1+ 0\vec{v}_2+ 0\vec{v}_3=\vec{0}$$
+what (if anything) can we conclude about linear independence of vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3$?
 \begin{multipleChoice}
  \choice{The vectors are linearly independent}
   \choice{The vectors are linearly dependent }
@@ -452,7 +445,9 @@ $$0\vec{v}_1+ 0\vec{v}_2+ 0\vec{v}_3=\vec{0}$$
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice6}
+Given that
 $$3\vec{v}_1+ 4\vec{v}_2- \vec{v}_3=\vec{0}$$
+what (if anything) can we conclude about linear independence of vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3$?
 \begin{multipleChoice}
  \choice{The vectors are linearly independent}
   \choice[correct]{The vectors are linearly dependent }
@@ -461,7 +456,9 @@ $$3\vec{v}_1+ 4\vec{v}_2- \vec{v}_3=\vec{0}$$
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice7}
+Given that
 $$2\vec{v}_1+ 0\vec{v}_2+ 0\vec{v}_3=\vec{0}$$
+what (if anything) can we conclude about linear independence of vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3$?
 \begin{multipleChoice}
  \choice{The vectors are linearly independent}
   \choice[correct]{The vectors are linearly dependent }
@@ -471,12 +468,8 @@ $$2\vec{v}_1+ 0\vec{v}_2+ 0\vec{v}_3=\vec{0}$$
 
 
 
-\emph{Problems \ref{prob:linindmultchoice9}-\ref{prob:linindmultchoice10}}
-
-Each diagram below shows a collection of vectors.  Are the vectors linearly dependent or independent?
-
-
 \begin{problem}\label{prob:linindmultchoice9}
+Are the vectors in the diagram linearly dependent or independent?
 \begin{multipleChoice}
  \choice{The vectors are linearly independent}
   \choice[correct]{The vectors are linearly dependent }
@@ -496,6 +489,7 @@ Each diagram below shows a collection of vectors.  Are the vectors linearly depe
 \end{problem}
 
 \begin{problem}\label{prob:linindmultchoice10}
+Are the vectors in the diagram linearly dependent or independent?
 \begin{multipleChoice}
  \choice[correct]{The vectors are linearly independent}
   \choice{The vectors are linearly dependent }
