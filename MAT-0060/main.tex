@@ -179,53 +179,55 @@ See the corollary to Theorem \ref{th:matrixinverse}.
 
 \section*{Practice Problems}
 
-\emph{Problems \ref{prob:elemmatrices1}-\ref{prob:elemmatrices3}}
-
-For each elementary matrix $E$ below, determine the elementary row operation that results from multiplying a $3\times n$ matrix $A$ by $E$ on the left.  Write down $E^{-1}$ without going through the row-reduction procedure.
-(Hint: Think of an elementary row operation that would undo the row operation caused by $E$.)
-
 
 \begin{problem}\label{prob:elemmatrices1}
+Determine the elementary row operation that results from multiplying some $3\times n$ matrix $A$ by $E$ on the left.  Write down $E^{-1}$ without going through the row-reduction procedure.
+(Hint: Think of an elementary row operation that would undo the row operation caused by $E$.)
+
 $$E=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}$$
 Answer:
 $$E^{-1}=\begin{bmatrix}\answer{0}&\answer{1}&\answer{0}\\\answer{1}&\answer{0}&\answer{0}\\\answer{0}&\answer{0}&\answer{1}\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}\label{prob:elemmatrices2}
+Determine the elementary row operation that results from multiplying some $3\times n$ matrix $A$ by $E$ on the left.  Write down $E^{-1}$ without going through the row-reduction procedure.
+(Hint: Think of an elementary row operation that would undo the row operation caused by $E$.)
 $$E=\begin{bmatrix}1&0&0\\0&1&0\\0&0&5\end{bmatrix}$$
 Answer:
 $$E^{-1}=\begin{bmatrix}\answer{1}&\answer{0}&\answer{0}\\\answer{0}&\answer{1}&\answer{0}\\\answer{0}&\answer{0}&\answer{1/5}\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}\label{prob:elemmatrices3}
+Determine the elementary row operation that results from multiplying some $3\times n$ matrix $A$ by $E$ on the left.  Write down $E^{-1}$ without going through the row-reduction procedure.
+(Hint: Think of an elementary row operation that would undo the row operation caused by $E$.)
 $$E=\begin{bmatrix}1&0&0\\0&1&0\\0&4&1\end{bmatrix}$$
 Answer:
 $$E^{-1}=\begin{bmatrix}\answer{1}&\answer{0}&\answer{0}\\\answer{0}&\answer{1}&\answer{0}\\\answer{0}&\answer{-4}&\answer{1}\end{bmatrix}$$
 \end{problem}
 
 
-\begin{problem}\label{prob:elem_mat_inv}
-Find the inverse of each of the following elementary matrices from Explorations \ref{init:elementarymat2}, \ref{init:elementarymat1} and \ref{init:elementarymat3}.
-$$
- B = \begin{bmatrix}  
- 1&0&0\\0&5&0\\0&0&1
- \end{bmatrix}\quad
- C = \begin{bmatrix}  
- 1&0&0\\0&1&0\\0&0&-2
- \end{bmatrix}
- \quad
- D = \begin{bmatrix}  
- 1&0&1\\0&1&0\\0&0&1
- \end{bmatrix}\quad 
- G =  \begin{bmatrix}  
- 0&0&1\\0&1&0\\1&0&0
- \end{bmatrix}
- $$
-\end{problem}
+% \begin{problem}\label{prob:elem_mat_inv}
+% Find the inverse of each of the following elementary matrices from Explorations \ref{init:elementarymat2}, \ref{init:elementarymat1} and \ref{init:elementarymat3}.
+% $$
+%  B = \begin{bmatrix}  
+%  1&0&0\\0&5&0\\0&0&1
+%  \end{bmatrix}\quad
+%  C = \begin{bmatrix}  
+%  1&0&0\\0&1&0\\0&0&-2
+%  \end{bmatrix}
+%  \quad
+%  D = \begin{bmatrix}  
+%  1&0&1\\0&1&0\\0&0&1
+%  \end{bmatrix}\quad 
+%  G =  \begin{bmatrix}  
+%  0&0&1\\0&1&0\\1&0&0
+%  \end{bmatrix}
+%  $$
+% \end{problem}
 
-\begin{problem}\label{prob:proofofelemmatricesinvert}
-Finish the proof of Theorem \ref{th:elemmatricesinvertible}.
-\end{problem}
+% \begin{problem}\label{prob:proofofelemmatricesinvert}
+% Finish the proof of Theorem \ref{th:elemmatricesinvertible}.
+% \end{problem}
 
 \begin{problem}\label{prob:prodelemmatrices}
 Express $A$ as a product of elementary matrices.
@@ -236,18 +238,18 @@ Row-reduce $A$ to find $\mbox{rref}(A)$.  Record the elementary row operations a
 Is this representation unique?  Prove your claim.
 \end{problem}
 
-\begin{problem}\label{prob:explorationelemmat} In Explorations \ref{init:elementarymat2}, \ref{init:elementarymat1} and \ref{init:elementarymat3} we performed elementary row operations on $A$ by multiplying $A$ by elementary matrices $B, C, D, F, G$ on the left.  Compute $AB, AC, AD, AF$ and $AG$.  Summarize your findings.
+% \begin{problem}\label{prob:explorationelemmat} In Explorations \ref{init:elementarymat2}, \ref{init:elementarymat1} and \ref{init:elementarymat3} we performed elementary row operations on $A$ by multiplying $A$ by elementary matrices $B, C, D, F, G$ on the left.  Compute $AB, AC, AD, AF$ and $AG$.  Summarize your findings.
 
-Answer:
-$$AB=\begin{bmatrix}\answer{1} & \answer{10} & \answer{3} \\ \answer{4} & \answer{25} & \answer{6}\\ \answer{7} & \answer{40} & \answer{9}\end{bmatrix}
-\quad
-AC=\begin{bmatrix}\answer{1} & \answer{2} & \answer{-6} \\ \answer{4} & \answer{5} & \answer{-12}\\ \answer{7} & \answer{8} & \answer{-18}\end{bmatrix}$$
-$$AD=\begin{bmatrix}\answer{1} & \answer{2} & \answer{4} \\ \answer{4} & \answer{5} & \answer{10}\\ \answer{7} & \answer{8} & \answer{16}\end{bmatrix}
-\quad
-AF=\begin{bmatrix}\answer{-3} & \answer{2} & \answer{3} \\ \answer{-6} & \answer{5} & \answer{6}\\ \answer{-9} & \answer{8} & \answer{9}\end{bmatrix}$$
-$$AG=\begin{bmatrix}\answer{3} & \answer{2} & \answer{1} \\ \answer{6} & \answer{5} & \answer{4}\\ \answer{9} & \answer{8} & \answer{7}\end{bmatrix}
-$$
-\end{problem}
+% Answer:
+% $$AB=\begin{bmatrix}\answer{1} & \answer{10} & \answer{3} \\ \answer{4} & \answer{25} & \answer{6}\\ \answer{7} & \answer{40} & \answer{9}\end{bmatrix}
+% \quad
+% AC=\begin{bmatrix}\answer{1} & \answer{2} & \answer{-6} \\ \answer{4} & \answer{5} & \answer{-12}\\ \answer{7} & \answer{8} & \answer{-18}\end{bmatrix}$$
+% $$AD=\begin{bmatrix}\answer{1} & \answer{2} & \answer{4} \\ \answer{4} & \answer{5} & \answer{10}\\ \answer{7} & \answer{8} & \answer{16}\end{bmatrix}
+% \quad
+% AF=\begin{bmatrix}\answer{-3} & \answer{2} & \answer{3} \\ \answer{-6} & \answer{5} & \answer{6}\\ \answer{-9} & \answer{8} & \answer{9}\end{bmatrix}$$
+% $$AG=\begin{bmatrix}\answer{3} & \answer{2} & \answer{1} \\ \answer{6} & \answer{5} & \answer{4}\\ \answer{9} & \answer{8} & \answer{7}\end{bmatrix}
+% $$
+% \end{problem}
 
 
 \begin{problem}\label{prob:expressasprodelemmat} If possible, express 
