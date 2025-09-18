@@ -1,0 +1,392 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+ \title{Linear Independence} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+ \end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Review Problems for Exam 1}
+\end{onlineOnly}
+
+\begin{exercise}
+Select all pairs of parallel vectors.
+ 
+\begin{selectAll}
+ \choice[correct]{$\begin{bmatrix}-3\\-6\\3\end{bmatrix}$, $\begin{bmatrix}5\\10\\-5\end{bmatrix}$}
+ \choice[correct]{$\begin{bmatrix}3\\-6\\3\end{bmatrix}$, $\begin{bmatrix}-1\\2\\-1\end{bmatrix}$}
+ \choice{$\begin{bmatrix}1\\0\\1\end{bmatrix}$, $\begin{bmatrix}-1\\0\\1\end{bmatrix}$}
+ \choice[correct]{$\begin{bmatrix}2\\0\\-1\end{bmatrix}$, $\begin{bmatrix}-8\\0\\4\end{bmatrix}$}
+ \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Find $Q$ such that $\overrightarrow{PQ}=\vec{v}$ if
+$$P(-1, 2, 2), \vec{v}=\begin{bmatrix}1\\3\\1\end{bmatrix}$$
+$$Q(\answer{0},\answer{5},\answer{3})$$
+\end{exercise}
+
+\begin{exercise}
+Find a unit vector $\vec{u}$ in the direction of $\begin{bmatrix}7\\-1\\5\end{bmatrix}$
+$$\vec{u}=\answer{\frac{1}{\sqrt{75}}}\begin{bmatrix}7\\-1\\5\end{bmatrix}$$
+Enter the exact answer.  No decimal approximations.
+\end{exercise}
+
+\begin{exercise}
+Select all pairs of orthogonal vectors.
+ 
+\begin{selectAll}
+ \choice{$\begin{bmatrix}1\\-3\end{bmatrix}$, $\begin{bmatrix}-3\\1\end{bmatrix}$}
+ \choice[correct]{$\begin{bmatrix}2\\3\end{bmatrix}$, $\begin{bmatrix}-6\\4\end{bmatrix}$}
+ \choice[correct]{$\begin{bmatrix}1\\2\\-1\end{bmatrix}$, $\begin{bmatrix}4\\-2\\0\end{bmatrix}$}
+ \choice[correct]{$\begin{bmatrix}-1\\3\\-2\\5\end{bmatrix}$, $\begin{bmatrix}2\\1\\-2\\-1\end{bmatrix}$}
+ \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Use the augmented matrix notation and elementary row operations to find all solutions (if any) to the system. 
+ 
+$$\begin{matrix}
+      3x& -&y&=&0\\
+      2x & -&3y&= &1
+    \end{matrix}$$
+ 
+ $$(\answer{-1/7}, \answer{-3/7})$$
+Enter your answers using fractions.  If the system is inconsistent, type DNE in each answer cell.
+\end{exercise}
+
+\begin{exercise}
+Use the augmented matrix notation and elementary row operations to find all solutions (if any) to the system. 
+ 
+$$\begin{matrix}
+      3x& -&y&=&2\\
+      -6x & +&2y&= &-4
+    \end{matrix}$$
+ 
+ $$(\answer{(1/3)t+2/3}, t)$$
+Enter your answers using fractions. 
+\end{exercise}
+
+\begin{exercise}
+Use the augmented matrix notation and elementary row operations to find all solutions (if any) to the system. 
+ 
+$$\begin{matrix}
+      -2x& +&3y&+&3z&=&-9\\
+      3x & -&4y&+&z&= &5\\
+      -5x&+&7y&+&2z&=&-14
+    \end{matrix}$$
+ 
+ $$(\answer{-15t-21}, \answer{-11t-17}, t)$$
+If the system is inconsistent, type DNE in each answer cell.
+\end{exercise}
+
+\begin{exercise}
+Use the augmented matrix notation and elementary row operations to find all solutions (if any) to the system. 
+ 
+$$\begin{matrix}
+      x& +&2y&-&z&=&2\\
+      2x & +&5y&-&3z&= &1\\
+      x&+&4y&-&3z&=&3
+    \end{matrix}$$
+ 
+ $$(\answer{DNE}, \answer{DNE}, \answer{DNE})$$
+If the system is inconsistent, type DNE in each answer cell.
+\end{exercise}
+
+\begin{exercise}
+Use the augmented matrix notation and elementary row operations to find all solutions (if any) to the system. 
+ 
+$$\begin{matrix}
+      3x& -&2y&+&z&=&-2\\
+      x & -&y&+&3z&= &5\\
+      -x&+&y&+&z&=&-1
+    \end{matrix}$$
+ 
+ $$(\answer{-7}, \answer{-9}, \answer{1})$$
+If the system is inconsistent, type DNE in each answer cell.
+\end{exercise}
+
+\begin{exercise}
+The augmented matrix of a system of linear equations has been carried to the following by row operations.  Solve the system.
+ 
+$$\left[\begin{array}{cccccc|c}
+ 1 & -2 & 0 & 2 & 0 & 1 & 1\\
+ 0 & 0 & 1 & 5 & 0 & -3 & -1\\
+ 0 & 0 & 0 & 0 & 1 & 6 & 1\\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0
+ \end{array}\right]$$
+ 
+ $$(\answer{1-t-2s+2r}, r, \answer{-1+3t-5s}, s,\answer{1-6t}, t)$$
+\end{exercise}
+
+\begin{exercise}
+The augmented matrix of a system of linear equations has been carried to the following by row operations.  Solve the system.
+ 
+$$\left[\begin{array}{ccccc|c}
+ 1 & -1 & 2 & 4 & 6 & 2\\
+0 & 1 & 2 & 1 & -1 & -1\\
+ 0 & 0 & 0 & 1 & 0 & 1\\
+ 0 & 0 & 0 & 0 & 0 & 0
+ \end{array}\right]$$
+ 
+ \begin{hint}
+     Is this matrix in reduced row-echelon form?  If not, carry it to the reduced row-echelon form.
+ \end{hint}
+ 
+ $$(\answer{-4s-5t-4}, \answer{-2+t-2s}, s,\answer{1}, t)$$
+  
+\end{exercise}
+
+\begin{exercise}
+Consider the following augmented matrix in which $\ast$ denotes an
+arbitrary number and $\blacksquare$ denotes a nonzero number.
+ 
+\begin{equation*}
+\left[
+\begin{array}{ccccc|c}
+\blacksquare & \ast & \ast & \ast & \ast & \ast \\
+0 & \blacksquare & \ast & \ast & \ast & \ast \\
+0 & 0 & \blacksquare & \blacksquare & \ast & \ast \\
+0 & 0 & 0 & 0 & \blacksquare & 0
+\end{array}
+\right]
+\end{equation*}
+  
+Which of the following is true?  Select all that apply.
+ 
+\begin{selectAll}
+ \choice[correct]{The corresponding system of equations is consistent.}
+  \choice{The corresponding system of equations is inconsistent.}
+ \choice[correct]{The rank of the augmented matrix is $4$.}
+ \choice{The rank of the augmented matrix is $5$.}
+ \choice{The rank of the augmented matrix is $6$.}
+  \choice{There are no free variables.}
+ \choice[correct]{There is one free variable.}
+ \choice{There are two free variables.}
+ \choice{The corresponding system has a unique solution.}
+ \choice[correct]{The corresponding system has infinitely many solutions.}
+ \end{selectAll}
+ 
+\end{exercise}
+
+\begin{exercise}
+Consider an augmented matrix of the form
+$$\left[\begin{array}{c|c}
+ A & \vec{b}\\
+ \end{array}\right]$$
+ corresponding to a system of linear equations.
+ 
+ True or False?
+ 
+ \begin{enumerate}
+     \item If there is more than one solution, $\left[\begin{array}{c|c}
+ A & \vec{b}\\
+ \end{array}\right]$ has a row of zeros.
+ 
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+ 
+ \item If $\left[\begin{array}{c|c}
+ A & \vec{b}\\
+ \end{array}\right]$ has a row of zeros, there is more than one solution.
+ 
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+ 
+ \item If there is no solution, $\mbox{rref}(A)$ has a row of zeros.
+ 
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+ 
+ \item If $\mbox{rref}(A)$ has a row of zeros, there is no solution.
+ 
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+ 
+ \item There is NO system that is inconsistent for every $\vec{b}$.
+ 
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+ 
+ \item If the system is consistent for some choice of $\vec{b}$, it is consistent for every choice of $\vec{b}$.
+ 
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Express $\begin{bmatrix}127\\-26\end{bmatrix}$ as a linear combination of $\begin{bmatrix}101\\50\end{bmatrix}$ and $\begin{bmatrix}25\\42\end{bmatrix}$.
+$$\answer{2}\begin{bmatrix}101\\50\end{bmatrix}+\answer{-3}\begin{bmatrix}25\\42\end{bmatrix}=\begin{bmatrix}127\\-26\end{bmatrix}$$
+\end{exercise}
+
+\begin{exercise}
+Suppose $\vec{v}_1, \vec{v}_2, \vec{v}_3$ and $\vec{w}$ are vectors in $\RR^n$.  What are the implications of the statement: \textit{$\vec{w}$ is in the span of $\vec{v}_1, \vec{v}_2, \vec{v}_3$}
+Select all that apply.
+\begin{selectAll}
+ \choice[correct]{Vector $\vec{w}$ a linear combination of $\vec{v}_1, \vec{v}_2, \vec{v}_3$}
+ \choice[correct]{The set $\{\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{w}\}$ contains redundant vectors.}
+ \choice{Vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{w}$ are linearly independent.}
+ \choice[correct]{Vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{w}$ are linearly dependent.}
+ \choice{Vector $\vec{v}_1$ can be written as a linear combination of $\vec{v}_2, \vec{v}_3, \vec{w}$.}
+ \choice[correct]{The equation $a\vec{v}_1+ b\vec{v}_2+ c\vec{v}_3+ d\vec{w}=\vec{0}$ has a non-trivial solution.}
+ \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Express $\begin{bmatrix}-1\\4\\5\end{bmatrix}$ as a linear combination of $\begin{bmatrix}2\\1\\-3\end{bmatrix}$, $\begin{bmatrix}-1\\1\\4\end{bmatrix}$ and $\begin{bmatrix}1\\1\\-2\end{bmatrix}$.
+ 
+If this is not possible, enter DNE in each answer cell.
+ 
+$$\begin{bmatrix}-1\\4\\5\end{bmatrix}=\answer{-1}\begin{bmatrix}2\\1\\-3\end{bmatrix}+\answer{2}\begin{bmatrix}-1\\1\\4\end{bmatrix}+\answer{3}\begin{bmatrix}1\\1\\-2\end{bmatrix}$$
+\end{exercise}
+
+\begin{exercise}
+Suppose three planes given by the equations below intersect at a single point.
+$$\begin{matrix}
+      a_1x& +&a_2y&+&a_3z&=&0\\
+      b_1x & +&b_2y&+&b_3z&= &0\\
+      c_1x&+&c_2y&+&c_3z&=&0
+    \end{matrix}$$
+ 
+What can be said about the vectors $\begin{bmatrix}a_1\\b_1\\c_1\end{bmatrix}$, $\begin{bmatrix}a_2\\b_2\\c_2\end{bmatrix}$ and $\begin{bmatrix}a_3\\b_3\\c_3\end{bmatrix}$?  
+ 
+Select all that apply.
+ 
+\begin{selectAll}
+ \choice{Nothing can be deduced from the information given.}
+ \choice[correct]{The three vectors are linearly independent.}
+ \choice{The three vectors are linearly dependent.}
+ \choice{The three vectors are pairwise orthogonal.}
+ \choice{The first vector can be written as a linear combination of the other two.}
+ \choice[correct]{The equation $\alpha\begin{bmatrix}a_1\\b_1\\c_1\end{bmatrix}+\beta\begin{bmatrix}a_2\\b_2\\c_2\end{bmatrix}+\omega\begin{bmatrix}a_3\\b_3\\c_3\end{bmatrix}=\vec{0}$ has only the trivial solution.}
+ \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Use the navigation bar arrows in the interactive below to advance the construction steps.  Use the final result to express $\vec{w}$ as a linear combination of $\vec{u}$ and $\vec{v}$.
+ 
+\begin{center}
+\geogebra{mafugdge}{800}{450}
+\end{center}
+ 
+$$\vec{w}=\answer{-1}\vec{u}+\answer{0.5}\vec{v}$$
+\end{exercise}
+
+\begin{exercise}
+True or False?
+ 
+\begin{enumerate}
+    \item If $\{\vec{x}, \vec{y}\}$ is linearly independent, then $\{\vec{x}, \vec{y}, \vec{x}+\vec{y}\}$ is linearly independent.
+    \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+  
+ \item If $\{\vec{x}, \vec{y}, \vec{z}\}$ is linearly independent, then $\{\vec{y}, \vec{z}\}$ is linearly independent.
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+  
+ \item If $\{\vec{y}, \vec{z}\}$ is linearly dependent, then $\{\vec{x}, \vec{y}, \vec{z}\}$ is linearly dependent.
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+  
+ \item If $a\vec{x}+b\vec{y}+c\vec{z}=\vec{0}$, then $\{\vec{x}, \vec{y}, \vec{z}\}$ is linearly independent.
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+  
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Find the inverse of the following matrix.
+$$A=\begin{bmatrix}1 & -1 & 2\\-5 & 7 & -11\\-2 & 3 &-5\end{bmatrix}$$
+$$A^{-1}=\begin{bmatrix}\answer{2} & \answer{-1} & \answer{3}\\\answer{3} & \answer{1} & \answer{-1}\\\answer{1} & \answer{1} &\answer{-2}\end{bmatrix}$$
+  
+\end{exercise}
+
+\begin{exercise}
+Consider the system of equations:
+$$\begin{matrix}
+      x& -&3y&+&z&=&2\\
+      -3x & -&4y&+&z&= &0\\
+       & &2y&-&z&=&1
+    \end{matrix}$$
+ 
+Let $A$ be the coefficient matrix corresponding to this system, and let $\vec{b}=\begin{bmatrix}2\\0\\1\end{bmatrix}$.
+ 
+Suppose that we find that  $(1, -2, -5)$ is a unique solution to this system.  What does this tell us?  Select ALL that apply.
+ 
+\begin{selectAll}
+ \choice[correct]{$A$ is invertable.}
+ \choice[correct]{Vector $\vec{b}$  is in the span of the columns of $A$.}
+ \choice{Columns of $A$ are linearly dependent.}
+ \choice[correct]{Equation $A\vec{x}=\vec{b}$ has a unique solution.}
+ \choice[correct]{Vector $\vec{b}$  can be written as a linear combination of the columns of $A$.}
+ \choice{$A\vec{b}=\begin{bmatrix}1\\-2\\-5\end{bmatrix}$}
+ \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Let $A=\begin{bmatrix}|&|&|\\\vec{c}_1& \vec{c}_2 & \vec{c}_3\\|&|&|\end{bmatrix}$ be a $3\times 3$ matrix with columns $\vec{c}_1$, $\vec{c}_2$ and $\vec{c}_3$.
+ 
+Suppose $A\begin{bmatrix}-1\\-1\\2\end{bmatrix}=\begin{bmatrix}0\\1\\1\end{bmatrix}$
+ 
+Which of the following can we conclude from the given information?  Select ALL that apply.
+\begin{selectAll}
+ \choice{$\vec{c}_2+\vec{c}_3=\begin{bmatrix}-1\\-1\\2\end{bmatrix}$}
+ \choice[correct]{$-\vec{c}_1-\vec{c}_2+2\vec{c}_3=\begin{bmatrix}0\\1\\1\end{bmatrix}$}
+ \choice{$A$ is non-singular.}
+ \choice[correct]{$\begin{bmatrix}0\\1\\1\end{bmatrix}$ is in $\text{span}(\vec{c}_1, \vec{c}_2, \vec{c}_3)$.}
+ \choice[correct]{Vector $\begin{bmatrix}0\\1\\1\end{bmatrix}$  can be written as a linear combination of the columns of $A$.}
+  \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Suppose $A$ is a non-singular $3\times 3$ matrix.  Let $A^{-1}=\begin{bmatrix}|&|&|\\\vec{d}_1& \vec{d}_2 & \vec{d}_3\\|&|&|\end{bmatrix}$.
+ 
+Suppose $A\begin{bmatrix}2\\3\\4\end{bmatrix}=\begin{bmatrix}5\\6\\7\end{bmatrix}$
+ 
+Express $\begin{bmatrix}2\\3\\4\end{bmatrix}$ as a linear combination of the columns of $A^{-1}$.
+ 
+$$\begin{bmatrix}2\\3\\4\end{bmatrix}=\answer{5}\vec{d}_1+\answer{6}\vec{d}_2+\answer{7}\vec{d}_3$$
+\end{exercise}
+
+\begin{exercise}
+Let $A$ be a $2\times 5$ matrix.  Compute the dimensions of each product.
+ 
+$A^TA$ is a $\answer{5}\times \answer{5}$ matrix.
+ 
+$AA^T$ is a $\answer{2}\times \answer{2}$ matrix.
+ 
+ \end{exercise}
+
+ \begin{exercise}
+Let $A=\begin{bmatrix}1 & 2\\-1 & 1\end{bmatrix}$ and $C=\begin{bmatrix}-1 & 1\\2 & 1\end{bmatrix}$.  Find elementary matrices $E_1$ and $E_2$ such that $C=E_2E_1A$.
+$$E_1=\begin{bmatrix}\answer{1} & \answer{-1}\\\answer{0} & \answer{1}\end{bmatrix};\quad E_2=\begin{bmatrix}\answer{0} & \answer{1}\\\answer{1} & \answer{0}\end{bmatrix}$$
+ 
+ \end{exercise}
+
+\end{document}
