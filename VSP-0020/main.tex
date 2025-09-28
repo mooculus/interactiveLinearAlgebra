@@ -153,7 +153,7 @@ Recall that the \dfn{span} of a set of vectors is the set of all linear combinat
 Let $S$ be any set of vectors in $\RR^n$.  Then $\mbox{span}(S)$ is a subspace of $\RR^n$.
 \end{theorem}
 
-In particular, if we take $S$ to be the single vector $\vec{v}$, we have that $\text{span}(\vec{v})$ is a subspace of $\RR^n$.  Geometrically, this subspace is a line in the direction of the vector $\vec{v}$.  Similarly, the span of two vectors is a subspace of $\RR^n$.  If the two vectors are linearly independent, then the subspace is a plane in $\RR^n$. 
+In particular, if we take $S$ to be the single vector $\vec{v}$, we have that $\text{span}(\vec{v})$ is a subspace of $\RR^n$.  Geometrically, this subspace is a line with a direction vector $\vec{v}$.  Similarly, the span of two vectors is a subspace of $\RR^n$.  If the two vectors are linearly independent, then the subspace is a plane in $\RR^n$. 
 
 Not every line or plane in $\RR^n$ is a subspace, however.  The following important result provides us with a quick way to determine that some subsets are not subspaces.
 
@@ -174,10 +174,7 @@ The proof is similar to what was done for the previous theorem and is left as an
 
 \section*{Practice Problems}
 
-\emph{Problems \ref{prob:Y^+1}-\ref{prob:Y^+2}}
-
-Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are non-negative.    
- \begin{problem}\label{prob:Y^+1}
+ \begin{problem}\label{prob:Y^+1} Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are non-negative.  
  Is $Y^+$ closed under vector addition?
  
  \begin{multipleChoice}
@@ -186,7 +183,7 @@ Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are n
  \end{multipleChoice}
  \end{problem}
  
- \begin{problem}\label{prob:Y^+2}
+ \begin{problem}\label{prob:Y^+2} Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are non-negative.  
  Is $Y^+$ closed under scalar multiplication?
  
   \begin{multipleChoice}
@@ -197,11 +194,7 @@ Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are n
 
 
 
-\emph{Problems \ref{pr:R^3axes1}-\ref{pr:R^3axes2}}
-
- Let $X$ be the set of all vectors in $\RR^3$ that lie on either the $x$-axis, the $y$-axis, or the $z$-axis.    
- 
- 	\begin{problem}\label{pr:R^3axes1}
+ 	\begin{problem}\label{pr:R^3axes1}  Let $X$ be the set of all vectors in $\RR^3$ that lie on either the $x$-axis, the $y$-axis, or the $z$-axis. 
   Is $X$ closed under vector addition?
   
   \begin{multipleChoice}
@@ -210,7 +203,7 @@ Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are n
  \end{multipleChoice}
  
  	\end{problem}
- 	\begin{problem}\label{pr:R^3axes2}
+ 	\begin{problem}\label{pr:R^3axes2}  Let $X$ be the set of all vectors in $\RR^3$ that lie on either the $x$-axis, the $y$-axis, or the $z$-axis. 
  Is $X$ closed under scalar multiplication?
  
  \begin{multipleChoice}
@@ -218,13 +211,8 @@ Let $Y^+$ be the set of all vectors in $\mathbb{R}^2$ whose $y$ components are n
  \choice{No}
  \end{multipleChoice}
  	\end{problem}
-
-
-\emph{Problems \ref{prob:closedmultchoice1}-\ref{prob:closedmultchoice2}}
-
-For each figure below, determine whether the set $V$ of vectors shown in the figure is closed under vector addition and scalar multiplication.  Justify your responses.
   
-\begin{problem}\label{prob:closedmultchoice1} 
+\begin{problem}\label{prob:closedmultchoice1} Determine whether the set $V$ of vectors shown in the figure is closed under vector addition and scalar multiplication.  Justify your responses.
 $V$ consists of all vectors in $\mathbb{R}^3$ in a slanted half-plane which has the $x$-axis as a boundary.
 
 \tdplotsetmaincoords{70}{130}
@@ -255,7 +243,7 @@ Is $V$ closed under scalar multiplication?
  \end{multipleChoice}
 \end{problem}
 
-\begin{problem} \label{prob:closedmultchoice2}
+\begin{problem} \label{prob:closedmultchoice2} Determine whether the set $V$ of vectors shown in the figure is closed under vector addition and scalar multiplication.  Justify your responses.
 $V$ consists of all vectors along the line, as shown.
 
 \begin{tikzpicture}[scale=0.5]
@@ -286,11 +274,11 @@ $V$ consists of all vectors along the line, as shown.
 
 
 \begin{problem}\label{prob:opposite_in_subspace}
-Prove Theorem \ref{th:opposite_in_subspace}.
+Prove that if $V$ is a subspace of $\RR^n$, then for any vector $\vec{v} \in V$, the opposite vector, $-\vec{v}$, is also in $V$. (Theorem \ref{th:opposite_in_subspace})
 \end{problem}
 
 \begin{problem}\label{prob:null(A)_is_subspace}
-Let $A$ be an $m \times n$ matrix.  Let $V$ be the subset of $\RR^n$ consisting of all vectors $\vec{x}$ such that $A \vec{x} = \vec{0}$.  Prove that $V$ is a subspace of $\RR^n$.  (Note that this subspace is called the null space of the matrix $A$ and we will denote it $\mbox{null}(A)$.)
+Let $A$ be an $m \times n$ matrix.  Let $V$ be the subset of $\RR^n$ consisting of all vectors $\vec{x}$ such that $A \vec{x} = \vec{0}$.  Prove that $V$ is a subspace of $\RR^n$.  (This subspace is called the null space of the matrix $A$.  We will denote it $\mbox{null}(A)$.)
 \end{problem}
 
 \end{document}
