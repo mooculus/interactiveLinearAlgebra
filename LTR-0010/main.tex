@@ -698,12 +698,31 @@ Left to the reader.  (See Practice Problem \ref{prob:zerotrans})
 
 \section*{Practice Problems}
 \begin{problem}\label{prob:sum}
-
-Show that (\ref{lin2}) of Exploration \ref{init:lintransintro} holds for vectors $\begin{bmatrix}3\\4\end{bmatrix}$ and $\begin{bmatrix}-2\\1\end{bmatrix}$.
+Define $T_1$ as follows 
+$$T_1:\RR^2\rightarrow\RR^2$$
+$$T_1\left(\begin{bmatrix}
+x\\
+y
+\end{bmatrix}\right)=\begin{bmatrix}
+x-y\\
+x
+\end{bmatrix}$$
+(See Exploration \ref{init:lintransintro})
+Use vectors $\begin{bmatrix}3\\4\end{bmatrix}$ and $\begin{bmatrix}-2\\1\end{bmatrix}$ to illustrate that $T_1(\vec{u}+\vec{v}) = T_1(\vec{u})+T_1(\vec{v})$.
 \end{problem}
 
-\begin{problem}\label{prob:prob2}
-Use a counter-example to prove (\ref{t2}) of Exploration \ref{init:lintransintro}.
+\begin{problem}\label{prob:prob2} Define $T_2$ as follows
+$$T_2:\RR^2\rightarrow\RR^2$$
+$$T_2\left(\begin{bmatrix}
+x\\
+y
+\end{bmatrix}\right)=\begin{bmatrix}
+-x+y+1\\
+y-2
+\end{bmatrix}$$
+(See Exploration \ref{init:lintransintro})
+
+Use a counter-example to prove that $T_2(\vec{u}+\vec{v}) \neq T_2(\vec{u})+T_2(\vec{v})$
 \end{problem}
 
 \begin{problem}\label{prob:imageoflincomb}
@@ -714,7 +733,7 @@ $$T(3\vec{u}-\vec{v})=\begin{bmatrix}\answer{11}\\\answer{-6}\end{bmatrix}$$
 
 
 \begin{problem}\label{prob:notlinear} 
-Let $\vec{u}$ be a fixed vector.  Define $T_{\vec{u}}:\RR^2\rightarrow\RR^2$, by $T_{\vec{u}}(\vec{x})=\vec{u}-\vec{x}$.
+Let $\vec{u}$ be a fixed non-zero vector.  Define $T_{\vec{u}}:\RR^2\rightarrow\RR^2$, by $T_{\vec{u}}(\vec{x})=\vec{u}-\vec{x}$.
   \begin{enumerate}
   \item 
   Describe the effect of this transformation by sketching ${\bf x}$ and $T_{\vec{u}}({\bf x})$ for at least four vectors ${\bf x}$ and a fixed vector $\vec{u}$ of your choice.
@@ -741,22 +760,18 @@ Suppose a linear transformation $T:\RR^3\rightarrow\RR^3$ maps ${\bf i}$ to $\be
 $$T\left(\begin{bmatrix}1\\1\\-2\end{bmatrix}\right)=\begin{bmatrix}\answer{-6}\\\answer{3}\\\answer{11}\end{bmatrix}$$
 \end{problem}
 
-\begin{problem}\label{prob:idtrans} Prove Theorem \ref{th:idlintrans}\end{problem}
+\begin{problem}\label{prob:idtrans} Prove that the identity transformation is linear. (Theorem \ref{th:idlintrans})\end{problem}
 
-\begin{problem}\label{prob:zerotrans} Prove Theorem \ref{th:zerolintrans}\end{problem}
+\begin{problem}\label{prob:zerotrans} Prove that the zero transformation is linear. (Theorem \ref{th:zerolintrans})\end{problem}
 
-\emph{Problems \ref{prob:domaincodomain1}-\ref{prob:domaincodomain2}}
-
-For each matrix $A$ below, find the domain and the codomain of the linear transformation $T:\RR^n\rightarrow\RR^m$ induced by $A$; find and draw the image of $T$. (Hint: See Example \ref{ex:lineartrans3}.)
-
-  \begin{problem}\label{prob:domaincodomain1}
+  \begin{problem}\label{prob:domaincodomain1} Find the domain and the codomain of the linear transformation $T:\RR^n\rightarrow\RR^m$ induced by $A$; find and draw the image of $T$.
   $$A=\begin{bmatrix}0&0\\1&1\\2&0\end{bmatrix}$$
   Domain: $\RR^n$, where $n=\answer{2}$.
 
   Codomain: $\RR^m$, where $m=\answer{3}$.
   \end{problem}
   
-  \begin{problem}\label{prob:domaincodomain2}
+  \begin{problem}\label{prob:domaincodomain2} Find the domain and the codomain of the linear transformation $T:\RR^n\rightarrow\RR^m$ induced by $A$; find and draw the image of $T$.
   $$A=\begin{bmatrix}3&-1\\-3&1\end{bmatrix}$$
    \end{problem}
 
