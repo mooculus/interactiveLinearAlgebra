@@ -30,7 +30,7 @@ Recall that by Observation \ref{obs:imagesOfijk} of \href{https://ximera.osu.edu
 
 
 \begin{image}
-    \includegraphics[height=1.5in]{gulls_pic.jpg}
+    \includegraphics[height=3in]{gulls_pic.jpg}
 \end{image}
 % \begin{center}
 % 		\begin{tikzpicture}[scale=2]
@@ -225,29 +225,31 @@ shears the plane vertically.
 
 \begin{example}\label{ex:vertshear1} Find the matrix $M_{vs}$ of a matrix transformation $T$ that {\it shears} the image of a seagull, as shown in the figure below. 
 
-%\begin{figure}[h]
-%\begin{image}[4in]
-  \begin{center} 
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{gull.jpg}};
-  \draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,2);
-       \end{tikzpicture}
-  \quad\quad
-\begin{tikzpicture}[scale=2]
- \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{shearedgull.jpg}};
-  
-  \draw (0.5,0) arc (0:30:0.5);
-  \node[] at (0.75, 0.2)   (a) {$30^{\circ}$};
+\begin{image}
+    \includegraphics[height=3in]{gull_pic.jpg}
+\end{image}
 
-\draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,2);
+%   \begin{center} 
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+%   {\includegraphics[width=25mm]{gull.jpg}};
+%   \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,2);
+%        \end{tikzpicture}
+%   \quad\quad
+% \begin{tikzpicture}[scale=2]
+%  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.25mm,0)
+%   {\includegraphics[width=25mm]{shearedgull.jpg}};
+  
+%   \draw (0.5,0) arc (0:30:0.5);
+%   \node[] at (0.75, 0.2)   (a) {$30^{\circ}$};
+
+% \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,2);
     
- \end{tikzpicture}
-%\end{image}
-\end{center}
+%  \end{tikzpicture}
+% %\end{image}
+% \end{center}
 
 \begin{explanation}
 Consider what this transformation does to the standard unit vectors.
@@ -300,22 +302,26 @@ It turns out that rotations about the origin are also matrix transformations.  Y
 
 \begin{example}\label{ex: rotate45} Let $R_{45^{\circ}}:\RR^2\rightarrow\RR^2$ be a transformation that rotates $\RR^2$ countercolockwise about the origin by $45^{\circ}$.  Find a matrix that induces $R_{45^{\circ}}$.
 
-%\begin{image}[4in]
- \begin{center}   
-		\begin{tikzpicture}[scale=1.3]
-\node[inner sep=0pt] (tower) at (0,0)
-  {\includegraphics[width=45mm]{tower.jpg}};
-  \draw[<->] (-2,0)--(2,0);
-  \draw[<->] (0,-2)--(0,2);
-       \end{tikzpicture}\quad
-\begin{tikzpicture}[scale=1.3]
-\node[inner sep=0pt] (tower) at (0,0)
-  {\includegraphics[width=50mm]{rotatedtower.jpg}};
-  \draw[<->] (-2,0)--(2,0);
-  \draw[<->] (0,-2)--(0,2);
-       \end{tikzpicture}
-%\end{image}
-\end{center}
+\begin{image}
+    \includegraphics[height=3in]{tower_pic.jpg}
+\end{image}
+
+% %\begin{image}[4in]
+%  \begin{center}   
+% 		\begin{tikzpicture}[scale=1.3]
+% \node[inner sep=0pt] (tower) at (0,0)
+%   {\includegraphics[width=45mm]{tower.jpg}};
+%   \draw[<->] (-2,0)--(2,0);
+%   \draw[<->] (0,-2)--(0,2);
+%        \end{tikzpicture}\quad
+% \begin{tikzpicture}[scale=1.3]
+% \node[inner sep=0pt] (tower) at (0,0)
+%   {\includegraphics[width=50mm]{rotatedtower.jpg}};
+%   \draw[<->] (-2,0)--(2,0);
+%   \draw[<->] (0,-2)--(0,2);
+%        \end{tikzpicture}
+% %\end{image}
+% \end{center}
 
 \begin{explanation}  Consider the action of $R_{\theta}$ on the standard unit vectors. 
 
@@ -553,32 +559,31 @@ Note that when $m=0$, expression (\ref{eq:reflectionymx}) is consistent with the
 
 \begin{example}\label{ex:reflectedduck} Find matrix $M$ that reflects the image of the duck about the line $y=\frac{3}{5}x$.
 
-%\begin{figure}[h]
-%\begin{image}[4in]
-\begin{center}
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{duck.jpg}};
-  \draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,1.5);
-  \draw[red,thick] (0,0)--(2,1.2);
-  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
-       \end{tikzpicture}
-   \quad
-\begin{tikzpicture}[scale=2]
- \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
-  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
-  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
-\draw[red,thick] (0,0)--(2,1.2);
-\draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,1.5);
+\begin{image}
+    \includegraphics[height=3in]{duckEx_pic.jpg}
+\end{image}
+
+% \begin{center}
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+%   {\includegraphics[width=25mm]{duck.jpg}};
+%   \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,1.5);
+%   \draw[red,thick] (0,0)--(2,1.2);
+%   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+%        \end{tikzpicture}
+%    \quad
+% \begin{tikzpicture}[scale=2]
+%  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
+%   {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+%   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+% \draw[red,thick] (0,0)--(2,1.2);
+% \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,1.5);
     
- \end{tikzpicture}
- \end{center}
-% \end{image}
-% \caption{The original photo of the duck was reflected about he line $y=\frac{3}{5}x$.}
-%  \label{fig:reflectedduck} 
-%\end{figure}
+%  \end{tikzpicture}
+%  \end{center}
+
 \begin{explanation}
 $$M=\frac{1}{1+9/25}\begin{bmatrix}1-9/25 & 6/5\\6/5 & 9/25 -1\end{bmatrix}=\frac{25}{34}\begin{bmatrix}16/25 & 6/5\\6/5 & -16/25\end{bmatrix}=\begin{bmatrix}8/17 & 15/17\\15/17 & -8/17\end{bmatrix}$$
 \end{explanation}
@@ -779,55 +784,63 @@ $$M=\begin{bmatrix}\answer{2} & \answer{0}\\\answer{0} & \answer{3}\end{bmatrix}
 
 \begin{problem}\label{prob:shearedsheep}
 (Sheared Sheep) Find a matrix that induces the transformation shown in the figure. 
-%\begin{image}[4in]
-   \begin{center}
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (8.75mm,0)
-  {\includegraphics[width=35mm]{sheep.jpg}};
-  \draw[<->] (-0.25,0)--(2,0);
-  \draw[<->] (0,-0.25)--(0,1.8);
-       \end{tikzpicture}
-  \quad
-\begin{tikzpicture}[scale=2]
- 
- \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (12.35mm,0)
-  {\includegraphics[width=49.4mm]{shearedsheep.jpg}};
-  \node[] at (2.4, 0.25)   (a) {$60^{\circ}$};
- \draw (22.3mm,0) arc (0:60:0.5) ;
 
-\draw[<->] (-0.25,0)--(3,0);
-  \draw[<->] (0,-0.25)--(0,1.8);
+\begin{image}
+    \includegraphics[height=3in]{sheep_pic.jpg}
+\end{image}
+
+%    \begin{center}
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (8.75mm,0)
+%   {\includegraphics[width=35mm]{sheep.jpg}};
+%   \draw[<->] (-0.25,0)--(2,0);
+%   \draw[<->] (0,-0.25)--(0,1.8);
+%        \end{tikzpicture}
+%   \quad
+% \begin{tikzpicture}[scale=2]
+ 
+%  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (12.35mm,0)
+%   {\includegraphics[width=49.4mm]{shearedsheep.jpg}};
+%   \node[] at (2.4, 0.25)   (a) {$60^{\circ}$};
+%  \draw (22.3mm,0) arc (0:60:0.5) ;
+
+% \draw[<->] (-0.25,0)--(3,0);
+%   \draw[<->] (0,-0.25)--(0,1.8);
     
- \end{tikzpicture}
- \end{center}
-%\end{image}
+%  \end{tikzpicture}
+%  \end{center}
+
 
 \end{problem}
 
 \begin{problem}\label{prob:translation_does_not_work}
 
 Suppose a 1 by 1 photo of a chipmunk was shifted as shown in the figure. 
-%\begin{image}[4.2in]  
-\begin{center}
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{chipmunk.jpg}};
-  \draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,2);
-  \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(12.5mm,0mm)node[below right]{$(1, 0)$};
-  \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(0mm,12.5mm)node[above left]{$(0, 1)$};
-       \end{tikzpicture}
-  \quad\quad
-   \begin{tikzpicture}[scale=2]
- \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (11.25mm,5mm)
-  {\includegraphics[width=25mm]{chipmunk.jpg}};
-\draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,2);
-  \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(17.5mm,5mm)node[below right]{$(1.4, 0.4)$};
-  \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(5mm,17.5mm)node[above right]{$(0.4, 1.4)$};
-    \end{tikzpicture}
-    \end{center}
-%\end{image}
+
+\begin{image}
+    \includegraphics[height=3in]{chipmunk_pic.jpg}
+\end{image}
+
+% \begin{center}
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+%   {\includegraphics[width=25mm]{chipmunk.jpg}};
+%   \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,2);
+%   \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(12.5mm,0mm)node[below right]{$(1, 0)$};
+%   \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(0mm,12.5mm)node[above left]{$(0, 1)$};
+%        \end{tikzpicture}
+%   \quad\quad
+%    \begin{tikzpicture}[scale=2]
+%  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (11.25mm,5mm)
+%   {\includegraphics[width=25mm]{chipmunk.jpg}};
+% \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,2);
+%   \draw[->,red, line width=1mm, -stealth] (0mm,0mm)--(17.5mm,5mm)node[below right]{$(1.4, 0.4)$};
+%   \draw[->,blue, line width=1mm, -stealth] (0mm,0mm)--(5mm,17.5mm)node[above right]{$(0.4, 1.4)$};
+%     \end{tikzpicture}
+%     \end{center}
+
 
 Suppose we tried to construct a standard matrix $M$ for this transformation by making the images of $\vec{i}$ and $\vec{j}$ the columns of $M$.  We would obtain
 $$M=\begin{bmatrix}1.4 & 0.4\\0.4 & 1.4\end{bmatrix}$$
@@ -857,44 +870,55 @@ Prove that every point along the line $y=\frac{3}{5}x$ in Example \ref{ex:reflec
 
 \begin{problem}\label{prob:reflectedduck}
 The figure below shows a sequence of two matrix transformations that accomplishes a reflection about the line $y=\frac{3}{5}x$.  The first transformation is a reflection of the plane about the $x$-axis.  The second transformation is a rotation of the plane about the origin.  Find matrices that induce the two transformations and verify that their product (in the correct order) is the reflection matrix of Example \ref{ex:reflectedduck}.
-%\begin{figure}[h]
-\begin{center}
+
+\begin{image}
+    \includegraphics[height=3in]{duck_pic1.jpg}
+\end{image}
+
+% \begin{center}
      
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
-  {\includegraphics[width=25mm]{duck.jpg}};
-  \draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,1.5);
-  \draw[red,thick] (0,0)--(2,1.2);
-  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
-       \end{tikzpicture}
-\end{center}  
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,0)
+%   {\includegraphics[width=25mm]{duck.jpg}};
+%   \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,1.5);
+%   \draw[red,thick] (0,0)--(2,1.2);
+%   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+%        \end{tikzpicture}
+% \end{center}  
+
+\begin{image}
+    \includegraphics[height=3in]{duck_pic2.jpg}
+\end{image}
     
- \begin{center}      
-		\begin{tikzpicture}[scale=2]
-\node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,-8.9mm)
-  {\includegraphics[width=25mm]{upsidedownduck.jpg}};
-  \draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-1.5)--(0,1.5);
-  \draw[red,thick] (0,0)--(2,1.2);
-  \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
-  \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{};
-       \end{tikzpicture}
- \end{center}  
+%  \begin{center}      
+% 		\begin{tikzpicture}[scale=2]
+% \node[inner sep=0pt, anchor=base] (gulls) at (6.25mm,-8.9mm)
+%   {\includegraphics[width=25mm]{upsidedownduck.jpg}};
+%   \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-1.5)--(0,1.5);
+%   \draw[red,thick] (0,0)--(2,1.2);
+%   \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+%   \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{};
+%        \end{tikzpicture}
+%  \end{center}  
+
+
+\begin{image}
+    \includegraphics[height=3in]{duck_pic3.jpg}
+\end{image}
     
- \begin{center}
-\begin{tikzpicture}[scale=2]
- \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
-  {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
-  
-  
-\draw[red,thick] (0,0)--(2,1.2);
-\node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
-\draw[<->] (-0.5,0)--(2,0);
-  \draw[<->] (0,-0.5)--(0,1.5);
-   \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{}; 
- \end{tikzpicture}
-\end{center}
+%  \begin{center}
+% \begin{tikzpicture}[scale=2]
+%  \node[inner sep=0pt, anchor=base]  (stretchedgulls) at (6.875mm,-4.2mm)
+%   {\includegraphics[width=27.5mm]{reflectedduck.jpg}};
+%   \draw[red,thick] (0,0)--(2,1.2);
+% \node[red] at (1.5, 1.3)   (a) {$y=\frac{3}{5}x$};
+% \draw[<->] (-0.5,0)--(2,0);
+%   \draw[<->] (0,-0.5)--(0,1.5);
+%    \draw[dashed] (0,0)--(0.8,1.5)node[above=2mm, left=1mm]{}; 
+%  \end{tikzpicture}
+% \end{center}
  \end{problem}
 
 \section*{Example Source}
