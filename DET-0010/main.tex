@@ -16,9 +16,9 @@
 
 In this section we will define a function that assigns to each square matrix $A$ a scalar output called the \dfn{determinant of $A$}.  We will denote the determinant of $A$ by $\det{A}$.  For a matrix with real number entries, the output of the determinant function will always be a real number.
 
-One important property of the determinant is its connection to matrix inverses.  We will find that a matrix $A$ is singular if and only if $\det{A}=0$.  For nonsingular matrices, we will establish a formula that gives the inverse of a matrix exclusively in terms of determinants.  This property will be addressed in detail in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0040/main}{Properties of the Determinant}, and \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0060/main}{Determinants and Inverses of Nonsingular Matrices}.
+One important property of the determinant is its connection to matrix inverses.  We will find that a matrix $A$ is singular if and only if $\det{A}=0$.  %For nonsingular matrices, we will establish a formula that gives the inverse of a matrix exclusively in terms of determinants.  This property will be addressed in detail in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0040/main}{Properties of the Determinant}, and \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0060/main}{Determinants and Inverses of Nonsingular Matrices}.
 
-Geometrically speaking, the determinant of a matrix of a linear transformation is the factor by which the area (or volume or hypervolume) is scaled by the transformation.  This will be discussed in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0070/main}{Determinants as Areas and Volumes}. 
+Geometrically speaking, the determinant of a matrix of a linear transformation is the factor by which the area (or volume or hypervolume) is scaled by the transformation.  %This will be discussed in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0070/main}{Determinants as Areas and Volumes}. 
 
 \subsection*{Cofactor Expansion Along the Top Row}
 To start from the beginning, let us define the determinant of a $1\times 1$ matrix.
@@ -47,15 +47,19 @@ The easiest way to understand the definition of the determinant for a $3\times 3
 \begin{example}\label{ex:threebythreedet1}
 Find $\det{A}$ if 
 $$A=\begin{bmatrix}3&-2&1\\5&-1&2\\1&4&1\end{bmatrix}$$
+
 \begin{explanation}
+We will use three color-coded copies of the matrix $A$
+$$A=\begin{bmatrix}{\color{blue}3}&-2&1\\5&{\color{blue}-1}&{\color{blue}2}\\1&{\color{blue}4}&{\color{blue}1}\end{bmatrix},\quad A=\begin{bmatrix}3&{\color{red}-2}&1\\{\color{red}5}&-1&{\color{red}2}\\{\color{red}1}&4&{\color{red}1}\end{bmatrix},\quad A=\begin{bmatrix}3&-2&{\color{brown}1}\\{\color{brown}5}&{\color{brown}-1}&2\\{\color{brown}1}&{\color{brown}4}&1\end{bmatrix}$$
+
 \begin{align*}
-\det{A}&=(3)\begin{vmatrix}-1&2\\4&1\end{vmatrix}-(-2)\begin{vmatrix}5&2\\1&1\end{vmatrix}+(1)\begin{vmatrix}5&-1\\1&4\end{vmatrix}\\
+\det{A}&={\color{blue}(3)\begin{vmatrix}-1&2\\4&1\end{vmatrix}}-{\color{red}(-2)\begin{vmatrix}5&2\\1&1\end{vmatrix}}+{\color{brown}(1)\begin{vmatrix}5&-1\\1&4\end{vmatrix}}\\
 &=(3)(-1-8)-(-2)(5-2)+(1)(20+1)\\
 &=-27+6+21\\
 &=0
 \end{align*}
 
-\youtube{aR2w-viFcvI}
+%\youtube{aR2w-viFcvI}
 \end{explanation}
 \end{example}
 
@@ -125,7 +129,7 @@ As you watch the video below, pay particular attention to the same patterns as y
 &=57
 \end{align*}
 
-\youtube{YIJq7TqncyU}
+%\youtube{YIJq7TqncyU}
 \end{explanation}
 \end{example}
 
@@ -300,66 +304,57 @@ As an immediate consequence of this theorem, we have the following result.
 
 \section*{Practice Problems}
 
-\emph{Problems \ref{prob:2x2det1}-\ref{prob:laplace}}
-
-Find the determinant of each matrix.
-
-  \begin{problem}\label{prob:2x2det1}
+  \begin{problem}\label{prob:2x2det1} Find the determinant.
   $$A=\begin{bmatrix}4&-2\\3&7\end{bmatrix}$$
   Answer:
   $$\det{A}=\answer{34}$$
   \end{problem}
   
-  \begin{problem}\label{prob:2x2det2}
+  \begin{problem}\label{prob:2x2det2} Find the determinant.
   $$B=\begin{bmatrix}5&-1&0\\0&3&-2\\1&-1&2\end{bmatrix}$$
   Answer:
   $$\text{det}(B)=\answer{22}$$
   \end{problem}
 
-  \begin{problem}\label{prob:laplace}
+  \begin{problem}\label{prob:laplace} Find the determinant.
   $$C=\begin{bmatrix}1&-2&0&0&0\\0&-4&1&1&0\\3&0&-1&0&1\\0&0&4&1&0\\-1&-2&0&0&0\end{bmatrix}$$
    Answer:
   $$\det(C)=\answer{12}$$
  \end{problem}
 
 
-\begin{problem}\label{prob:toprowexp2x2}
-Show that Definition \ref{def:toprowexpansion} is consistent with Definition \ref{def:twobytwodet} by verifying that both produce the same result when applied to a $2\times 2$ matrix.
-\end{problem}
+% \begin{problem}\label{prob:toprowexp2x2}
+% Show that Definition \ref{def:toprowexpansion} is consistent with Definition \ref{def:twobytwodet} by verifying that both produce the same result when applied to a $2\times 2$ matrix.
+% \end{problem}
 
 \begin{problem}\label{prob:detOfTrans}
-    Prove Theorem \ref{th:detoftrans}.
+    Prove that for a square matrix $A$, $\det{A^T}=\det{A}$. (Theorem \ref{th:detoftrans})
 \end{problem}
 
 \begin{problem}\label{prob:detrowswitch}
-Let $B'$ be a matrix obtained from $B$ of Problem \ref{prob:2x2det2} by switching the first and the second row of $B$.  Compute the determinant of $B'$.  What do you observe?
-\end{problem}
+Let $$A=\begin{bmatrix}-2&1&3\\0&4&0\\-1&1&2\end{bmatrix}$$
 
-\begin{problem}\label{prob:2x2rowswitchproof}
-Make a conjecture about what happens to the determinant of a matrix if two rows of a matrix are switched.  Prove your conjecture for a $2\times 2$ matrix.
-\end{problem}
+\begin{enumerate}
+    \item $$\text{det}A=\answer{-4}$$
+    \item Let $A_1$ be a matrix obtained from $A$ by switching the first and the second row of $A$.  
+$$\text{det}A_1=\answer{4}$$
+    What do you observe?
 
-\begin{problem}\label{prob:scalarmultrowdet} Let $B'$ be a matrix obtained from $B$ of Problem \ref{prob:2x2det2} by multiplying the middle row by $-3$.  Compute the determinant of $B'$.  What do you observe?
-\end{problem}
+    \item Let $A_2$ be a matrix obtained from $A$ by multiplying the bottom row by $-3$.
 
-\begin{problem}\label{prob:rowtimesconstant2x2proof}
-Make a conjecture about what happens to the determinant of a matrix if one of the rows is multiplied by a constant.  Prove your conjecture for a $2\times 2$ matrix.
-\end{problem}
+ $$\text{det}A_2=\answer{12}$$   
+    What do you observe?
 
-\begin{problem}\label{prob:matrixtimesconst}
-Let $B'$ be a matrix obtained from $B$ of Problem \ref{prob:2x2det2} by multiplying $B$ by $2$.  Compute the determinant of $B'$.  What do you observe?
-\end{problem}
+    \item Let $A_3$ be a matrix obtained from $A$  by multiplying $A$ by $2$.    
+    
+    $$\text{det}A_3=\answer{-32}$$ 
+    What do you observe?  Relate your observations to what you found in the previous part.
 
-\begin{problem}\label{prob:matrixtimesconstant2x2proof}
-Make a conjecture about what happens to the determinant of a matrix if the matrix is multiplied by a constant.  Prove your conjecture for a $2\times 2$ matrix.
-\end{problem}
-
-\begin{problem}\label{prob:scalarmultofrow}
-Let $B'$ be a matrix obtained from $B$ of Problem \ref{prob:2x2det2} by adding twice the third row to the first.  Compute the determinant of $B'$.  What do you observe?
-\end{problem}
-
-\begin{problem}\label{prob:scalarmultofrow2x2}
-Make a conjecture about what happens to the determinant of a matrix if a multiple of one row is added to another row.  Prove your conjecture for a $2\times 2$ matrix.
+    \item Let $A_4$ be a matrix obtained from $A$ by adding twice the third row to the first.  
+    $$\text{det}A_4=\answer{-4}$$ 
+    
+    What do you observe?
+\end{enumerate}
 \end{problem}
 
 \begin{problem}\label{prob:detsumsumdetquestion}

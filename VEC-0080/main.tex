@@ -180,7 +180,7 @@ $$\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$$
 \begin{proof}
 The proof is left to the reader.  (See Practice Problem \ref{prob:corssuvnegcrossvu})
 \end{proof}
-The next theorem lists two additional properties of the cross product.  Proofs of these properties are routine and are left to the reader.  (See Practice Problems \ref{prob:scalarassocofcrossprod} and \ref{prob:distofrossprod})
+The next theorem lists two additional properties of the cross product.  Proofs of these properties are routine and are left to the reader.  %(See Practice Problems \ref{prob:scalarassocofcrossprod} and \ref{prob:distofrossprod})
 
 \begin{theorem}\label{th:crossproductproperties}
 Let $\vec{u}$, $\vec{v}$ and $\vec{w}$ be vectors in $\mathbb{R}^3$, and $k$ be a scalar, then\\
@@ -237,7 +237,7 @@ We will derive an analogous result for the cross product.  To do so, we will nee
 Let $\vec{u}$ and $\vec{v}$ be vectors in $\RR^3$.  Then
 $$\norm{\vec{u}\times\vec{v}}^2=\norm{\vec{u}}^2\norm{\vec{v}}^2-(\vec{u}\dotp\vec{v})^2$$
 \end{lemma}
-\begin{proof} The proof is left to the reader.  (See Practice Problem \ref{prob:corssprodmagnitude})
+\begin{proof} The proof is left to the reader.  %(See Practice Problem \ref{prob:corssprodmagnitude})
 \end{proof}
 
 The following theorem establishes a relationship between the magnitude of the cross product, the magnitudes of the two vectors involved in the cross product and the angle between the two vectors.  It is important to note that  the identity in this theorem involves the magnitude of the cross product, not the cross product itself.
@@ -261,76 +261,79 @@ $$\norm{\vec{u}\times\vec{v}}=\norm{\vec{u}}\norm{\vec{v}}\sin\theta$$
 
 
 \section*{Practice Problems}
-\begin{problem}\label{prob:crossik}
-$\vec{i}\times\vec{k}=$
-\begin{multipleChoice}\choice{$\vec{j}$}
-  \choice[correct]{$-\vec{j}$ }
-  \choice{neither}
-  \end{multipleChoice}
-\end{problem}
+% \begin{problem}\label{prob:crossik}
+% $\vec{i}\times\vec{k}=$
+% \begin{multipleChoice}\choice{$\vec{j}$}
+%   \choice[correct]{$-\vec{j}$ }
+%   \choice{neither}
+%   \end{multipleChoice}
+% \end{problem}
 
-\begin{problem}\label{prob:crosski}
-$\vec{k}\times\vec{i}=$
-\begin{multipleChoice}\choice[correct]{$\vec{j}$}
-  \choice{$-\vec{j}$ }
-  \choice{neither}
-  \end{multipleChoice}
-\end{problem}
+% \begin{problem}\label{prob:crosski}
+% $\vec{k}\times\vec{i}=$
+% \begin{multipleChoice}\choice[correct]{$\vec{j}$}
+%   \choice{$-\vec{j}$ }
+%   \choice{neither}
+%   \end{multipleChoice}
+% \end{problem}
 
-\emph{Problems \ref{prob:crossuv1}-\ref{prob:crossuv2}} 
 
-Find the cross product $\vec{u}\times\vec{v}$, and verify that $\vec{u}\times\vec{v}$ is orthogonal to both $\vec{u}$ and $\vec{v}$.
 
-\begin{problem}\label{prob:crossuv1}
+\begin{problem}\label{prob:crossuv1} Find the cross product $\vec{u}\times\vec{v}$, and verify that $\vec{u}\times\vec{v}$ is orthogonal to both $\vec{u}$ and $\vec{v}$.
 $\vec{u}=\begin{bmatrix}2\\-1\\4\end{bmatrix}$, $\vec{v}=\begin{bmatrix}0\\3\\1\end{bmatrix}$.
 
 Answer:
 $$\vec{u}\times\vec{v}=\begin{bmatrix}\answer{-13}\\\answer{-2}\\\answer{6}\end{bmatrix}$$
 \end{problem}
 
-\begin{problem}\label{prob:crossuv2}
-$\vec{u}=\begin{bmatrix}-1\\5\\-3\end{bmatrix}$, $\vec{v}=\begin{bmatrix}2\\-1\\-4\end{bmatrix}$.
+% \begin{problem}\label{prob:crossuv2}
+% $\vec{u}=\begin{bmatrix}-1\\5\\-3\end{bmatrix}$, $\vec{v}=\begin{bmatrix}2\\-1\\-4\end{bmatrix}$.
 
-Answer:
-$$\vec{u}\times\vec{v}=\begin{bmatrix}\answer{-23}\\\answer{-10}\\\answer{-9}\end{bmatrix}$$
+% Answer:
+% $$\vec{u}\times\vec{v}=\begin{bmatrix}\answer{-23}\\\answer{-10}\\\answer{-9}\end{bmatrix}$$
+% \end{problem}
+
+% \begin{problem}\label{prob:corssuvnegcrossvu}
+% Prove Theorem \ref{th:corssuvnegcrossvu}.
+% \end{problem}
+
+% \begin{problem}\label{prob:scalarassocofcrossprod}
+% Prove Theorem \ref{th:crossproductproperties}\ref{item:scalarassocofcrossprod} in two different ways:
+%   \begin{enumerate}
+%   \item By direct computation.
+%   \item (Optional) By using Theorem \ref{th:elemrowopsanddet}\ref{item:rowconstantmultanddet}. 
+%   \end{enumerate}
+% \end{problem}
+
+\begin{problem}
+    Let $\vec{u}$ and $\vec{v}$ be vectors in $\RR^3$, prove that
+$$\vec{u}\times\vec{v}=-(\vec{v}\times\vec{u})$$
 \end{problem}
 
-\begin{problem}\label{prob:corssuvnegcrossvu}
-Prove Theorem \ref{th:corssuvnegcrossvu}.
-\end{problem}
-
-\begin{problem}\label{prob:scalarassocofcrossprod}
-Prove Theorem \ref{th:crossproductproperties}\ref{item:scalarassocofcrossprod} in two different ways:
-  \begin{enumerate}
-  \item By direct computation.
-  \item (Optional) By using Theorem \ref{th:elemrowopsanddet}\ref{item:rowconstantmultanddet}. 
-  \end{enumerate}
-\end{problem}
-
-\begin{problem}\label{prob:distofrossprod}
-Prove Theorem \ref{th:crossproductproperties}\ref{item:distofrossprod}.
-\end{problem}
+% \begin{problem}\label{prob:distofrossprod}
+% Prove Theorem \ref{th:crossproductproperties}\ref{item:distofrossprod}.
+% \end{problem}
 
 \begin{problem}\label{prob:crossproductorthtouandv}
-Prove Theorem \ref{th:crossproductorthtouandv}.
+Let $\vec{u}$ and $\vec{v}$ be vectors of $\RR^3$.  Prove that $\vec{u}\times\vec{v}$ is orthogonal to both $\vec{u}$ and $\vec{v}$. (Theorem \ref{th:crossproductorthtouandv})
 \end{problem}
 
 \begin{problem}\label{prob:crossself}
 Prove that the cross product of any vector with itself is the zero vector.
 \end{problem}
 
-\begin{problem}\label{prob:crossprodzero}
-Suppose that $\vec{u}$ is a non-zero vector.  Let $\vec{v}=k\vec{u}$ for $k\neq 0$.  Argue that $\vec{u}\times \vec{v}=\vec{0}$ in two different ways:
-\begin{enumerate}
-\item
-By using Theorem \ref{th:crossproductsin}.
-\item (Optional) By using Theorem \ref{th:detofsingularmatrix}.
-\end{enumerate}
-\end{problem}
+% \begin{problem}\label{prob:crossprodzero}
+% Suppose that $\vec{u}$ is a non-zero vector.  Let $\vec{v}=k\vec{u}$ for $k\neq 0$.  Argue that $\vec{u}\times \vec{v}=\vec{0}$ in two different ways:
+% \begin{enumerate}
+% \item
+% By using Theorem \ref{th:crossproductsin}.
+% \item (Optional) By using Theorem \ref{th:detofsingularmatrix}.
+% \end{enumerate}
+% \end{problem}
 
-\begin{problem}\label{prob:corssprodmagnitude} Prove the following identity for vectors $\vec{u}$ and $\vec{v}$ of $\RR^3$.
-$$\norm{\vec{u}\times\vec{v}}^2=\norm{\vec{u}}^2\norm{\vec{v}}^2-(\vec{u}\dotp\vec{v})^2$$
-(Lemma \ref{lemma:crossprodmagnitude})
-\end{problem}
+% \begin{problem}\label{prob:corssprodmagnitude} Prove the following identity for vectors $\vec{u}$ and $\vec{v}$ of $\RR^3$.
+% $$\norm{\vec{u}\times\vec{v}}^2=\norm{\vec{u}}^2\norm{\vec{v}}^2-(\vec{u}\dotp\vec{v})^2$$
+% (Lemma \ref{lemma:crossprodmagnitude})
+% \end{problem}
 
 \end{document} 
