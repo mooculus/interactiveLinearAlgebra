@@ -35,13 +35,15 @@ Let $A=\begin{bmatrix} 2& 1\\ 1&2
   \end{onlineOnly}
 
 What do you observe about the relationship between vectors along the red line $y=-x$ and their images?
-  For many vectors, $A\vec{x}$ does not point in the same direction as $\vec{x}$ but if we look at the vectors parallel to $\begin{bmatrix}-1\\1\end{bmatrix}$, we notice that they appear unchanged in magnitude and direction.  Such vectors are sometimes called \dfn{fixed vectors} of $A$.
+
+  For many vectors $\vec{x}$ of $\RR^2$, $A\vec{x}$ does not point in the same direction as $\vec{x}$ but if we look at the vectors along the line $y=-x$, we notice that the transformation does not seem to affect their magnitude and direction.  Such vectors are sometimes called \dfn{fixed vectors} of $A$.  For example $\begin{bmatrix}1\\-1\end{bmatrix}$ is a fixed vector.
 
 What do you observe about the relationship between vectors along the blue line $y=x$ and their images?
+
 We observe that the magnitudes of these vectors are changed by the transformation, but the direction in which the  vectors point is unchanged.  
 \end{exploration}
 
-In Exploration \ref{init:eignintro} we found that vectors $\begin{bmatrix}1\\1\end{bmatrix}$ and $\begin{bmatrix}-1\\1\end{bmatrix}$ do not change direction under the linear transformation induced by matrix $A$.  Such vectors are examples of \dfn{eigenvectors} of $A$. 
+In Exploration \ref{init:eignintro} we found that the images of vectors $\begin{bmatrix}1\\1\end{bmatrix}$ and $\begin{bmatrix}-1\\1\end{bmatrix}$ stay parallel to the original vectors under the linear transformation induced by matrix $A$.  Such vectors are examples of \dfn{eigenvectors} of $A$. 
 
 In general, any nonzero vector whose image under a matrix transformation is parallel to the original vector is called an \dfn{eigenvector} of the matrix that induced the transformation.  The following definition captures this idea algebraically.
 
