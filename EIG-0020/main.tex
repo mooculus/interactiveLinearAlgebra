@@ -143,7 +143,7 @@ Once we have computed an eigenvalue $\lambda$ of an $n \times n$ matrix $A$, the
 \begin{align}\label{eqn:nullspace}
  (A-\lambda I) \vec{x}=\vec{0}   
 \end{align} 
-As we have seen in the previous section, a scalar multiple of an eigenvector is an eigenvector.  So for any given eigenvalue $\lambda$ there are infinitely many eigenvectors associated with it.  In fact, the eigenvectors associated with $\lambda$, together with the zero vector, form a subspace of $\RR^n$. 
+As we have seen in the previous section, a (non-zero) scalar multiple of an eigenvector is an eigenvector.  So for any given eigenvalue $\lambda$ there are infinitely many eigenvectors associated with it.  In fact, the eigenvectors associated with $\lambda$, together with the zero vector, form a subspace of $\RR^n$. 
 
 \begin{theorem}\label{th:eigenspace}
     Let $A$ be an $n\times n$ matrix and let $\lambda$ be an eigenvalue of $A$.  Then the set of all eigenvectors associated with $\lambda$, together with the zero vector, is a subspace of $\RR^n$.
@@ -228,7 +228,7 @@ This time there is one free variable.  %Setting $x_3=t$, we also get $x_1=t$ and
 The eigenvectors in $\mathcal{S}_4$ have the form $\begin{bmatrix}t\\t\\t\end{bmatrix}$, so a possible basis for the eigenspace $\mathcal{S}_4$ is given by $\left\{\begin{bmatrix}1\\1\\1\end{bmatrix}\right\}$.
 
 \begin{remark}
-    Recall that $\lambda_1=1$ has algebraic multiplicity $2$.  Note that $\text{dim}(\mathcal{S}_{\lambda_1})=2$.  We say that  $\lambda_1$ has geometric multiplicity $2$.  We have to be careful, however, not to assume that geometric and algebraic multiplicity are always the same.  We will revisit this issue later in the text.
+    Recall that $\lambda_1=1$ has algebraic multiplicity $2$.  Note that $\text{dim}(\mathcal{S}_{\lambda_1})=2$.  We say that  $\lambda_1$ has geometric multiplicity $2$.  We have to be careful, and not draw hasty conclusions. Geometric and algebraic multiplicity are NOT always the same!  We will revisit this issue later in the text.
 \end{remark}
 
 \end{explanation}
