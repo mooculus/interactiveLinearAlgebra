@@ -1,0 +1,128 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+\title{Similar Matrices} \license{CC BY-NC-SA 4.0}
+
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Similar Matrices}
+\end{onlineOnly}
+
+% In the previous section, we discovered that eigenvalues of diagonal matrices are the values along the diagonal.  This property is useful for computations, and for understanding linear transformations.  In this section, we consider square matrices that can be written as a product involving a diagonal matrix and have eigenvalues identical to those of the diagonal matrix.  Being able to express a square matrix as such a product can offer significant computational advantages.
+
+\begin{definition}\label{def:similar}
+If $A$ and $B$ are $n \times n$ matrices, we say that $A$ and $B$ are \dfn{similar}, if $B = P^{-1}AP$ for some invertible matrix $P$.  In this case we write $A \sim B$.
+\end{definition}
+
+Similar matrices share many properties. 
+
+\begin{theorem}\label{th:properties_similar}
+If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_det} $\det(A) = \det(B)$,
+\item\label{th:properties_similar_rank} $\mbox{rank}(A) = \mbox{rank}(B)$,
+\item\label{th:properties_similar_char_poly} $A$ and $B$ have the same characteristic equations, and
+\item\label{th:properties_similar_eig} $A$ and $B$ have the same eigenvalues.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let $B = P^{-1}AP$ for some invertible matrix $P$. 
+
+For \ref{th:properties_similar_det}, $\det B = \det(P^{-1}) \det A \det P = \det A$ because $\det(P^{-1}) = 1/ \det P$ (Theorem \ref{th:detofinverse}). %and determinants commute (see \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/DET-0040/main}{Properties of the Determinant}).
+
+Similarly, for \ref{th:properties_similar_rank} $\mbox{rank} B = \mbox{rank}(P^{-1}AP) = \mbox{rank} A$, because multiplication by an invertible matrix cannot change the rank.  To see this, note that any invertible matrix is a product of elementary matrices.  Multiplying by elementary matrices is equivalent to performing elementary row (column) operations on $A$, which does not change the row (column) space, nor the rank.  It follows that similar matrices have the same rank. 
+
+As for \ref{th:properties_similar_char_poly},
+\begin{align*}
+\det(B-\lambda I) &= \det \{P^{-1}AP-\lambda(P^{-1}P)\} \\
+&= \det \{ P^{-1}(A-\lambda I)P\} \\
+&= \det (A-\lambda I),
+\end{align*} so $A$ and $B$ have the same characteristic equation.
+Finally, \ref{th:properties_similar_char_poly} implies \ref{th:properties_similar_eig} because the eigenvalues of a matrix are the roots of its characteristic polynomial.
+\end{proof}
+
+\begin{remark}\label{rem:fivePropSim}
+Sharing the four properties in Theorem~\ref{th:properties_similar} does not guarantee that two matrices are similar. The matrices
+$A = \begin{bmatrix}
+1 & 1 \\
+0 & 1
+\end{bmatrix}$ and $I = \begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}$ have the same determinant, rank, characteristic polynomial, and eigenvalues, but they are not similar because $P^{-1}IP = I$ for any invertible matrix $P$.
+\end{remark}
+
+The next theorem shows that similarity is preserved under inverses, transposes, and powers:
+
+\begin{theorem}\label{th:other_properties_similar}
+If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_inverse} $A^{-1} \sim B^{-1}$ (provided that the inverses exist),
+\item\label{th:properties_similar_transpose} $A^T \sim B^T$, and
+\item\label{th:properties_similar_powers} $A^k \sim B^k$ for all integers $k \geq 1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+See Practice Problem~\ref{prob:similarproperties}.
+\end{proof}
+
+\section*{Practice Problems}
+
+\begin{problem}\label{prob:similarproperties}
+Prove that if $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_inverse} $A^{-1} \sim B^{-1}$ (provided that the inverses exist),
+\item\label{th:properties_similar_transpose} $A^T \sim B^T$, and
+\item\label{th:properties_similar_powers} $A^k \sim B^k$ for all integers $k \geq 1$.
+\end{enumerate} 
+(See Theorem \ref{th:other_properties_similar})
+\end{problem}
+
+\begin{problem}
+    Let $$A=\begin{bmatrix}1 & 2 & 0\\2 & -1 & -2\\0 & -2 & 1\end{bmatrix}$$
+    \begin{question}
+    The eigenvalues of $A$ are known to be $\lambda_1=-3$, $\lambda_2=3$ and $\lambda_3=1$.
+    Find the corresponding eigenspaces.
+$$\mathcal{S}_{-3}=\text{span}\left(\begin{bmatrix}\answer{-1}\\\answer{2}\\1\end{bmatrix}\right)$$
+$$\mathcal{S}_3=\text{span}\left(\begin{bmatrix}\answer{-1}\\\answer{-1}\\1\end{bmatrix}\right)$$
+$$\mathcal{S}_1=\text{span}\left(\begin{bmatrix}\answer{1}\\\answer{0}\\1\end{bmatrix}\right)$$
+We will refer to the eigenvectors you listed above as $\vec{x}_1$, $\vec{x}_2$ and $\vec{x}_3$.
+\end{question}
+\begin{question}
+    Form matrix $P$ whose columns are the eigenvectors $\vec{x}_1$, $\vec{x}_2$, and $\vec{x}_3$ you found in the previous part.  Use technology to find $P^{-1}$.
+    $$P^{-1}=\frac{1}{6}\begin{bmatrix}\answer{-1} & \answer{2} & \answer{1}\\\answer{-2} & \answer{-2} & \answer{2}\\\answer{3} & \answer{0} & \answer{3}\end{bmatrix}$$
+\end{question}
+\begin{question}
+    Find the product $P^{-1}AP$.  What did you get?
+    Which of the following is true?
+    \begin{multipleChoice}
+    \choice{$A\sim P$}
+    \choice{$A\sim D$ for ANY diagonal matrix $D$}
+    \choice[correct]{$A\sim D$ for the diagonal matrix $D$ whose diagonal entries are the eigenvalues of $A$}
+    \end{multipleChoice}
+\end{question}
+
+\end{problem}
+
+\begin{problem}\label{prob:similarproperties_ev}
+Let $\lambda$ be an eigenvalue of $A$ with corresponding eigenvector $\vec{x}$. If $B = P^{-1}AP$ is similar to $A$, show that $P^{-1}\vec{x}$ is an eigenvector of $B$ corresponding to $\lambda$.
+\end{problem}
+
+
+
+\section*{Text Source}
+The text in this section is a compilation of material from Section 7.2.1 of Ken Kuttler's \href{https://open.umn.edu/opentextbooks/textbooks/a-first-course-in-linear-algebra-2017}{\it A First Course in Linear Algebra} (CC-BY) and Section 5.5 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications} (CC-BY-NC-SA).
+
+Ken Kuttler, {\it  A First Course in Linear Algebra}, Lyryx 2017, Open Edition, p. 362-364.
+
+% Many of the Practice Problems are Exercises from 
+% W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, pp. 298-310.
+
+\end{document}
