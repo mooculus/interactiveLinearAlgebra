@@ -17,7 +17,7 @@
 
 \section*{Explorations}
 
-\begin{exploration}\label{exp:coordSystemLinCombs}
+\begin{exploration}\label{exp:coordSystemLinCombs1}
 Use the interactive below to answer the questions
 % https://www.geogebra.org/classic/qw5dpmqq
 \begin{center}
@@ -27,9 +27,9 @@ Use the interactive below to answer the questions
     List the coordinates for each $P_i$ with respect to the given coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
     $$P_1=\left(\answer{1},\answer{1}\right)$$
     $$P_2=\left(\answer{-2},\answer{0}\right)$$
-    $$P_1=\left(\answer{0},\answer{-1}\right)$$
-    $$P_1=\left(\answer{-2},\answer{3}\right)$$
-    $$P_1=\left(\answer{3},\answer{-2}\right)$$
+    $$P_3=\left(\answer{0},\answer{-1}\right)$$
+    $$P_4=\left(\answer{-2},\answer{3}\right)$$
+    $$P_5=\left(\answer{3},\answer{-2}\right)$$
 \end{question}
 
 \begin{question}
@@ -37,9 +37,9 @@ Move point $B$ to coincide with $P_3$
     List the coordinates for each $P_i$ with respect to the new coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
     $$P_1=\left(\answer{1},\answer{-1}\right)$$
     $$P_2=\left(\answer{-2},\answer{0}\right)$$
-    $$P_1=\left(\answer{0},\answer{1}\right)$$
-    $$P_1=\left(\answer{-2},\answer{-3}\right)$$
-    $$P_1=\left(\answer{3},\answer{2}\right)$$
+    $$P_3=\left(\answer{0},\answer{1}\right)$$
+    $$P_4=\left(\answer{-2},\answer{-3}\right)$$
+    $$P_5=\left(\answer{3},\answer{2}\right)$$
     How do these coordinates compare to the coordinates in the previous question?  Explain why this is happening. (Hint: you can use the RESET button to return to the original coordinate system to compare.)
 \end{question}
 
@@ -48,9 +48,9 @@ Press RESET to return to the original coordinate system.  Move point $A$ to coin
     List the coordinates for each $P_i$ with respect to the new coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
     $$P_1=\left(\answer{1},\answer{0}\right)$$
     $$P_2=\left(\answer{-2},\answer{2}\right)$$
-    $$P_1=\left(\answer{0},\answer{-1}\right)$$
-    $$P_1=\left(\answer{-2},\answer{5}\right)$$
-    $$P_1=\left(\answer{3},\answer{-5}\right)$$
+    $$P_3=\left(\answer{0},\answer{-1}\right)$$
+    $$P_4=\left(\answer{-2},\answer{5}\right)$$
+    $$P_5=\left(\answer{3},\answer{-5}\right)$$
     How do these coordinates compare to the coordinates in the original coordinate system?  Explain why this is happening. (Hint: you can use the reset button to return to the original coordinate system to compare.)
 \end{question}
 
@@ -65,6 +65,37 @@ $$\overrightarrow{OP}_5=\answer{3}\overrightarrow{OA}+\answer{-2}\overrightarrow
 Discuss the relationship between your answers to the first question and your answers here.
 \end{question}
 
+\begin{question}
+    Move point $B$ to coincide with $P_2$.  What do you observe?  Do vectors $\overrightarrow{OA}$ and $\overrightarrow{OB}$ determine a good coordinate system for the plane?  Can we express every point in the plane as a linear combination of $\overrightarrow{OA}$ and $\overrightarrow{OB}$?  Can we express \textit{some} points in the plane as linear combinations of $\overrightarrow{OA}$ and $\overrightarrow{OB}$?
+\end{question}
+
+\end{exploration}
+
+\begin{exploration}\label{exp:coordSystemLinCombs2}
+We will use the same set-up as in the previous exploration but introduce an additional vector $\overrightarrow{OC}$.
+
+ % https://www.geogebra.org/classic/b3k96x2w
+
+ \begin{center}
+     \geogebra{b3k96x2w}{800}{600}
+ \end{center}
+
+ \begin{question}
+     Suppose we want to express $P_1$ using a coordinate system determined by three vectors $\overrightarrow{OA}$, $\overrightarrow{OB}$, and $\overrightarrow{OC}$.  If the coordinates are to be of the form $(A\text{-coordinate}, B\text{-coordinate}, C\text{-coordinate})$, how many ways do you think there would be to express $P_1$? Fill in the missing coordinates for $P_1$ below.
+     $$P_1=\left(\answer{1},\answer{1},0\right)$$
+     $$P_1=\left(0,\answer{2},\answer{0.5}\right)$$
+     $$P_1=\left(\answer{2}, 0, \answer{-0.5}\right)$$
+     $$P_1=\left(\answer{3},-1,-1\right)$$
+ \end{question}
+
+ \begin{question}
+     Based on your work above, express $\overrightarrow{OP_1}$ as a linear combination of $\overrightarrow{OA}$, $\overrightarrow{OB}$, and $\overrightarrow{OC}$.  How many ways do you think there are to do this?
+ \end{question}
+
+ \begin{question}
+     Compare and contrast the coordinate systems in this exploration and Exploration \ref{exp:coordSystemLinCombs1}.  
+ \end{question}
+    
 \end{exploration}
 
 \end{document} 
