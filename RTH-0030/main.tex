@@ -92,7 +92,7 @@ Our geometric observations will help us develop a method for finding $\vec{z}$ .
 
 What we observed above, holds in general.  We will use this fact to find $\vec{z}$.
 
-Every vector in $\text{col}(A)$ can be written in the form $A\vec{x}$ for some $\vec{x}$ in $\RR^m$.  Our goal is to find $\vec{z}$ such that $A\vec{z}$ is the orthogonal projection of $\vec{b}$ onto $\text{col}(A)$. By Corollary \ref{cor:orthProjOntoW}, every vector $A\vec{x}$ in $\text{col}(A)$ is orthogonal to $\vec{b}-A\vec{z}$.  This means $\vec{b}-A\vec{z}$ is in the orthogonal complement of $\text{col}(A)$, which is $\text{null}(A^T)$.
+Every vector in $\text{col}(A)$ can be written in the form $A\vec{x}$ for some $\vec{x}$ in $\RR^m$.  Our goal is to find $\vec{z}$ such that $A\vec{z}$ is the orthogonal projection of $\vec{b}$ onto $\text{col}(A)$. By Corollary \ref{cor:orthProjOntoW}, every vector $A\vec{x}$ in $\text{col}(A)$ is orthogonal to $\vec{b}-A\vec{z}$.  %This means $\vec{b}-A\vec{z}$ is in the orthogonal complement of $\text{col}(A)$, which is $\text{null}(A^T)$.
 
 Therefore, we have
 %{\begin{eqnarray*}
@@ -418,11 +418,9 @@ Enter answers in fraction form below.
 $$x=\answer{\frac{-20}{12}},\quad y=\answer{\frac{46}{12}},\quad z=\answer{\frac{95}{12}}$$
 \end{problem}
 
-\emph{Problems \ref{prob:leastSq2a}-\ref{prob:leastSq2b}}
-
-Find a linear function of best fit for each of the following sets of data points.  Examine how well your line fits the points by typing the equation of the line into the Desmos window.
 
 \begin{problem}\label{prob:leastSq2a}
+Find a linear function of best fit for the given set of data points.  Examine how well your line fits the points by typing the equation of the line into the Desmos window.
 $$(2,4), (4,3), (7,2), (8,1)$$
 Enter your answers in fraction form.
 $$f(x)=\answer{\frac{-6}{13}}x+\answer{\frac{64}{13}}$$
@@ -434,6 +432,7 @@ $$f(x)=\answer{\frac{-6}{13}}x+\answer{\frac{64}{13}}$$
 \end{problem}
 
 \begin{problem}\label{prob:leastSq2b}
+Find a linear function of best fit for the given set of data points.  Examine how well your line fits the points by typing the equation of the line into the Desmos window.
 $$(-2, 3), (-1,1), (0,0), (1, -2), (2, -4)$$
 
 $$f(x)=\answer{-1.7}x+\answer{-0.4}$$
@@ -449,21 +448,21 @@ Use Octave to find the least squares approximating quadratic function for the fo
 $$(-2,1),(0,0),(3,2),(4,3)$$
 Round your answers to three decimal places.
 $$f(x)=\answer{0.194}x^2+\answer{-0.024}x+\answer{0.127}$$
-For more information about doing least squares with Octave, please see \href{https://ximera.osu.edu/linearalgebradzv3/xOctave/OCT_orth/main}{Octave for Chapter 9}.
+For more information about doing least squares with Octave, please see \href{https://ximera.osu.edu/corela/xOctave/OCT_orth/main}{Octave for Chapter 9}.
 \end{problem}
 
-\begin{problem}\label{ex:5_6_14}
-If $A$ is an $m \times n$ matrix, it can be proved that there exists a unique $n \times m$ matrix $A^{\#}$ satisfying the following four conditions: $AA^{\#}A = A$; $A^{\#}AA^{\#} = A^{\#}$; $AA^{\#}$ and $A^{\#}A$ are symmetric. The matrix $A^{\#}$ is called the \emph{Moore-Penrose} inverse.
+% \begin{problem}\label{ex:5_6_14}
+% If $A$ is an $m \times n$ matrix, it can be proved that there exists a unique $n \times m$ matrix $A^{\#}$ satisfying the following four conditions: $AA^{\#}A = A$; $A^{\#}AA^{\#} = A^{\#}$; $AA^{\#}$ and $A^{\#}A$ are symmetric. The matrix $A^{\#}$ is called the \emph{Moore-Penrose} inverse.
 
-\begin{enumerate}
-\item If $A$ is square and invertible, show that $A^{\#} = A^{-1}$.
+% \begin{enumerate}
+% \item If $A$ is square and invertible, show that $A^{\#} = A^{-1}$.
 
-\item If $\text{rank} A = m$, show that $A^{\#} = A^{T}(AA^{T})^{-1}$.
+% \item If $\text{rank} A = m$, show that $A^{\#} = A^{T}(AA^{T})^{-1}$.
 
-\item If $\text{rank} A = n$, show that $A^{\#} = (A^{T}A)^{-1}A^{T}$.  (Notice the appearance of the Moore-Penrose inverse arrived when we solve the normal equations, arriving at Equation (\ref{eq:leastSquaresZ})). 
+% \item If $\text{rank} A = n$, show that $A^{\#} = (A^{T}A)^{-1}A^{T}$.  (Notice the appearance of the Moore-Penrose inverse arrived when we solve the normal equations, arriving at Equation (\ref{eq:leastSquaresZ})). 
 
-\end{enumerate}
-\end{problem}
+% \end{enumerate}
+% \end{problem}
 
 
 % In many scientific investigations, data are collected that relate two variables. For example, if $x$ is the
