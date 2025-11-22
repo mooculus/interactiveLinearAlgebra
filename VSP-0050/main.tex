@@ -12,7 +12,7 @@
 \section*{Abstract Vector Spaces}
 \end{onlineOnly}
 
-In \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/VSP-0020/main}{Subspaces of $\RR^n$} we discussed $\RR^n$ as a vector space and introduced the notion of a subspace of $\RR^n$.  
+Earlier in the text we discussed $\RR^n$ as a vector space and introduced the notion of a subspace of $\RR^n$.  
 In this section we will consider sets other than $\RR^n$ that have two operations and satisfy the same properties as $\RR^n$.  Such sets, together with the operations of addition and scalar multiplication, will also be called vector spaces.
 
 \subsection*{Properties of Vector Spaces} 
@@ -51,9 +51,9 @@ and satisfies the following properties:
   $1\vec{u}=\vec{u}$
   \end{enumerate}
 
-  \begin{remark}
-      All scalars in this chapter are assumed to be real numbers.  Complex scalars are considered in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0050/main}{Complex Matrices}.
-  \end{remark}
+  % \begin{remark}
+  %     All scalars in this chapter are assumed to be real numbers.  Complex scalars are considered in \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0050/main}{Complex Matrices}.
+  % \end{remark}
 
 In the next two examples we will explore two sets other than $\RR^n$ endowed with addition and scalar multiplication and satisfying the same properties.
 
@@ -378,25 +378,60 @@ See Practice Problem \ref{prob:spanisasubspaceabstract}.
 \end{proof}
 
 \section*{Practice Problems}
-\emph{Problems \ref{prob:abstractvectspace1}-\ref{prob:abstractvectspace4}}
 
-Is the set of all points in $\mathbb{R}^2$ a vector space under the given definitions of addition and scalar multiplication?    In each case be specific about which vector space properties hold and which properties fail.
 
   \begin{problem}\label{prob:abstractvectspace1}
+Given the set of all points in $\mathbb{R}^2$, define the operations of addition and scalar multiplication as follows:
+  
   Addition: $(a, b)+(c, d)=(a+d, b+c)$\\ Scalar Multiplication: $k(a, b)=(ka, kb)$
+
+  Is addition, as defined above, commutative?
+  \begin{multipleChoice}
+      \choice{Yes}
+      \choice[correct]{No}
+  \end{multipleChoice}
   \end{problem}
   
-  \begin{problem}\label{prob:abstractvectspace2}
+  \begin{problem}\label{prob:abstractvectspace2} Given the set of all points in $\mathbb{R}^2$, define the operations of addition and scalar multiplication as follows:
+  
   Addition: $(a, b)+(c, d)=(0, b+d)$\\ Scalar Multiplication: $k(a, b)=(ka, kb)$
+
+  Is addition, as defined above, commutative?
+  \begin{multipleChoice}
+      \choice[correct]{Yes}
+      \choice{No}
+  \end{multipleChoice}
+
+Is there an additive identity?
+  \begin{multipleChoice}
+      \choice{Yes}
+      \choice[correct]{No}
+  \end{multipleChoice}
+  
   \end{problem}
   
   \begin{problem}\label{prob:abstractvectspace3}
-  Addition: $(a, b)+(c, d)=(a+c, b+d)$\\ Scalar Multiplication: $k(a, b)=(a, kb)$
-  \end{problem}
+  Given the set of all points in $\mathbb{R}^2$, define the operations of addition and scalar multiplication as follows:
+   
+   Addition: $(a, b)+(c, d)=(a+c, b+d)$\\ Scalar Multiplication: $k(a, b)=(a, kb)$
+
+   Is the Distributive Property over Vector Addition satisfied?
+\begin{multipleChoice}
+      \choice[correct]{Yes}
+      \choice{No}
+  \end{multipleChoice}
+
+  Is the Distributive Property over Scalar Addition satisfied?
+\begin{multipleChoice}
+      \choice{Yes}
+      \choice[correct]{No}
+  \end{multipleChoice}
+   
+   \end{problem}
   
-  \begin{problem}\label{prob:abstractvectspace4}
-  Addition: $(a, b)+(c, d)=(a-c, b-d)$\\ Scalar Multiplication: $k(a, b)=(ka, kb)$
-  \end{problem}
+  % \begin{problem}\label{prob:abstractvectspace4}
+  % Addition: $(a, b)+(c, d)=(a-c, b-d)$\\ Scalar Multiplication: $k(a, b)=(ka, kb)$
+  % \end{problem}
  
    
  \begin{problem}\label{prob:abstractvectspace5}
@@ -405,33 +440,49 @@ Is the set of all points in $\mathbb{R}^2$ a vector space under the given defini
  Verify that $\mathcal{F}$ is a vector space.
  \end{problem}
  
- \begin{problem}\label{prob:abstractvectspacediffeq}
- A differential equation is an equation that contains derivatives.  Consider the differential equation:
- \begin{align}\label{diffeq} f''+f=0\end{align}
-A solution to such an equation is a function.
-  \begin{enumerate}
-  \item Verify that $f(x)=\sin x$ is a solution to (\ref{diffeq}).
-  \item Is $f(x)=2\sin x$ a solution?
-  \item Is $f(x)=\cos x$ a solution?
-  \item Is $f(x)=\sin x+\cos x$ a solution?
-  \item Let $S$ be the set of all solutions to (\ref{diffeq}).  Prove that $S$ is a vector space.
-  \end{enumerate}
-  \end{problem}
+%  \begin{problem}\label{prob:abstractvectspacediffeq}
+%  A differential equation is an equation that contains derivatives.  Consider the differential equation:
+%  \begin{align}\label{diffeq} f''+f=0\end{align}
+% A solution to such an equation is a function.
+%   \begin{enumerate}
+%   \item Verify that $f(x)=\sin x$ is a solution to (\ref{diffeq}).
+%   \item Is $f(x)=2\sin x$ a solution?
+%   \item Is $f(x)=\cos x$ a solution?
+%   \item Is $f(x)=\sin x+\cos x$ a solution?
+%   \item Let $S$ be the set of all solutions to (\ref{diffeq}).  Prove that $S$ is a vector space.
+%   \end{enumerate}
+%   \end{problem}
   
-\begin{problem}\label{prob:abstractvectspacecomplex}
-In this problem we will check that the set $\mathbb{C}$ of all complex numbers is in fact a vector space.  Let $z_1 = a_1 + b_1 i$ be a complex number.  Similarly, let $z_2 = a_2 + b_2 i$, $z_3 = a_3 + b_3 i$ be complex numbers, and let $k$ and $p$ be real number scalars.  Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.
-\end{problem}
+% \begin{problem}\label{prob:abstractvectspacecomplex}
+% In this problem we will check that the set $\mathbb{C}$ of all complex numbers is in fact a vector space.  Let $z_1 = a_1 + b_1 i$ be a complex number.  Similarly, let $z_2 = a_2 + b_2 i$, $z_3 = a_3 + b_3 i$ be complex numbers, and let $k$ and $p$ be real number scalars.  Check that complex numbers are closed under addition and multiplication, and that they satisfy each of the vector space properties.
+% \end{problem}
 
 \begin{problem}\label{prob:abstractvectspace6}
-Refer to Example \ref{ex:centralizerofA} and describe all elements of $C_I$, where $I$ is a $3\times 3$ identity matrix.
+Recall that for a fixed matrix $A$ in $\mathbb{M}_{n,n}$, the set $C_A$ of all $n\times n$ matrices that commute with $A$ under matrix multiplication  is a subspace of $\mathbb{M}_{n,n}$. (Example \ref{ex:centralizerofA})
+
+Describe all elements of $C_I$, where $I$ is a $3\times 3$ identity matrix.
 \end{problem}
   
 \begin{problem}\label{prob:abstractvectspace7}
-Is the subset of all invertible $n\times n$ matrices a subspace of $\mathbb{M}_{n,n}$?  Prove your claim. 
+Is the subset of all invertible $n\times n$ matrices a subspace of $\mathbb{M}_{n,n}$? 
+
+\begin{multipleChoice}
+      \choice{Yes}
+      \choice[correct]{No}
+  \end{multipleChoice}
+
+Prove your claim. 
 \end{problem}
 
 \begin{problem}\label{prob:symmetricsubspace}
-Is the subset of all symmetric $n\times n$ matrices a subspace of $\mathbb{M}_{n,n}$?  (See Definition \ref{def:symmetricandskewsymmetric}.)  Prove your claim. 
+Is the subset of all symmetric $n\times n$ matrices a subspace of $\mathbb{M}_{n,n}$?  
+
+\begin{multipleChoice}
+      \choice[correct]{Yes}
+      \choice{No}
+  \end{multipleChoice}
+
+Prove your claim. 
 \end{problem}
 
 \begin{problem}\label{prob:abstractvectspace8}
@@ -440,9 +491,9 @@ $$Z=\{B : BY=YB \mbox{ for all } Y \in \mathbb{M}_{n,n}\}$$
 
 Is $Z$ a subspace of $\mathbb{M}_{n,n}$?
 
-\begin{hint}
-Don't forget to check that $Z$ is not empty!
-\end{hint}
+% \begin{hint}
+% Don't forget to check that $Z$ is not empty!
+% \end{hint}
 \end{problem}
 
 \begin{problem}\label{prob:abstractvectspace9}
@@ -454,7 +505,7 @@ Find $\mbox{span}(1, x, x^2, x^3)$.
 \end{problem}
 
 \begin{problem}\label{prob:spanisasubspaceabstract}
-Prove Theorem \ref{th:spanisasubspaceabstract}.
+Let $V$ be a vector space.  Let $S$ be any subset of $V$.  Prove that $U=\mbox{span}(S)$ is a subspace of $V$. (Theorem \ref{th:spanisasubspaceabstract})
 \end{problem}
 
 \section*{Text Source} The discussion on polynomials was adapted from Section 6.1 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
