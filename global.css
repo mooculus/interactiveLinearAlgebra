@@ -217,3 +217,17 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 .outcomeHead:hover + .outcomeContent {
 	display: block;
 } */
+
+/* 202511:Add proof label/background color */
+.proof::before {
+        content: "proof:";
+        display: inline;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding-right: 0.5em;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.proof {
+	background-color: whitesmoke;
+}
