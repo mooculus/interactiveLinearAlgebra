@@ -326,22 +326,27 @@ Coordinate vectors will play a vital role in establishing one of the most fundam
 
 \section*{Practice Problems}
 \begin{problem}\label{prob:CABlinind}
-Prove that set $\mathcal{B}=\left\{\begin{bmatrix}1&1\\0&0\end{bmatrix},\begin{bmatrix}1&0\\0&1\end{bmatrix}\right\}$ of Example \ref{ex:CAbasis} is linearly independent.
+Consider the subset
+\begin{equation*}
+C_A = \{X \in\mathbb{M}_{2,2} : AX = XA \}
+\end{equation*}
+of $\mathbb{M}_{2,2}$. (See Example \ref{ex:CAbasis}) 
+
+Prove that set $\mathcal{B}=\left\{\begin{bmatrix}1&1\\0&0\end{bmatrix},\begin{bmatrix}1&0\\0&1\end{bmatrix}\right\}$ is a linearly independent subset of $C_A$.
 \end{problem}
 
-\emph{Problems \ref{prob:linindabstractvsp1}-\ref{prob:linindabstractvsp3}}
-
-Show that each of the following sets of vectors is linearly independent.
-
 \begin{problem}\label{prob:linindabstractvsp1}
-$$\{1 + x, 1 - x, x + x^{2}\}$$ in $\mathbb{P}^{2}$
+Show that the following subset of $\mathbb{P}^{2}$ is linearly independent, and is a basis of $\mathbb{P}^{2}$.
+$$\{1 + x, 1 - x, x + x^{2}\}$$
 \end{problem}
 
 \begin{problem}\label{prob:linindabstractvsp2}
-$$\{x^{2}, x + 1, 1 - x - x^{2}\}$$ in $\mathbb{P}^{2}$
+Show that the following subset of $\mathbb{P}^{2}$ is linearly independent, and is a basis of $\mathbb{P}^{2}$.
+$$\{x^{2}, x + 1, 1 - x - x^{2}\}$$ 
 \end{problem}
 
 \begin{problem}\label{prob:linindabstractvsp3}
+Show that the following subset of $\mathbb{M}_{2,2}$ is linearly independent, and is a basis of $\mathbb{M}_{2,2}$.
 $$
 \left\{
 \begin{bmatrix}
@@ -364,34 +369,24 @@ $$
 0 & 1
 \end{bmatrix}
 \right\}$$ 
-
-in $\mathbb{M}_{2,2}$
 \end{problem}
-
-
-
-\begin{problem}\label{prob:linindabstractvsp123}
-Show that each set in Practice Problems \ref{prob:linindabstractvsp1}-\ref{prob:linindabstractvsp3} is a basis for its respective vector space.
-\end{problem}
-
-\emph{Problems \ref{prob:coordvectors1}-\ref{prob:coordvectors2}}
-
-Find the coordinate vector for $p(x)=6-2x+4x^2$ with respect to the given ordered basis $\mathcal{B}$ of $\mathbb{P}^2$.
 
 \begin{problem}\label{prob:coordvectors1}
+Find the coordinate vector for $p(x)=6-2x+4x^2$ in $\mathbb{P}^2$ with respect to 
 $$\mathcal{B}=\{1 + x, 1 - x, x + x^{2}\}$$
 Answer:
 $$[p(x)]_{\mathcal{B}}=\begin{bmatrix}\answer{0}\\\answer{6}\\\answer{4}\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}\label{prob:coordvectors2}
+Find the coordinate vector for $p(x)=6-2x+4x^2$ in $\mathbb{P}^2$ with respect to 
 $$\mathcal{B}=\{x^{2}, x + 1, 1 - x - x^{2}\}$$
 Answer:
 $$[p(x)]_{\mathcal{B}}=\begin{bmatrix}\answer{8}\\\answer{2}\\\answer{4}\end{bmatrix}$$
 \end{problem}
 
 \begin{problem}\label{prob:coordvectors3}
-Find the coordinate vector for $A=\begin{bmatrix}4&-3\\1&2\end{bmatrix}$ with respect to the ordered basis
+Find the coordinate vector for $A=\begin{bmatrix}4&-3\\1&2\end{bmatrix}$ in $\mathbb{M}_{2,2}$ with respect to the ordered basis
 $$\mathcal{B}=
 \left\{
 \begin{bmatrix}
@@ -418,9 +413,9 @@ Answer:
 $$[A]_{\mathcal{B}}=\begin{bmatrix}\answer{-1}\\\answer{5}\\\answer{-4}\\\answer{-2}\end{bmatrix}$$
 \end{problem}
 
-\begin{problem}\label{prob:basisforabstractvectspace}
-Let $V$ be a vector space of dimension $3$.  Suppose $S=\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}$ is linearly independent in $V$.  Show that $S$ is a basis for $V$.
-\end{problem}
+% \begin{problem}\label{prob:basisforabstractvectspace}
+% Let $V$ be a vector space of dimension $3$.  Suppose $S=\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}$ is linearly independent in $V$.  Show that $S$ is a basis for $V$.
+% \end{problem}
 
 \section*{Text Source} The discussion of the zero space was adapted from Section 6.3 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
 
