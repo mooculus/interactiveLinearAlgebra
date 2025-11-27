@@ -188,11 +188,6 @@ If the problem environment(s) have the "titletext" attribute defined, then overw
 Note: This is used to do automatic translation, but could also be used to change the default text in *any* way we would want,
 e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 */
-.problem-environment[titletext]::before {
-	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
-	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
-	content:attr(titletext) attr(numbered) ".";
-}
 
 .theorem-like[titletext]::before {
 	content:attr(titletext);
@@ -200,6 +195,12 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 
 .feedback[titletext]::before {
 	content:attr(titletext) ": ";
+}
+
+.problem-environment[titletext]::before {
+	/* Numbered everything in CSS is causing trouble.  TeX should decide the numbering. */
+	/* content:"${nameOfClass} " counter($counterToIncrement) ". ";*/
+	content:attr(titletext) attr(numbered) ".";
 }
 
 
@@ -217,3 +218,28 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 .outcomeHead:hover + .outcomeContent {
 	display: block;
 } */
+
+/* 202511:Add proof label/background color */
+.proof::before {
+        content: "proof:";
+        display: inline;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding-right: 0.5em;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.proof {
+	background-color: whitesmoke;
+}
+
+
+/* No numbers/left border for explanation-inside-example */
+.example .explanation::before {
+    content: attr(titletext) ":";
+}
+
+.example .explanation {
+	border-left: unset;
+	padding-left: 0px;
+}
