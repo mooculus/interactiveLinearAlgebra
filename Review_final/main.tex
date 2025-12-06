@@ -1,0 +1,336 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+
+ \title{Review for the Final Exam} \license{CC BY-NC-SA 4.0}
+
+\begin{document}
+
+\begin{abstract}
+ \end{abstract}
+\maketitle
+
+\begin{onlineOnly}
+\section*{Review Problems for the Final Exam}
+\end{onlineOnly}
+
+\begin{exercise}
+    Suppose $A$ is a $3\times 5$ matrix, and $\text{rank}(A)=2$.  
+
+    \begin{enumerate}
+    \item Which of the following are possibilities for a non-zero vector $\vec{b}$? (Check all that apply.)
+
+    \begin{selectAll}
+    \choice{$A\vec{x}=\vec{b}$ has a unique solution.}
+    \choice[correct]{$A\vec{x}=\vec{b}$ has infinitely many solutions.}
+    \choice[correct]{$A\vec{x}=\vec{b}$ has no solutions.}
+    \end{selectAll}
+\item Find the following dimensions.
+$$\text{dim}(\text{null}(A))=\answer{3},\quad \text{dim}(\text{col}(A))=\answer{2},\quad \text{dim}(\text{row}(A))=\answer{2}$$
+
+ \item Let $T$ be a linear transformation induced by $A$.  What is true about $T$? (Check all that apply.)
+
+    \begin{selectAll}
+        \choice[correct]{$T:\RR^5\rightarrow \RR^3$}
+        \choice{$T:\RR^3\rightarrow \RR^5$}
+        \choice{$\vec{0}$ is the ONLY vector that maps to $\vec{0}$.}
+        \choice[correct]{Infinitely many vectors map to $\vec{0}$.}
+        \choice[correct]{$\text{dim}(\text{im}(T))=2$}
+         \choice{$\text{dim}(\text{im}(T))=3$}
+         \choice{$\text{dim}(\text{im}(T))=5$}
+    \end{selectAll}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Suppose $A$ is a $7\times 2$ matrix, and $\text{rank}(A)=2$.  
+    \begin{enumerate}
+    \item Which of the following are possibilities for a non-zero vector $\vec{b}$? (Check all that apply.)
+
+    \begin{selectAll}
+    \choice[correct]{$A\vec{x}=\vec{b}$ has a unique solution.}
+    \choice{$A\vec{x}=\vec{b}$ has infinitely many solutions.}
+    \choice[correct]{$A\vec{x}=\vec{b}$ has no solutions.}
+    \end{selectAll}
+    
+    \item Which of the following is true about the columns of $A$?
+    \begin{multipleChoice}
+        \choice[correct]{Columns of $A$ are linearly independent.}
+        \choice{Columns of $A$ are linearly dependent.}
+        \choice{Not enough information is given to determine linear dependence/independence of the columns of $A$.}
+    \end{multipleChoice}
+
+    \item Let $T$ be a linear transformation induced by $A$.  What is true about $T$? (Check all that apply.)
+
+    \begin{selectAll}
+        \choice{$T:\RR^7\rightarrow \RR^2$}
+        \choice[correct]{$T:\RR^2\rightarrow \RR^7$}
+        \choice[correct]{$\vec{0}$ is the ONLY vector that maps to $\vec{0}$.}
+        \choice{Infinitely many vectors map to $\vec{0}$.}
+        \choice[correct]{$\text{dim}(\text{im}(T))=2$}
+         \choice{$\text{dim}(\text{im}(T))=7$}
+    \end{selectAll}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+You may use technology for this problem.  Let $$S=\text{span}\left(\begin{bmatrix}1\\-3\\14\end{bmatrix},\begin{bmatrix}17\\0\\16\end{bmatrix},\begin{bmatrix}10\\4\\-8\end{bmatrix}\right)$$.
+\begin{enumerate}
+    \item Describe $S$.
+    \begin{multipleChoice}
+        \choice{$S$ is ALL of $\RR^3$.}
+        \choice[correct]{$S$ is a plane in $\RR^3$.}
+        \choice{$S$ is a line in $\RR^3$.}
+    \end{multipleChoice}
+
+    \item Let $\mathcal{B}=\left\{\begin{bmatrix}1\\-3\\14\end{bmatrix},\begin{bmatrix}17\\0\\16\end{bmatrix},\begin{bmatrix}10\\4\\-8\end{bmatrix}\right\}$.  Is $\mathcal{B}$ a basis for $S$?
+    \begin{multipleChoice}
+        \choice{Yes}
+        \choice[correct]{No}
+    \end{multipleChoice}
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+    Let $A$ be a $3\times 3$ matrix.  Suppose $\text{rref}(A)=\begin{bmatrix}1 & 0 &-2\\0 & 1 & 1\\0 & 0& 0\end{bmatrix}$.  What do you know (or can deduce) from this information? (Check all that apply.)
+    \begin{selectAll}
+        \choice[correct]{$\det(A)=0$}
+        \choice[correct]{I can find the row space of $A$.}
+        \choice{I can find the column space of $A$.}
+        \choice[correct]{Columns of $A$ are linearly dependent.}
+        \choice[correct]{Rows of $A$ are linearly dependent.}
+        \choice[correct]{$A$ is not invertible.}
+        \choice[correct]{The null space of $A$ has infinitely many elements.}
+        \choice[correct]{0 is an eigenvalue of $A$.}
+    \end{selectAll}
+\end{exercise}
+
+\begin{exercise}
+Find the standard matrix, $A$, of the linear transformation $T:\RR^2\rightarrow \RR^2$ if $$T\left(\begin{bmatrix}1\\1\end{bmatrix}\right)=\begin{bmatrix}-1\\7\end{bmatrix},\quad T\left(\begin{bmatrix}0\\2\end{bmatrix}\right)=\begin{bmatrix}-4\\8\end{bmatrix}$$
+$$A=\begin{bmatrix}\answer{1} & \answer{-2}\\\answer{3} & \answer{4}\end{bmatrix}$$
+
+\end{exercise}
+
+\begin{exercise}
+Find the determinant of $A$ if 
+$$A=\begin{bmatrix}1 & 3 & 4 & 1\\k & 0 & 0 & 2\\0 & 1 & -2 & 1\\1 & -1 & 0 & 1\end{bmatrix}$$
+where $k$ is a constant.
+
+$$\mbox{det}(A)=\answer{16k-24}$$
+
+For what value of $k$ is $A$ singular?
+
+$$k=\answer{1.5}$$
+ \end{exercise}
+
+ \begin{exercise}
+Find the determinant of $A$ by first adding all other rows to the first row.
+$$A=\begin{bmatrix}x-1 & 2 & 3\\2 & -3 & x-2\\-2 & x & -2\end{bmatrix}$$
+
+$$\mbox{det}(A)=\answer{0}$$
+
+\subsection*{Source}
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 3.1.14 (a). 
+ \end{exercise}
+
+\begin{exercise}
+Use technology to find the line of best fit.
+ 
+\begin{center} 
+\desmos{xfoeppxjbn}{800}{400} 
+\end{center}
+ 
+Enter your computed coefficients to three decimal places.
+$$y=\answer[tolerance=0.01]{-0.915}x+\answer[tolerance=0.01]{0.393}$$
+Plot your your line of best fit in the Desmos interactive above.
+ 
+ \end{exercise}
+
+ \begin{exercise}
+
+True or False?  If False, you should come up with a counterexample.  
+
+Suppose $A$ and $B$ are $n\times n$ matrices ($n\geq 2$).
+
+ \begin{enumerate}
+ \item $\det{(AB)}=\det{A}\det{B}$
+
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+
+ \item If $\det{A}=\frac{1}{\det{B}}$, then $A=B^{-1}$.
+
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+
+\item $\det{(A+B)}=\det{A}+\det{B}$.
+
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+
+ \item If $A=2B$, then $\det{A}=2\det{B}$.
+
+ \begin{multipleChoice}
+ \choice{True}
+ \choice[correct]{False}
+ \end{multipleChoice}
+
+ \item If $A=-B$, then $\det{A}=-\det{B}$ when $n$ is odd, and $\det{A}=\det{B}$ when $n$ is even.
+
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $B$ be a parallelepiped determined by vectors $\vec{u}$, $\vec{v}$, and $\vec{w}$ in $\RR^3$.  Suppose the volume of $B$ is 10 cubic units.  Let $B'$ be a parallelepiped determined by $-\vec{u}$, $2\vec{v}$, and $\vec{w}+\vec{u}$.  Find the volume of $B'$.
+
+$$\text{volume of }B' = \answer{20}\,\text{cubic units}$$
+
+
+ \end{exercise}
+
+\begin{exercise}
+Find eigenvalues of $A=\begin{bmatrix} 2 & 4\\5 & 3\end{bmatrix}$.
+
+$$\text{Eigenvalues (in increasing order): }\lambda_1=\answer{-2}, \quad\lambda_2=\answer{7}$$
+
+Compute a basis for the eigenspace associated with each of these eigenvalues.
+
+A basis for $\mathcal{S}_{\lambda_1}$: $\left\{\begin{bmatrix}1\\\answer{-1}\end{bmatrix}\right\}$
+
+A basis for $\mathcal{S}_{\lambda_2}$: $\left\{\begin{bmatrix}4\\\answer{5}\end{bmatrix}\right\}$
+
+ \end{exercise}
+
+ \begin{exercise}
+Let $A=\begin{bmatrix} 2 & 3 & -3 \\ 1 & 0 & -1 \\ 1 & 1 & -2 \end{bmatrix}$ and let $B=\begin{bmatrix} 0 & 1 & 0 \\ 3 & 0 & 1 \\ 2 & 0 & 0 \end{bmatrix}$.
+
+Each of these matrices has the same characteristic polynomial, $(2-\lambda)(1+\lambda)^2$.  Which of the following is true?  (Justify your answer.)
+
+ \begin{multipleChoice}
+ \choice[correct]{$A$ is diagonalizable but $B$ is not diagonalizable.}
+ \choice{$A$ is not diagonalizable but $B$ is diagonalizable.}
+ \choice{Both $A$ and $B$ are diagonalizable.}
+  \choice{Neither $A$ nor $B$ is diagonalizable.}
+ \end{multipleChoice}
+
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Problem 3.3.26.
+\end{exercise}
+
+\begin{exercise}
+
+For square matrices $A$ and $B$.  True or False?  If False, you should come up with a counterexample.  If True, can you give a proof?
+
+ \begin{enumerate}
+ 
+ \item If $\lambda$ is an eigenvalue of $A$, then $\lambda - c$ is an eigenvalue of $A - cI$.
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+
+ \item If $\lambda$ is an eigenvalue of $A$, then $2\lambda$ is an eigenvalue of $2A$.
+ \begin{multipleChoice}
+ \choice[correct]{True}
+ \choice{False}
+ \end{multipleChoice}
+
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+If $A = \begin{bmatrix}
+5 & 0 & 0 \\
+0 & 3 & 7 \\
+0 & 7 & 3
+\end{bmatrix}$, find an orthogonal matrix $Q$ and a diagonal matrix $D$ such that $D=Q^{-1}AQ$.
+
+$$Q = \begin{bmatrix}
+1 & \answer{0} & \answer{0} \\
+\answer{0} & 1/\sqrt{2} & 1/\sqrt{2} \\
+\answer{0} & 1/\sqrt{2} & \answer{-1/\sqrt{2}}
+\end{bmatrix}$$
+$$D=\begin{bmatrix}\answer{5} & 0 &0\\0&\answer{10} & 0\\0 & 0 &\answer{-4}\end{bmatrix}$$
+Verify that the columns of $Q$ are orthonormal.  Are the rows of $Q$ orthonormal?
+
+ \end{exercise}
+
+ \begin{exercise}
+ Each set $V$ given below is a subset of $\mathbb{M}_{2,2}$ with the usual matrix operations.  Is $V$ a subspace of $\mathbb{M}_{2,2}$?
+\begin{enumerate}
+ \item $V$ is the set of $2 \times 2$ matrices with zero determinant.
+\begin{multipleChoice}
+ \choice{$V$ is a vector space.}
+ \choice[correct]{$V$ is not a vector space.}
+ \end{multipleChoice}
+
+ \item $V$ is the set of all $2 \times 2$ matrices whose entries sum to 0.
+
+ \begin{multipleChoice}
+ \choice[correct]{$V$ is a vector space.}
+ \choice{$V$ is not a vector space.}
+ \end{multipleChoice}
+ 
+\end{enumerate}
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 6.1.2. 
+ \end{exercise}
+
+\begin{exercise}
+Describe the following subspace of $\mathbb{M}_{3,3}$.
+$$\text{span}\left\{\begin{bmatrix}1 & 0 & 0\\0 & 0 & 0\\0 & 0 & 0\end{bmatrix},\begin{bmatrix}0 & 0 & 0\\0 & 1 & 0\\0 & 0 & 0\end{bmatrix}, \begin{bmatrix}0 & 0 & 0\\0 & 0 & 0\\0 & 0 & 1\end{bmatrix}, \begin{bmatrix}0 & 1 & 0\\1 & 0 & 0\\0 & 0 & 0\end{bmatrix}, \begin{bmatrix}0 & 0 & 1\\0 & 0 & 0\\1 & 0 & 0\end{bmatrix}, \begin{bmatrix}0 & 0 & 0\\0 & 0 & 1\\0 & 1 & 0\end{bmatrix}\right\}$$
+
+The subspace consists of:
+ \begin{multipleChoice}
+ \choice[correct]{Matrices $A$ of $\mathbb{M}_{3,3}$ such that $A^T=A$.}
+ \choice{All invertible matrices of $\mathbb{M}_{3,3}$.}
+ \choice{Upper and lower triangular matrices of $\mathbb{M}_{3,3}$.}
+ \choice{All of $\mathbb{M}_{3,3}$.}
+ \end{multipleChoice}
+
+ \end{exercise}
+
+ \begin{exercise}
+Find the matrix of the linear transformation $T:\mathbb{M}_{2,2}\rightarrow \mathbb{M}_{2,2}$, given by $T(A)=A^T$, if the basis of the domain ($\mathcal{B}$) and the basis of the codomain ($\mathcal{D}$) are given by
+$$\mathcal{B}=\mathcal{D}=\left\{\begin{bmatrix}1 & 0\\0 & 0\end{bmatrix},\begin{bmatrix}0 & 1\\0 & 0\end{bmatrix}, \begin{bmatrix}0 & 0\\1 & 0\end{bmatrix}, \begin{bmatrix}0 & 0\\0 & 1\end{bmatrix}\right\} $$
+
+$$\begin{bmatrix}\answer{1} & \answer{0} & \answer{0} & \answer{0}\\\answer{0} & \answer{0} & \answer{1} & \answer{0}\\\answer{0} & \answer{1} & \answer{0} & \answer{0}\\\answer{0} & \answer{0} & \answer{0} & \answer{1}\end{bmatrix}$$
+
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 9.1.3 (b).  
+ \end{exercise}
+
+
+\begin{exercise}
+Find the coordinates of $\vec{v}=ax^2+bx+c$ of $\mathbb{P}^2$ with respect to the ordered basis $\mathcal{B}=\left\{x^2, x+1, x+2\right\}$.
+$$[\vec{v}]_{\mathcal{B}}=\begin{bmatrix}\answer{a}\\\answer{2b-c}\\\answer{c-b}\end{bmatrix}$$
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 9.1.1 (b).  
+ \end{exercise}
+
+\begin{exercise}
+Suppose $T:\mathbb{M}_{2,2}\rightarrow \RR$ is a linear transformation such that $$T\left(\begin{bmatrix}1 & 0\\0 & 0\end{bmatrix}\right)=3$$
+$$T\left(\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix}\right)=-1$$
+$$T\left(\begin{bmatrix}1 & 0\\1 & 0\end{bmatrix}\right)=0$$
+$$T\left(\begin{bmatrix}0 & 0\\0 & 1\end{bmatrix}\right)=0$$
+Find $T\left(\begin{bmatrix}a & b\\c & d\end{bmatrix}\right)$
+$$T\left(\begin{bmatrix}a & b\\c & d\end{bmatrix}\right)=\answer{3a+2b-3c}$$
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 7.1.4 (d).  
+ \end{exercise}
+
+\begin{exercise}
+Suppose $T:\mathbb{P}^2\rightarrow \mathbb{P}^3$ is a linear transformation such that $$T(x^2)=x^3,\quad T(x+1)=0,\quad T(x-1)=x$$
+Find $T(x^2+x+1)$.
+$$T(x^2+x+1)=\answer{x^3}$$
+[Nicholson] W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2021, Open Edition, Exercises 7.1.4 (c).  
+ \end{exercise}
+
+
+
+\end{document}
