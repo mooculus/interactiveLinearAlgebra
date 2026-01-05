@@ -250,8 +250,8 @@ Next we find a basis for the eigenspace $\mathcal{S}_{1+i}$.  We need to compute
 \begin{align*}\mbox{rref}(D-(1+i)I)&=\mbox{rref}\left(\begin{bmatrix} -(1+i)&0&0\\ 0 &1-(1+i)&1\\ 0 & -1&1-(1+i)\end{bmatrix}\right) \\
 &=\begin{bmatrix} 1 & 0 &0\\ 0 & 1 & i\\ 0 & 0 & 0\end{bmatrix}
 \end{align*}
-There is one free variable.  Setting $x_3=t$, we get $x_1=0$ and $x_2=ti$.  From this we see that eigenvectors in $\mathcal{S}_{1+i}$ have the form $\begin{bmatrix}0\\i\\1\end{bmatrix}t$, so a possible basis for the eigenspace $\mathcal{S}_{1+i}$ is given by $\left\{\begin{bmatrix}0\\i\\1\end{bmatrix}\right\}$.
-We ask you in Practice Problem \ref{prob:3x3_complex_ev} to show that $\left\{\begin{bmatrix}0\\-i\\1\end{bmatrix}\right\}$ is a basis for $\mathcal{S}_{1-i}$.
+There is one free variable.  Setting $x_3=t$, we get $x_1=0$ and $x_2=ti$.  From this we see that eigenvectors in $\mathcal{S}_{1+i}$ have the form $\begin{bmatrix}0\\-i\\1\end{bmatrix}t$, so a possible basis for the eigenspace $\mathcal{S}_{1+i}$ is given by $\left\{\begin{bmatrix}0\\-i\\1\end{bmatrix}\right\}$.
+We ask you in Practice Problem \ref{prob:3x3_complex_ev} to show that $\left\{\begin{bmatrix}0\\i\\1\end{bmatrix}\right\}$ is a basis for $\mathcal{S}_{1-i}$.
 \end{explanation}
 \end{example}
 
@@ -318,7 +318,7 @@ and a basis for $\mathcal{S}_{\lambda_3}$ is $\left\{\begin{bmatrix}2\\\answer{1
 
 
 \begin{problem}\label{prob:3x3_complex_ev}
-Complete Example \ref{ex:3x3_complex_ev} by showing that a basis for $\mathcal{S}_{1-i}$ is given by $\left\{\begin{bmatrix}0\\-i\\1\end{bmatrix}\right\}$, where  $\mathcal{S}_{1-i}$ is the eigenspace associated with the eigenvalue $\lambda=1-i$ of the matrix $D=\begin{bmatrix} 0&0&0\\ 0 &1&1\\ 0 & -1&1\end{bmatrix}$.
+Complete Example \ref{ex:3x3_complex_ev} by showing that a basis for $\mathcal{S}_{1-i}$ is given by $\left\{\begin{bmatrix}0\\i\\1\end{bmatrix}\right\}$, where  $\mathcal{S}_{1-i}$ is the eigenspace associated with the eigenvalue $\lambda=1-i$ of the matrix $D=\begin{bmatrix} 0&0&0\\ 0 &1&1\\ 0 & -1&1\end{bmatrix}$.
 \end{problem}
 
 
@@ -367,7 +367,7 @@ Verify that the eigenvalues of $M_{\theta}$ are
 $$\lambda=\cos\theta\pm\sqrt{\cos^2\theta-1}$$
 Use algebra, then use geometry to explain why $\lambda$ is a real number if and only if $\theta$ is a multiple of $\pi$.  
 
-Suppose $\theta$ is a muliple of $\pi$.  Then $\lambda =\answer{-1}$ has algebraic multiplicity $\answer{2}$.  Which of the following describes the corresponding eigenspace?
+Suppose $\theta=\pi$.  Then $\lambda =\answer{-1}$ has algebraic multiplicity $\answer{2}$.  Which of the following describes the corresponding eigenspace?
 \begin{multipleChoice}
     \choice[correct]{All vectors in $\RR^2$.}
     \choice{All vectors along the $x$-axis.}
