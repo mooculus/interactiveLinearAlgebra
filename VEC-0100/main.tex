@@ -14,7 +14,7 @@
 \end{onlineOnly}
 
 
-\section*{Linear Independence}
+%\section*{Linear Independence}
 
 \begin{definition}[Linear Independence]\label{def:linearindependence}
 Let $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k$ be vectors of $\RR^n$.  We say that the set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ is \dfn{linearly independent} if the only solution to 
@@ -23,6 +23,11 @@ is the \dfn{trivial solution} $c_1=c_2=\ldots =c_k=0$.
 
 If, in addition to the trivial solution, a \dfn{non-trivial solution} (not all $c_1, c_2,\ldots ,c_k$ are zero) exists, then we say that the set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ is \dfn{linearly dependent}.
 \end{definition}
+
+\begin{observation}
+The trivial solution $c_1=c_2=\ldots =c_k=0$ is always a solution to $c_1\vec{v}_1+c_2\vec{v}_2+\ldots +c_p\vec{v}_k=\vec{0}$ because $0\vec{v}_1+0\vec{v}_2+\ldots +0\vec{v}_k=\vec{0}$. So, when checking for linear independence, the question is not whether the trivial solution is a solution, but whether it is the ONLY solution.
+\end{observation}
+
 \begin{remark}\label{remark:LinIndEquiv}
 Given a set of vectors $X=\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\}$ we can now ask the following questions:
 \begin{enumerate}
