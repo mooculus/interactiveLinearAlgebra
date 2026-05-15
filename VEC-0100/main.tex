@@ -13,95 +13,6 @@
 \section*{Linear Independence}
 \end{onlineOnly}
 
-If a friend told you that they have a line spanned by $\begin{bmatrix}1\\1\end{bmatrix}$ and $\begin{bmatrix}2\\2\end{bmatrix}$ and $\begin{bmatrix}3\\3\end{bmatrix}$, you would probably think that your friend's description is a little excessive.  Isn't one of the above vectors sufficient to describe the line?  A line can be described as a span of one vector, but it can also be described as a span of two or more vectors.  There are many advantages, however, to using the most efficient description possible.  In this section we will begin to explore what makes a description ``more efficient."
-\subsection*{Redundant Vectors}
-
-\begin{exploration}\label{exp:redundantVecs1}
-Consider the following collection of vectors:
-$$\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}$$
-What is the span of these vectors?  \wordChoice{\choice{A line}, \choice[correct]{$\RR^2$}, \choice{A parallelogram}, \choice{A parallelepiped}}
-
-In this Exploration we will examine what can happen to the span of a collection of vectors when a vector is removed from the collection.  
-
-First, let's remove
-$\begin{bmatrix}2\\1\end{bmatrix}$ from $\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}$.  
-
-Which of the following is true?  
-\begin{multipleChoice}  
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$}  
-\choice[correct]{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)$ is a line}  
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)=\RR^2$}
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}\right)$ is a parallelogram.}
-\end{multipleChoice}  
-
-Removing $\begin{bmatrix}2\\1\end{bmatrix}$ from $\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}$ \wordChoice{\choice[correct]{changed}, \choice{did not change}} the span.
-
-Now let's remove $\begin{bmatrix}-4\\2\end{bmatrix}$ from the \emph{original} collection of vectors.  
-
-Which of the following is true?
-
-\begin{multipleChoice}  
-\choice[correct]{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$}  
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$ is a line}  
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$ is the right side of the coordinate plane.}
-\choice{$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$ is a parallelogram.}
-\end{multipleChoice}  
-
-Removing $\begin{bmatrix}-4\\2\end{bmatrix}$ from $\left\{\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right\}$ \wordChoice{\choice{changed}, \choice[correct]{did not change}} the span.
-
-\end{exploration}
-
-As you just discovered, removing a vector from a collection of vectors may or may not affect the span of the collection.  We will refer to vectors that can be removed from a collection without changing the span as \dfn{redundant}.  In Exploration \ref{exp:redundantVecs1}, $\begin{bmatrix}-4\\2\end{bmatrix}$ is \dfn{redundant}, while $\begin{bmatrix}2\\1\end{bmatrix}$ is not.
-
-\begin{definition}\label{def:redundant}
-Let $\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\}$ be a set of vectors in $\RR^n$.  If we can remove one vector without changing the span of this set, then that vector is \dfn{redundant}.  In other words, if $$\mbox{span}\left(\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\right)=\mbox{span}\left(\vec{v}_1,\vec{v}_2,\dots,\vec{v}_{j-1},\vec{v}_{j+1},\dots,\vec{v}_k\right)$$ we say that $\vec{v}_j$ is a redundant element of $\{\vec{v}_1,\vec{v}_2,\dots,\vec{v}_k\}$, or simply redundant.
-\end{definition}
-
-Our next goal is to see what causes $\begin{bmatrix}-4\\2\end{bmatrix}$ of Exploration \ref{exp:redundantVecs1} to be redundant.  The answer lies not in the vector itself, but in its relationship to the other vectors in the collection. Observe that $\begin{bmatrix}-4\\2\end{bmatrix}=-2\begin{bmatrix}2\\-1\end{bmatrix}$.  In other words, $\begin{bmatrix}-4\\2\end{bmatrix}$ is a scalar multiple of another vector in the set.  To see why this matters, let's pick an arbitrary vector $\vec{w}=\begin{bmatrix}0\\2\end{bmatrix}$ in $\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$.  Vector $\vec{w}$ is in the span because it can be written as a linear combination of the three vectors as follows
-$$\vec{w}=\begin{bmatrix}0\\2\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}$$
-
-But $\begin{bmatrix}-4\\2\end{bmatrix}$ is not essential to this linear combination because it can be replaced with $-2\begin{bmatrix}2\\-1\end{bmatrix}$, as shown below.
-
-$$\begin{bmatrix}0\\2\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}-4\\2\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}2\\-1\end{bmatrix}+ (-2)\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}=-\begin{bmatrix}2\\-1\end{bmatrix}+ \begin{bmatrix}2\\1\end{bmatrix}$$
-
-Regardless of what vector $\vec{w}$ we write as a linear combination of$\begin{bmatrix}2\\-1\end{bmatrix}$,$ \begin{bmatrix}-4\\2\end{bmatrix}$ and $\begin{bmatrix}2\\1\end{bmatrix}$, we will always be able to replace $\begin{bmatrix}-4\\2\end{bmatrix}$ with $-2\begin{bmatrix}2\\-1\end{bmatrix}$, placing $\vec{w}$ into the span of $\begin{bmatrix}2\\-1\end{bmatrix}$ and $\begin{bmatrix}2\\1\end{bmatrix}$, and making $\begin{bmatrix}-4\\2\end{bmatrix}$ redundant.  (Note that we can just as easily write $\begin{bmatrix}2\\-1\end{bmatrix}=-\frac{1}{2}\begin{bmatrix}-4\\2\end{bmatrix}$, and argue that $\begin{bmatrix}2\\-1\end{bmatrix}$ is redundant.)  We conclude that only one of $\begin{bmatrix}-4\\2\end{bmatrix}$ and $\begin{bmatrix}2\\-1\end{bmatrix}$ is needed to maintain the span of the original three vectors.  We have
-$$\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}2\\-1\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}-4\\2\end{bmatrix}, \begin{bmatrix}2\\1\end{bmatrix}\right)$$
-The left-most collection in this expression contains redundant vectors; the other two collections do not.
-
-In Exploration \ref{exp:redundantVecs1} we found one vector to be redundant because we could replace it with a scalar multiple of another vector in the set.  The following Exploration delves into what happens when a vector in a given set is a linear combination of the other vectors.
-
-\begin{exploration}\label{exp:redundantVecs2}
-    Consider the set of vectors $$\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$$
-The three vectors are shown below. RIGHT-CLICK and DRAG to rotate the interactive graph.
-
-\pdfOnly{
-Access GeoGebra interactives through the online version of this text at 
-
-\href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro}.
-}
-
-\begin{onlineOnly}
-\begin{center}
-\geogebra{x72vbsaw}{400}{400}
-\end{center}
-\end{onlineOnly}
-
-$\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)$ is \wordChoice{\choice{A line}, \choice[correct]{A plane}, \choice{$\RR^3$}, \choice{A parallelepiped}}
-
-
-Can we remove one of the vectors from the set without changing the span?  Observe that we can write $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ as a linear combination of the other two vectors
- \begin{equation}\label{eq:redundant}\begin{bmatrix}4\\4\\-1\end{bmatrix}=2\begin{bmatrix}1\\2\\-1\end{bmatrix}+1\begin{bmatrix}2\\0\\1\end{bmatrix}\end{equation}
-
- This means that we can write any vector in $\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)$ as a linear combination of only $\begin{bmatrix}1\\2\\-1\end{bmatrix}$ and $\begin{bmatrix}2\\0\\1\end{bmatrix}$ by replacing $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ with the expression in (\ref{eq:redundant}). For example, $$\begin{bmatrix}7\\6\\-1\end{bmatrix}=\begin{bmatrix}1\\2\\-1\end{bmatrix}+\begin{bmatrix}2\\0\\1\end{bmatrix}+\begin{bmatrix}4\\4\\-1\end{bmatrix}=\answer{3}\begin{bmatrix}1\\2\\-1\end{bmatrix}+\answer{2}\begin{bmatrix}2\\0\\1\end{bmatrix}$$
-
-We have
-$$\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)=\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix}\right)$$
-
- We conclude that vector $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ is redundant.  Can each of the other two vectors in the set 
- $\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$ be considered redundant?  You will address this question in the problem set. %Practice Problem \ref{prob:redundant1}.
-\end{exploration}
- 
- Collections of vectors that do not contain redundant vectors are very important in linear algebra.  We will refer to such collections as \dfn{linearly independent}.  Collections of vectors that contain redundant vectors will be called \dfn{linearly dependent}.  The following section offers a definition that will allow us to easily determine linear dependence and independence of vectors.
 
 \section*{Linear Independence}
 
@@ -335,27 +246,7 @@ A set of three vectors is linearly independent if the vectors do not lie in the 
 
 \section*{Practice Problems}
 
-\begin{problem}\label{prob:redundant1}
-In Exploration \ref{exp:redundantVecs2} we considered the following set of vectors
-$$\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$$
 
-and demonstrated that $\begin{bmatrix}4\\4\\-1\end{bmatrix}$ is redundant by using the fact that it is a linear combination of the other two vectors.  
-\begin{enumerate}
-    \item Express each of $\begin{bmatrix}1\\2\\-1\end{bmatrix}$ and $\begin{bmatrix}2\\0\\1\end{bmatrix}$ as a linear combination of the remaining vectors.
-    $$\begin{bmatrix}1\\2\\-1\end{bmatrix}=\answer{-\frac{1}{2}}\begin{bmatrix}2\\0\\1\end{bmatrix}+\answer{\frac{1}{2}}\begin{bmatrix}4\\4\\-1\end{bmatrix}$$
-
-    $$\begin{bmatrix}2\\0\\1\end{bmatrix}=\answer{-2}\begin{bmatrix}1\\2\\-1\end{bmatrix}+\answer{1}\begin{bmatrix}4\\4\\-1\end{bmatrix}$$
-
-    \item
-    Which of the following is NOT true?
-\begin{multipleChoice}
- \choice{If $\vec{w}$ is in $\mbox{span}\left(\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)$, then $\vec{w}$ is in $\mbox{span}\left(\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right)$.}
- \choice{Both $\begin{bmatrix}1\\2\\-1\end{bmatrix}$ and $\begin{bmatrix}2\\0\\1\end{bmatrix}$ are redundant in $\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$.}
-  \choice[correct]{We can remove $\begin{bmatrix}1\\2\\-1\end{bmatrix}$ and $\begin{bmatrix}2\\0\\1\end{bmatrix}$ from $\left\{\begin{bmatrix}1\\2\\-1\end{bmatrix},\begin{bmatrix}2\\0\\1\end{bmatrix},\begin{bmatrix}4\\4\\-1\end{bmatrix}\right\}$ at the same time without affecting the span. }
- \end{multipleChoice}
-    
-\end{enumerate}
-\end{problem}
 
  \begin{problem}\label{prob:linindmultchoice1}
  Are the vectors below linearly independent?
