@@ -14,6 +14,62 @@
 \end{onlineOnly}
 
 \subsection*{How to Read a Coordinate System}
+Let's take a fresh look at the familiar rectangular coordinate system.  In the diagram on the left, the point $(3,2)$ can be located by moving your finger 3 units along the $x$-axis, then moving your finger 2 units parallel to the $y$-axis. We can think of the $x$ and $y$ axes as being determined by the standard unit vectors $\vec{i}$ and $\vec{j}$.  The vector $\begin{bmatrix}3\\2\end{bmatrix}$ can be written as a linear combination of $\vec{i}$ and $\vec{j}$ as $$\begin{bmatrix}3\\2\end{bmatrix}=3\vec{i}+2\vec{j}$$
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-1,-1) grid (4,4);
+  \draw[<->] (-1,0)--(4,0);
+  \draw[<->] (0,-1)--(0,4);
+  \fill[black] (3,2)node[above right]{$(3,2)$} circle (0.1cm);
+ \end{tikzpicture}\quad\quad\quad\quad
+ \begin{tikzpicture}[scale=1]
+\draw[thin,gray!40] (-1,-1) grid (4,4);
+  \draw[<->] (-1,0)--(4,0);
+  \draw[<->] (0,-1)--(0,4);
+  \draw[line width=1pt,-stealth, red](0,0)--(1,0) node[below right]{$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}$};
+  \draw[line width=1pt,-stealth, blue](0,0)--(0,1) node[above left]{$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}$};
+  \draw[line width=1pt,-stealth, black](0,0)--(3,2) node[above right]{$\vec{j}=\begin{bmatrix}3\\2\end{bmatrix}$};
+ \end{tikzpicture}
+\end{center}
+
+Orthogonal unit vectors are often a convenient choice for establishing a coordinate system, but occasionally, using other vectors is preferrable. An example of an alternative coordinate grid determined by vectors $\vec{v}_1$ and $\vec{v}_2$ is shown below.  
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[line width=0.5pt, gray](-2,1)--(0.5,6);  
+\draw[line width=0.5pt, gray](-1,-2)--(3,6);
+\draw[line width=0.5pt, gray](1.5,-2)--(5.5,6);
+\draw[line width=0.5pt, gray](4,-2)--(8,6);
+\draw[line width=0.5pt, gray](6.5,-2)--(8,1);
+\draw[line width=0.5pt, gray](-2, 4.33)--(3,6);
+\draw[line width=0.5pt, gray](-2, 2.66)--(8,6);
+\draw[line width=0.5pt, gray](-2, 1)--(8,4.33);
+\draw[line width=0.5pt, gray](-2, -0.66)--(8,2.66);
+\draw[line width=0.5pt, gray](-1, -2)--(8,1);
+\draw[line width=0.5pt, gray](4,-2)--(8,-0.66);
+ \draw[line width=2pt,blue,-stealth](0,0)--(1,2);
+\draw[line width=2pt,red,-stealth](0,0)--(3,1);
+\draw[line width=2pt,-stealth](0,0)--(7,4);
+\node[blue] at (0.5, 1.5)  (p2)    {$\vec{v}_2$};
+\node[red] at (1.6, 0.2)  (p2)    {$\vec{v}_1$};
+\node[] at (3.5, 2.3)  (p2)    {$\vec{x}$};
+\fill[black] (3,2)node[above right]{$P(3.5,2.3)$} circle (0.1cm);
+ \end{tikzpicture}
+ \end{center}
+
+ Fortunately, finding points and constructing vectors in such coordinate systems relies on the same principals as we use in the familiear rectangular coordinate system. To reach point $P$, we first travel 2 units along the line containing $\vec{v}_1$, then one unit along the line parallel to $\vec{v}_2$.  We can say that in this coordinate system, $P$ has coordinates $(2,1)$.  Also, observe that vector $\vec{x}$ can be written as a linear combination of $\vec{v}_1$ and $\vec{v}_2$ as follows $$\vec{x}=2\vec{v}_1+\vec{v}_2$$
+ 
+ \begin{idea}
+    We take it for granted that the $x$-coordinate (the coefficient in front of $\vec{i}$) is the first component in the ordered pair of coordinates, and the $y$-coordinate (the coefficient in front of $\vec{j}$) is the second component.  
+
+    In the above setup, we chose to list the coefficient in front of $\vec{v}_1$ as the first coordinate of $P$ and the coefficient in front of $\vec{v}_2$ as the second coordinate.  
+
+    How would the coordinates of $P$ be impacted if we had chosen a different order?  Think about why establishing (or knowing) the order in which $\vec{v}_1$ and $\vec{v}_2$ are used is important.
+ \end{idea}
+
+ The following interactive demonstrates how to find the coordinates for a point using a coordinate grid defined using vectors $\overarrow{OA}$ and $\overarrow{OB}$ (in that order).  To use the interactive, you can either (1) move the sliders to change the coordinates of $P$ within this coordinate system, or (2) move the tips of vectors $\overarrow{OA}$ and $\overarrow{OB}$ to change the coordinate system.  For (2), explain why the coordinates of $P$ do not change while $P$ moves around the plane.
+
 % https://www.geogebra.org/classic/qxjtdgkc
 
 \begin{center}
