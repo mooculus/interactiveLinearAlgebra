@@ -199,11 +199,11 @@ Another relation between matrices we have studied in this course is that two mat
 
 \end{problem}
 
-\emph{Problems \ref{prob:notsimilar_a}-\ref{prob:notsimilar_e}}
 
-By computing the trace, determinant, and rank, show that $A$ and $B$ are \textit{not} similar in each case.
 
 \begin{problem}\label{prob:notsimilar_a}
+
+  Use Theorem \ref{th:properties_similar} to show that $A$ and $B$ are not similar.
 $A = \begin{bmatrix}
 	1 & 2 \\
 	2 & 1
@@ -212,21 +212,11 @@ $A = \begin{bmatrix}
 	1 & 1\\
 	-1 & 1
 \end{bmatrix}$
-\end{problem}
 
-\begin{problem}\label{prob:notsimilar_b}
-$A =
-\begin{bmatrix}
-3 & 1 \\
-2 & -1
-\end{bmatrix}$, $B =
-\begin{bmatrix}
-1 & 1 \\
-2 & 1
-\end{bmatrix}$
 \end{problem}
 
 \begin{problem}\label{prob:notsimilar_c}
+  Use Theorem \ref{th:properties_similar} to show that $A$ and $B$ are not similar.
 $A =
 \begin{bmatrix}
 3 & 1 \\
@@ -238,21 +228,10 @@ $A =
 \end{bmatrix}$
 \end{problem}
 
-\begin{problem}\label{prob:notsimilar_d}
-$A =
-\begin{bmatrix}
-2 & 1 & 1 \\
-1 & 0 & 1 \\
-1 & 1 & 0
-\end{bmatrix}$, $B =
-\begin{bmatrix}
- 1 & -2 & 1 \\
--2 & 4 & -2 \\
--3 & 6 & -3
-\end{bmatrix}$
-\end{problem}
+
 
 \begin{problem}\label{prob:notsimilar_e}
+  Use Theorem \ref{th:properties_similar} to show that $A$ and $B$ are not similar.
 $A =
 \begin{bmatrix}
 1 & 2 & -3 \\
@@ -279,6 +258,7 @@ $A =
 
 
 \begin{problem}\label{prob:notsimilar_4x4}
+
 Show that $\begin{bmatrix}
 1 & 2 & -1 &  0 \\
 2 & 0 &  1 &  1 \\
@@ -293,17 +273,44 @@ Show that $\begin{bmatrix}
 \end{bmatrix}$ are \textit{not} similar.
 \end{problem}
 
+\begin{problem}
+    Let $$A=\begin{bmatrix}1 & 2 & 0\\2 & -1 & -2\\0 & -2 & 1\end{bmatrix}$$
+    \begin{question}
+    The eigenvalues of $A$ are known to be $\lambda_1=-3$, $\lambda_2=3$ and $\lambda_3=1$.
+    Find the corresponding eigenspaces.
+$$\mathcal{S}_{-3}=\text{span}\left(\begin{bmatrix}\answer{-1}\\\answer{2}\\1\end{bmatrix}\right)$$
+$$\mathcal{S}_3=\text{span}\left(\begin{bmatrix}\answer{-1}\\\answer{-1}\\1\end{bmatrix}\right)$$
+$$\mathcal{S}_1=\text{span}\left(\begin{bmatrix}\answer{1}\\\answer{0}\\1\end{bmatrix}\right)$$
+We will refer to the eigenvectors you listed above as $\vec{x}_1$, $\vec{x}_2$ and $\vec{x}_3$.
+\end{question}
+\begin{question}
+    Form matrix $P$ whose columns are the eigenvectors $\vec{x}_1$, $\vec{x}_2$, and $\vec{x}_3$ you found in the previous part.  Use technology to find $P^{-1}$.
+    $$P^{-1}=\frac{1}{6}\begin{bmatrix}\answer{-1} & \answer{2} & \answer{1}\\\answer{-2} & \answer{-2} & \answer{2}\\\answer{3} & \answer{0} & \answer{3}\end{bmatrix}$$
+\end{question}
+\begin{question}
+    Find the product $P^{-1}AP$.  What did you get?
+    Which of the following is true?
+    \begin{multipleChoice}
+    \choice{$A\sim P$}
+    \choice{$A\sim D$ for ANY diagonal matrix $D$}
+    \choice[correct]{$A\sim D$ for the diagonal matrix $D$ whose diagonal entries are the eigenvalues of $A$}
+    \end{multipleChoice}
+\end{question}
+
+\end{problem}
+
+
 \begin{problem}\label{prob:similarproperties}
-Prove Theorem \ref{th:other_properties_similar}
+Prove that if $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+\begin{enumerate}
+\item\label{th:properties_similar_inverse} $A^{-1} \sim B^{-1}$ (provided that the inverses exist),
+\item\label{th:properties_similar_transpose} $A^T \sim B^T$, and
+\item\label{th:properties_similar_powers} $A^k \sim B^k$ for all integers $k \geq 1$.
+\end{enumerate} 
+(See Theorem \ref{th:other_properties_similar})
 \end{problem}
 
-\begin{problem}\label{prob:similarproperties_invertible}
-If $A$ is invertible, show that $AB$ is similar to $BA$ for all $B$.
-\end{problem}
 
-\begin{problem}\label{prob:similarproperties_rI}
-Show that the only matrix similar to a scalar matrix $A = rI$, $r\in\RR$, is $A$ itself.
-\end{problem}
 
 \begin{problem}\label{prob:similarproperties_ev}
 Let $\lambda$ be an eigenvalue of $A$ with corresponding eigenvector $\vec{x}$. If $B = P^{-1}AP$ is similar to $A$, show that $P^{-1}\vec{x}$ is an eigenvector of $B$ corresponding to $\lambda$.
