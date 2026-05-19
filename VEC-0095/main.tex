@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\title{Linear Combinations and Alternative Coordinate Systems} \license{CC BY-NC-SA 4.0}
+\title{What Makes a Good Coordinate System?} \license{CC BY-NC-SA 4.0}
 
 \begin{document}
 
@@ -10,7 +10,7 @@
 \maketitle
 
 \begin{onlineOnly}
-\section*{Linear Combinations and Alternative Coordinate Systems}
+\section*{What Makes a Good Coordinate System?}
 \end{onlineOnly}
 
 \subsection*{How to Read a Coordinate System}
@@ -31,7 +31,7 @@ Let's take a fresh look at the familiar rectangular coordinate system.  We can i
   \draw[<->] (0,-1)--(0,4);
   \draw[line width=1pt,-stealth, red](0,0)--(1,0) node[below right]{$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}$};
   \draw[line width=1pt,-stealth, blue](0,0)--(0,1) node[above left]{$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}$};
-  \draw[line width=1pt,-stealth, black](0,0)--(3,2) node[above right]{$\vec{v}=\begin{bmatrix}3\\2\end{bmatrix}$};
+  \draw[line width=1pt,-stealth, black](0,0)--(3,2) node[above]{$\vec{v}=\begin{bmatrix}3\\2\end{bmatrix}$};
  \end{tikzpicture}
 \end{center}
 
@@ -103,7 +103,9 @@ We now understand that we can take two vectors and use them to impose a coordina
 
 
 \begin{exploration}\label{exp:coordSystemLinCombs1}
-Use the interactive below to answer the questions.  Tips: To better navigate between the interactive and the questions, we suggest that you use a second device to manipulate the interactive.  Refresh your browser to reset the interactive to default settings.
+Use the interactive below to answer the questions.  
+
+Tip: To better navigate between the interactive and the questions, we suggest that you use a second device to manipulate the interactive.  Refresh your browser to reset the interactive to default settings.
 % https://www.geogebra.org/classic/qw5dpmqq
 \begin{center}
     \geogebra{qw5dpmqq}{800}{600}
@@ -147,7 +149,7 @@ $$\overrightarrow{OP}_3=\answer{0}\overrightarrow{OA}+\answer{-1}\overrightarrow
 $$\overrightarrow{OP}_4=\answer{-2}\overrightarrow{OA}+\answer{3}\overrightarrow{OB}$$
 $$\overrightarrow{OP}_5=\answer{3}\overrightarrow{OA}+\answer{-2}\overrightarrow{OB}$$
 
-Discuss the relationship between your answers to the first question and your answers here.
+Discuss the relationship between your answers to the first question and your answers here.  Observe that each vector $\overrightarrow{OP}_i$ is in $\text{span}\left(\overrightarrow{OA},\overrightarrow{OB}\right)$.
 \end{question}
 
 \begin{question}
