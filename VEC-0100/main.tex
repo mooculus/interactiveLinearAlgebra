@@ -13,15 +13,34 @@
 \section*{Linear Independence}
 \end{onlineOnly}
 
+%\begin{summary}
+%Let's review what we have learned in the previous three sections.  Let $\{\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_n\}$ be a collection of vectors.  
 
-%\section*{Linear Independence}
+%For scalars $a_1$, $a_2,\dots, a_n$, the expression $a_1\vec{v}_1+a_2\vec{v}_2+\dots +a_n\vec{v}_n$ is called \wordChoice{\choice[correct]{a linear combination} \choice{the sum}} of $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_n$.
+
+%The set of all linear combinations of $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_n$ is called \wordChoice{\choice[correct]{the span} \choice{a linear combination} \choice{the sum}} of $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_n$.
+%\end{summary}
+
+
+In the last section  we considered properties a set of vectors should possess in order to be used to define a ``good'' coordinate system for a plane.  Let $S$ be a set of vectors in the plane.  We have already established that in order to use vectors in $S$ to define the axes of a ``good'' coordinate system, vectors in $S$ must span the plane.  This would guarantee that every vector in the plane can be written as a linear combination of elements of $S$.  
+
+In addition, we observed that we want each vector in the plane to be represented as a \textit{unique} linear combination of elements of $S$.  This gives us motivation to consider the question of uniqueness.  We will now step away from coordinate systems in the plane and turn to this question in a more general setting.
+
+Let $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k$ be vectors of $\RR^n$.  Let $V=\text{span}(\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k)$.  Then every vector in $V$ can be written as a linear combination of $\vec{v}_i$s in at least one way.  Our interest here is in spanning sets where each vector in $V$ has exactly one representation as a linear combination of $\vec{v}_i$s.
+
+Suppose that two linear combinations are equal
+ $$a_1\vec{v}_1+a_2\vec{v}_2+\dots +a_k\vec{v}_k=\vec{v}=b_1\vec{v}_1+b_2\vec{v}_2+\dots +b_k\vec{v}_k$$ 
+We are looking for a condition on the set $\{\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k\}$ that guarantees that this representation is unique.  This amounts to showing that $a_i=b_i$ for each $i$.  Taking all terms to the left side gives us
+$$(a_1-b_1)\vec{v}_1+(a_2-b_2)\vec{v}_2+\dots +(a_k-b_k)\vec{v}_k=\vec{0}$$
+
+So the condition that guarantees uniqueness is that all coefficients $(a_i-b_i)$ must be zero.  This motivates the following definition.
 
 \begin{definition}[Linear Independence]\label{def:linearindependence}
 Let $\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k$ be vectors of $\RR^n$.  We say that the set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ is \dfn{linearly independent} if the only solution to 
 \begin{equation}\label{eq:defLinInd}c_1\vec{v}_1+c_2\vec{v}_2+\ldots +c_p\vec{v}_k=\vec{0}\end{equation}
 is the \dfn{trivial solution} $c_1=c_2=\ldots =c_k=0$.
 
-If, in addition to the trivial solution, a \dfn{non-trivial solution} (not all $c_1, c_2,\ldots ,c_k$ are zero) exists, then we say that the set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ is \dfn{linearly dependent}.
+If, in addition to the trivial solution, any \dfn{non-trivial solutions} (not all $c_1, c_2,\ldots ,c_k$ are zero) exist, then we say that the set $\{\vec{v}_1, \vec{v}_2,\ldots ,\vec{v}_k\}$ is \dfn{linearly dependent}.
 \end{definition}
 
 \begin{observation}
@@ -415,4 +434,8 @@ Suppose $\{{\vec{u}},{\vec{v}}\}$ is a linearly independent set of vectors.  Pro
 \begin{problem}\label{prob:OtherLinearComb2}
 Suppose $\{{\vec{u}},{\vec{v}}\}$ is a linearly independent set of vectors in $\RR^3$.  Is the following set dependent or independent $\{\vec{u} -\vec{v}, \vec{u}+2\vec{v}, \vec{u}+\vec{v}\}$? Prove your claim.
 \end{problem}
+
+\section*{Text Source} A portion of this section was adapted from Section 5.2 of Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+ 
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition, p. 271.
 \end{document} 
