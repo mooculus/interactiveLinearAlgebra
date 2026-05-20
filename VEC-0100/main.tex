@@ -26,11 +26,11 @@ In the last section  we considered properties a set of vectors should possess in
 
 In addition, we observed that we want each vector in the plane to be represented as a \textit{unique} linear combination of elements of $S$.  This gives us motivation to consider the question of uniqueness.  We will now step away from coordinate systems in the plane and turn to this question in a more general setting.
 
-Let $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k$ be vectors of $\RR^n$.  Let $V=\text{span}(\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k)$.  Then every vector in $V$ can be written as a linear combination of $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k$ in at least one way.  Our interest here is in spanning sets where each vector in $V$ has exactly one representation as a linear combination of $\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k$.
+Let $\vec{v}_1, \vec{v}_2,\dots ,\,\vec{v}_k$ be vectors of $\RR^n$.  Let $V=\text{span}(\vec{v}_1, \vec{v}_2,\dots ,\,\vec{v}_k)$.  Then every vector in $V$ can be written as a linear combination of $\vec{v}_1, \vec{v}_2,\dots ,\,\vec{v}_k$ in at least one way.  Our interest here is in spanning sets where each vector in $V$ has exactly one representation as a linear combination of $\vec{v}_1, \vec{v}_2,\dots ,\,\vec{v}_k$.
 
 Suppose that two linear combinations are equal
  $$a_1\vec{v}_1+a_2\vec{v}_2+\dots +a_k\vec{v}_k=b_1\vec{v}_1+b_2\vec{v}_2+\dots +b_k\vec{v}_k$$ 
-We are looking for a condition on the set $\{\vec{v}_1, \vec{v}_2,\dots\,\vec{v}_k\}$ that guarantees that this representation is unique.  This amounts to showing that $a_i=b_i$ for each $i$.  Taking all terms to the left side gives us
+We are looking for a condition on the set $\{\vec{v}_1, \vec{v}_2,\dots ,\,\vec{v}_k\}$ that guarantees that this representation is unique.  This amounts to showing that $a_i=b_i$ for each $i$.  Taking all terms to the left side gives us
 $$(a_1-b_1)\vec{v}_1+(a_2-b_2)\vec{v}_2+\dots +(a_k-b_k)\vec{v}_k=\vec{0}$$
 
 So the condition that guarantees uniqueness is that all coefficients $(a_i-b_i)$ must be zero.  This motivates the following definition.
