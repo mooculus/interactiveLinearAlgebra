@@ -1,188 +1,65 @@
 \documentclass{ximera}
-\input{../preamble.tex}
 
-\title{Linear Combinations and Alternative Coordinate Systems} \license{CC BY-NC-SA 4.0}
+\title{Slope of a Line}
 
 \begin{document}
-
 \begin{abstract}
+  Practice finding slope, equations of lines, and slopes of perpendicular lines.
 \end{abstract}
+
 \maketitle
 
-\begin{onlineOnly}
-\section*{Linear Combinations and Alternative Coordinate Systems}
-\end{onlineOnly}
-
-\subsection*{How to Read a Coordinate System}
-Let's take a fresh look at the familiar rectangular coordinate system.  In the diagram on the left, the point $(3,2)$ can be located by moving your finger 3 units along the $x$-axis, then moving your finger 2 units parallel to the $y$-axis. We can think of the $x$ and $y$ axes as being determined by the standard unit vectors $\vec{i}$ and $\vec{j}$.  The vector $\begin{bmatrix}3\\2\end{bmatrix}$ can be written as a linear combination of $\vec{i}$ and $\vec{j}$ as $$\begin{bmatrix}3\\2\end{bmatrix}=3\vec{i}+2\vec{j}$$
+\begin{problem}
+Find the equation, in slope-intercept form, for the line shown below.
 
 \begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[thin,gray!40] (-1,-1) grid (4,4);
-  \draw[<->] (-1,0)--(4,0);
-  \draw[<->] (0,-1)--(0,4);
-  \fill[black] (3,2)node[above right]{$(3,2)$} circle (0.1cm);
- \end{tikzpicture}\quad\quad\quad\quad
- \begin{tikzpicture}[scale=1]
-\draw[thin,gray!40] (-1,-1) grid (4,4);
-  \draw[<->] (-1,0)--(4,0);
-  \draw[<->] (0,-1)--(0,4);
-  \draw[line width=1pt,-stealth, red](0,0)--(1,0) node[below right]{$\vec{i}=\begin{bmatrix}1\\0\end{bmatrix}$};
-  \draw[line width=1pt,-stealth, blue](0,0)--(0,1) node[above left]{$\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}$};
-  \draw[line width=1pt,-stealth, black](0,0)--(3,2) node[above right]{$\begin{bmatrix}3\\2\end{bmatrix}$};
- \end{tikzpicture}
+\begin{tikzpicture}[scale=.75]
+  \draw[<->] (-1,0)--(6,0) node[right]{$x$};
+  \draw[<->] (0,-1)--(0,5) node[above]{$y$};
+
+  \draw[thick] (-.5,4)--(5.5,0);
+  \fill (1,3) circle (2pt) node[above right]{$(1,3)$};
+  \fill (4,1) circle (2pt) node[above right]{$(4,1)$};
+\end{tikzpicture}
 \end{center}
 
-Orthogonal unit vectors are often a convenient choice for establishing a coordinate system, but occasionally, using other vectors is preferrable. An example of an alternative coordinate grid determined by vectors $\vec{v}_1$ and $\vec{v}_2$ is shown below.  
+The slope is
+\[
+m=\answer{-\frac{2}{3}}.
+\]
 
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[line width=0.5pt, gray](-2,1)--(0.5,6);  
-\draw[line width=0.5pt, gray](-1,-2)--(3,6);
-\draw[line width=0.5pt, gray](1.5,-2)--(5.5,6);
-\draw[line width=0.5pt, gray](4,-2)--(8,6);
-\draw[line width=0.5pt, gray](6.5,-2)--(8,1);
-\draw[line width=0.5pt, gray](-2, 4.33)--(3,6);
-\draw[line width=0.5pt, gray](-2, 2.66)--(8,6);
-\draw[line width=0.5pt, gray](-2, 1)--(8,4.33);
-\draw[line width=0.5pt, gray](-2, -0.66)--(8,2.66);
-\draw[line width=0.5pt, gray](-1, -2)--(8,1);
-\draw[line width=0.5pt, gray](4,-2)--(8,-0.66);
- \draw[line width=2pt,blue,-stealth](0,0)--(1,2);
-\draw[line width=2pt,red,-stealth](0,0)--(3,1);
-\draw[line width=2pt,-stealth](0,0)--(7,4);
-\node[blue] at (0.5, 1.5)  (p2)    {$\vec{v}_2$};
-\node[red] at (1.6, 0.2)  (p2)    {$\vec{v}_1$};
-\node[] at (3.5, 2.3)  (p2)    {$\vec{x}$};
-\fill[black] (7,4)node[above]{$P(2,1)$} circle (0.1cm);
- \end{tikzpicture}
- \end{center}
+The equation of the line is
+\[
+y=\answer{-\frac{2}{3}}x+\answer{\frac{11}{3}}.
+\]
+\end{problem}
 
- Fortunately, finding points and constructing vectors in such coordinate systems relies on the same principles as we use in the familiear rectangular coordinate system. To reach point $P$, we first travel 2 units along the line containing $\vec{v}_1$, then one unit along the line parallel to $\vec{v}_2$.  We can say that in this coordinate system, $P$ has coordinates $(2,1)$.  Also, observe that vector $\vec{x}$ can be written as a linear combination of $\vec{v}_1$ and $\vec{v}_2$ as follows $$\vec{x}=2\vec{v}_1+\vec{v}_2$$
- 
- \begin{idea}
-    We take it for granted that the $x$-coordinate (the coefficient in front of $\vec{i}$) is the first component in the ordered pair of coordinates, and the $y$-coordinate (the coefficient in front of $\vec{j}$) is the second component.  
+\begin{problem}
+Find the slope of a line perpendicular to the line from the previous problem.
 
-    In the above setup, we chose to list the coefficient in front of $\vec{v}_1$ as the first coordinate of $P$ and the coefficient in front of $\vec{v}_2$ as the second coordinate.  
+\[
+m_{\perp}=\answer{\frac{3}{2}}.
+\]
+\end{problem}
 
-    How would the coordinates of $P$ be impacted if we had chosen a different order?  Think about why establishing (or knowing) the order in which $\vec{v}_1$ and $\vec{v}_2$ are used is important.
- \end{idea}
+\begin{problem}
+Find the equation, in slope-intercept form, for the line through the points $(2,-1)$ and $(6,5)$.
 
- The following interactive demonstrates how to find the coordinates for a point using a coordinate grid defined using vectors $\overrightarrow{OA}$ and $\overrightarrow{OB}$ (in that order).  To use the interactive, you can either (1) move the sliders to change the coordinates of $P$ within this coordinate system, or (2) move the tips of vectors $\overrightarrow{OA}$ and $\overrightarrow{OB}$ to change the coordinate system.  For (2), explain why the coordinates of $P$ do not change while $P$ moves around the plane.
+The slope is
+\[
+m=\answer{\frac{3}{2}}.
+\]
 
-% https://www.geogebra.org/classic/qxjtdgkc
+The equation of the line is
+\[
+y=\answer{\frac{3}{2}}x+\answer{-4}.
+\]
 
-\begin{center}
-    \geogebra{qxjtdgkc}{800}{600}
-\end{center}
+Find the slope of a line perpendicular to this line.
 
-\subsection*{Explorations}
+\[
+m_{\perp}=\answer{-\frac{2}{3}}.
+\]
+\end{problem}
 
-\begin{exploration}\label{exp:coordSystemLinCombs1}
-Use the interactive below to answer the questions
-% https://www.geogebra.org/classic/qw5dpmqq
-\begin{center}
-    \geogebra{qw5dpmqq}{800}{600}
-\end{center}
-\begin{question}
-    List the coordinates for each $P_i$ with respect to the given coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
-    $$P_1=\left(\answer{1},\answer{1}\right)$$
-    $$P_2=\left(\answer{-2},\answer{0}\right)$$
-    $$P_3=\left(\answer{0},\answer{-1}\right)$$
-    $$P_4=\left(\answer{-2},\answer{3}\right)$$
-    $$P_5=\left(\answer{3},\answer{-2}\right)$$
-\end{question}
-
-\begin{question}
-Move point $B$ to coincide with $P_3$
-    List the coordinates for each $P_i$ with respect to the new coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
-    $$P_1=\left(\answer{1},\answer{-1}\right)$$
-    $$P_2=\left(\answer{-2},\answer{0}\right)$$
-    $$P_3=\left(\answer{0},\answer{1}\right)$$
-    $$P_4=\left(\answer{-2},\answer{-3}\right)$$
-    $$P_5=\left(\answer{3},\answer{2}\right)$$
-    How do these coordinates compare to the coordinates in the previous question?  Explain why this is happening. (Hint: you can use the RESET button to return to the original coordinate system to compare.)
-\end{question}
-
-\begin{question}
-Press RESET to return to the original coordinate system.  Move point $A$ to coincide with $P_1$
-    List the coordinates for each $P_i$ with respect to the new coordinate system.  Your coordinates should be of the form $(A\text{-coordinate}, B\text{-coordinate})$.
-    $$P_1=\left(\answer{1},\answer{0}\right)$$
-    $$P_2=\left(\answer{-2},\answer{2}\right)$$
-    $$P_3=\left(\answer{0},\answer{-1}\right)$$
-    $$P_4=\left(\answer{-2},\answer{5}\right)$$
-    $$P_5=\left(\answer{3},\answer{-5}\right)$$
-    How do these coordinates compare to the coordinates in the original coordinate system?  Explain why this is happening. (Hint: you can use the reset button to return to the original coordinate system to compare.)
-\end{question}
-
-\begin{question}
-    Press RESET to return to the original coordinate system.  Express each $\overrightarrow{OP}_i$ as a linear combination of $\overrightarrow{OA}$ and $\overrightarrow{OB}$.
-$$\overrightarrow{OP}_1=\answer{1}\overrightarrow{OA}+\answer{1}\overrightarrow{OB}$$
-$$\overrightarrow{OP}_2=\answer{-2}\overrightarrow{OA}+\answer{0}\overrightarrow{OB}$$
-$$\overrightarrow{OP}_3=\answer{0}\overrightarrow{OA}+\answer{-1}\overrightarrow{OB}$$
-$$\overrightarrow{OP}_4=\answer{-2}\overrightarrow{OA}+\answer{3}\overrightarrow{OB}$$
-$$\overrightarrow{OP}_5=\answer{3}\overrightarrow{OA}+\answer{-2}\overrightarrow{OB}$$
-
-Discuss the relationship between your answers to the first question and your answers here.
-\end{question}
-
-\begin{question}
-    Move point $B$ to coincide with $P_2$.  What do you observe?  Do vectors $\overrightarrow{OA}$ and $\overrightarrow{OB}$ determine a good coordinate system for the plane?  Can we express every point in the plane as a linear combination of $\overrightarrow{OA}$ and $\overrightarrow{OB}$?  Can we express \textit{some} points in the plane as linear combinations of $\overrightarrow{OA}$ and $\overrightarrow{OB}$?
-\end{question}
-
-\end{exploration}
-
-\begin{exploration}\label{exp:coordSystemLinCombs2}
-We will use the same set-up as in the previous exploration but introduce an additional vector $\overrightarrow{OC}$.
-
- % https://www.geogebra.org/classic/b3k96x2w
-
- \begin{center}
-     \geogebra{b3k96x2w}{800}{600}
- \end{center}
-
- \begin{question}
-     Suppose we want to express $P_1$ using a coordinate system determined by three vectors $\overrightarrow{OA}$, $\overrightarrow{OB}$, and $\overrightarrow{OC}$.  If the coordinates are to be of the form $(A\text{-coordinate}, B\text{-coordinate}, C\text{-coordinate})$, how many ways do you think there would be to express $P_1$? Fill in the missing coordinates for $P_1$ below.
-     $$P_1=\left(\answer{1},\answer{1},0\right)$$
-     $$P_1=\left(0,\answer{2},\answer{0.5}\right)$$
-     $$P_1=\left(\answer{2}, 0, \answer{-0.5}\right)$$
-     $$P_1=\left(\answer{3},-1,-1\right)$$
- \end{question}
-
- \begin{question}
-     Based on your work above, express $\overrightarrow{OP_1}$ as a linear combination of $\overrightarrow{OA}$, $\overrightarrow{OB}$, and $\overrightarrow{OC}$.  How many ways do you think there are to do this?
- \end{question}
-
- \begin{question}
-     Compare and contrast the coordinate systems in this exploration and Exploration \ref{exp:coordSystemLinCombs1}.  
- \end{question}
-    
-\end{exploration}
-
-\subsection*{Existence and Uniqueness of Representation}
-
-\begin{idea}
-    What makes a good coordinate system?
-    \begin{itemize}
-        \item Every point has coordinates associated with it;
-        \item Coordinates associated with each point are unique.
-    \end{itemize}
-\end{idea}
-
-%\subsection*{More stuff for later in the semester}
-% https://www.geogebra.org/classic/ebad3qkc
-
-%What does the linear transformation induced by $A$ accomplish?
-
-%\begin{center}
-%    \geogebra{ebad3qkc}{800}{600}
-%\end{center}
-
-%Same transformation as above.  Can you give a better description now?
-
-% https://www.geogebra.org/classic/dmuu6kqd
-
-%\begin{center}
-%    \geogebra{dmuu6kqd}{900}{600}
-%\end{center}
-\end{document} 
+\end{document}
