@@ -1,0 +1,373 @@
+\documentclass{ximera}
+\input{preamble.sty}
+ 
+\title{Octave for Chapter 9} \license{CC BY-NC-SA 4.0}
+ 
+\begin{document}
+ 
+\begin{abstract}
+\end{abstract}
+\maketitle
+ 
+\section*{Octave for Chapter 9}
+ 
+Examples and Templates in this section provide sample Octave code for least squares, and $QR$-factorization. You can access our code through the link at the bottom of each template.  Feel free to modify the code and experiment to learn more! 
+ 
+You can write your own code using Octave software or online Octave cells.  To access Octave cells online, go to the \href{https://sagecell.sagemath.org/}{Sage Math Cell Webpage}, select OCTAVE as the language, enter your code, and press EVALUATE. 
+ 
+To ''save" or share your online code, click on the \emph{Share} button, select \emph{Permalink}, then copy the address directly from the browser window.  You can store this link to access your work later or share this link with others.  You will need to get a new Permalink every time you modify the code.
+ 
+\subsection*{Octave Tutorial}
+\subsubsection*{Least Squares}
+The following theorem establishes one way to implement least squares.
+ 
+\begin{theorem}[\ref{th:bestApprox}]
+    Let $A$ be an $m\times n$ matrix, let $\vec{b}$ be a column vector in $\RR^m$.  Consider the matrix equation
+    $$A\vec{x}=\vec{b}$$
+    \begin{enumerate}
+        \item Any solution $\vec{z}$ to the normal equations
+        $$\left(A^TA\right)\vec{z}=A^T\vec{b}$$
+        is a best approximation to a solution to $A\vec{x}=\vec{b}$ in the sense that $\norm{\vec{b}-A\vec{z}}$ is minimized.
+        \item If the columns of $A$ are linearly independent, then $A^TA$ is invertible and $\vec{z}$ is given uniquely by
+        $$\vec{z}=\left(A^TA\right)^{-1}A^T\vec{b}$$
+    \end{enumerate}
+    \end{theorem}
+ 
+We can implement this process as follows.
+ 
+\begin{template}\label{temp:leastSq}
+    We show how to find a least squares solution to $A\vec{x}=\vec{b}$.
+ 
+    \begin{verbatim}
+% Define matrix A
+A=[9 -3 3;
+    1 -1 1;
+    4 0 1;
+    1 1 1;
+    9 -1 2];
+         
+% Define vector b
+b=[3;1;1;2;4];
+ 
+% Now we solve for z
+z=inv(transpose(A)*A)*transpose(A)*b
+    \end{verbatim}
+ 
+\href{https://sagecell.sagemath.org/?z=eJxTVXBJTcvMS1XITSwpyqxQcOTlcrSNtlTQNVYwtublUgACQwVdQwVDKMdEwQDONgRBawUIxxKkyigWKgUCvFyqMMPLUpNL8osUkni5kmyjja0NgdDI2gSkGKTIL79coTxVoTg_pyxVIQ2oroqXq8o2M69Mo6QoMa-4IL84VcNRUwuIUPhJAN_XLTM=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.   
+\end{template}
+ 
+\begin{warning}
+    Finding matrix inverses is both computationally expensive and unstable. 
+\end{warning}
+ 
+To do least squares in Octave, we use the backslash operator ($\setminus$). Depending on the type of matrix, backslash uses different techniques to compute the least squares solution more efficiently.  For more information about \emph{inv} and the backslash operator ($\setminus$) see \href{https://www.mathworks.com/help/matlab/ref/inv.html}{Reference}.
+ 
+The following two examples illustrate the two implementations of least squares side-by-side.
+ 
+\begin{example}\label{ex:LeastSquaresComp1}
+  We will compare the results of the two implementations of least squares for a $7\times 3$ coefficient matrix.
+   
+      \begin{verbatim}
+        % Define matrix A
+        A=[4 -1 0;
+            2 -1 1;
+            6 3 1;
+            -1 1 2;
+            3 1 -2;
+            -2 8 7;
+            1 1 -5];
+                 
+        % Define vector b
+        b=[-2;4;1;2;-5;1;-3];
+         
+        % Implement least squares using our original method
+        z1=inv(transpose(A)*A)*transpose(A)*b
+         
+        % Implement least squares using the backslash operator
+        z2=A\b       
+      \end{verbatim}
+   
+  \href{https://sagecell.sagemath.org/?z=eJyNjstqwzAQRfcC_cPdBNKAIFZeBeGFoZt-Q5qFlExiUVtyJDmUfn0l4hSyyzAwc2buPGb4oLN1hF6nYH_QcNbU-zVEhaXiDNlkgWqCLVb_eSlDKtwp1yHkoyXxjt0ERSY2h4mKcTZ73L3RMfkAw5mp93l-rSolldjkIFZlpmg_-6GjnlxCRzomxOuoA0WM0boL_Bjgg71Ypzv0lFp_4uy3qq27zVPQLg4-0rx5W2R_YvPK9tQSjD5-x07HFn6goPPD-YCsmy_zB_2HVXs=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.  
+   
+  \end{example}
+   
+ 
+\begin{example}\label{ex:LeastSquaresComp2}
+We will compare the performance of two the implementations of least squares for a $2000\times 20$ coefficient matrix.
+ 
+    \begin{verbatim}
+      % Define matrix A
+      A=rand(2000,20); % rand(m,n) creates an m by n matrix whose entries are between 0 and 1
+               
+      % Define vector b
+      b=rand(2000,1);
+       
+      % Start the timer
+      tic
+       
+      % Implement least squares using our original method
+      z1=inv(transpose(A)*A)*transpose(A)*b;
+       
+      % Stop the timer
+      timeINV=toc
+       
+      % Start the timer
+      tic
+       
+      % Implement least squares using the backslash operator
+      z2=A\b;
+       
+      % Stop the timer
+      timeBSlash=toc
+    \end{verbatim}
+ 
+\href{https://sagecell.sagemath.org/?z=eJylkDFPwzAQhXdL_g9viZSgDk7WKkMQSxeWSkxd7ORoLGI72Je28OtxgCK6sHC65e7d0_d0BR7o2XqC0xztBZ0UXRu1H8pGKbVpVLUFis-F2_gKfSTNlKA9HMwb_NV4HkMikM_DKkeCIT4Teah8PKCWAt8lRXGlnqjnEGGkML-odbWVYr3as44MHglsHUUp2PZfys7NE7mMw0Q6MdLrkpkJS7L-iLBEhGiP1usJjngMgxTvdWv9qeTMSXMOW3bVXe6b2fyAw3zLdbR7fGo59P9LtjqM7l_SpNOIMFPU-QE5XNN2h7_o9_vVsQb4AOCph5E=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.  
+ 
+Each time you run the algorithm, you will get slightly different run times for each implementation.  Most of the time, you will see that the backslash operator outperforms our initial method.
+\end{example}
+ 
+The
+backslash operator ($\setminus$) can be used to solve systems of equations when a solution exists.  Here is an example.
+ 
+\begin{example}\label{temp:systems1}
+Consider the system
+\begin{equation}
+\begin{array}{ccccccccc}
+      x &- &y&&&&&= &0 \\
+     2x& -&2y&+&z&+&2w&=&4\\
+     & &y&&&+&w&=&0\\
+     & &&&2z&+&w&=&5
+    \end{array}
+    \end{equation}
+ 
+ (You may remember this system from \href{https://ximera.osu.edu/linearalgebrav3/LinearAlgebraInteractiveIntro/SYS-0020/main}{Augmented Matrix Notation and Elementary Row Operations}.)  We will solve this system using the backslash operator ($\setminus$).  
+\begin{verbatim}
+% Define the coefficient matrix A
+A = [1 -1 0 0;
+     2 -2 1 2;
+     0 1 0 1;
+     0 0 2 1];
+ 
+% Define vector b
+b = [0;4;0;5];
+ 
+% Solve the system
+x = A \ b
+ 
+% Compare the solution above to the solution obtained
+% using rref
+A_b=[A b];
+rref(A_b)
+\end{verbatim}
+ 
+\href{https://sagecell.sagemath.org/?z=eJxVj8EOgjAQRO9N-g9zIdEDSUv0RDgQ_QOPaAzFok2ANaUQ_Hu7UWLc20zf7GwTHG3rBovwsGjItq1rnB0C-jp4t6CUokSBSiPVUFC5FODJkGbQyFatwM_6J1VE9CVqKZK1Y7ZNIA8jheGdKt_lKt-v0Im6-XPH-BqD7SHFErESZ04wcaD-WfsvQ90UHA2oDXGM_l0yoY6VN45Noxvu8N628TNXU1QlDJeys4nG9g1f4kXS&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+ 
+\end{example}
+ 
+\begin{warning}
+  While the backslash ($\setminus$) operator can be used to solve feasible systems, we urge you to be very cautious because
+\begin{itemize}
+  \item If a system has infinitely many solutions, the backslash ($\setminus$) operator will find one particular solution.
+  \item If a system has no solutions, the backslash ($\setminus$) operator will find an approximate solution using least-squares. 
+\end{itemize}
+The way the answer is presented, you cannot tell the difference!
+\end{warning}
+ 
+\subsubsection*{$QR$-factorization}
+ 
+Recall the definition of $QR$-factorization.
+\begin{definition}[\ref{def:QR-factorization}]
+Let $A$ be an $m \times n$ matrix with independent columns. A \dfn{QR-factorization} of $A$ expresses it as $A = QR$ where $Q$ is $m \times n$ with orthonormal columns and $R$ is an invertible and upper triangular matrix with positive diagonal entries.
+\end{definition}
+ 
+\begin{example}\label{ex:qrOrthonormalQ}
+Find the $QR$-factorization of
+$$A=\begin{bmatrix}2 & -1 & 4 & 0\\
+    3 & 1 & 1 & -2\\
+    1 & 5 & -1 & 6\\
+    -3 & 4 & 0 & 7\end{bmatrix}$$
+and demonstrate that matrix $Q$ is orthogonal (columns are orthonormal).    
+\begin{explanation}
+    \begin{verbatim}
+      % Define A
+      A=[2 -1 4 0;
+          3 1 1 -2;
+          1 5 -1 6;
+          -3 4 0 7];
+       
+      % Find the QR-factorization of A
+      [Q,R]=qr(A)
+       
+      % Verify that columns of Q are orthonormal
+      % You may get numbers that are close to zero but not zero
+      % due to round-off error
+      transpose(Q)*Q
+ 
+      % why does this verify that the columns are orthonormal?
+    \end{verbatim}
+   
+\href{https://sagecell.sagemath.org/?z=eJxdj8tqwzAQRfcG_8PdBJJSQZ30sSihGEr3yqJQQhaKPaoFtqYdSy3O11eKUyiVVpc5Z7izwDNZ5wl1WdTb_Rqqwi1uHssC6W1Qpa_Wl1jhLs_vL1FtMoqHQ8plscCL8y1CR9A7ZU0TWNzJBMcebPP-vb7eHbafsqxXs_BK4uyUFBPQcB8HP2ZUwwiBJXTsWQbTZ_aNIwYz4Z0CfByOJOMsZrbpeSQExomEcYwJ4XAOWW3jeSYcfavYWpAIS1kEMX78SOZSr670XOm7m9Ay5d1uxNefgvmw35L_-j39ACBmYSg=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.
+\end{explanation} 
+ 
+\begin{question}
+In the code above, we used the product $Q^TQ$ to verify that the columns of $Q$ are orthonormal.  What do you expect this product to look like if the columns are orthonormal?  What will the product look like if they are not?  You will be asked to explain your reasoning in Problem \ref{prob_oct_orth}.
+\end{question}
+ 
+\end{example}
+ 
+Recall the following algorithm for using $QR$-factorization to approximate eigenvalues from \href{https://ximera.osu.edu/linearalgebradzv3/LinearAlgebraInteractiveIntro/RTH-0040/main}{$QR$-Factorization}.
+ 
+\begin{algorithm}[\ref{alg:qrEig}]
+Let $A$ be an invertible matrix.
+ 
+\emph{Step 1}: Define $A_{1} = A$ and factor it as $A_{1} = Q_{1}R_{1}$.
+ 
+\emph{Step 2}: Define $A_{2} = R_{1}Q_{1}$ and factor it as $A_{2} = Q_{2}R_{2}$.
+ 
+\emph{Step 3}: Define $A_{3} = R_{2}Q_{2}$ and factor it as $A_{3} = Q_{3}R_{3}$.
+ 
+ $\vdots$
+  
+\emph{Step $k+1$}: Define $A_{k + 1} = R_{k}Q_{k}$ (where $A_{k} = Q_{k}R_{k}$).
+ 
+Note that $A_{k + 1}$ is similar to $A_{k}$ (in fact, $A_{k+1} = R_{k}Q_{k} = (Q_{k}^{-1}A_{k})Q_{k}$), and hence each $A_{k}$ has the same eigenvalues as $A$. If the eigenvalues of $A$ are real and have distinct absolute values, the sequence of matrices $A_{1}, A_{2}, A_{3}, \dots$ converges to an upper triangular matrix with these eigenvalues on the main diagonal.
+\end{algorithm}
+ 
+Compare the following example to Example \ref{QR-algortihm-2x2-025425}.
+ 
+\begin{example}\label{ex:qrEig}
+Use the $QR$ algorithm to approximate the eigenvalues of $A=\begin{bmatrix}1 & 1\\2 & 0\end{bmatrix}$. 
+ 
+\begin{explanation}
+    Here is a very simple implementation of the algorithm. 
+ 
+    \begin{verbatim}
+% Define A
+A=[1 1;
+    2 0];
+ 
+% Set the desired number of iterations
+iter=20; 
+ 
+% Implement the algorithm. Note that we are over-writing the previous A with every iteration.
+for i=1:iter
+    [Q,R]=qr(A);
+    A=R*Q
+end   
+    \end{verbatim}
+ 
+\href{https://sagecell.sagemath.org/?z=eJwtjbEKwkAQRPuF_YdpAioWuZSGKw78gcQypFBuD7fwDjfn_5tDp3oMvJkOV0maBYEp-MXBjUzYM6Bfd2TqcJOK-hRE2dQkIn9eDzGUBK1i96olb0yN_dCPQLNSMah3l9b-BpfpPK_-bYdw_F8EP58mJsnxCzFCIso=&lang=octave&interacts=eJyLjgUAARUAuQ==}{Link to code}.  
+ 
+Observe that the main diagonal entries are approaching the eigenvalues of $A$.
+\end{explanation}
+     
+\end{example}
+ 
+\subsection*{Octave Exercises}
+\begin{problem}\label{prob_oct_1}
+    Attempt to solve each of the following systems of equations using the backslash ($\setminus$) operator, and the \emph{rref} function.  Interpret your results.
+ 
+    \begin{enumerate}
+        \item
+        \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+     &&y&+&z&=&1\\
+     -2x&&&+&3z&=&1
+    \end{array}
+    \end{equation}
+   
+     
+    What is true about this system?
+     
+    \begin{multipleChoice}
+    \choice[correct]{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+ 
+       \item
+    \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+     x&-&y&+&2z&=&4\\
+     -2x&+&y&-&3z&=&-3
+    \end{array}
+    \end{equation}
+ 
+    What is true about this system?
+    \begin{multipleChoice}
+    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice[correct]{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+ 
+    \item
+    \begin{equation}
+\begin{array}{ccccccccc}
+      3x &- &y&+&4z&= &2 \\
+     x&-&y&+&2z&=&1\\
+     -2x&+&y&-&3z&=&1
+    \end{array}
+    \end{equation}
+ 
+    What is true about this system?
+    \begin{multipleChoice}
+    \choice{The system is consistent.  Using the backslash operator produces the same result as using the \emph{rref} function.}
+    \choice[correct]{The system is inconsistent.  The backslash operator gives the least squares approximation.}
+    \choice{The system is consistent but has infinitely many solutions.  The backslash operator gives one particular solution.}
+    \end{multipleChoice}
+ 
+         \end{enumerate}
+\end{problem}
+ 
+\begin{problem}\label{prob_oct_lineFit}
+  Use least squares to find a line of best fit for the points shown in the GeoGebra interactive below.
+  Enter the equation of the line into the GeoGebra interactive to view your result.
+ 
+  \begin{center}
+    \geogebra{kmt5ukhc}{700}{500} 
+  \end{center}
+   
+  \begin{enumerate}
+    \item Find the residual, $\norm{\vec{b}-A\vec{z}}$, for your line of best fit. 
+    \item The original line, $y=x+1$ initially shown in the interactive, visually appeared to be a pretty good fit.  Find the residual for the line $y=x+1$ and compare it to the residual you got for your line.  Is your line a better fit?
+  \end{enumerate}
+\end{problem}
+ 
+\begin{problem}\label{prob_oct_orth}
+  Explain how to interpret the product $Q^TQ$ to determine whether matrix $Q$ has orthonormal columns.  Prove your claims.
+\end{problem}
+ 
+\begin{problem}\label{prob_oct_qr1}
+Modify the code in Example \ref{ex:qrEig} to approximate the eigenvalues of $A=\begin{bmatrix} 9 & 2 & 8\\ 2 & -6 & -2\\ -8 & 2 & -5\end{bmatrix}$.  Compare your answers to the answers you got for Problem \ref{prob:3x3fromKuttler1}.
+\end{problem}
+ 
+\begin{problem}\label{prob_oct_qr2}
+  Modify the code in Example \ref{ex:qrEig} for the matrix $A=\begin{bmatrix} 0 & -1\\ 1 & 0 \end{bmatrix}$.  What are you observing?  Are we getting close to finding the eigenvalues of $A$?  Explain what is happening and why.
+  \end{problem}
+
+
+\begin{problem}\label{prob:Penrose}
+Let $A$ be a real $m\times n$ matrix. The {\bf pseudoinverse} of $A$ is the unique $n\times m$ matrix $A^+$ such that the following two conditions are satisfied:
+\begin{align}
+    \tag{{\bf P1}} \label{eq:P1}
+    AA^+A = A, \quad A^+AA^+ = A^+, \\
+    \tag{{\bf P2}} \label{eq:P2}
+    \text{Both $AA^+$ and $A^+A$ are symmetric.}
+\end{align}
+Show that $A^+ = (A^TA)^{-1}A^T$ for $A$ with linearly independent columns.
+\end{problem}
+
+\begin{remark}\label{rk:Penrose}
+    Solutions to {\bf P1} are called \emph{middle inverses} and are not unique in general. Penrose's Theorem guarantees uniqueness of middle inverses satisfying {\bf P2}. In case $A$ has linearly independent rows, the pseudoinverse solves the least squares approximation.
+\end{remark}
+
+\subsection*{Acknowledgements}
+ 
+Penrose's Theorem and topics in pseudoinverses (cf.~ Problem \ref{prob:Penrose}) can be found in Sec.~8.6.4 in Keith Nicholson's \href{https://open.umn.edu/opentextbooks/textbooks/linear-algebra-with-applications}{\it Linear Algebra with Applications}. (CC-BY-NC-SA)
+ 
+W. Keith Nicholson, {\it Linear Algebra with Applications}, Lyryx 2018, Open Edition.
+
+
+\end{document}
