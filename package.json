@@ -1,0 +1,30 @@
+{
+	"name": "interactive-linear-algebra",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tex4npm build",
+		"deploy": "tex4npm deploy linear-algebra.ximera.cloud",
+		"dev": "tex4npm watch",
+		"relink": "npm link tex4npm @ximera/answer @ximera/choice @ximera/proof @ximera/xkcd @ximera/chrome @ximera/core @ximera/dialogue @ximera/foldable @ximera/free-response @ximera/hint @ximera/multiple-choice @ximera/select-all @ximera/verbatim @ximera/video @ximera/word-choice",
+		"check-links": "node scripts/check-links.mjs"
+	},
+	"dependencies": {
+		"tex4npm": "*",
+		"@ximera/answer": "*",
+		"@ximera/choice": "*",
+		"@ximera/proof": "*",
+		"@ximera/xkcd": "*",
+		"@ximera/chrome": "*",
+		"@ximera/core": "*",
+		"@ximera/dialogue": "*",
+		"@ximera/foldable": "*",
+		"@ximera/free-response": "*",
+		"@ximera/hint": "*",
+		"@ximera/multiple-choice": "*",
+		"@ximera/select-all": "*",
+		"@ximera/verbatim": "*",
+		"@ximera/video": "*",
+		"@ximera/word-choice": "*"
+	}
+}

@@ -336,3 +336,9 @@ gpgkey
 
 # File used to update DevEnv config-files  (xmlatex updateDevEnv)
 xmDevEnvFiles.tgz
+
+# tex4npm build outputs and vendored packages
+dist/
+node_modules/
+.tex4npm/
+
